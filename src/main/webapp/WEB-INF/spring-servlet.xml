@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:util="http://www.springframework.org/schema/util"
+       xsi:schemaLocation="
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/security
+        http://www.springframework.org/schema/security/spring-security.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd
+        http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+    <context:component-scan base-package="com.aug" />
+<!--     <context:component-scan base-package="com.aug" />
+    <context:component-scan base-package="com.aug" /> -->
+    <tx:annotation-driven/>
+    <context:annotation-config/>
+    
+
+
+    <mvc:default-servlet-handler />
+    <mvc:resources mapping="/resources/**" location="/" />
+    
+    <bean class="org.springframework.web.servlet.mvc.annotation.AnnotationMethodHandlerAdapter">
+        <property name="messageConverters">
+            <list>
+                <bean class="org.springframework.http.converter.json.MappingJacksonHttpMessageConverter"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="prefix"><value>/WEB-INF/pages/</value></property>
+        <property name="suffix"><value>.jsp</value></property>
+    </bean>
+
+    <!-- Message Resource config -->
+	<bean id="messageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
+        <property name="basename" value="classpath:messages"></property>
+        <property name="defaultEncoding" value="UTF-8"></property>
+    </bean>
+
+ 	<!-- I18n config -->
+    <mvc:interceptors>
+	<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor">
+		<property name="paramName" value="locale" />
+	</bean>
+	</mvc:interceptors>
+		<bean id="localeResolver" class="org.springframework.web.servlet.i18n.SessionLocaleResolver">
+		<property name="defaultLocale" value="en" />
+	</bean>
+	
+	<!-- Configure the multipart resolver-->
+ 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <property name="maxUploadSize" value="5000000" />    <!-- 5000000 -->
+	</bean>
+	
+	<bean
+	  class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+	  <property name="exceptionMappings">
+		<props>
+			
+			<prop key="org.apache.http.HttpException">
+				error/exception_error
+			</prop>
+			<prop key="com.aug.exception.CustomException">
+				error/generic_error
+			</prop>
+			<prop key="java.io.IOException">error/page_exception_error</prop>
+			<prop key="java.sql.SQLException">error/page500</prop>
+		    <prop key="org.springframework.beans.ConversionNotSupportedException">error/page500</prop>
+			<prop key="javax.validation.ConstraintViolationException">error/page500</prop>
+			<prop key="org.springframework.http.converter.HttpMessageNotWritableException">error/page500</prop>
+			<prop key="org.springframework.web.servlet.mvc.multiaction.NoSuchRequestHandlingMethodException">error/page404</prop>
+			<prop key="org.springframework.web.HttpRequestMethodNotSupportedException">error/page405</prop>
+			<prop key="javassist.tools.web.BadHttpRequest">error/page400</prop>
+			<prop key="org.springframework.web.bind.MissingServletRequestParameterException">error/page400</prop>
+			<prop key="org.springframework.web.bind.ServletRequestBindingException">error/page400</prop>
+			<prop key="org.springframework.beans.TypeMismatchException">error/page400</prop>			
+			<prop key="org.springframework.http.converter.HttpMessageNotReadableException">error/page400</prop>
+			<prop key="org.springframework.web.bind.MethodArgumentNotValidException">error/page400</prop>		
+			<prop key="org.springframework.web.multipart.support.MissingServletRequestPartException">error/page400</prop>
+			<prop key="org.springframework.web.HttpMediaTypeNotSupportedException">error/page415</prop>		
+			<prop key="java.lang.Exception">error/page_exception_error</prop>
+			<prop key="java.net.ConnectException">error/page_exception_error</prop>		
+			
+		</props>
+	  </property>
+	</bean>  
+	
+	<!-- <bean id="RestOperations" class="org.springframework.web.client.RestTemplate">
+    <constructor-arg>
+        <bean class="org.springframework.http.client.HttpComponentsClientHttpRequestFactory">
+            <property name="readTimeout" value="0" />
+            <property name="connectTimeout" value="0" />
+        </bean>
+    </constructor-arg>
+  </bean> -->
+  
+  <!--<bean
+        class="org.springframework.ws.transport.http.HttpComponentsMessageSender">
+             <property name="connectionTimeout" value="10" />
+      		 <property name="readTimeout" value="0" />
+    </bean> -->
+
+    <bean id="jsonConverter" class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter"></bean>
+
+    <!-- MVC converters -->
+    <mvc:annotation-driven content-negotiation-manager="contentNegotiationManager">
+        <mvc:message-converters>
+            <bean class="com.aug.hr.services.utils.DefaultJacksonHttpMessageConverter"
+                  p:prettyPrint="true"/>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+
+    <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <property name="favorPathExtension" value="false"/>
+        <property name="favorParameter" value="false"/>
+        <property name="ignoreAcceptHeader" value="false"/>
+        <property name="mediaTypes">
+            <value>
+                html=text/html
+                json=application/json
+                *=*/*
+            </value>
+        </property>
+    </bean>
+
+    <!-- Repeated Converter since mvc:message-converters doesn't support ref -->
+    <bean id="jacksonHttpMessageConverter"
+          class="com.aug.hr.services.utils.DefaultJacksonHttpMessageConverter"
+          p:prettyPrint="true"/>
+
+
+	
+    <bean id="transactionManager"
+          class="org.springframework.orm.hibernate3.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory" />
+    </bean>
+	
+
+
+    <!--<import resource="classpath:/META-INF/spring/marshaller/jaxb2-marshaller-context.xml"/>
+
+
+    <bean id="httpClient" class="org.apache.http.impl.client.DefaultHttpClient">
+        <constructor-arg>
+            <bean class="org.apache.http.impl.conn.PoolingClientConnectionManager"/>
+        </constructor-arg>
+    </bean>
+
+    <bean id="restTemplate" class="org.springframework.web.client.RestTemplate"
+          p:messageConverters-ref="messageConvertersList">
+        <constructor-arg>
+            <bean class="org.springframework.http.client.HttpComponentsClientHttpRequestFactory">
+                <constructor-arg ref="httpClient"/>
+            </bean>
+        </constructor-arg>
+    </bean>
+
+    <import resource="classpath:/META-INF/spring/mvc/rest-json-converter-context.xml"/>
+    <import resource="classpath:/META-INF/spring/mvc/rest-json-type-converter-context.xml"/>
+
+    &lt;!&ndash; since id is the same as XML list above, essentially overriding the other list &ndash;&gt;
+    <util:list id="messageConvertersList">
+        <ref bean="mappingJacksonHttpMessageConverterWithType"/>
+    </util:list>-->
+
+</beans>

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Education</title>
+
+<!-- jQuery -->
+<script src="../js/jquery-1.10.2.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- Bootstrap -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap-theme.min.css">
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<!-- jQuery dataTable -->
+<script src="../js/jquery.dataTables.min.js"></script>
+<link rel="stylesheet" href="../css/jquery.dataTables.css">
+<link rel="stylesheet" href="../css/jquery.dataTables.min.css">
+
+<!-- dataTable Bootstrap -->
+<script src="../js/dataTables.bootstrap.js"></script>
+<link rel="stylesheet" href="../css/dataTables.bootstrap.css">
+
+</head>
+<body>
+
+<div class="container">
+<form >
+
+<ol class="breadcrumb">
+	<li role="presentation" class="active"><a href="#">Home</a></li>
+	<li role="presentation"><a href="#addModal" data-toggle="modal">Add Education</a></li>
+</ol>
+
+<h2>Education</h2> 
+ 
+<!-- Table -->
+<div class="form-group">
+<table id="tbResult" class="table">
+	<thead>
+		<tr>
+			<th>University</th>
+			<th>GPA</th>
+			<th>Faculty</th>
+			<th>Major</th>
+			<th>Degree</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody></tbody>
+</table>
+</div>
+
+<!-- Button trigger modal -->
+<div class="form-group" align="right">
+<button type="button" class="btn btn-info" data-toggle="modal" data-target="#addModal">Add Education</button> 
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Education Add</h4>
+      </div>
+      
+      <div class="modal-body">
+        
+	  <div class="form-group">
+	    <label>University :</label>
+	    <input type="text" class="form-control" id="university" placeholder="Enter University">
+	  </div>
+	  
+	  <div class="form-group">
+	    <label>GPA :</label>
+	    <input type="text" class="form-control" id="gpa" placeholder="Enter GPA">
+	  </div>
+	  
+	  <div class="form-group">
+	    <label>Faculty :</label>
+	    <input type="text" class="form-control" id="faculty" placeholder="Enter Faculty">
+	  </div>
+	  
+	  <div class="form-group">
+	    <label>Major :</label>
+	    <input type="text" class="form-control" id="major" placeholder="Enter Major">
+	  </div>
+	  
+	  <div class="form-group">
+	    <label>Degree :</label>
+	    
+		<div class="btn-group">
+		  <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+		    Degree <span class="caret"></span>
+		  </button>
+		  <ul class="dropdown-menu" role="menu">
+		 	<li><a href="#">Bachelor</a></li>
+	    	<li><a href="#">Master's degree</a></li>
+	    	<li><a href="#">Doctoral degree</a></li>
+		  </ul>
+		</div>
+	  </div>
+
+      </div>
+      
+      <div class="form-group" align="center">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      	<button type="button" class="btn btn-info" data-dismiss="modal">Save</button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+ 
+
+
+</form>
+</div>
+
+</body>
+</html>

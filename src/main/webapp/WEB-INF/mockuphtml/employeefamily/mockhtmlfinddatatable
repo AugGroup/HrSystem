@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="../bootstrap/js/jquery-1.11.2.min.js"></script> 
+  <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap.css"/>
+  <link rel="stylesheet" type="text/css" href="../bootstrap/css/bootstrap-theme.css"/>
+  <script src="../bootstrap/js/bootstrap.js"></script>
+  <script src="../DataTable/jquery.dataTables.min.js"></script> 
+  <link rel="stylesheet" type="text/css" href="../DataTable/dataTables.bootstrap.css"/>
+  <link rel="stylesheet" type="text/css" href="../DataTable/jquery.dataTables.min.css"/>
+  <link rel="stylesheet" type="text/css" href="../DataTable/jquery.dataTables_themeroller.css"/>
+  <script src="../DataTable/dataTables.bootstrap.js"></script> 
+
+ 
+ 
+
+<style type="text/css">
+#example {
+        width: 90%;
+    }
+ 
+</style>
+
+</head>
+<body>
+
+
+
+
+<div class="container">
+
+     <h2>Family</h2>
+     <br/>
+     <br/>
+  
+     
+      <a href="#" data-toggle="modal" data-backdrop="static" data-keyboard="false" data-target="#addFamModal"><span class="glyphicon glyphicon-plus-sign"></span>Add Data</a>   
+
+     <table id="example" class="display dataTable" cellspacing="0" width="100%">
+    
+       <thead>
+            <tr>
+                <th>No</th>
+                <th>Employee Name</th>
+                <th>Family Name</th>
+                <th>Occupation</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Tel</th>
+                <th>Relation</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+
+ 
+        <tfoot>
+            <tr>
+                <th>No</th>
+                <th>Employee Name</th>
+                <th>Family Name</th>
+                <th>Occupation</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Tel</th>
+                <th>Relation</th>
+                <th>Edit</th>
+            </tr>
+        </tfoot>
+ 
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Tiger Nixon</td>
+                <td>William Nixon</td>
+                <td>Developper</td>
+                <td>25</td>
+                <td>Male</td>
+                <td>089-0851022</td>
+                <td>son</td>
+                <td>
+                    <a href="#">
+                    <span class="glyphicon glyphicon-edit"></span>
+                    </a>
+                    
+                     <a href="#">
+                     <span class="glyphicon glyphicon-remove del"></span>
+                     </a>
+                </td>
+            </tr>
+
+           <tr>
+                <td>2</td>
+                <td>Garrett Winters</td>
+                <td>Ashton Winters</td>
+                <td>Hunman Resource</td>
+                <td>24</td>
+                <td>Male</td>
+                <td>089-0851022</td>
+                <td>son</td>
+                 <td>
+                    <a href="#">
+                    <span class="glyphicon glyphicon-edit"></span>
+                    </a>
+                    
+                     <a href="#">
+                     <span class="glyphicon glyphicon-remove del"></span>
+                     </a>
+                </td>
+            </tr>
+           
+        </tbody>
+
+    </table>
+
+
+
+
+
+
+    
+<!-- Modal -->
+<div class="modal fade" id="addFamModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">ข้อมูลครอบครัว</h4>
+      </div>
+      <div class="modal-body">
+
+      <form class="form-horizontal" method="post" action="">
+
+    <div class="form-group">
+      <label for="firstname" class="col-sm-2 control-label">First Name</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="firstname" placeholder="First Name">
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="lastname" class="col-sm-2 control-label">Last Name</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="lastname" placeholder="Last Name">
+      </div>
+    </div>
+
+    <div class="form-group">
+
+    <label class="col-sm-2 control-label">Gender</label>
+
+    <div class="col-sm-4">
+      <div class="radio-inline">
+        <label>
+          <input type="radio" name="gender" id="male" value="male" checked> Male
+        </label>
+      </div>
+      <div class="radio-inline">
+        <label>
+          <input type="radio" name="gender" id="female" value="female"> FeMale
+        </label>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="form-group">
+      <label for="age" class="col-sm-2 control-label">age</label>
+      <div class="col-sm-4">
+        <input type="number" class="form-control" id="age" placeholder="Age">
+      </div>
+  </div>
+
+
+  <div class="form-group">
+      <label for="mobile" class="col-sm-2 control-label">Mobile</label>
+      <div class="col-sm-4">
+        <input type="tel" class="form-control" id="mobile" placeholder="Mobile">
+      </div>
+  </div>
+
+
+  <div class="form-group">
+      <label for="address" class="col-sm-2 control-label">Address</label>
+      <div class="col-sm-4">
+        <textarea rows="3" id="address" class="form-control" placeholder="Address"></textarea>
+      </div>
+    </div>
+
+
+
+  <div class="form-group">
+      <label for="occupation" class="col-sm-2 control-label">Occupation</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="occupation" placeholder="Occupation">
+      </div>
+  </div>
+
+
+  <div class="form-group">
+      <label for="position" class="col-sm-2 control-label">Position</label>
+      <div class="col-sm-4">
+        <input type="text" class="form-control" id="position" placeholder="Position">
+      </div>
+  </div>
+
+
+    <div class="form-group">
+        <label for="relation" class="col-sm-2 control-label">Relation</label>
+        <div class="col-sm-4">
+          <input type="text" class="form-control" id="relation" placeholder="Relation">
+        </div>
+    </div>
+
+    
+   <br/>
+
+    
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+
+
+  </form>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+</div>
+
+ 
+</body>
+
+ <script type="text/javascript">
+        $(document).ready(function() {
+
+            
+          $('#example').dataTable( {
+              "autoWidth": false,
+              "bPaginate": true,
+              "bFilter": true,
+              "bInfo": true
+           } );    
+
+      } );
+   </script>
+</html>
+
+
+

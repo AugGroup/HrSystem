@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reportStatusEmp" language="groovy" pageWidth="1224" pageHeight="595" orientation="Landscape" columnWidth="1184" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2d3c3217-4ead-4895-ba23-982db41308ff">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="1"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[select 		emp.ID as id, emp.EMPLOYEE_CODE as employeeCode,
+			emp.NAME_THAI as nameThai,
+			emp.NAME_ENG as nameEng,
+            emp.DATEOFBIRTH as dateOfBirth,
+            emp.AGE as age,
+            staff.STAFFTYPENAME as statusStaff,
+            EMP_OFFICIAL.START_WORK_DATE as startWorkDate,
+            site.PROJECTOWNER as projectOwner,site.STARTDATE as startDate, site.ENDDATE as endDate,
+
+
+            YEAR(CURDATE()) - YEAR(dateOfBirth) - IF(STR_TO_DATE(CONCAT(YEAR(CURDATE()), '/', MONTH(dateOfBirth), '/', DAY(dateOfBirth)) ,'%Y-%c-%e') > CURDATE(), 1, 0) as year,
+            MONTH(curdate()) - MONTH(dateOfBirth) - IF(STR_TO_DATE(CONCAT(YEAR(CURDATE()), '/', MONTH(dateOfBirth), '/', DAY(dateOfBirth)) ,'%Y-%c-%e') > CURDATE(), 1, 0) as month,
+            DAY(curdate()) - DAY(dateOfBirth) - IF(STR_TO_DATE(CONCAT(YEAR(CURDATE()), '/', MONTH(dateOfBirth), '/', DAY(dateOfBirth)) ,'%Y-%c-%e') > CURDATE(), 1, 0) as day,
+
+
+            YEAR(CURDATE()) - YEAR(START_WORK_DATE) - IF(STR_TO_DATE(CONCAT(YEAR(CURDATE()), '/', MONTH(START_WORK_DATE), '/', DAY(START_WORK_DATE)) ,'%Y-%c-%e') > CURDATE(), 1, 0) as yearwork,
+            MONTH(curdate()) - MONTH(START_WORK_DATE) - IF(STR_TO_DATE(CONCAT(YEAR(CURDATE()), '/', MONTH(START_WORK_DATE), '/', DAY(START_WORK_DATE)) ,'%Y-%c-%e') > CURDATE(), 1, 0) as monthwork,
+            DAY(curdate()) - DAY(START_WORK_DATE) - IF(STR_TO_DATE(CONCAT(YEAR(CURDATE()), '/', MONTH(START_WORK_DATE), '/', DAY(START_WORK_DATE)) ,'%Y-%c-%e') > CURDATE(), 1, 0) as daywork
+
+
+
+from EMP_EMPLOYEE as emp
+join EMP_SITE as site on site.employee_ID = emp.ID
+join EMP_OFFICIAL on emp.OFFICIAL_ID = EMP_OFFICIAL.ID
+join MAS_STAFFTYPE as staff on staff.ID = emp.ID]]>
+	</queryString>
+	<field name="id" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="employeeCode" class="java.lang.String"/>
+	<field name="nameThai" class="java.lang.String"/>
+	<field name="nameEng" class="java.lang.String"/>
+	<field name="dateOfBirth" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="age" class="java.lang.Integer">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="statusStaff" class="java.lang.String"/>
+	<field name="startWorkDate" class="java.sql.Timestamp"/>
+	<field name="projectOwner" class="java.lang.String">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="startDate" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="endDate" class="java.sql.Timestamp">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="year" class="java.lang.Long">
+		<fieldDescription><![CDATA[]]></fieldDescription>
+	</field>
+	<field name="month" class="java.lang.Long"/>
+	<field name="day" class="java.lang.Long"/>
+	<field name="yearwork" class="java.lang.Long"/>
+	<field name="monthwork" class="java.lang.Long"/>
+	<field name="daywork" class="java.lang.Long"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="57" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="65" splitType="Stretch">
+			<staticText>
+				<reportElement x="360" y="16" width="438" height="35" uuid="0a4f650c-b367-48cf-b64b-10af30f168ab"/>
+				<textElement textAlignment="Center">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Employee Status Report]]></text>
+			</staticText>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<line>
+				<reportElement x="494" y="20" width="124" height="1" uuid="d0b52305-e6d6-46e1-8763-7bbd04a11b43"/>
+			</line>
+			<line>
+				<reportElement x="233" y="20" width="151" height="1" uuid="3026a5e1-f6f9-439a-9297-4603012819fd"/>
+			</line>
+			<line>
+				<reportElement x="19" y="44" width="1111" height="3" uuid="f3297f67-3fdc-4f42-97d8-8e0ca1226a8a"/>
+			</line>
+			<textField>
+				<reportElement x="135" y="16" width="90" height="20" uuid="29f6c38e-ba42-4d43-afd4-fa6c9b06d938"/>
+				<textFieldExpression><![CDATA[$R{reportstatus.datestartwork}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="296" y="1" width="68" height="19" uuid="8f323a51-853b-4e9d-81f4-97840d964806"/>
+				<textFieldExpression><![CDATA[$R{reportstatus.duration}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="221" y="26" width="62" height="20" uuid="126bfff0-606d-466e-98db-49084d24abf6"/>
+				<textFieldExpression><![CDATA[$R{reportstatus.durationy}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="282" y="27" width="67" height="20" uuid="3171ffac-f769-44e3-847a-39d063179bbb"/>
+				<textFieldExpression><![CDATA[$R{reportstatus.durationm}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="347" y="27" width="65" height="20" uuid="4b797503-5126-4880-9fa4-d8361c962d7d"/>
+				<textFieldExpression><![CDATA[$R{reportstatus.durationd}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="417" y="21" width="68" height="20" uuid="785be5b9-58a0-4e00-b047-f7aa6f385c86"/>
+				<textFieldExpression><![CDATA[$R{reportstatus.birthdate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="546" y="4" width="59" height="20" uuid="64edac18-443c-4547-a797-4ceccc609104"/>
+				<textFieldExpression><![CDATA[$R{reportstatus.age}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="486" y="28" width="52" height="20" uuid="e8be851b-7f2b-4952-ae3d-d965f482a942"/>
+				<textFieldExpression><![CDATA[$R{reportstatus.agey}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="540" y="28" width="48" height="20" uuid="43e83432-5c1b-4588-b44d-517142f71172"/>
+				<textFieldExpression><![CDATA[$R{reportstatus.agem}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="591" y="28" width="65" height="20" uuid="694362c0-5b7e-448c-851c-0fef70b0a52f"/>
+				<textFieldExpression><![CDATA[$R{reportstatus.aged}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="672" y="16" width="83" height="20" uuid="217d1e83-e519-49c9-8282-49e8e63c1306"/>
+				<textFieldExpression><![CDATA[$R{reportstatus.resourcenameth}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="804" y="16" width="80" height="20" uuid="e9a456bd-d63d-495d-ac5e-84db04bd1d18"/>
+				<textFieldExpression><![CDATA[$R{reportstatus.resourcenameen}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="908" y="15" width="73" height="20" uuid="aac7385e-daae-4666-af43-1abf5df00085"/>
+				<textFieldExpression><![CDATA[$R{reportstatus.statusstaff}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="985" y="16" width="62" height="20" uuid="573932a9-18c2-4920-a9b7-cfe3d91a8147"/>
+				<textFieldExpression><![CDATA[$R{reportstatus.startdate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1065" y="16" width="43" height="20" uuid="ce879d11-f220-4d62-a1d3-c2ad85b1fcd0"/>
+				<textFieldExpression><![CDATA[$R{reportstatus.enddate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="31" y="15" width="85" height="20" uuid="c550e109-bf4f-48df-acc1-4208300eb0df"/>
+				<textFieldExpression><![CDATA[$R{reportstatus.resource}]]></textFieldExpression>
+			</textField>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="56" splitType="Stretch">
+			<textField>
+				<reportElement x="42" y="7" width="74" height="20" uuid="e51cd9bf-1d44-4b61-b1ab-fae7ac0ae863"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{employeeCode}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd/MM/yyyy">
+				<reportElement x="419" y="7" width="46" height="20" uuid="c56654e3-1670-42d8-afa4-536bdef49e02"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{dateOfBirth}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="694" y="5" width="62" height="20" uuid="920ca227-8bf4-485a-acee-f8fdc5c07fa8"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nameThai}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="827" y="6" width="57" height="20" uuid="666897c2-e39c-417e-b66c-7207f286b6f3"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nameEng}]]></textFieldExpression>
+			</textField>
+			<textField isBlankWhenNull="true">
+				<reportElement x="967" y="6" width="69" height="20" uuid="08c6f698-b4e5-4537-9e93-c30888e3de06"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{startDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="1047" y="6" width="77" height="20" uuid="f69c5e1d-9251-4617-acc4-4e50f3778139"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{endDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="491" y="8" width="36" height="20" uuid="bf3cacce-99c5-46dc-91c2-03371cb7358b"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{year}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="546" y="8" width="29" height="20" uuid="f1834d15-7db7-4fc7-9c88-17372f4c84a5"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{month}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="602" y="8" width="24" height="20" uuid="b0f559fd-d263-43b4-91f4-be000b057baa"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{day}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="140" y="7" width="67" height="20" uuid="649cd004-d53a-476b-ad02-4dd62201d8e9"/>
+				<textElement>
+					<font size="10"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{startWorkDate}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="242" y="7" width="30" height="20" uuid="062f5ca1-ae17-4d95-ba4d-925cc1143443"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{yearwork}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="295" y="7" width="29" height="20" uuid="21c4242c-2ddc-4ce9-8369-4e71f56a87f6"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{monthwork}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="357" y="6" width="27" height="20" uuid="458dda72-b0d6-4946-8b74-371b99d819ee"/>
+				<textElement>
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{daywork}]]></textFieldExpression>
+			</textField>
+			<line>
+				<reportElement x="19" y="34" width="1111" height="1" forecolor="#CC0000" uuid="f23f4cea-2811-4857-9d32-88f4f8b2f50d"/>
+			</line>
+			<textField>
+				<reportElement x="908" y="6" width="43" height="20" uuid="56658884-ee23-4a3e-9cb7-6d64f4a01d99"/>
+				<textFieldExpression><![CDATA[$F{statusStaff}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

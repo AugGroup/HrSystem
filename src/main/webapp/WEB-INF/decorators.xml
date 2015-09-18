@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<decorators defaultdir="/decorators">
+    <!-- Excludes will never be decorated by Sitemesh. -->
+  	<excludes>
+	    <!-- <pattern>/error.jsp</pattern> -->
+        <pattern>/*login*</pattern>
+        <pattern>/*logout*</pattern>
+        <pattern>/*accessdenied*</pattern>
+        <!-- <pattern>/error/400.jsp</pattern>
+        <pattern>/error/403.jsp</pattern>
+        <pattern>/error/404.jsp</pattern>
+        <pattern>/error/415.jsp</pattern>       
+        <pattern>/error/500.jsp</pattern>    
+        <pattern>/error/httperror.jsp</pattern>
+        <pattern>/error/exception_error.jsp</pattern> 
+        <pattern>/error/generic_error.jsp</pattern>    
+        <pattern>/*httperror*</pattern>  
+        <pattern>/*employee/submit*</pattern>  --> 
+        <pattern>/*modal*</pattern>
+        <pattern>/*Popup*</pattern>
+        <pattern>/*view*</pattern>
+<!--         <pattern>/*family*</pattern> -->
+<!--         <pattern>/*education*</pattern> -->
+<!--         <pattern>/*experience*</pattern> -->
+<!--         <pattern>/*ability*</pattern> -->
+<!--         <pattern>/*reference*</pattern> -->
+<!--         <pattern>/*reward*</pattern> -->
+<!--         <pattern>/*history*</pattern> -->
+<!--         <pattern>/*probation*</pattern> -->
+<!--         <pattern>/*punish*</pattern> -->
+<!--         <pattern>/*leave*</pattern> -->
+<!--         <pattern>/*skilllanguage*</pattern> -->
+<!--         <pattern>/*site*</pattern> -->
+<!--         <pattern>/*certification*</pattern> -->
+<!--         <pattern>/*card*</pattern> -->
+<!--         <pattern>/*allowances*</pattern> -->
+<!--         <pattern>/*health*</pattern> -->
+  	</excludes>
+    <decorator name="default" page="main.jsp">
+        <pattern>/*</pattern>
+    </decorator>
+</decorators>

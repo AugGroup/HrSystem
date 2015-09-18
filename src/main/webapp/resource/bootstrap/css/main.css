@@ -1,0 +1,360 @@
+
+ html, body {
+      height: 100%;
+      margin: 0 0 1px;
+      padding: 0;
+}
+    
+.error {
+	color: #ff0000;
+	padding-left: 5px;
+	font-family: Dosis-Regular;
+}
+		 
+.errorblock {
+	color: #000;
+	background-color: #ffEEEE;
+	border: 3px solid #ff0000;
+	padding: 8px;
+	margin: 5px;
+	font-family: Dosis-Regular;
+}
+
+#imagePreview {
+	margin: 20px;
+    padding: 10px;
+    border: 4px solid #fff;
+    width: 150px;
+    height: 150px;
+    background-position: center;
+    background-size: cover;
+    -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, .3);
+    display: inline-block;
+}
+
+.legend2 { font-size: 16px;}
+
+
+.img-flag{
+	max-height: 20px;
+}
+
+.navbar {
+    margin-bottom: 5px;
+    min-height: 30px;
+}
+
+.navbar-header {
+    padding-left: 5px;
+}
+
+.navbar-brand {
+    font-size: 15px;
+    height: 30px;
+    padding: 5px;
+}
+
+.navbar-nav > li > a {
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+.navbar-nav .img-flag > li > a {
+    padding-bottom: 2px;
+    padding-top: 2px;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+.required:after {
+  margin-bottom: 0px;
+  content:"*";
+  color:red;
+}  
+
+.btn-warning, .btn-warning:active, .btn-warning.active, .btn-warning:hover, .btn-warning:focus {
+  background-color: #ff9900;
+  border-color: #ff9900;
+  font-size : 16px;
+  color : #ffffff;
+  font-family: Dosis-Regular;
+  background-image: linear-gradient(to bottom, #ff9900 -0%, #ff9900 100%);
+}
+
+.btn-info, .btn-info:active, .btn-info.active, .btn-info:hover, .btn-info:focus {
+  background-color: #ff9900;
+  border-color: #ff9900;
+  font-size : 16px;
+  color : #ffffff;
+  font-family: Dosis-Regular;
+  background-image: linear-gradient(to bottom, #ff9900 -0%, #ff9900 100%);
+}
+
+.btn-danger, .btn-danger.active, .btn-danger.active, .btn-danger:hover, .btn-danger:focus {
+  background-color: #ff0000;
+  border-color: #ff0000;
+  font-size : 16px;
+  color : #ffffff;
+  font-family: Dosis-Regular;
+  background-image: linear-gradient(to bottom, #ff0000 -0%, #ff0000 100%);
+}
+
+table.dataTable.stripe tbody tr.even, table.dataTable.display tbody tr.even {
+  background-color: #d6d6d6;
+}
+
+table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd {
+  background-color: #e7e7e7;
+}
+
+table.dataTable tbody th, table.dataTable tbody td {
+  padding: 8px 10px;
+  font-size: 18px;
+  color: #414141;
+  font-family: Dosis-Regular;
+}
+
+table.dataTable thead th, table.dataTable tfoot th {
+  font-weight: bold;
+  background-color: #ababab;
+  font-size: 16px;
+  color : #ffffff;
+  font-family: Dosis-Regular;
+}
+
+div#tdResult_length {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #292929;
+  font-family: Dosis-Regular;
+}
+
+div#tdResult_filter {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #292929;
+  font-family: Dosis-Regular;
+}
+
+div#tdResult_info {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #292929;
+  font-family: Dosis-Regular;
+}
+
+div#tbResult_filter {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #292929;
+  font-family: Dosis-Regular;
+}
+
+div#tbResult_info {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #292929;
+  font-family: Dosis-Regular;
+}
+
+div#tableResult_filter {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #292929;
+  font-family: Dosis-Regular;
+}
+
+div#tableResult_info {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size: 20px;
+  color: #292929;
+  font-family: Dosis-Regular;
+}
+
+.pagination > .active > a, .pagination > .active > span, .pagination > .active > a:hover, .pagination > .active > span:hover, .pagination > .active > a:focus, .pagination > .active > span:focus {
+  z-index: 2;
+  color: #ffffff;
+  cursor: default;
+  background-color: #ababab;
+  border-color: #ababab;
+}
+
+.pagination > li:first-child > a, .pagination > li:first-child > span {
+  margin-left: 0;
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  background-color: #ebebeb;
+  font-size: 14px;
+  color: #747474;
+  font-family: Dosis-Regular;
+}
+
+.pagination > li:last-child > a, .pagination > li:last-child > span {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  background-color: #ebebeb;
+  font-size: 14px;
+  color: #747474;
+  font-family: Dosis-Regular;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+  box-sizing: border-box;
+  display: inline-block;
+  min-width: 1.5em;
+  padding: 0.5em 1em;
+  margin-left: 2px;
+  text-align: center;
+  text-decoration: none !important;
+  cursor: pointer;
+  color: #ababab;
+  border: 1px solid transparent;
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+	color: #ababab !important;
+  border: 1px solid#ababab;
+  background-color:#ababab;
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ababab), color-stop(100%, #111111));
+  background: -webkit-linear-gradient(top,#ababab 0%,#ababab 100%);
+  background: -moz-linear-gradient(top,#ababab 0%,#ababab 100%);
+  background: -ms-linear-gradient(top,#ababab 0%,#ababab 100%);
+  background: -o-linear-gradient(top,#ababab 0%,#ababab 100%);
+  background: linear-gradient(to bottom,#ababab 0%,#ababab 100%);
+}
+
+caption {
+  height: 30px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  color: #ffffff;
+  font-size: 18px;
+  background-color: #ffcc00;
+  font-family: Dosis-Regular;
+  font-weight: bold;
+}
+
+#div-information h2{
+	height: 30px;
+	color:#ffffff;
+	background-color: #ffcc00;
+	font-size: 18px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	padding-left: 10px;
+	font-family: Dosis-Regular;
+	font-weight: bold;
+}
+
+.btn-file{
+  background-image: linear-gradient(to bottom, #ff9900 0%, #ff9900 114%);
+  border-color:#ff9900;
+}
+.btn-primary{
+	background-color: #ff9900;
+	border-color: #ff9900;
+	background-image: linear-gradient(to bottom, #ff9900 -0%, #ff9900 100%);
+	border-color: #ff9900;
+}
+
+.btn-primary:hover, .btn-primary:focus {
+  background-color: #ff9900;
+  background-position: 0 -15px;
+
+}
+
+.dropdown-link-menu b{
+	width: 75px;
+	height: 25px;
+	margin-top: 5px;
+	padding-left: 5px;
+	margin-left: 5px;
+	border: 1px solid #ebebeb; 
+	font-family: Dosis-Regular;
+	font-size: 16px;
+	color: #000000;
+	background-color: #ebebeb;
+	
+}
+
+.toolbar {
+    float: left;
+}
+
+.modal-header {
+  min-height: 16.42857143px;
+  padding: 15px;
+  border-bottom: 1px solid #e5e5e5;
+  background-color: #ff9900;
+  font-family: Dosis-Regular;
+  color: #ffffff;
+}
+
+.btn-info:active, .btn-info.active {
+  background-color: #ff9900;
+  border-color: #ff9900;
+  font-size : 16px;
+  color : #ffffff;
+  font-family: Dosis-Regular;
+}
+
+.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus {
+	background-color: #ff9900;
+	background-image: linear-gradient(to bottom, #ff9900 0%, #ff9900 100%);
+}
+
+label {
+  display: inline-block;
+  max-width: 100%;
+  margin-bottom: 5px;
+  font-weight: bold;
+  font-size : 16px;
+  color : #292929;
+  font-family: Dosis-Regular;
+}
+
+.dropdown-menu > li > a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.42857143;
+  color: #333;
+  white-space: nowrap;
+  font-family: Dosis-Regular;
+}
+
+.form-control {
+	font-family: Dosis-Regular;
+}
+
+.modal-body {
+	font-family: Dosis-Regular;
+}
+
+.btn-default, .btn-default:hover, .btn-default:focus {
+	font-family: Dosis-Regular;
+}
