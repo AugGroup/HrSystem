@@ -68,9 +68,9 @@
     <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
          <property name="dataSource" ref="dataSource"/>
    		 <property name="packagesToScan" value="com.aug.hrdb.*" />
-   		 <property name="entityInterceptor">
+   		<!--  <property name="entityInterceptor">
    		 <bean class = "com.aug.hrdb.interceptor.AuditInterceptor"></bean>
-   		 </property>
+   		 </property> -->
    		 
      </bean>
 
