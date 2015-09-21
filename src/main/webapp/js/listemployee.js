@@ -37,8 +37,8 @@ var empId;
 		   	    
 		   	   }else {
 		     		
-		   		  alert(testStatus);
-			          myRedirect('${pageContext.request.contextPath}/httperror',testStatus);
+		   		      alert(testStatus);
+			          //myRedirect($getContextPath+'/httperror',testStatus);
 		   	   
 		   	   }
 
@@ -59,35 +59,43 @@ var empId;
 		dt=$("#tdResult").dataTable({ 
 			"ordering": false,
 // 			"dom": '<"toolbar">frtip'
+			fnInitComplete : function(){
+				listAll();
+			}
 		});
   	
+		
 // 		 $("div.toolbaCr").html('<b>Custom tool bar! Text/images etc.</b>');
 		 
     	var button = $(event.relatedTarget);
 		empId = button.data("empid"); 
- 		listAll();
+// 		listAll();
 			
     		function listAll(){
+//    			alert('list all'); 
     			$.ajax({
     				url : $getContextPath+"/employee/listAll",
     				type : "POST",
     				contentType: "application/json",
     				dataType: "json",
     				success : function(data) {
+    					
     					dt.fnClearTable();
-    
-    				for (var i=0;i< data.length; i++) {
-    					dt.fnAddData([data[i].id,data[i].employeeCode,data[i].nameEng, 
-    					              data[i].surnameEng,
-    						 '<button type="button" style="margin-right :15px;" class="btn btn-warning btn-sm active " data-empId="' + data[i].id + '" onclick="initEditEmployee('+data[i].id+')" >'+$msgEdit+'</button>'+
-    						'<button type="button" class="btn btn-danger btn-sm active" data-empId="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
-    			 
-    					}
-    				}/* ,
-    				error : function(data,testStatus,jqXHR) {
-    					$("#outputajax").text(testStatus);
-    					} */
-    				}); 
+    				    
+	    				for (var i=0;i< data.length; i++) {
+	    					console.log(data);
+	    					
+	    					dt.fnAddData([data[i].id,data[i].employeeCode,data[i].nameEng, 
+	    					              data[i].surnameEng,
+	    						 '<button type="button" style="margin-right :15px;" class="btn btn-warning btn-sm active " data-empId="' + data[i].id + '" onclick="initEditEmployee('+data[i].id+')" >'+$msgEdit+'</button>'+
+	    						'<button type="button" class="btn btn-danger btn-sm active" data-empId="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
+	    			 
+    					}	
+
+    		
+    				},
+    				error : function(xhr){console.log("err----------------"+xhr.responseText)}
+    			});
     		}
 	
 /* --------------------------------------------------- Delete Function --------------------------------------------------- */		

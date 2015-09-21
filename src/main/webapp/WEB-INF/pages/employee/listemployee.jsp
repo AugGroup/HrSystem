@@ -9,7 +9,7 @@
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link href="<c:url value="css/header.css" />" rel="stylesheet" type="text/css">
-<script src="<c:url value="js/listemployee.js" />"></script>
+<script src="<c:url value="/resources/js/listemployee.js" />"></script>
 <style>
 .form{
 	font-family: Dosis-Regular;
