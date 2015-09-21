@@ -76,10 +76,9 @@ public class ReferenceController {
 		
 		Reference entityLOaded = referenceService.findById(referenceDto.getId());
 		entityLOaded.setName(referenceDto.getName()); 
-//		entityLOaded.setAddress(referenceDto.getAddress());
+		entityLOaded.setAddress(referenceDto.getAddress());
 		entityLOaded.setTel(referenceDto.getTel());
-//		entityLOaded.setOccupation(referenceDto.getOccupation());
-		
+		entityLOaded.setOccupation(referenceDto.getOccupation());		
 		referenceService.update(entityLOaded);
 		return referenceDto;
 	}

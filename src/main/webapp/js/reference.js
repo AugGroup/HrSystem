@@ -145,7 +145,7 @@
 					address :$("#address").val(),
 					tel :$("#tel").val(),
 					occupation :$("#occupation").val(),
-					employeeId: id 
+					applicantId: id 
 				}),
 				type : "POST",
 				contentType : "application/json",
@@ -209,7 +209,7 @@
 								address: $("#address").val(),
 								tel :$("#tel").val(),
 								occupation: $("#occupation").val(),
-								employeeId: id 
+								applicantId: id 
 												
 					}),
 					type:"POST",
@@ -266,7 +266,7 @@
 					$("#address").val(data.address);
 					$("#tel").val(data.tel);
 					$("#occupation").val(data.occupation);
-					employeeId: data.employeeId;					
+					applicantId: data.applicantId;					
 				},
 				error : function(jqXHR,	textStatus,	error) {	
 					$(function(){ new PNotify({
