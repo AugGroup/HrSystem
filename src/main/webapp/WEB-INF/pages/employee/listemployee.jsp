@@ -8,7 +8,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<link href="<c:url value="css/header.css" />" rel="stylesheet" type="text/css">
+<link href="<c:url value="/resources/css/header.css" />" rel="stylesheet" type="text/css">
 <script src="<c:url value="/resources/js/listemployee.js" />"></script>
 <style>
 .form{
@@ -56,7 +56,7 @@
 </div>		
 </div>
 	<!-- Button trigger modal -->
-	<sec:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_HR')">
+    <sec:authorize access="hasAnyRole('ROLE_ADMIN','ROLE_HR')"> 
 	<div id="groupbtn" align="right">
 	<f:form action="${pageContext.request.contextPath}/employee" method="POST" role="form">
 		<div class="form-group">
@@ -66,7 +66,7 @@
 		</div>
 	</f:form>
 	</div> 
-	</sec:authorize>
+	</sec:authorize> 
 
 <!-- Modal Delete -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">

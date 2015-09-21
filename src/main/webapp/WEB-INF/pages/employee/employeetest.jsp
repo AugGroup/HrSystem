@@ -22,16 +22,16 @@
 
 <input type="hidden" id="emp">
 <input type="hidden" id="empname">
-<!-- <input type="hidden" id="id"> -->
 
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
 <%-- <f:form method="post" id="addForm" commandName="allEmployeeDto" class="form-horizontal" role="form" action="${pageContext.request.contextPath}/employee/submit" enctype="multipart/form-data"> --%>
 
-<f:form method="post" id="addForm" commandName="allEmployeeDto" class="form-horizontal" role="form" name="employeeForm" enctype="multipart/form-data">
+<f:form method="post" id="addForm" commandName="employeeDto" class="form-horizontal" role="form" name="employeeForm" enctype="multipart/form-data">
 
 <!------------------------------------------------------ Start Information-------------------------------------------------------->
 		
-		 <input id="employeeCodeDto" name="employeeCodeDto.rungingNumber" type="hidden" class="form-control"  placeholder="Location ID" value="${ employeeCodeDto.rungingNumber}">
+		<input id="employeeCodeDto" name="employeeCodeDto.rungingNumber" type="hidden" class="form-control"  placeholder="Location ID" value="${ employeeCodeDto.rungingNumber}">
+		
 		
 		
 		<div id="message"></div>
@@ -50,14 +50,14 @@
 																				
 										<div class="col-md-9">
 										<div class="row" align="center">
-										   <c:if test="${empty allEmployeeDto.image}">
+										   <c:if test="${empty employeeDto.image}">
 												<div  id="imagePreview" class="img-rounded img-responsive"
 													style="background-image:url('<c:url value="/resource/images/photo_2.jpg" />');">
 												</div>
 											</c:if>
 											
-											<c:if test="${not empty allEmployeeDto.image}">
-										   		 <div id="imagePreview" class="img-rounded img-responsive" style="background-image:url('${pageContext.request.contextPath}/DisplayImageServlet?namespace=EMPLOYEE&fileName=${allEmployeeDto.image}');"></div>
+											<c:if test="${not empty employeeDto.image}">
+										   		 <div id="imagePreview" class="img-rounded img-responsive" style="background-image:url('${pageContext.request.contextPath}/DisplayImageServlet?namespace=EMPLOYEE&fileName=${employeeDto.image}');"></div>
 										    </c:if>
 											</div>
 											<br>
@@ -67,12 +67,12 @@
 												
 											<input type="file" id="uploadFile" name="fileupload" accept="image/*"
 												class="file" data-show-upload="false"
-												data-show-preview="false" data-initial-caption="${allEmployeeDto.image}"
+												data-show-preview="false" data-initial-caption="${employeeDto.image}"
 												data-overwrite-initial="false">  
 												
 												<input type="hidden" name="image"
 												class="form-control element-to-paste-filename"
-												value="${allEmployeeDto.image}" />
+												value="${employeeDto.image}" />
 
 											
 										</div>
@@ -110,8 +110,8 @@
 		 	             </div>
 
 							<div class="form-group">
-									<!-- <label for="id"> ID :</label> -->
-									<input id="id" name="id" type="hidden" value="${id}"> 
+								<input id="id" name="id" type="hidden" value="${id}"> 
+		
 								
 								<div class="col-md-6">
 		    					<label><spring:message code="employee.location"></spring:message> :</label>
@@ -123,10 +123,10 @@
 							
 								<div class="col-md-6">
 									<label for="employeeCode"> <spring:message code="employee.code"></spring:message> :</label> 
-									<input id="employeeCodeForShow" name="employeeCodeForShow" type="text" class="form-control" disabled  value="${allEmployeeDto.employeeCode}">
+									<input id="employeeCodeForShow" name="employeeCodeForShow" type="text" class="form-control" disabled  value="${employeeDto.employeeCode}">
 								</div>
 								
-									<input id="employeeCode" name="employeeCode" type="hidden" class="form-control"  value="${allEmployeeDto.employeeCode}"> 
+									<input id="employeeCode" name="employeeCode" type="hidden" class="form-control"  value="${employeeDto.employeeCode}"> 
 								
 								
 							</div>
@@ -137,19 +137,19 @@
 								<div class="col-md-4">
 									<label class="required"> <spring:message code="employee.nameThai" ></spring:message> :</label> 
 									<input type="text" class="form-control" 
-									id="nameThai"name="nameThai" placeholder="${please}${enter}<spring:message code="employee.nameThai"></spring:message>" value="${allEmployeeDto.nameThai}">
+									id="nameThai"name="nameThai" placeholder="${please}${enter}<spring:message code="employee.nameThai"></spring:message>" value="${employeeDto.nameThai}">
 								</div>
 								
 								<div class="col-md-4">
 									<label> <spring:message code="employee.surnameThai"></spring:message> :</label> 
 									<input type="text" class="form-control" 
-									id="surnameThai" name="surnameThai" placeholder="${please}${enter}<spring:message code="employee.surnameThai"></spring:message>" value="${allEmployeeDto.surnameThai}">
+									id="surnameThai" name="surnameThai" placeholder="${please}${enter}<spring:message code="employee.surnameThai"></spring:message>" value="${employeeDto.surnameThai}">
 								</div>
 								
 								<div class="col-md-4">
 									<label> <spring:message code="employee.nicknameThai"></spring:message> :</label> 
 									<input type="text" class="form-control" 
-									id="nicknameThai" name="nicknameThai" placeholder="${please}${enter}<spring:message code="employee.nicknameThai"></spring:message>" value="${allEmployeeDto.nicknameThai}">
+									id="nicknameThai" name="nicknameThai" placeholder="${please}${enter}<spring:message code="employee.nicknameThai"></spring:message>" value="${employeeDto.nicknameThai}">
 								</div>
 							</div>
 					
@@ -158,21 +158,22 @@
 							<div class="form-group">
 								<div class="col-md-4">
 									<label> <spring:message code="employee.nameEng"></spring:message> :</label> 
-									<input type="text" class="form-control" id="nameEng" name="nameEng" placeholder="${please}${enter}<spring:message code="employee.nameEng"></spring:message>" value="${allEmployeeDto.nameEng}">
+									<input type="text" class="form-control" id="nameEng" name="nameEng" placeholder="${please}${enter}<spring:message code="employee.nameEng"></spring:message>" value="${employeeDto.nameEng}">
 								</div>
 								<div class="col-md-4">
 									<label> <spring:message code="employee.surnameEng"></spring:message> :</label> <input type="text" class="form-control"
-									id="surnameEng" name="surnameEng" placeholder="${please}${enter}<spring:message code="employee.surnameEng"></spring:message>" value="${allEmployeeDto.surnameEng}">
+									id="surnameEng" name="surnameEng" placeholder="${please}${enter}<spring:message code="employee.surnameEng"></spring:message>" value="${employeeDto.surnameEng}">
 								</div>
 								<div class="col-md-4">
 									<label> <spring:message code="employee.nicknameEng"></spring:message> :</label> <input type="text" class="form-control"
-									id="nicknameEng" name="nicknameEng" placeholder="${please}${enter}<spring:message code="employee.nicknameEng"></spring:message>" value="${allEmployeeDto.nicknameEng}">
+									id="nicknameEng" name="nicknameEng" placeholder="${please}${enter}<spring:message code="employee.nicknameEng"></spring:message>" value="${employeeDto.nicknameEng}">
 								</div>
 							</div>
 					
 	         </div>
 	         
 	     
+ <input id="appId" name="appId" type="text" class="form-control">
 	         
 	         
  <!-------------------------------------------------- Start Address-------------------------------------------------->
@@ -233,19 +234,19 @@
 							<div class="form-group">
 								<div class="col-md-3">
 									<label class="required" style="margin-right: 25px;"> <spring:message code="employee.email"></spring:message> :</label> <input type="email" class="form-control" 
-									id="email" name="email" placeholder="${please} ${enter} <spring:message code="employee.email"></spring:message>" value="${allEmployeeDto.email}">
+									id="email" name="email" placeholder="${please} ${enter} <spring:message code="employee.email"></spring:message>" value="${employeeDto.email}">
 								</div>
 								<div class="col-md-3">
 									<label class="required" style="margin-right: 25px;"> <spring:message code="employee.telHome"></spring:message> :</label> <input type="text" class="form-control"
-									id="telHome" name="telHome" placeholder="<spring:message code="employee.formatTel"></spring:message>" value="${allEmployeeDto.telHome}">
+									id="telHome" name="telHome" placeholder="<spring:message code="employee.formatTel"></spring:message>" value="${employeeDto.telHome}">
 								</div>
 								<div class="col-md-3">
 									<label class="required" style="margin-right: 25px;"> <spring:message code="employee.telMobile"></spring:message> :</label> <input type="text" class="form-control"
-									id="telMobile" name="telMobile" placeholder="<spring:message code="employee.formatTelMo"></spring:message>" value="${allEmployeeDto.telMobile}">
+									id="telMobile" name="telMobile" placeholder="<spring:message code="employee.formatTelMo"></spring:message>" value="${employeeDto.telMobile}">
 								</div>
 								<div class="col-md-3">
 									<label class="required" style="margin-right: 25px;"> <spring:message code="employee.telFax"></spring:message> :</label> <input type="text" class="form-control"
-									id="telFax" name="telFax" placeholder="<spring:message code="employee.formatTel"></spring:message>" value="${allEmployeeDto.telFax}">
+									id="telFax" name="telFax" placeholder="<spring:message code="employee.formatTel"></spring:message>" value="${employeeDto.telFax}">
 								</div>
 							</div>
 					
@@ -258,11 +259,11 @@
 							<div class="form-group">
 								<div class="col-md-6">
 									<label style="margin-right: 25px;"> <spring:message code="employee.congenitalDisease"></spring:message> :</label> <input type="text" class="form-control"
-									id="congenitalDisease" name="congenitalDisease" placeholder="${please} ${enter} <spring:message code="employee.congen"></spring:message>" value="${allEmployeeDto.congenitalDisease}">
+									id="congenitalDisease" name="congenitalDisease" placeholder="${please} ${enter} <spring:message code="employee.congen"></spring:message>" value="${employeeDto.congenitalDisease}">
 								</div>
 								<div class="col-md-6">
 									<label style="margin-right: 25px;"> <spring:message code="employee.hospital"></spring:message> :</label> <input type="text" class="form-control"
-									id="hospital" name="hospital" placeholder="${please} ${enter} <spring:message code="employee.hospital"></spring:message>" value="${allEmployeeDto.hospital}">
+									id="hospital" name="hospital" placeholder="${please} ${enter} <spring:message code="employee.hospital"></spring:message>" value="${employeeDto.hospital}">
 								</div>
 							</div>
 					
@@ -275,12 +276,12 @@
 							<div class="form-group">
 								<div class="col-md-6">
 									<label class="required" style="margin-right: 25px;"> <spring:message code="employee.emergencyContact"></spring:message> :</label> <input type="text" class="form-control"
-									id="emergencyContact" name="emergencyContact" placeholder="${please} ${enter} <spring:message code="employee.emergencyname"></spring:message>" value="${allEmployeeDto.emergencyContact}">
+									id="emergencyContact" name="emergencyContact" placeholder="${please} ${enter} <spring:message code="employee.emergencyname"></spring:message>" value="${employeeDto.emergencyContact}">
 								</div>
 								<div class="col-md-6">
 									<label style="margin-right: 25px;"> <spring:message code="employee.relationshipWithEmergencyContact"></spring:message> :</label> <input type="text" class="form-control"
 									id="relationshipWithEmergencyContact" name="relationshipWithEmergencyContact" placeholder="${please} ${enter} <spring:message code="employee.relationshipWithEmergencyContact"></spring:message>"
-									value="${allEmployeeDto.relationshipWithEmergencyContact}">
+									value="${employeeDto.relationshipWithEmergencyContact}">
 								</div>
 							</div>
 					
@@ -292,11 +293,11 @@
 							<div class="form-group">
 								<div class="col-md-6">
 									<label style="margin-right: 25px;"> <spring:message code="employee.emergencyContactAddress"></spring:message> :</label> <input type="text" class="form-control"
-									id="emergencyContactAddress" name="emergencyContactAddress" placeholder="${please} ${enter} <spring:message code="employee.emergencyAddress"></spring:message>" value="${allEmployeeDto.emergencyContactAddress}">
+									id="emergencyContactAddress" name="emergencyContactAddress" placeholder="${please} ${enter} <spring:message code="employee.emergencyAddress"></spring:message>" value="${employeeDto.emergencyContactAddress}">
 								</div>
 								<div class="col-md-3">
 									<label class="required" style="margin-right: 25px;"> <spring:message code="employee.emergencyContactPhoneNumber"></spring:message>  :</label> <input type="text" class="form-control"
-									id="emergencyContactPhoneNumber" name="emergencyContactPhoneNumber" placeholder="<spring:message code="employee.formatTelMo"></spring:message>" value="${allEmployeeDto.emergencyContactPhoneNumber}">
+									id="emergencyContactPhoneNumber" name="emergencyContactPhoneNumber" placeholder="<spring:message code="employee.formatTelMo"></spring:message>" value="${employeeDto.emergencyContactPhoneNumber}">
 								</div>
 							</div>
 					
@@ -316,7 +317,7 @@
 									
 									<input type="text" class="form-control"
 									id="dateOfBirth" name="dateOfBirth" placeholder="${please} ${enter} <spring:message code="employee.dob"></spring:message>"            							 
-           							value='<fmt:formatDate pattern="dd-MM-yyyy" value="${allEmployeeDto.dateOfBirth}" />' /> 
+           							value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.dateOfBirth}" />' /> 
            							           							
 									
 									<span class="input-group-addon">
@@ -329,28 +330,18 @@
 								
 								<div class="col-md-3">
 									<label style="margin-right: 25px;"> <spring:message code="employee.placeOfBirth"></spring:message> :</label> <input type="text" class="form-control"
-									id="placeOfBirth" name="placeOfBirth" placeholder="${please} ${enter} <spring:message code="employee.pob"></spring:message>" value="${allEmployeeDto.placeOfBirth}">
+									id="placeOfBirth" name="placeOfBirth" placeholder="${please} ${enter} <spring:message code="employee.pob"></spring:message>" value="${employeeDto.placeOfBirth}">
 								</div>
 								
-								
-								<%-- <div class="col-md-3">
-								
-									<label> Place of Birth :</label>
-									<div class='input-group date' id='placeOfBirth'> <input type="text" class="form-control"
-									id="placeOfBirth" name="placeOfBirth" placeholder="Enter POB" value="${allEmployeeDto.placeOfBirth}">
-									<span class="input-group-addon">
-									<span class="glyphicon glyphicon-calendar"></span>
-									</span></div>
-								</div> --%>
 								
 								
 								<div class="col-md-3">
 									<label style="margin-right: 25px;"> <spring:message code="employee.age"></spring:message> :</label> <input type="text" class="form-control"
-									id="age" name="age" placeholder="${please} ${enter} <spring:message code="employee.age"></spring:message>" value="${allEmployeeDto.age}">
+									id="age" name="age" placeholder="${please} ${enter} <spring:message code="employee.age"></spring:message>" value="${employeeDto.age}">
 								</div>
 								<div class="col-md-3">
 									<label style="margin-right: 25px;"> <spring:message code="employee.religion"></spring:message> :</label> <input type="text" class="form-control"
-									id="religion" name="religion" placeholder="${please} ${enter} <spring:message code="employee.religion"></spring:message>" value="${allEmployeeDto.religion}">
+									id="religion" name="religion" placeholder="${please} ${enter} <spring:message code="employee.religion"></spring:message>" value="${employeeDto.religion}">
 								</div>
 								
 							</div>
@@ -364,18 +355,18 @@
 							<div class="form-group">
 								<div class="col-md-3">
 									<label class="required" style="margin-right: 25px;"> <spring:message code="employee.idCard"></spring:message> :</label> <input type="text" class="form-control"
-									id="idCard" name="idCard" placeholder="${please} ${enter} <spring:message code="employee.idCard"></spring:message>" value="${allEmployeeDto.idCard}">
+									id="idCard" name="idCard" placeholder="${please} ${enter} <spring:message code="employee.idCard"></spring:message>" value="${employeeDto.idCard}">
 								</div>
 								<div class="col-md-3">
 									<label style="margin-right: 25px;"> <spring:message code="employee.issuedOffice"></spring:message> :</label> <input type="text" class="form-control"
-									id="issuedOffice" name="issuedOffice" placeholder="${please} ${enter} <spring:message code="employee.issuedOffice"></spring:message>" value="${allEmployeeDto.issuedOffice}">
+									id="issuedOffice" name="issuedOffice" placeholder="${please} ${enter} <spring:message code="employee.issuedOffice"></spring:message>" value="${employeeDto.issuedOffice}">
 								</div>
 								
 								<div class="col-md-3">
 									<label style="margin-right: 25px;"> <spring:message code="employee.expiryDate"></spring:message> :</label>
 									<div class='input-group date' id='expiryDate'> <input type="text" class="form-control"
 									id="expiryDate" name="expiryDate" placeholder="${enter} <spring:message code="employee.expiryDate"></spring:message>" 
-									value='<fmt:formatDate pattern="dd-MM-yyyy" value="${allEmployeeDto.expiryDate}" />' />
+									value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.expiryDate}" />' />
 								
 								<span class="input-group-addon">
 								<span class="glyphicon glyphicon-calendar"></span>
@@ -394,22 +385,21 @@
 							<div class="col-md-3">
 									<label style="margin-right: 25px;"> <spring:message code="employee.sex"></spring:message> :</label>
 									<div class="radio">
-									 <c:if test="${empty allEmployeeDto.sex}">									
+									 <c:if test="${empty employeeDto.sex}">									
 									  		 <label><input type="radio" name="sex" id="Male" value="Male"><spring:message code="employee.male"></spring:message></label>
 									  		 <label><input type="radio" name="sex" id="Female" value="Female"><spring:message code="employee.female"></spring:message></label>
-									 		<%-- <label for="sex" class="error"><spring:message code="employee.required.sex"></spring:message></label> --%>
-									 		<label id="sex-error" class="error" for="sex"></label>
+									 		 <label id="sex-error" class="error" for="sex"></label>
 									  </c:if>
 									  
 									  
-									  <c:if test="${not empty allEmployeeDto.sex}">
+									  <c:if test="${not empty employeeDto.sex}">
 
 										 <c:if test="${allEmployeeDto.sex =='Male'}">
 										        <label><input type="radio" name="sex" id="Male" value="Male" checked="checked"><spring:message code="employee.male"></spring:message></label>
 										        <label><input type="radio" name="sex" id="Female" value="Female"><spring:message code="employee.female"></spring:message></label>
 										  </c:if>
 										    
-										   <c:if test="${allEmployeeDto.sex =='Female'}">
+										   <c:if test="${employeeDto.sex =='Female'}">
 										       <label><input type="radio" name="sex" id="Male" value="Male"><spring:message code="employee.male"></spring:message></label>
 										       <label><input type="radio" name="sex" id="Female" value="Female" checked="checked"><spring:message code="employee.female"></spring:message></label>						  
 										   </c:if>
@@ -423,29 +413,28 @@
 								<div class="col-md-3">
 									<label style="margin-right: 25px;"> <spring:message code="employee.maritalStatus"></spring:message> :</label>
 									<div class="radio">
-									  <c:if test="${empty allEmployeeDto.maritalStatus}">	
+									  <c:if test="${empty employeeDto.maritalStatus}">	
      									 <label><input type="radio" name="maritalStatus" id="Single" value="Single"><spring:message code="employee.single"></spring:message></label> 
       									 <label><input type="radio" name="maritalStatus" id="Married" value="Married"><spring:message code="employee.married"></spring:message></label>
       									 <label><input type="radio" name="maritalStatus" id="Divorce" value="Divorce"><spring:message code="employee.divorce"></spring:message></label>
-    								  		<%-- <label for="maritalStatus" class="error"><spring:message code="employee.required.maritalStatus"></spring:message></label> --%>
-    								  		<label id="maritalStatus-error" class="error" for="maritalStatus"></label>
+    								  	<label id="maritalStatus-error" class="error" for="maritalStatus"></label>
     								  </c:if>
-    								  <c:if test="${not empty allEmployeeDto.maritalStatus}">
+    								  <c:if test="${not empty employeeDto.maritalStatus}">
     								        
     								        <c:choose>
-										    <c:when test="${allEmployeeDto.maritalStatus =='Single'}">
+										    <c:when test="${employeeDto.maritalStatus =='Single'}">
 										       <label><input type="radio" name="maritalStatus" id="Single" value="Single" checked="checked"><spring:message code="employee.single"></spring:message></label> 
       									 	   <label><input type="radio" name="maritalStatus" id="Married" value="Married"><spring:message code="employee.married"></spring:message></label>
       									       <label><input type="radio" name="maritalStatus" id="Divorce" value="Divorce"><spring:message code="employee.divorce"></spring:message></label>
 										    </c:when>
 										    
-										     <c:when test="${allEmployeeDto.maritalStatus =='Married'}">
+										     <c:when test="${employeeDto.maritalStatus =='Married'}">
 										       <label><input type="radio" name="maritalStatus" id="Single" value="Single"><spring:message code="employee.single"></spring:message></label> 
       									 	   <label><input type="radio" name="maritalStatus" id="Married" value="Married" checked="checked"><spring:message code="employee.married"></spring:message></label>
       									       <label><input type="radio" name="maritalStatus" id="Divorce" value="Divorce"><spring:message code="employee.divorce"></spring:message></label>
 										    </c:when>
 										    
-										    <c:when test="${allEmployeeDto.maritalStatus =='Divorce'}">
+										    <c:when test="${employeeDto.maritalStatus =='Divorce'}">
 										       <label><input type="radio" name="maritalStatus" id="Single" value="Single"><spring:message code="employee.single"></spring:message></label> 
       									 	   <label><input type="radio" name="maritalStatus" id="Married" value="Married" checked="checked"><spring:message code="employee.married"></spring:message></label>
       									       <label><input type="radio" name="maritalStatus" id="Divorce" value="Divorce"><spring:message code="employee.divorce"></spring:message></label>
@@ -467,11 +456,11 @@
 							
 								<div class="col-md-3">
 									<label style="margin-right: 25px;"> <spring:message code="employee.height"></spring:message> :</label> <input type="text" class="form-control"
-									id="height" name="height" placeholder="${please} ${enter} <spring:message code="employee.height"></spring:message>" value="${allEmployeeDto.height}">
+									id="height" name="height" placeholder="${please} ${enter} <spring:message code="employee.height"></spring:message>" value="${employeeDto.height}">
 								</div>
 								<div class="col-md-3">
 									<label style="margin-right: 25px;"> <spring:message code="employee.weigth"></spring:message> :</label> <input type="text" class="form-control"
-									id="weigth" name="weigth" placeholder="${please} ${enter} <spring:message code="employee.weigth"></spring:message>" value="${allEmployeeDto.weigth}">
+									id="weigth" name="weigth" placeholder="${please} ${enter} <spring:message code="employee.weigth"></spring:message>" value="${employeeDto.weigth}">
 								</div>
 							</div>
 					
@@ -479,84 +468,7 @@
 	        </div>
 	        
 	        
-	        <%--  <div class="col-md-12">
-	         		
-							<div class="form-group">
-								<div class="col-md-3">
-									<label> <spring:message code="employee.sex"></spring:message> :</label>
-									<div class="radio">
-									 <c:if test="${empty allEmployeeDto.sex}">									
-									  		 <label><input type="radio" name="sex" id="Male" value="Male"><spring:message code="employee.male"></spring:message></label>
-									  		 <label><input type="radio" name="sex" id="Female" value="Female"><spring:message code="employee.female"></spring:message></label>
-									  </c:if>
-									  
-									  
-									  <c:if test="${not empty allEmployeeDto.sex}">
-
-										 <c:if test="${allEmployeeDto.sex =='Male'}">
-										        <label><input type="radio" name="sex" id="Male" value="Male" checked="checked"><spring:message code="employee.male"></spring:message></label>
-										        <label><input type="radio" name="sex" id="Female" value="Female"><spring:message code="employee.female"></spring:message></label>
-										  </c:if>
-										    
-										   <c:if test="${allEmployeeDto.sex =='Female'}">
-										       <label><input type="radio" name="sex" id="Male" value="Male"><spring:message code="employee.male"></spring:message></label>
-										       <label><input type="radio" name="sex" id="Female" value="Female" checked="checked"><spring:message code="employee.female"></spring:message></label>						  
-										   </c:if>
-									  </c:if>
-									 
-    								</div>
-								</div>
-    						</div>	
-					
-	        </div> --%>
-	        
-	        
-	        <%--  <div class="col-md-12">
-	         		
-							<div class="form-group">
-								<div class="col-md-3">
-									<label> <spring:message code="employee.maritalStatus"></spring:message> :</label>
-									<div class="radio">
-									  <c:if test="${empty allEmployeeDto.maritalStatus}">	
-     									 <label><input type="radio" name="maritalStatus" id="Single" value="Single"><spring:message code="employee.single"></spring:message></label> 
-      									 <label><input type="radio" name="maritalStatus" id="Married" value="Married"><spring:message code="employee.married"></spring:message></label>
-      									 <label><input type="radio" name="maritalStatus" id="Divorce" value="Divorce"><spring:message code="employee.divorce"></spring:message></label>
-    								  </c:if>
-    								  <c:if test="${not empty allEmployeeDto.maritalStatus}">
-    								        
-    								        <c:choose>
-										    <c:when test="${allEmployeeDto.maritalStatus =='Single'}">
-										       <label><input type="radio" name="maritalStatus" id="Single" value="Single" checked="checked"><spring:message code="employee.single"></spring:message></label> 
-      									 	   <label><input type="radio" name="maritalStatus" id="Married" value="Married"><spring:message code="employee.married"></spring:message></label>
-      									       <label><input type="radio" name="maritalStatus" id="Divorce" value="Divorce"><spring:message code="employee.divorce"></spring:message></label>
-										    </c:when>
-										    
-										     <c:when test="${allEmployeeDto.maritalStatus =='Married'}">
-										       <label><input type="radio" name="maritalStatus" id="Single" value="Single"><spring:message code="employee.single"></spring:message></label> 
-      									 	   <label><input type="radio" name="maritalStatus" id="Married" value="Married" checked="checked"><spring:message code="employee.married"></spring:message></label>
-      									       <label><input type="radio" name="maritalStatus" id="Divorce" value="Divorce"><spring:message code="employee.divorce"></spring:message></label>
-										    </c:when>
-										    
-										    <c:when test="${allEmployeeDto.maritalStatus =='Divorce'}">
-										       <label><input type="radio" name="maritalStatus" id="Single" value="Single"><spring:message code="employee.single"></spring:message></label> 
-      									 	   <label><input type="radio" name="maritalStatus" id="Married" value="Married" checked="checked"><spring:message code="employee.married"></spring:message></label>
-      									       <label><input type="radio" name="maritalStatus" id="Divorce" value="Divorce"><spring:message code="employee.divorce"></spring:message></label>
-										    </c:when>
-										    
-										    <c:otherwise>
-										       <label><input type="radio" name="maritalStatus" id="Single" value="Single"><spring:message code="employee.single"></spring:message></label> 
-      									 	   <label><input type="radio" name="maritalStatus" id="Married" value="Married"><spring:message code="employee.married"></spring:message></label>
-      									       <label><input type="radio" name="maritalStatus" id="Divorce" value="Divorce"><spring:message code="employee.divorce"></spring:message></label>
-										    </c:otherwise>
-										   </c:choose>
-    								  
-    								  </c:if>
-    								  
-    								</div>
-								</div>
-    						</div>	
-					
-	        </div> --%>
+	     
 	        
 	        <div class="row">
 	           <div class="col-md-12">
@@ -564,19 +476,19 @@
 							<div class="form-group">
 								<div class="col-md-3">
 									<label style="margin-right: 25px;"> <spring:message code="employee.numberOfChildren"></spring:message> :</label> <input type="text" class="form-control"
-									id="numberOfChildren" name="numberOfChildren" placeholder="${please} ${enter} <spring:message code="employee.numberOfChildren"></spring:message>" value="${allEmployeeDto.numberOfChildren}">
+									id="numberOfChildren" name="numberOfChildren" placeholder="${please} ${enter} <spring:message code="employee.numberOfChildren"></spring:message>" value="${employeeDto.numberOfChildren}">
 								</div>
 								<div class="col-md-3">
 									<label style="margin-right: 25px;"> <spring:message code="employee.spouseName"></spring:message> :</label> <input type="text" class="form-control"
-									id="spouseName" name="spouseName" placeholder="${please} ${enter} <spring:message code="employee.spouseName"></spring:message>" value="${allEmployeeDto.spouseName}">
+									id="spouseName" name="spouseName" placeholder="${please} ${enter} <spring:message code="employee.spouseName"></spring:message>" value="${employeeDto.spouseName}">
 								</div>
 								<div class="col-md-3">
 									<label style="margin-right: 25px;"> <spring:message code="employee.marriageCertificateNo"></spring:message> :</label> <input type="text" class="form-control"
-									id="marriageCertificateNo" name="marriageCertificateNo" placeholder="${please} ${enter} <spring:message code="employee.marcertno"></spring:message>" value="${allEmployeeDto.marriageCertificateNo}">
+									id="marriageCertificateNo" name="marriageCertificateNo" placeholder="${please} ${enter} <spring:message code="employee.marcertno"></spring:message>" value="${employeeDto.marriageCertificateNo}">
 								</div>
 								<div class="col-md-3">
 									<label style="margin-right: 25px;"> <spring:message code="employee.issuedOffice"></spring:message> :</label> <input type="text" class="form-control"
-									id="issuedOffice2" name="issuedOffice2" placeholder="${please} ${enter} <spring:message code="employee.issuedOffice"></spring:message>" value="${allEmployeeDto.issuedOffice2}">
+									id="issuedOffice2" name="issuedOffice2" placeholder="${please} ${enter} <spring:message code="employee.issuedOffice"></spring:message>" value="${employeeDto.issuedOffice2}">
 								</div>
 							</div>
 					
@@ -589,11 +501,11 @@
 							<div class="form-group">
 								<div class="col-md-6">
 									<label style="margin-right: 25px;"> <spring:message code="employee.address"></spring:message> :</label> <input type="text" class="form-control"
-									id="address" name="address" placeholder="${please} ${enter} <spring:message code="employee.address"></spring:message>" value="${allEmployeeDto.address}">
+									id="address" name="address" placeholder="${please} ${enter} <spring:message code="employee.address"></spring:message>" value="${employeeDto.address}">
 								</div>
 								<div class="col-md-6">
 									<label style="margin-right: 25px;"> <spring:message code="employee.occupation"></spring:message> :</label> <input type="text" class="form-control"
-									id="occupation" name="occupation" placeholder="${please} ${enter} <spring:message code="employee.occupation"></spring:message>" value="${allEmployeeDto.occupation}">
+									id="occupation" name="occupation" placeholder="${please} ${enter} <spring:message code="employee.occupation"></spring:message>" value="${employeeDto.occupation}">
 								</div>
 							</div>
 					
@@ -611,55 +523,55 @@
 							<div class="col-md-12">
 								<div class="col-md-3">
 								
-   								     <c:if test="${empty allEmployeeDto.knowAugNewspaper}">	
+   								     <c:if test="${empty employeeDto.knowAugNewspaper}">	
      									  <label style="margin-right: 25px;"><input type="checkbox" id="Newspaper" name="knowAugNewspaper" value="Newspaper"><spring:message code="employee.newspaper"></spring:message></label>   										      									
     								  </c:if>
     								 
-									  <c:if test="${not empty allEmployeeDto.knowAugNewspaper}">	
+									  <c:if test="${not empty employeeDto.knowAugNewspaper}">	
      									   <label style="margin-right: 25px;"><input type="checkbox" id="Newspaper" name="knowAugNewspaper" value="Newspaper" checked="checked"><spring:message code="employee.newspaper"></spring:message></label>    								  		
     								  </c:if>
     								  
-    								  <input type="text" class="form-control" id="descriptionNewspaper" name="descriptionNewspaper" placeholder="${please} ${enter} <spring:message code="employee.newspaper"></spring:message>" value="${allEmployeeDto.descriptionNewspaper}">
+    								  <input type="text" class="form-control" id="descriptionNewspaper" name="descriptionNewspaper" placeholder="${please} ${enter} <spring:message code="employee.newspaper"></spring:message>" value="${employeeDto.descriptionNewspaper}">
     								  
 								 </div>
 									  
 									 <div class="col-md-3">
 									  
-									  <c:if test="${empty allEmployeeDto.knowAugMagazine}">	
+									  <c:if test="${empty employeeDto.knowAugMagazine}">	
      									 <label style="margin-right: 25px;"><input type="checkbox" id="Magazine" name="knowAugMagazine" value="Magazine"><spring:message code="employee.magazine"></spring:message></label>      									 
     								  </c:if>
     								 
-									  <c:if test="${not empty allEmployeeDto.knowAugMagazine}">	
+									  <c:if test="${not empty employeeDto.knowAugMagazine}">	
      									   <label style="margin-right: 25px;"><input type="checkbox" id="Magazine" name="knowAugMagazine" value="Magazine" checked="checked"><spring:message code="employee.magazine"></spring:message></label>
     								  </c:if>
     								  
-    								  <input type="text" class="form-control" id="descriptionMagazine" name="descriptionMagazine" placeholder="${please} ${enter} <spring:message code="employee.magazine"></spring:message>" value="${allEmployeeDto.descriptionMagazine}">
+    								  <input type="text" class="form-control" id="descriptionMagazine" name="descriptionMagazine" placeholder="${please} ${enter} <spring:message code="employee.magazine"></spring:message>" value="${employeeDto.descriptionMagazine}">
     								  
 									</div>
 										
 								    <div class="col-md-3">
-									 <c:if test="${empty allEmployeeDto.knowAugWebsite}">	
+									 <c:if test="${empty employeeDto.knowAugWebsite}">	
      									 <label style="margin-right: 25px;"><input type="checkbox" id="Website" name="knowAugWebsite" value="Website"><spring:message code="employee.website"></spring:message></label>
       									
     								  </c:if>
     								 
-									  <c:if test="${not empty allEmployeeDto.knowAugWebsite}">	
+									  <c:if test="${not empty employeeDto.knowAugWebsite}">	
      									 <label style="margin-right: 25px;"><input type="checkbox" id="Website" name="knowAugWebsite" value="Website" checked="checked"><spring:message code="employee.website"></spring:message></label>      									
     								  </c:if>
     								  
-    								  <input type="text" class="form-control" id="descriptionWebsite" name="descriptionWebsite" placeholder="${please} ${enter} <spring:message code="employee.website"></spring:message>" value="${allEmployeeDto.descriptionWebsite}">
+    								  <input type="text" class="form-control" id="descriptionWebsite" name="descriptionWebsite" placeholder="${please} ${enter} <spring:message code="employee.website"></spring:message>" value="${employeeDto.descriptionWebsite}">
     								 </div>
 									  
 									  <div class="col-md-3">
-									  <c:if test="${empty allEmployeeDto.knowAugFriend}">	
+									  <c:if test="${empty employeeDto.knowAugFriend}">	
      									 <label style="margin-right: 25px;"><input type="checkbox" id="Friend" name="knowAugFriend" value="Friend"><spring:message code="employee.friend"></spring:message></label>      									
     								  </c:if>
     								 
-									  <c:if test="${not empty allEmployeeDto.knowAugFriend}">	
+									  <c:if test="${not empty employeeDto.knowAugFriend}">	
      									 <label style="margin-right: 25px;"><input type="checkbox" id="Friend" name="knowAugFriend" value="Friend" checked="checked"><spring:message code="employee.friend"></spring:message></label>
     								  </c:if>
     								  
-    								  <input type="text" class="form-control" id="descriptionFriend" name="descriptionFriend" placeholder="${please} ${enter} <spring:message code="employee.friend"></spring:message>" value="${allEmployeeDto.descriptionFriend}">
+    								  <input type="text" class="form-control" id="descriptionFriend" name="descriptionFriend" placeholder="${please} ${enter} <spring:message code="employee.friend"></spring:message>" value="${employeeDto.descriptionFriend}">
     								  
 									    
 									  </div>
@@ -669,15 +581,15 @@
 									    
 								 <div class="col-md-12">
 								   <div class="col-md-12">
-									  <c:if test="${empty allEmployeeDto.knowAugOther}">	
+									  <c:if test="${empty employeeDto.knowAugOther}">	
 									    <label><input type="checkbox" id="Other" name="knowAugOther" value="Other"><spring:message code="employee.other"></spring:message></label>
     								  </c:if>
 									    
-									  <c:if test="${not empty allEmployeeDto.knowAugOther}">	
+									  <c:if test="${not empty employeeDto.knowAugOther}">	
 									    <label><input type="checkbox" id="Other" name="knowAugOther" value="Other" checked="checked"><spring:message code="employee.other"></spring:message></label>
     								  </c:if>
     								  
-    								  <input type="text" class="form-control" id="descriptionOther" name="descriptionOther" placeholder="${please} ${enter} <spring:message code="employee.other"></spring:message>" value="${allEmployeeDto.descriptionOther}">
+    								  <input type="text" class="form-control" id="descriptionOther" name="descriptionOther" placeholder="${please} ${enter} <spring:message code="employee.other"></spring:message>" value="${employeeDto.descriptionOther}">
     								  
 								    </div>		 
       							  </div>
@@ -707,7 +619,7 @@
 	     									  </div>
 	     									  
 	     									  <div class="col-md-11">
-	     									  <f:input  class="form-control" id="descriptionYes" path="descriptionYes" value="${allEmployeeDto.descriptionYes}" placeholder="${please} ${enter} ${write}" />
+	     									  <f:input  class="form-control" id="descriptionYes" path="descriptionYes" value="${employeeDto.descriptionYes}" placeholder="${please} ${enter} ${write}" />
 	     									  
 	     									  </div>
 	     									  </div>
@@ -718,7 +630,7 @@
 	     									  <f:radiobutton id="No" path="knowEmployed"  value="No" /><spring:message code="employee.no"></spring:message>
 	     									  </label>
     										  
-											  <input id="knowEmployed" type="hidden" value="${allEmployeeDto.knowEmployed}"/>
+											  <input id="knowEmployed" type="hidden" value="${employeeDto.knowEmployed}"/>
     								</div>
     								</div>
     				
@@ -750,7 +662,7 @@
 
     									 <div class='input-group date' id='fromYear'>
     									 <input type="text" class="form-control" id="fromYear" name="fromYear" placeholder="${please} ${enter} <spring:message code="employee.fromYear"></spring:message>"
-    									  value='<fmt:formatDate pattern="dd-MM-yyyy" value="${allEmployeeDto.fromYear}" />' />
+    									  value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.fromYear}" />' />
     								     <span class="input-group-addon">
 										 <span class="glyphicon glyphicon-calendar"></span>
 										 </span></div>
@@ -760,7 +672,7 @@
     									 <label style="margin-right: 25px;"> <spring:message code="employee.toYear"></spring:message> :</label>
     									 <div class='input-group date' id='toYear'>
     									 <input type="text" class="form-control" id="toYear" name="toYear" placeholder="${please} ${enter} <spring:message code="employee.toYear"></spring:message>"
-    									  value='<fmt:formatDate pattern="dd-MM-yyyy" value="${allEmployeeDto.toYear}" />'  />
+    									  value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.toYear}" />'  />
     									 <span class="input-group-addon">    									 
     									 <span class="glyphicon glyphicon-calendar"></span>
     									 </span>
@@ -770,12 +682,12 @@
 
     								<div class="col-md-3">
     									 <label style="margin-right: 25px;"> <spring:message code="employee.branchOfService"></spring:message> :</label>
-    									 <input type="text" class="form-control" id="branchOfService" name="branchOfService" placeholder="${please} ${enter} <spring:message code="employee.branchOfService"></spring:message>" value="${allEmployeeDto.branchOfService}">
+    									 <input type="text" class="form-control" id="branchOfService" name="branchOfService" placeholder="${please} ${enter} <spring:message code="employee.branchOfService"></spring:message>" value="${employeeDto.branchOfService}">
     								</div>
     								
     								<div class="col-md-3">
      									 <label style="margin-right: 25px;"> <spring:message code="employee.serviceNo"></spring:message> :</label>
-    									 <input type="text" class="form-control" id="serviceNo" name="serviceNo" placeholder="${please} ${enter} <spring:message code="employee.serviceNo"></spring:message>" value="${allEmployeeDto.serviceNo}">
+    									 <input type="text" class="form-control" id="serviceNo" name="serviceNo" placeholder="${please} ${enter} <spring:message code="employee.serviceNo"></spring:message>" value="${employeeDto.serviceNo}">
     							    </div>
     						</div>	
 					
@@ -797,19 +709,19 @@
      				<div class="col-md-12">
      								<div class="col-md-6">
     									 <label> <spring:message code="employee.pleasestatethereasons"></spring:message> :</label>
-    									 <f:input  class="form-control" id="reasonsNo" path="reasonsNo" value="${allEmployeeDto.reasonsNo}" placeholder="${please} ${enter} ${pleasereason}" /> 
+    									 <f:input  class="form-control" id="reasonsNo" path="reasonsNo" value="${employeeDto.reasonsNo}" placeholder="${please} ${enter} ${pleasereason}" /> 
     								</div>
     								<div class="col-md-3">
     									 <label style="margin-right: 25px;"> <spring:message code="employee.dateToBeDrafted"></spring:message> :</label>
 
     									 <div class='input-group date' id='dateToBeDrafted'>
     									 <f:input  class="form-control" id="dateToBeDrafted" path="dateToBeDrafted"  placeholder="${please} ${enter} ${datedrafted}" 
-    									 value='<fmt:formatDate pattern="dd-MM-yyyy" value="${allEmployeeDto.dateToBeDrafted}" />'  />
+    									 value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.dateToBeDrafted}" />'  />
     							      	 <span class="input-group-addon">
 										 <span class="glyphicon glyphicon-calendar"></span>
 										 </span></div></div>
 
-										<input id="militaryService" type="hidden" value="${allEmployeeDto.militaryService}"/>
+										<input id="militaryService" type="hidden" value="${employeeDto.militaryService}"/>
     									<%--  <input type="text" class="form-control" id="dateToBeDrafted" name="dateToBeDrafted" placeholder="Enter Date Drafted" value="${allEmployeeDto.dateToBeDrafted}">
     									</div> --%>
 
@@ -845,10 +757,10 @@
 					</div>
 				
 				<div class="col-md-11">
-					<f:input  class="form-control" id="previousEmpreasonsNo" path="previousEmpreasonsNo" value="${allEmployeeDto.previousEmpreasonsNo}" placeholder="${please} ${enter} ${reason}" />
+					<f:input  class="form-control" id="previousEmpreasonsNo" path="previousEmpreasonsNo" value="${employeeDto.previousEmpreasonsNo}" placeholder="${please} ${enter} ${reason}" />
 				</div>
 				
-				<input id="previousEmployer" type="hidden" value="${allEmployeeDto.previousEmployer}"/>
+				<input id="previousEmployer" type="hidden" value="${employeeDto.previousEmployer}"/>
 			</div>
 			
 		</div>
@@ -870,12 +782,12 @@
 			<div class="form-group">
 				<div class="col-md-6">
 									<label style="margin-right: 25px;"> <spring:message code="official.positionAppliedFor"></spring:message> :</label> 
-									<input type="text" class="form-control" id="positionAppliedFor" name="positionAppliedFor" placeholder="${please} ${enter} <spring:message code="official.position"></spring:message>" value="${allEmployeeDto.positionAppliedFor}">
+									<input type="text" class="form-control" id="positionAppliedFor" name="positionAppliedFor" placeholder="${please} ${enter} <spring:message code="official.position"></spring:message>" value="${employeeDto.positionAppliedFor}">
 				</div>
 								
 
 				<div class="col-md-6">
-				<label style="margin-right: 25px;"> <spring:message code="official.salaryExpected"></spring:message> :</label> <input type="text" class="form-control" id="salaryExpected" name="salaryExpected" placeholder="${please} ${enter} <spring:message code="official.salary"></spring:message>" value="${allEmployeeDto.salaryExpected}">
+				<label style="margin-right: 25px;"> <spring:message code="official.salaryExpected"></spring:message> :</label> <input type="text" class="form-control" id="salaryExpected" name="salaryExpected" placeholder="${please} ${enter} <spring:message code="official.salary"></spring:message>" value="${employeeDto.salaryExpected}">
 			
 
 				<%-- <div class="col-md-6">
@@ -916,7 +828,7 @@
     						<label style="margin-right: 25px;"> <spring:message code="official.startWorkDate"></spring:message> :</label> 
     						<div class='input-group date' id='startWorkDate'><input type="text" class="form-control"
 							id="startWorkDate" name="startWorkDate" placeholder="${enter} <spring:message code="official.startWorkDate"></spring:message>" 
-							value='<fmt:formatDate pattern="dd-MM-yyyy" value="${allEmployeeDto.startWorkDate}"/>'  />
+							value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.startWorkDate}"/>'  />
 							<span class="input-group-addon">
 							<span class="glyphicon glyphicon-calendar"></span>
 							</span></div></div>
@@ -927,7 +839,7 @@
     						<div class='input-group date' id='endWorkDate'>
     						<input type="text" class="form-control"
 							id="endWorkDate" name="endWorkDate" placeholder="${please} ${enter} <spring:message code="official.endWorkDate"></spring:message>" 
-							value='<fmt:formatDate pattern="dd-MM-yyyy" value="${allEmployeeDto.endWorkDate}"/>' />
+							value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.endWorkDate}"/>' />
 						    <span class="input-group-addon">
 							<span class="glyphicon glyphicon-calendar"></span>
 							</span>
@@ -937,7 +849,7 @@
 						<%-- ${allEmployeeDto.endWorkDate} --%> 
 
 
-					  <%-- 	<div class="col-md-3">
+					    <%-- 	<div class="col-md-3">
     						<label> Start Work Date :</label> <input type="text" class="form-control"
 									id="startWorkDate" name="startWorkDate" placeholder="Enter Start Work Date" value="${allEmployeeDto.startWorkDate}">
 						</div>
@@ -1072,10 +984,10 @@
 				<label> <spring:message code="label.aim"></spring:message> :</label>
 								<div class="checkbox">
      								
-     							<c:if test="${empty allEmployeeDto.isManager}">
+     							<c:if test="${empty employeeDto.isManager}">
      								<label style="margin-right: 25px;"><input type="checkbox" value = "1" name="isManager"><spring:message code="label.ismanager"></spring:message></label>
 								</c:if>
-								<c:if test="${not empty allEmployeeDto.isManager}">
+								<c:if test="${not empty employeeDto.isManager}">
      								<label style="margin-right: 25px;"><input type="checkbox" value = "1" name="isManager" checked="checked"><spring:message code="label.ismanager"></spring:message></label>
 								</c:if>
 								
@@ -1090,7 +1002,7 @@
 						<div class='input-group date' id='probationDate'>
 						<input type="text" class="form-control"
 									id="probationDate" name="probationDate" placeholder="${please} ${enter} <spring:message code="employee.probationdate"></spring:message>" 
-									value='<fmt:formatDate pattern="dd-MM-yyyy" value="${allEmployeeDto.probationDate}"/>' />
+									value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.probationDate}"/>' />
 
 
 						<%-- <label> Probation Date :</label> <input type="text" class="form-control"
@@ -1135,7 +1047,7 @@
 
 									<div class='input-group date' id='officialDate'>
 									<input type="text" class="form-control" id="officialDate" name="officialDate" placeholder="${enter} <spring:message code="official.registerDate"></spring:message>" 
-									value='<fmt:formatDate pattern="dd-MM-yyyy" value="${allEmployeeDto.officialDate}"/>' />
+									value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.officialDate}"/>' />
 								    <span class="input-group-addon">
 									<span class="glyphicon glyphicon-calendar"></span>
 									</span></div></div>	
