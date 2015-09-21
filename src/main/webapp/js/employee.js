@@ -1078,12 +1078,12 @@ if($('#previousEmployer').val()=="No"){
 			   	
 			   		function listAddress(id){
 			   			
-			    			//alert('list address: '+id);
+			    			alert('list address: '+id);
 							var status = 'unmodified';
 			   			
 			   			$.ajax({
 							url : $getContextPath+"/employee/address/",
-							data: JSON.stringify({"employeeId":id}),
+							data: JSON.stringify({"applicantId":1}),
 							type : "POST",
 							dataType : 'json', 
 						  	//data : JSON.stringify({"id":id}),  

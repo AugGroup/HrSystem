@@ -141,10 +141,10 @@ public class EmployeeController {
 	}
 
 	@RequestMapping(value = "/employee", method = { RequestMethod.GET, RequestMethod.POST })
-	// @Transactional
-	public String listAll(@ModelAttribute EmployeeDto employeeDto, HttpSession session, Locale locale, ModelMap model
-	// @RequestBody String aa,
-	// @PathVariable("id") Integer id
+	public String listAll(@ModelAttribute("employeeDto") EmployeeDto employeeDto, 
+			HttpSession session,
+			Locale locale, 
+			ModelMap model
 	) {
 
 		// model.addAttribute("masspecialtyList",masSpecialtyService.findAll());
@@ -161,14 +161,9 @@ public class EmployeeController {
 		model.addAttribute("staffTypeList", masStaffTypeService.findAll());
 		model.addAttribute("aimList", aimEmployeeDtoService.listEmployeeAim());
 
-		// employeeDto.setId(id);
-		// model.addAttribute("id",employeeDto.getId());
-		// model.addAttribute("employeeCodeDto",employeeCodeDtoService.serchRunningNo(1));
-
-		// return "/employee/employee";
+		
 		return "/employee/employeetest";
 
-		// return "/aa";
 	}
 
 	@RequestMapping(value = "/employee/listAll", method = { RequestMethod.GET, RequestMethod.POST })
@@ -192,14 +187,16 @@ public class EmployeeController {
 	}
 
 	// findAddress
-	@RequestMapping(value = "/employee/address", method = RequestMethod.POST)
+	@RequestMapping(value = "/employee/address", method = {RequestMethod.POST,RequestMethod.GET})
 	public @ResponseBody List<AddressDto> findAddress(@RequestBody AddressDto addressDto,
-			@ModelAttribute("employeeDto") EmployeeDto employeeDto, ModelMap model) {
-		// model.addAttribute("masAddressTypeList",masAddressTypeService.findAll());
-		// model.addAttribute("provinceList",masProvinceService.findAll());
-
+		   @ModelAttribute("employeeDto") EmployeeDto employeeDto, ModelMap model) {
+		
+		model.addAttribute("masAddressTypeList",masAddressTypeService.findAll());
+		model.addAttribute("provinceList",masProvinceService.findAll());
+		
+		addressDto.setApplicantId(addressDto.getApplicantId());
+		
 		return addressService.findAddressByApplicantId(addressDto.getApplicantId());
-		// return addressService.searchAddress(addressDto.getEmployeeId());
 	}
 
 	// Add Address
