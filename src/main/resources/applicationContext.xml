@@ -23,8 +23,9 @@
     <context:annotation-config/>
     <tx:annotation-driven/>
     <jpa:repositories base-package="com.aug.hrdb"/>
-    <context:component-scan base-package="com.aug.hr.controller"/>
+    <context:component-scan base-package="com.aug.hr.*"/>
     <context:component-scan base-package="com.aug.hrdb.*"/>
+    <context:component-scan base-package="com.aug.hrdb.interceptor"/>
 
     <util:properties id="appProps" location="classpath:ApplicationResources.properties" />
 
@@ -68,13 +69,10 @@
     <bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
          <property name="dataSource" ref="dataSource"/>
    		 <property name="packagesToScan" value="com.aug.hrdb.*" />
-   		 <!-- <property name="entityInterceptor">
-   			 <bean class = "com.aug.hrdb.interceptor.AuditInterceptor">
-   			 	<property name="loginService" ref="loginService"></property>
-   			 </bean>
-   		 </property>  -->
-   		 
+   		 <property name="entityInterceptor" ref="auditInterceptor"/>   			 	 
      </bean>
+     
+     <!-- <bean id="auditInterceptor" class = "com.aug.hrdb.interceptor.AuditInterceptor"></bean> -->
 
 
     <!--<bean id="transactionManager" class="org.springframework.orm.jpa.JpaTransactionManager"></bean>-->
