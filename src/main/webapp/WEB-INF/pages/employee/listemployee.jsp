@@ -46,7 +46,6 @@
 		 			<th><spring:message code="employee.firstname" /></th>
 					<th><spring:message code="employee.surname" /></th>
 					<th><spring:message code="label.action" /></th>
-					<!-- <th></th> -->
 				</tr>
 			</thead>
 			<tbody></tbody>
@@ -66,7 +65,7 @@
 		</div>
 	</f:form>
 	</div> 
-	</sec:authorize> 
+	</sec:authorize>
 
 <!-- Modal Delete -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
