@@ -13,13 +13,18 @@
 
 
 <input id="empId" type="hidden" value="${id}">
+<input id="appId" type="hidden" value="${appId}">
 
 
-
-<div class="row">
+<!-- <div class="row">
 	<div id="message"></div>
 	<div id="outputajax" class="form-group"></div>
-</div>		
+</div> -->		
+
+
+<!-- <button type="button" id="addBtnLan" class="btn btn-warning" data-toggle="modal" data-target="#addModal">New record</button>
+
+ -->
 
  <table id="tableResult" class="dataTable stripe table-bordered">
  <caption title=""><spring:message code="skilllanguage.name" /></caption>
@@ -40,12 +45,6 @@
             </tr>
         </thead>
 </table>
-
-
-
-
-
-
 
 
 <!-- Modal Add and Update data-->
@@ -85,7 +84,9 @@
 
 					<div class='col-sm-6'>
 						<div class="form-group">
-							<input id="LangName" type="text" class="form-control" />
+							<!-- <input id="LangName" type="text" class="form-control" /> -->
+							<f:input path="nameLanguage" type="text" class="form-control" id="nameLanguage" name="nameLanguage"/>
+	    
 
 						</div>
 					</div>
@@ -174,15 +175,15 @@
 				    <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">	 
 
 							     <label class="radio-inline" for=abilitySpeaking > 
-					 			     	<f:radiobutton id="excSpeaking" name="speaking" path="abilitySpeaking" value="Excellent"/>
+					 			     	<f:radiobutton id="excSpeaking" name="speaking" path="speaking" value="Excellent"/>
 					 			  		${Excellent}
 					 			 </label>
 					 			 <label class="radio-inline" for="abilitySpeaking"> 
-					 			     <f:radiobutton id="goodSpeaking" name="speaking" path="abilitySpeaking" value="Good"/>
+					 			     <f:radiobutton id="goodSpeaking" name="speaking" path="speaking" value="Good"/>
 							     		${Good}
 							     </label> 
 							     <label class="radio-inline" for="abilitySpeaking"> 
-					 			     <f:radiobutton id="fairSpeaking" name="speaking" path="abilitySpeaking" value="Fair" checked="true"/>
+					 			     <f:radiobutton id="fairSpeaking" name="speaking" path="speaking" value="Fair" checked="true"/>
 							    		${Fair}
 							     </label> 	
 						   	     		 
@@ -204,15 +205,15 @@
 
 			     <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">	
 				       <label class="radio-inline" for="abilityWriting" > 
-		 			     	<f:radiobutton id="excWriting" name="writing" path="abilityWriting" value="Excellent"/>
+		 			     	<f:radiobutton id="excWriting" name="writing" path="writing" value="Excellent"/>
 		 			  		${Excellent}
 		 			   </label>
 		 			 <label class="radio-inline" for="abilityWriting"> 
-		 			     <f:radiobutton id="goodWriting" name="writing" path="abilityWriting" value="Good"/>
+		 			     <f:radiobutton id="goodWriting" name="writing" path="writing" value="Good"/>
 				     		${Good}
 				     </label> 
 				     <label class="radio-inline" for="abilityWriting"> 
-		 			     <f:radiobutton id="fairWriting" name="writing" path="abilityWriting" value="Fair" checked="true"/>
+		 			     <f:radiobutton id="fairWriting" name="writing" path="writing" value="Fair" checked="true"/>
 				    		${Fair}
 				     </label> 	
 				     			     		 
@@ -232,15 +233,15 @@
 
 			     <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">	
 				       <label class="radio-inline" for="abilityReading" > 
-		 			     	<f:radiobutton id="excReading" name="reading" path="abilityReading" value="Excellent"/>
+		 			     	<f:radiobutton id="excReading" name="reading" path="reading" value="Excellent"/>
 		 			  		${Excellent}
 		 			   </label>
 		 			 <label class="radio-inline" for="abilityReading"> 
-		 			     <f:radiobutton id="goodReading" name="reading" path="abilityReading" value="Good"/>
+		 			     <f:radiobutton id="goodReading" name="reading" path="reading" value="Good"/>
 				     		${Good}
 				     </label> 
 				     <label class="radio-inline" for="abilityReading"> 
-		 			     <f:radiobutton id="fairReading" name="reading" path="abilityReading" value="Fair" checked="true"/>
+		 			     <f:radiobutton id="fairReading" name="reading" path="reading" value="Fair" checked="true"/>
 				    		${Fair}
 				     </label> 	
 				     			     		 
@@ -262,15 +263,15 @@
 	
 				     <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">	
 					       <label class="radio-inline" for="abilityUnderstanding" > 
-			 			     	<f:radiobutton id="excUnderstanding" name="understanding" path="abilityUnderstanding" value="Excellent"/>
+			 			     	<f:radiobutton id="excUnderstanding" name="understanding" path="understanding" value="Excellent"/>
 			 			  		${Excellent}
 			 			   </label>
 			 			 <label class="radio-inline" for="abilityUnderstanding"> 
-			 			     <f:radiobutton id="goodUnderstanding" name="understanding" path="abilityUnderstanding" value="Good"/>
+			 			     <f:radiobutton id="goodUnderstanding" name="understanding" path="understanding" value="Good"/>
 					     		${Good}
 					     </label> 
 					     <label class="radio-inline" for="abilityUnderstanding"> 
-			 			     <f:radiobutton id="fairUnderstanding" name="understanding" path="abilityUnderstanding" value="Fair"  checked="true"/>
+			 			     <f:radiobutton id="fairUnderstanding" name="understanding" path="understanding" value="Fair"  checked="true"/>
 					    		${Fair}
 					     </label> 	
 					     			     		 

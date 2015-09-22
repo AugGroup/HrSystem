@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.aug.hr.entity.editor.LanguageEditor;
 import com.aug.hrdb.dto.LanguageDto;
+import com.aug.hrdb.entities.Employee;
 import com.aug.hrdb.entities.Language;
 import com.aug.hrdb.services.EmployeeService;
 import com.aug.hrdb.services.LanguageDtoService;
@@ -66,8 +67,11 @@ public class LanguageController {
 		
 		
 		model.addAttribute("skillLaguage", language);
-		
 		languageDto.setEmployeeId(id);
+		
+		Employee employee = employeeService.findById(id);
+		model.addAttribute("appId",employee.getApplicant().getId());
+		languageDto.setApplicantId(employee.getApplicant().getId());
 		model.addAttribute("id", languageDto.getEmployeeId());
 		
 		return "/skilllanguage/skilllanguage";
@@ -79,12 +83,12 @@ public class LanguageController {
 	
 	@RequestMapping(value = "/skilllanguage/list/{id}", method = RequestMethod.POST,produces="application/json")
 	public @ResponseBody List<LanguageDto> findSkillLanguage(Locale locale,
-		   //@ModelAttribute(value = "family") Family family,
-			@PathVariable("id") Integer id,
-			ModelMap model)  {
+															 @PathVariable("id") Integer id,
+															 ModelMap model)  {
 		
 		
-		List<LanguageDto> languageList = languageDtoService.listLanguage(new Integer(id));	
+		
+		List<LanguageDto> languageList = languageDtoService.listLanguage(id);	
 		return languageList;
 	
 	}
@@ -95,8 +99,17 @@ public class LanguageController {
 
 	@RequestMapping(value = "/skilllanguage/add", method =  {RequestMethod.POST})
 	public @ResponseBody LanguageDto addData(Locale locale,
-				@Valid @ModelAttribute LanguageDto languageInfo,
-				ModelMap model)  {
+			    @ModelAttribute LanguageDto languageInfo,
+				Language language,ModelMap model)  {
+		
+		
+		model.addAttribute("skillLaguage", language);
+		languageInfo.setEmployeeId(languageInfo.getEmployeeId());
+		
+		Employee employee = employeeService.findById(languageInfo.getEmployeeId());
+		model.addAttribute("appId",employee.getApplicant().getId());
+		languageInfo.setApplicantId(employee.getApplicant().getId());
+		model.addAttribute("id", languageInfo.getEmployeeId());
 		
 	    LanguageDto LanguageDto = new LanguageDto();
 	    LanguageDto = languageInfo;
