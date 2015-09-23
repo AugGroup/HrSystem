@@ -149,6 +149,7 @@ public class EmployeeController {
 
 		// model.addAttribute("masspecialtyList",masSpecialtyService.findAll());
 		// model.addAttribute("masAddressTypeList",masAddressTypeService.findAll());
+
 		model.addAttribute("masAddressTypeList", masAddressTypeService.findAll());
 		model.addAttribute("provinceList", masProvinceService.findAll());
 
@@ -232,6 +233,10 @@ public class EmployeeController {
 
 		new SimpleDateFormat("dd-MMM-yyyy").format(employeeDto.getDateOfBirth());
 		System.out.println("date: " + employeeDto.getDateOfBirth());
+		
+		
+		Employee employee = employeeService.findById(empId);
+		model.addAttribute("appId", employee.getApplicant().getId());
 
 		return "/employee/employeetest";
 	}
