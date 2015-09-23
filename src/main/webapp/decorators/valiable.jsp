@@ -77,8 +77,9 @@
 	/* certification-message validate */
 	var $requiredyear = '<spring:message code="certification.required.year" />';
 	var $requiredcertificationname = '<spring:message code="certification.required.certification.name" />';
-	var $requiredcertificationfrom = '<spring:message code="certification.required.certification.from" />';
+	var $requiredcertificationform = '<spring:message code="certification.required.certification.form" />';
 	var $requireddescription = '<spring:message code="certification.required.description" />';
+	
 	
 	/* history-message validate */
 	var $requiredposition = '<spring:message code="history.required.position" />';

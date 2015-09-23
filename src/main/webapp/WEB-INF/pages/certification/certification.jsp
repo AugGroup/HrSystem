@@ -199,8 +199,9 @@
 	  </div>
 	  
 	  <div class="form-group">
-	    <label class="required"><spring:message code="certification.certification.from" var="certificationFrom"/>${certificationFrom} :</label>
-	    <form:input path="certificationFrom" type="text" class="form-control" id="certificationFrom" name="certificationFrom" placeholder="${enter }${certificationFrom }"/>
+	  
+	    <label class="required"><spring:message code="certification.certification.form" var="certificationForm"/>${certificationForm} :</label>
+	    <form:input path="certificationForm" type="text" class="form-control" id="certificationForm" name="certificationForm" placeholder="${certificationForm} "/>
 	  </div>
 	  
 	  <div class="form-group">

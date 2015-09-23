@@ -45,10 +45,10 @@
 // 	                    },
 // 	                }
 // 	            },
-	            certificationFrom: {
+	            certificationForm: {
 	                validators: {
 	                    notEmpty: {
-	                        message: $requiredcertificationfrom
+	                        message: $requiredcertificationform
 	                    }
 	                }
 	            },
@@ -144,7 +144,7 @@
 		function clearModal(){
 			$("#year").val("");
 			$("#name").val("");
-			$("#certificationFrom").val("");
+			$("#certificationForm").val("");
 			$("#description").val("");
 		}
 		
@@ -156,7 +156,7 @@
 				data : JSON.stringify({
 					year : $("#year").val(),
 					name :$("#name").val(),
-					certificationFrom :$("#certificationFrom").val(),
+					certificationForm :$("#certificationForm").val(),
 					description :$("#description").val(),
 					employeeId: id
 				}),
@@ -179,7 +179,7 @@
 // 						$("#Description").val(), */
 // 						data.year,
 // 						data.name,
-// 						data.certificationFrom,
+// 						data.certificationForm,
 // 						/* data.company,
 // 						data.salary,
 // 						data.time, */
@@ -225,7 +225,7 @@
 					id : certificationid,
 					year : $("#year").val(),
 					name :$("#name").val(),
-					certificationFrom :$("#certificationFrom").val(),
+					certificationForm :$("#certificationForm").val(),
 					description :$("#description").val(),
 					employeeId : id
 					/* company :$("#company").val(),
@@ -244,7 +244,7 @@
 					
 // 					dt.fnUpdate(data.year,tr,0);
 // 					dt.fnUpdate(data.name,tr,1);
-// 					dt.fnUpdate(data.certificationFrom,tr,2);
+// 					dt.fnUpdate(data.certificationForm,tr,2);
 					/* dt.fnUpdate(data.company, tr ,1);
 					dt.fnUpdate(data.salary, tr ,2);
 					dt.fnUpdate(data.time, tr ,3); */
@@ -286,7 +286,7 @@
 					//alert("ok");
 					$("#year").val(data.year);
 					$("#name").val(data.name);
-					$("#certificationFrom").val(data.certificationFrom);
+					$("#certificationForm").val(data.certificationForm);
 					$("#description").val(data.description);
 					/* employee: {id: data.position } */
 					/* $("#company").val(data.company),
@@ -383,7 +383,7 @@
 				for (var i=0;i< data.length; i++) {
 					dt.fnAddData([data[i].year,
 					              data[i].name,
-					              data[i].certificationFrom, 
+					              data[i].certificationForm, 
 						'<button type="button" style="margin-right :15px;" class="btn btn-warning btn-sm active" data-id="' + data[i].id + '" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>'+
 						'<button type="button" class="btn btn-danger btn-sm active" data-id="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
 			
