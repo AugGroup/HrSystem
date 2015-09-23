@@ -281,6 +281,8 @@
 				url : $getContextPath+"/history/update",
 				data : JSON.stringify({
 					id : historyid,
+					createdBy : $("#createHis").val(),
+					createdTimeStamp : $("#createdTimeHis").val(),
 					position : $("#position").val(),
 					salary :$("#salary").val().replace(/[\(\)\,-]/g, ""),
 					oldSalary :$("#oldSalary").val().replace(/[\(\)\,-]/g, ""),
@@ -349,6 +351,8 @@
 				success : function(data) {
 	 				//alert(JSON.stringify(data));
 					//alert("ok");
+					$("#createHis").val(data.createdBy);
+					$("#createdTimeHis").val(data.createdTimeStamp);
 					$("#position").val(data.position);
 					$("#salary").val(accounting.formatNumber(data.salary));
 					$("#oldSalary").val(accounting.formatNumber(data.oldSalary));

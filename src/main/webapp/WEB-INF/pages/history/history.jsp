@@ -48,7 +48,9 @@
 
 </form:form>
 
-<form:form id ="addForm" method="post" commandName="history">
+<form:form id ="addForm" method="post" commandName="history" >
+ <form:hidden path="createdBy" id="createHis"></form:hidden>
+ <form:hidden path="createdTimeStamp" id="createdTimeHis" ></form:hidden>
 
 <!-- Modal -->
 <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
