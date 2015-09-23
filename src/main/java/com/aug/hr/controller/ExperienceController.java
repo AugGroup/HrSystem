@@ -35,7 +35,7 @@ import com.aug.hrdb.services.ExperienceService;
 
 
 
-//@Controller
+@Controller
 public class ExperienceController {
 	@Autowired private ExperienceService experienceService;
 	@Autowired private ExperienceDtoService experienceDtoService;
@@ -47,7 +47,7 @@ public class ExperienceController {
 		
 		experienceDto.setApplicant(id);;
 		model.addAttribute("id", experienceDto.getApplicant());
-		return "experience/experience";
+		return "/experience/experience";
 	}
 	
 	@InitBinder

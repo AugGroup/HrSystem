@@ -170,17 +170,16 @@ var dt;
     				type : "POST",
     				data : JSON.stringify({
     					 companyName: $("#cName").val(),
-    					 businessType: $("#businessType").val(),
+    					 typeOfBusiness: $("#businessType").val(),
     					 position: $("#position").val(),
     					 salary: $("#salary").autoNumeric('get'),
     					 dateFrom: $("#dateFrom").val(),
     					 dateTo: $("#dateTo").val(),
     					 responsibility: $("#responsibility").val(),
     					 reference: $("#reference").val(),
-    					 superVisor: $("#supervisor").val(),
     					 address: $("#address").val(),
     					 reason: $("#reason").val(),
-    					 employeeId: id 
+    					 applicantId: id 
     					}),
     				datatype: "json",
     				contentType: "application/json",
@@ -237,7 +236,7 @@ var dt;
 						//$('#validate').bootstrapValidator('resetForm', true);
 						id:expId;
 						$("#cName").val(data.companyName);
-						$("#businessType").val(data.businessType);
+						$("#businessType").val(data.typeOfBusiness);
 						$("#position").val(data.position);
 /* 						$("#salary").val(data.salary); */
 						$('#salary').autoNumeric('set',data.salary);
@@ -247,7 +246,7 @@ var dt;
 						$("#reference").val(data.reference);
 						$("#address").val(data.address);
 						$("#reason").val(data.reason);
-						employeeId: data.employeeId;
+						applicantId: data.applicantId;
 					}/* ,
 					error : function(data,testStatus,jqXHR) {
 						$('#addModal').modal('toggle');
@@ -278,7 +277,7 @@ var dt;
 					data : JSON.stringify({
 						 id: expId,
 						 companyName: $("#cName").val(),
-    					 businessType: $("#businessType").val(),
+						 typeOfBusiness: $("#businessType").val(),
     					 position: $("#position").val(),
     					 salary: $("#salary").autoNumeric('get'),
     					 dateFrom: $("#dateFrom").val(),
@@ -287,7 +286,7 @@ var dt;
     					 reference: $("#reference").val(),
     					 address: $("#address").val(),
     					 reason: $("#reason").val(),
-    					 employeeId: id
+    					 applicantId: id
 					 }),
 					datatype: "json",
 					contentType: "application/json",
