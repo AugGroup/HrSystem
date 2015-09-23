@@ -29,6 +29,8 @@
 <f:form method="post" id="addForm" commandName="employeeDto" class="form-horizontal" role="form" name="employeeForm" enctype="multipart/form-data">
 
 <!------------------------------------------------------ Start Information-------------------------------------------------------->
+
+		<input id="appId" type="text" value="${appId}"/>
 		
 		<input id="employeeCodeDto" name="employeeCodeDto.rungingNumber" type="hidden" class="form-control"  placeholder="Location ID" value="${ employeeCodeDto.rungingNumber}">
 		
