@@ -777,6 +777,10 @@ if($('#previousEmployer').val()=="No"){
 							 
 							 var zipcode= $("#zipcode").val();
 							 
+							 var appId = $('#appId').val();
+							 
+							 alert("app: "+appId);
+							 
 							 var id=0;
 							 var status="add";
 							 
@@ -859,12 +863,20 @@ if($('#previousEmployer').val()=="No"){
 							  
 							  $('<input>').attr({
 								    type: 'hidden',
-								    id: 'datastatus'+getIndex,
+								    id: 'applicantId'+getIndex,
+								    name:'addressList['+getIndex+'].applicantId',
+								    value: appId
+								}).appendTo('form');
+							  						 
+							  
+							  $('<input>').attr({
+								    type: 'hidden',
+								    id: 'status'+getIndex,
 								    name: 'addressList['+getIndex+'].status',
 								    value: status
 								}).appendTo('form');
 							  
-							 
+							
 							 
 							  
 							  getIndex = getIndex+1; 
@@ -925,11 +937,14 @@ if($('#previousEmployer').val()=="No"){
 			   	    var provinceId = $("#province").val();
 				    var province = $("#province option:selected").text();
 				    var zipcode= $("#zipcode").val();
-				   
+				    
+				    var appId = $("#appId").val();
+				    alert("appId: "+appId);
 			   		
 				    
 			   		
 			   		if(dataUpdate[0]!=0){
+			   			
 			   			
 			   			dt.fnUpdate(addressId, rowUpdate, 1);
 			   			dt.fnUpdate(addressType, rowUpdate, 2);
@@ -942,33 +957,39 @@ if($('#previousEmployer').val()=="No"){
 					    dt.fnUpdate(zipcode, rowUpdate, 9);
 					    dt.fnUpdate('edit', rowUpdate, 12);
 					    
-					    $("#dataaddressid"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[8]+"].id");
+					    $("#dataaddressid"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[10]+"].id");
 					    $("#dataaddressid"+dataUpdate[10]).val(id);
 					    
-					    $("#dataaddresstype"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[8]+"].addressTypeId");
+					    $("#dataaddresstype"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[10]+"].addressTypeId");
 					    $("#dataaddresstype"+dataUpdate[10]).val(addressId);
 					    
-					    $("#datahouseNo"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[8]+"].houseNo");
+					    $("#datahouseNo"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[10]+"].houseNo");
 					    $("#datahouseNo"+dataUpdate[10]).val(houseNo);
 					    
-					    $("#dataroad"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[8]+"].road");
+					    $("#dataroad"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[10]+"].road");
 					    $("#dataroad"+dataUpdate[10]).val(road);
 					    
-					    $("#datadistrict"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[8]+"].district");
+					    $("#datadistrict"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[10]+"].district");
 					    $("#datadistrict"+dataUpdate[10]).val(district);
 					    
-					    $("#datasubDistrict"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[8]+"].subDistrict");
+					    $("#datasubDistrict"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[10]+"].subDistrict");
 					    $("#datasubDistrict"+dataUpdate[10]).val(subDistrict);
 					    
-					    $("#dataprovinceid"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[8]+"].masprovinceId");
+					    $("#dataprovinceid"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[10]+"].masprovinceId");
 					    $("#dataprovinceid"+dataUpdate[10]).val(provinceId);
 					    
 					
-					    $("#datazipcode"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[8]+"].zipcode");
+					    $("#datazipcode"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[10]+"].zipcode");
 					    $("#datazipcode"+dataUpdate[10]).val(zipcode);
 					    
-					    $("#datastatus"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[8]+"].status");
-					    $("#datastatus"+dataUpdate[10]).val('edit');
+					    
+					    $("#applicantId"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[10]+"].applicantId");
+					    $("#applicantId"+dataUpdate[10]).val(appId);
+					    
+					
+					    
+					    $("#status"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[10]+"].status");
+					    $("#status"+dataUpdate[10]).val('edit');
 					    
 					    
 					    
@@ -984,30 +1005,39 @@ if($('#previousEmployer').val()=="No"){
 				    dt.fnUpdate(province, rowUpdate, 8);
 				    dt.fnUpdate(zipcode, rowUpdate, 9);
 				    
-				    $("#dataaddressid"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[8]+"].id");
+				    $("#dataaddressid"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[10]+"].id");
 				    $("#dataaddressid"+dataUpdate[10]).val(id);
 				    
-				    $("#dataaddresstype"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[8]+"].addressTypeId");
+				    $("#dataaddresstype"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[10]+"].addressTypeId");
 				    $("#dataaddresstype"+dataUpdate[10]).val(addressId);
 				    
-				    $("#datahouseNo"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[8]+"].houseNo");
+				    $("#datahouseNo"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[10]+"].houseNo");
 				    $("#datahouseNo"+dataUpdate[10]).val(houseNo);
 				    
-				    $("#dataroad"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[8]+"].road");
+				    $("#dataroad"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[10]+"].road");
 				    $("#dataroad"+dataUpdate[10]).val(road);
 				    
-				    $("#datadistrict"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[8]+"].district");
+				    $("#datadistrict"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[10]+"].district");
 				    $("#datadistrict"+dataUpdate[10]).val(district);
 				    
-				    $("#datasubDistrict"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[8]+"].subDistrict");
+				    $("#datasubDistrict"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[10]+"].subDistrict");
 				    $("#datasubDistrict"+dataUpdate[10]).val(subDistrict);
 				    
-				    $("#dataprovinceid"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[8]+"].masprovinceId");
+				    $("#dataprovinceid"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[10]+"].masprovinceId");
 				    $("#dataprovinceid"+dataUpdate[10]).val(provinceId);
 				    
+				    
+				    $("#applicantId"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[10]+"].applicantId");
+				    $("#applicantId"+dataUpdate[10]).val(appId);
+				    
 				
-				    $("#datazipcode"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[8]+"].zipcode");
+				    $("#datazipcode"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[10]+"].zipcode");
 				    $("#datazipcode"+dataUpdate[10]).val(zipcode);
+				    
+				    
+				    $("#status"+dataUpdate[10]).attr('name', "addressList["+dataUpdate[10]+"].status");
+				    $("#status"+dataUpdate[10]).val('add');
+				    
 
 			   		
 			   	 }
@@ -1053,7 +1083,7 @@ if($('#previousEmployer').val()=="No"){
 			    		  //alert(dataDelete[8]);
 				    	  dt.fnUpdate('delete', row, 12);
 				    	  $("#datastatus"+dataDelete[10]).attr('name', "addressList["+dataDelete[10]+"].status");
-						  $("#datastatus"+dataDelete [10]).val('delete');
+						  $("#status"+dataDelete [10]).val('delete');
 						  dt.fnDeleteRow(row);
 						  $('#deleteModal').modal('toggle');
 
@@ -1168,22 +1198,35 @@ if($('#previousEmployer').val()=="No"){
 									  
 									  $('<input>').attr({
 										    type: 'hidden',
-										    id: 'datastatus'+getIndex,
-										    name: 'addressList['+getIndex+'].status',
-										    value: status
+										    id: 'datazipcode'+getIndex,
+										    name: 'addressList['+getIndex+'].zipcode',
+										    value: data[i].zipcode
+										}).appendTo('form');
+									  
+									  
+									  $('<input>').attr({
+										    type: 'hidden',
+										    id: 'applicantId'+getIndex,
+										    name: 'addressList['+getIndex+'].applicantId',
+										    value: id
 										}).appendTo('form');
 									
+									  
+									  $('<input>').attr({
+										    type: 'hidden',
+										    id: 'status'+getIndex,
+										    name: 'addressList['+getIndex+'].status',
+										    value: 'unmodified'
+										}).appendTo('form');
+									
+									  
 									
 									getIndex = getIndex+1; 
-//			 						alert(getIndex);
+
 						
 							  }
-							} /*,
-							error : function(data,testStatus,jqXHR) {
-								alert('err');
-								$("#outputajax").text(testStatus);
-								} */
-							}); 
+							} 
+						}); 
 					}
 				
 			 

@@ -406,6 +406,12 @@ public class EmployeeController {
 		} else if (employeeDto.getId() > 0) {
 
 			// logger.info("update emp");
+			
+			System.out.println("app: "+employeeDto.getAddressList().get(0).getApplicantId());
+			System.out.println("addtype: "+employeeDto.getAddressList().get(0).getAddressTypeId());
+			System.out.println("addtype: "+employeeDto.getAddressList().get(0).getMasprovinceId());
+			System.out.println("status: "+employeeDto.getAddressList().get(0).getStatus());
+
 
 			try {
 
