@@ -136,8 +136,10 @@ $.ajaxSetup({
    	    
    	   }else {
      		
+
    		  alert(testStatus);
 	      //myRedirect('${pageContext.request.contextPath}/httperror',testStatus);
+
    	   
    	   }
 

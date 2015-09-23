@@ -95,6 +95,8 @@
 		 	<spring:message code="employee.datedrafted" var="datedrafted"/>
 		 	<spring:message code="employee.selectempstatus" var="empstatuslabel"/>
 		 	
+		 	
+		 	
 		 	             <div class="form-group">
 									<div class="col-md-6">
 								   
@@ -172,9 +174,8 @@
 					
 	         </div>
 	         
-	     
- <input id="appId" name="appId" type="text" class="form-control">
 	         
+   
 	         
  <!-------------------------------------------------- Start Address-------------------------------------------------->
  

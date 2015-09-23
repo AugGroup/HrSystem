@@ -290,16 +290,12 @@ public class EmployeeController {
 		logger.info("infoooo: ================================================================>"
 				+ employeeDto.getAimempid());
 
-		// throw new HttpException("error");
-
-		// throw new CustomException("E999","err");
 
 		Employee employee = new Employee();
 		String employeeCode = null;
 
 		System.out.println("locations: " + employeeDto.getMasLocation());
-		// System.out.println("locations: "+
-		// masLocationService.findByLocationCode(employeeDto.getMasLocation()));
+
 
 		if (employeeDto.getId() == null) {
 
@@ -321,8 +317,6 @@ public class EmployeeController {
 						} catch (JDBCException jdbce) {
 
 							redirectAttributes.addFlashAttribute("msgerror", "dupicate employeecode");
-							// redirectAttributes.addFlashAttribute("employeeDto",
-							// employeeDto);
 
 							return "redirect:/employee";
 
@@ -354,9 +348,7 @@ public class EmployeeController {
 							} catch (JDBCException je) {
 
 								redirectAttributes.addFlashAttribute("msgerror", "dupicate employeecode");
-								// redirectAttributes.addFlashAttribute("employeeDto",
-								// employeeDto);
-
+							
 								return "redirect:/employee";
 
 							}
@@ -384,9 +376,7 @@ public class EmployeeController {
 							} catch (JDBCException je) {
 
 								redirectAttributes.addFlashAttribute("msgerror", "dupicate employeecode");
-								// redirectAttributes.addFlashAttribute("employeeDto",
-								// employeeDto);
-
+							
 								return "redirect:/employee";
 
 							}
@@ -400,14 +390,11 @@ public class EmployeeController {
 				}
 
 			} catch (IOException e) {
-				// redirectAttributes.addFlashAttribute("msgerror", "upload file
-				// error, please try again");
-				// return "redirect:/employee";
-
+				
 				throw new IOException();
 
 			} catch (Exception e) {
-				// return "redirect:/employee";
+				
 				throw new Exception();
 			}
 
@@ -426,8 +413,7 @@ public class EmployeeController {
 					employeeCode = employeeDto.getEmployeeCode();
 					employee = employeeService.updateEmployeeAndReturnId(employeeDto, employeeCode);
 				}
-				// employee.setId(employeeDto.getId());
-
+	
 			} catch (DataIntegrityViolationException jdbce) {
 				try {
 					if (employeeDto.getEmployeeCode() == null || employeeDto.getEmployeeCode().isEmpty() == true) {
@@ -440,10 +426,8 @@ public class EmployeeController {
 						employee = employeeService.updateEmployeeAndReturnId(employeeDto, employeeCode);
 					}
 				} catch (DataIntegrityViolationException je) {
+					
 					redirectAttributes.addFlashAttribute("msgerror", "dupicate employeecode");
-					// redirectAttributes.addFlashAttribute("employeeDto",
-					// employeeDto);
-
 					return "redirect:/listemployee";
 
 				}
