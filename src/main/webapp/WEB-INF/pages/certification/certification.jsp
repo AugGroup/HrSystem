@@ -11,6 +11,7 @@
 <script src="<c:url value="/resources/js/certification.js" />"></script>
 
 <input id="empId" type="hidden" value="${id}">
+<input id="appId" type="hidden" value="${appId}">
 
 <form:form id ="listForm" method="post" commandName="certification">
 
@@ -36,7 +37,7 @@
 		<tr>
 			<th><spring:message code="certification.year" /></th>
 			<th><spring:message code="certification.certification.name" /></th>
-			<th><spring:message code="certification.certification.from" /></th>
+			<th><spring:message code="certification.certification.form" /></th>
 			<th><spring:message code="label.action"/></th>
 			<!-- <th></th> -->
 		</tr>
@@ -48,6 +49,7 @@
 </form:form>
 
 <form:form id ="addForm" method="post" commandName="certification">
+
 
 <!-- Modal -->
 <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

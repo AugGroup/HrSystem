@@ -20,7 +20,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.aug.hrdb.services.CertificationDtoService;
+import com.aug.hrdb.services.EmployeeService;
 import com.aug.hrdb.entities.Certification;
+import com.aug.hrdb.entities.Employee;
 import com.aug.hrdb.dto.CertificationDto;
 import com.aug.hrdb.services.CertificationService;
 
@@ -31,6 +33,8 @@ public class CertificationController {
 	private CertificationService certificationService;
 	@Autowired
 	private CertificationDtoService certificationDtoService;
+	@Autowired
+	private EmployeeService employeeService;
 	
 	@RequestMapping(value = "/certification/{id}", method = { RequestMethod.GET,
 			RequestMethod.POST })
@@ -38,8 +42,10 @@ public class CertificationController {
 			@PathVariable("id") Integer id, 
 			@ModelAttribute CertificationDto certificationDto) {
 		
-		certificationDto.setApplicantId(id);
-		model.addAttribute("id", certificationDto.getApplicantId());
+		Employee employee = employeeService.findById(id);
+		//certificationDto.setApplicantId(employee.getApplicant().getId());
+		model.addAttribute("appId", employee.getApplicant().getId());
+		//model.addAttribute("id", certificationDto.getApplicantId());
 		return "/certification/certification";
 	}
 	

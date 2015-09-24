@@ -150,7 +150,7 @@
 		
 		function addCertification(){
 // 			var id = getUrlParameter('Id');
-			var id = $("#empId").val();
+			var id = $("#appId").val();
 			$.ajax({
 				url : $getContextPath+"/certification/add",
 				data : JSON.stringify({
@@ -158,7 +158,7 @@
 					name :$("#name").val(),
 					certificationForm :$("#certificationForm").val(),
 					description :$("#description").val(),
-					employeeId: id
+					applicationId: id
 				}),
 				type : "POST",
 				contentType : "application/json",
@@ -218,7 +218,7 @@
 		
 		function updateCertification(button, certificationid){
 // 			var id = getUrlParameter('Id');
-			var id = $("#empId").val();
+			var id = $("#appId").val();
 			$.ajax({
 				url : $getContextPath+"/certification/update",
 				data : JSON.stringify({
@@ -227,7 +227,7 @@
 					name :$("#name").val(),
 					certificationForm :$("#certificationForm").val(),
 					description :$("#description").val(),
-					employeeId : id
+					applicationId : id
 					/* company :$("#company").val(),
 					salary :$("#salary").val(),
 					time :$("#time").val(), */
@@ -384,6 +384,7 @@
 					dt.fnAddData([data[i].year,
 					              data[i].name,
 					              data[i].certificationForm, 
+					              data[i].description, 
 						'<button type="button" style="margin-right :15px;" class="btn btn-warning btn-sm active" data-id="' + data[i].id + '" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>'+
 						'<button type="button" class="btn btn-danger btn-sm active" data-id="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
 			
