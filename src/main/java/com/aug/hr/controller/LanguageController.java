@@ -102,7 +102,7 @@ public class LanguageController {
 			    @ModelAttribute LanguageDto languageInfo,
 				Language language,ModelMap model)  {
 		
-		
+		System.out.println("languageInfo: "+languageInfo.getNameLanguage());
 		model.addAttribute("skillLaguage", language);
 		languageInfo.setEmployeeId(languageInfo.getEmployeeId());
 		

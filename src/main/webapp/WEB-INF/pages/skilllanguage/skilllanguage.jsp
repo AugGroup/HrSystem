@@ -22,9 +22,6 @@
 </div> -->		
 
 
-<!-- <button type="button" id="addBtnLan" class="btn btn-warning" data-toggle="modal" data-target="#addModal">New record</button>
-
- -->
 
  <table id="tableResult" class="dataTable stripe table-bordered">
  <caption title=""><spring:message code="skilllanguage.name" /></caption>
@@ -59,7 +56,7 @@
       </div>
       <div class="modal-body row">
 
-
+					<input id="nameLang" type="hidden"/>
 
 
 					<div class='col-sm-12' align="left">
@@ -67,93 +64,36 @@
 								code="skilllanguage.name.lang" var="namelang" />${namelang } :</label>
 					</div>
 
-					<div class='col-sm-12'>
-					<div class='col-sm-6'>
-						<div class="form-group">
-							<select id="masSkillLanguage" class="form-control">
-								<option value=""><spring:message code="skilllanguage.enter.skill" /></option>
-								<option value="Thai">Thai</option>
-								<option value="English">English</option>
-								<option value="Other">Other</option>
-
-							</select>
-						</div>
-					</div>
 
 
-
-					<div class='col-sm-6'>
-						<div class="form-group">
-							<!-- <input id="LangName" type="text" class="form-control" /> -->
-							<f:input path="nameLanguage" type="text" class="form-control" id="nameLanguage" name="nameLanguage"/>
-	    
-
-						</div>
-					</div>
+					<div class='form-group form-group-sm col col-lg-12 col-md-12 col-sm-12 col-xs-12'>
 					
-	</div>
-
-					<%-- 
-		    <div class="form-group form-group-sm col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-	           
-		      <div class="row">  
-		      
-		        <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label required" for="masSkillLanguage" >
-			            <spring:message code="skilllanguage.name.lang" />
-:
-			    </label>	 
-			    	  <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			     <select id="masSkillLanguage" class="form-control" >
-			     						<option value=""><spring:message code="skilllanguage.enter.skill" /></option>						
+				       <div class="row">  
+							<div class='.col-md-2  col-lg-4 col-md-4 col-sm-4 col-xs-4'>
+								
+									<select id="masSkillLanguage" name="masSkillLanguage" class="form-control ">
+										<option value=""><spring:message code="skilllanguage.enter.skill" /></option>
 										<option value="Thai">Thai</option>
 										<option value="English">English</option>
 										<option value="Other">Other</option>
-										
-										
-									
-	  
-			     
-			     </select>
-			     </div>
-			   
-			 <div class="row"> 
-			 <label class="col-lg-4 col-md-4 col-sm-4 col-xs-4 control-label required" for="masSkillLanguage" >
-			            <spring:message code="skilllanguage.name.lang" />
-:
-			    </label>
-			  <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			 <input id="LangName"  type="text" class="form-control"/>
-			 </div>
-			 </div>
-			   
-			     
-			     <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">		     		
-
-			     		<f:select id="masSkillLanguage"  path="masSkillLanguage" cssClass="form-control" >
-						  <option  value="-1" label="please select data"/>								
-							<c:forEach var="obj" items="${ masSkillLanguageList }">									
-									<option value="${obj.id}" >${obj.skillLanguageName}</option> 									
-							</c:forEach>
-						</f:select> 
-						
-						<spring:message code="skilllanguage.enter.skill" var="skill"/>
-						
-						<f:select  id="masSkillLanguage" path="masSkillLanguage" cssClass="form-control">
-   						<f:option value="-1" label="${skill }"/>
- 					    <f:options items="${masSkillLanguageList}" itemValue="id" itemLabel="skillLanguageName"/>
- 					    </f:select>
- 					    
- 					    <div class="row">
- 					       <div class="col col-lg-12 col-md-12 col-sm-12 col-xs-12">		     	
- 					   		 <div id="error" style="color:red"></div>	
- 					   	   </div>
- 					    </div>
+		
+									</select>
+				
+							</div>
+	
+						  <div class='col col-lg-3 col-md-3 col-sm-3 col-xs-3'>
 							
-			     </div>	
-			 </div>
-		   
-		   </div>
-		    --%>
+								<!-- <input id="LangName" type="text" class="form-control" /> -->
+								<f:input path="nameLanguage" type="text" class="form-control" id="nameLanguage" name="nameLanguage"/>
+		    
+	
+						
+						</div>
+					</div>
+					
+				</div>
+
+				
 		   
 
 		   <spring:message code="skilllanguage.Excellent" var="Excellent"/>

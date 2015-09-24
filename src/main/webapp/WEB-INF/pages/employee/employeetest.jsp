@@ -30,7 +30,7 @@
 
 <!------------------------------------------------------ Start Information-------------------------------------------------------->
 
-		<input id="appId" type="text" value="${appId}"/>
+		<input id="appId" type="hidden" value="${appId}"/>
 		
 		<input id="employeeCodeDto" name="employeeCodeDto.rungingNumber" type="hidden" class="form-control"  placeholder="Location ID" value="${ employeeCodeDto.rungingNumber}">
 		

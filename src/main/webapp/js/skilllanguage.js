@@ -19,14 +19,11 @@ var dt;
 				"dom": '<"toolbar">frtip'
 			});
 			
-		// $("div.toolbar").html('<b><button type="button" class="btn btn-warning btn-md" data-toggle="modal" data-target="#addModal">'+$msgNewRecord+'</button> </b>');
-		 //$("div.toolbar").html('<b><button type="button" id="addBtnLan" class="btn btn-warning" data-toggle="modal" data-target="#addModal">'+$msgNewRecord+'</button> </b>');
 		 $("div.toolbar").html('<b><button type="button"  class="btn btn-warning" data-toggle="modal" data-target="#addModal">'+$msgNewRecord+'</button> </b>');
 			
 
 		$("#saveBtn").on("click",function(){
 			
-			//$('#formAddUpdate').bootstrapValidator('resetForm', true);
 			$('#formAddUpdate').bootstrapValidator();
 			$('#formAddUpdate').data('bootstrapValidator').resetForm();
 
@@ -46,22 +43,56 @@ var dt;
 		        },
 		        fields: {
 		        
-		        	/*masSkillLanguage: {
+		        	 masSkillLanguage: {
 		                validators: {
 		                    notEmpty: {
 		                        message: $requiredMasSkillLanguage
-		                    },
-		                    digits: {
-		                    	min:0,
-		                    	message: $requiredLanguage
 		                    }
-		
 		                }
-		            },*/
+		            },
 		        }
 		 
     });
+		 
+		 
+		 
+		 
+	      $("#nameLanguage").prop('readonly','readonly');
+		
+					
+		  $('#masSkillLanguage').change(function() {
+			  
+			  if($("#masSkillLanguage option:selected").text()=='Other'){
+				  
+				  	alert('aaaa');
 	
+					$("#nameLanguage").prop('readonly',false);
+				    $('#nameLanguage').val('');
+		
+			   }
+			  
+			  if($("#masSkillLanguage option:selected").text()=='English'){
+				  
+				  	alert('aaaa');
+	
+					$("#nameLanguage").prop('readonly',true);
+				    $('#nameLanguage').val($("#masSkillLanguage option:selected").text());
+		
+			   }
+			  
+			  if($("#masSkillLanguage option:selected").text()=='Thai'){
+				  
+				  	alert('aaaa');
+	
+					$("#nameLanguage").prop('readonly',true);
+				    $('#nameLanguage').val($("#masSkillLanguage option:selected").text());
+		
+			   }
+					
+			});
+			
+			
+			
 		
 		 dt=$('#tableResult').dataTable();
 		 doFindData();
@@ -76,7 +107,7 @@ var dt;
 		  	      
 			  	  $.ajax({  
 		  	      type : "POST",   
-		  	      url : $getContextPath+"/skilllanguage/list/"+id,   
+		  	      url : $getContextPath+"/skilllanguage/list/"+applicantId,   
 		  	      dataType : 'json', 
 		  	      contentType :"application/json; charset=utf-8",
 		  	     
@@ -87,6 +118,9 @@ var dt;
 		  	    	
 		  	        for(var i=0;i<data.length;i++){
 		  	        	
+		  	        	  
+		  	        	   //alert("id: "+data[i].id);
+		  	        	
 	
 		  	        	   dt.fnAddData([  
 		  	        	                   data[i].nameLanguage,
@@ -95,7 +129,7 @@ var dt;
 					  			           data[i].reading,
 					  			           data[i].understanding,
 					  			        
-					  			          '<button type="button" style="margin-right :15px;" class="btn btn-warning " data-id="'+data[i].id+'" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>'+
+					  			          '<button type="button" style="margin-right :15px;" class="btn btn-warning " data-idupdate="'+data[i].id+'" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>'+
 					    				  '<button type="button" class="btn btn-danger btn-sm active" data-iddelete="' + data[i].id+ '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>'
 					    					
 					  			           ]); 			  		
@@ -135,8 +169,9 @@ var dt;
 	    				$('#formAddUpdate').bootstrapValidator();
 	    				$('#formAddUpdate').data('bootstrapValidator').validate();
 	    				if($('#formAddUpdate').data('bootstrapValidator').isValid()){
+	    					
+	    					alert('aaa');
 	    					addSkilllanguage();
-	    					//validateSkilllanguage();
 	    				}
 	    			}
 	    		});
@@ -171,55 +206,6 @@ var dt;
 		   
 		   
 		   
-		   
-		   
-		   
-		   
-		 /*  function validateSkilllanguage(){
-			   
-			    alert($('#masSkillLanguage').val());
-		  	    var language =  "masSkillLanguageId="+$('#masSkillLanguage').val();
-
-		   				  	
-		  	    $.ajax({  
-			  	      type : "POST",   
-			  	      url : $getContextPath+"/skilllanguage/validate",   
-			  	      data : language,
-			  	      success : function(data) {  
-			  	    	  
-	    					 addSkilllanguage();
-	    					 
-			  	      },
-			  	      error : function(XMLHttpRequest,e,testStatus,jqXHR,xhr,errorThrown,thrownError) {  
-			  	    	 
-			  	    	  	alert(''+JSON.parse(XMLHttpRequest.responseText));
-			  	    	    $('#error').text(JSON.parse(XMLHttpRequest.responseText));
-			  	    	  	
-			  	     }
-		  	    });   	
-	   		}
-	   */
-	   
-		   
-		   
-		  
-		   
-		   
-		   
-		   		
-		   
-		   
-		   $("#masSkillLanguage").on('change', function(){
-			  var dataLan = $("#masSkillLanguage option:selected").text(); 
-			  if(dataLan=="Other"){
-				  $("#nameLanguage").val("");
-			  }else{
-				  
-				  $("#nameLanguage").val(dataLan);
-			  }
-	  			//alert( this.value );
-	  			
-	  		});	
 		   
 		   function addSkilllanguage(){
 			   		
@@ -302,25 +288,13 @@ var dt;
 			  		
 			  		
 			  			  	    
-			  	    /* var language = {masSkillLanguage:{"id":masSkillLanguageId},
-			  	    				"abilitySpeaking":speaking,
-			  	    				"abilityReading" : reading,
-			  	    				"abilityUnderstanding":understanding,
-			  	    				"abilityWriting":writing}; */
-			  	    				
-			  	 
-			  	    
-			  	    //var language =  "masSkillLanguage.id="+masSkillLanguageId+"&abilitySpeaking="+speaking+"&abilityReading="+reading+"&abilityUnderstanding="+understanding+"&abilityWriting="+writing;
-			  	     
+			 			  	     
 
 					var id = $("#empId").val();
 					
 					var idApp=$("#appId").val();
-					
-			  	    var language =  "masSkillLanguageId="+masSkillLanguageId+"&masSkillLanguageName="+masSkillLanguageName+"&abilitySpeaking="+speaking+"&abilityReading="+reading+"&abilityUnderstanding="+understanding+"&abilityWriting="+writing+"&employeeId="+id;
-			 
-			  	    var language2="nameLanguage="+nameLanguage+"&abilitySpeaking="+speaking+"&abilityReading="+reading+"&abilityUnderstanding="+understanding+"&abilityWriting="+writing+"&employeeId="+id+"&applicantId="+idApp;
-			  	    /*var language2="nameLanguage="+nameLanguage;*/
+								 
+			  	    var language2="nameLanguage="+nameLanguage+"&speaking="+speaking+"&reading="+reading+"&understanding="+understanding+"&writing="+writing+"&employeeId="+id+"&applicantId="+idApp;
 	                
 			  	    $.ajax({  
 			  	      type : "POST",   
@@ -357,7 +331,7 @@ var dt;
 		   	   
 			     		  	   
 		  	    var language = "id="+idUpdate;
-		  	    //alert("id: "+idUpdate);
+		  	    alert("id: "+idUpdate);
 		  	    
 		  	   
 		  	     $.ajax({  
@@ -366,17 +340,30 @@ var dt;
 		  	      data : language,  
 		  	     
 		  	      success : function(data) {  
+		  	    	  
+		  	    	  
+		  	    	  
+		  	    	if(data.nameLanguage=='English'||data.nameLanguage=='Thai'){
+		  	    		$('#masSkillLanguage').val(data.nameLanguage);
+		  	    	}else{
+		  	    		$('#masSkillLanguage').val('Other');
+		  	    		$("#nameLanguage").prop('readonly',false);
+		  	    	}
+		  	        
+		  	        $('#nameLanguage').val(data.nameLanguage);
+		  	        
+		  	        $('#nameLang').val(data.nameLanguage);
 		    	
 			  		
-			  		if(data.abilitySpeaking == "Excellent"){
+			  		if(data.speaking == "Excellent"){
 			  			
 			  			$('#excSpeaking').prop('checked', 'checked');
 			  			
-			  		}else if(data.abilitySpeaking == "Good"){
+			  		}else if(data.speaking == "Good"){
 			  			
 			  			$('#goodSpeaking').prop('checked','checked');
 			  			
-			  		}else if(data.abilitySpeaking == "Fair"){
+			  		}else if(data.speaking == "Fair"){
 			  			
 			  			
 			  			$('#fairSpeaking').prop('checked','checked');
@@ -386,15 +373,15 @@ var dt;
 			  		
 			  		
 			  		
-					if(data.abilityWriting == "Excellent"){
+					if(data.writing == "Excellent"){
 			  			
 						$('#excWriting').prop('checked','checked');
 			  			
-			  		}else if(data.abilityWriting == "Good"){
+			  		}else if(data.writing == "Good"){
 			  			
 			  		    $('#goodWriting').prop('checked','checked');
 			  			
-			  		}else if(data.abilityWriting == "Fair"){
+			  		}else if(data.writing == "Fair"){
 			  			
 			  		    $('#fairWriting').prop('checked','checked');
 			  			
@@ -404,15 +391,15 @@ var dt;
 
 					
 					
-					if(data.abilityReading == "Excellent"){
+					if(data.reading == "Excellent"){
 			  			
 						$('#excReading').prop('checked','checked');
 			  			
-			  		}else if(data.abilityReading == "Good"){
+			  		}else if(data.reading == "Good"){
 			  			
 			  			$('#goodReading').prop('checked','checked');
 			  			
-			  		}else if(data.abilityReading == "Fair"){
+			  		}else if(data.reading == "Fair"){
 			  			
 			  			$('#fairReading').prop('checked','checked');
 			  			
@@ -421,15 +408,15 @@ var dt;
 					
 					
 					
-					if(data.abilityUnderstanding == "Excellent"){
+					if(data.understanding == "Excellent"){
 			  			
 						$('#excUnderstanding').prop('checked','checked');
 			  			
-			  		}else if(data.abilityUnderstanding == "Good"){
+			  		}else if(data.understanding == "Good"){
 			  			
 			  			$('#goodUnderstanding').prop('checked','checked');
 			  			
-			  		}else if(data.abilityUnderstanding == "Fair"){
+			  		}else if(data.understanding == "Fair"){
 			  			
 			  			$('#fairUnderstanding').prop('checked','checked');
 			  			
@@ -460,7 +447,9 @@ var dt;
 		  	    var writing;
 		  	    var understanding;
 				var masSkillLanguage;
-				var nameLanguage;
+				var languageName;
+				
+				
 				
 		  		if($('#excSpeaking').is(':checked')){
 		  			
@@ -529,19 +518,16 @@ var dt;
 		  		}
 		  		
 		  		
-				masSkillLanguageId = $('#masSkillLanguage').val();
 				
 				
-				 nameLanguage=$("#nameLanguage").val();
+				languageName=$("#nameLanguage").val();
 				
 				
 				var masSkillLanguageName= $("#masSkillLanguage option:selected").text();
 		  	  
 				var id = $("#empId").val();
 				
-		  	    //var language =  "id="+idUpdate+"&masSkillLanguage.id="+masSkillLanguageId+"&abilitySpeaking="+speaking+"&abilityReading="+reading+"&abilityUnderstanding="+understanding+"&abilityWriting="+writing;
-                var language2 =  "id="+idUpdate+"&masSkillLanguageId="+masSkillLanguageId+"&masSkillLanguageName="+masSkillLanguageName+"&abilitySpeaking="+speaking+"&abilityReading="+reading+"&abilityUnderstanding="+understanding+"&abilityWriting="+writing+"&employeeId="+id;
-		  	    //alert("masid: "+masSkillLanguageId);
+                var language2 =  "id="+idUpdate+"&nameLanguage="+languageName+"&speaking="+speaking+"&reading="+reading+"&understanding="+understanding+"&writing="+writing+"&employeeId="+id;
 		  	    
 		  	    
 		  	   
