@@ -10,9 +10,12 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.WebDataBinder;
 import org.springframework.web.bind.annotation.InitBinder;
@@ -26,9 +29,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.aug.hrdb.services.EducationDtoService;
 import com.aug.hrdb.dto.EducationDto;
+import com.aug.hrdb.dto.ReferenceDto;
 import com.aug.hrdb.entities.Applicant;
 import com.aug.hrdb.entities.Education;
+import com.aug.hrdb.entities.Employee;
+import com.aug.hrdb.entities.Reference;
 import com.aug.hrdb.services.EducationService;
+import com.aug.hrdb.services.EmployeeService;
 import com.aug.hrdb.services.MasDegreetypeService;
 
 @Controller
@@ -42,6 +49,9 @@ public class EducationController {
 	
 	@Autowired
 	private MasDegreetypeService masDegreetypeService;
+	
+	@Autowired
+	private EmployeeService employeeService;
 
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
@@ -52,16 +62,25 @@ public class EducationController {
 	
 	@RequestMapping(value = "/education/{id}", method = { RequestMethod.GET,
 			RequestMethod.POST })
-	public String init(ModelMap model, Locale locale,
+	public String list(ModelMap model, Locale locale,
 			@PathVariable("id") Integer id, 
 			@ModelAttribute EducationDto educationDto) {
+		
+		Employee employee = employeeService.findById(id);
+		
 		model.addAttribute("masdegreetypeList",
 				masDegreetypeService.findAll());
 		
-		educationDto.setApplicant(id);
-		model.addAttribute("id", educationDto.getApplicant());
+		educationDto.setApplicant(employee.getApplicant().getId());
+		model.addAttribute("id", employee.getId());
+		model.addAttribute("appId", employee.getApplicant().getId());
 		return "/education/education";
 	}
+	
+	
+
+	
+	
 	
 	/*@RequestMapping(value = "/education/listAll", method = RequestMethod.POST)
 	public @ResponseBody List<Education> listAll(
@@ -87,23 +106,52 @@ public class EducationController {
 	@RequestMapping(value = "/education/add", method = RequestMethod.POST)
 	public @ResponseBody EducationDto addEducation(@RequestBody EducationDto educationDto) {
 		Education education = new Education();
+		
+		
+		
 		educationService.create(education.fromEducationDto(education, educationDto));
 		return educationDto;
 	}
 
+	@Transactional
 	@RequestMapping(value = "/education/update", method = {RequestMethod.GET, RequestMethod.POST})
 	public @ResponseBody EducationDto updateEducation(@RequestBody EducationDto educationDto) {
-		Education education = educationService.findById(educationDto.getId());
+		
+		Education entityLOaded=educationService.findById(educationDto.getId());
+		Education education = new Education();
+		educationService.update(education.fromEducationDto(entityLOaded, educationDto));
+		/*entityLOaded.setStart_date(educationDto.getStart_date());
+		entityLOaded.setGraduated_date(educationDto.getGraduated_date());
+		entityLOaded.setUniversity(educationDto.getUniversity());
+		entityLOaded.setMajor(educationDto.getMajor());
+		entityLOaded.setFaculty(educationDto.getFaculty());
+		entityLOaded
+		entityLOaded.setMasdegreetype(educationDto.getDegreeType());
+		entityLOaded.setGpa(educationDto.getGpa());
+		entityLOaded.setCertification(educationDto.getCertification());*/
+		educationService.update(entityLOaded);
+		return educationDto;
+		/*Education education = educationService.findById(educationDto.getId());
 		Education educationUpdate = education.fromEducationDto(education, educationDto);
 		educationService.update(educationUpdate);
-		return education.toEducationDto();
+		return education.toEducationDto();*/
 	}
 	
-	@RequestMapping(value = "/education/findById", method = {RequestMethod.GET, RequestMethod.POST})
-	public @ResponseBody EducationDto findById(@RequestParam Integer educationid) {
+	
+	
+	
+	
+	@RequestMapping(value = "/education/findById/{educationid}", method = {RequestMethod.GET, RequestMethod.POST})
+	public @ResponseBody EducationDto findById(@PathVariable("educationid")  Integer educationid) {
 		Education education = educationService.findById(educationid);
 		return education.toEducationDto();
 	}
+	
+	
+	
+	
+	
+	
 	
 	/*
 	@RequestMapping(value = "/education/findById/{educationid}", method = { RequestMethod.GET, RequestMethod.POST })

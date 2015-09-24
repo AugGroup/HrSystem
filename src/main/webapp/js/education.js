@@ -27,7 +27,7 @@
 	            validating: 'glyphicon glyphicon-refresh'
 	        },
 	        fields: {
-	        	startDate: {
+	        	start_date: {
 	                validators: {
 	                    notEmpty: {
 	                        message: $requiredstartdate
@@ -37,7 +37,7 @@
 	                    }
 	                }
 	            },
-	            graduatedDate: {
+	            graduated_date: {
 	                validators: {
 	                    notEmpty: {
 	                        message: $requiredfinishdate
@@ -149,9 +149,9 @@
                 // Get the bootstrapValidator instance
                 .data('bootstrapValidator')
                 // Mark the field as not validated, so it'll be re-validated when the user change date
-                .updateStatus('startDate', 'NOT_VALIDATED', null)
+                .updateStatus('start_date', 'NOT_VALIDATED', null)
                 // Validate the field
-                .validateField('startDate');
+                .validateField('start_date');
             
             var tempdate = new Date(e.date);
 			tempdate.setDate(tempdate.getDate());
@@ -166,9 +166,9 @@
                 // Get the bootstrapValidator instance
                 .data('bootstrapValidator')
                 // Mark the field as not validated, so it'll be re-validated when the user change date
-                .updateStatus('graduatedDate', 'NOT_VALIDATED', null)
+                .updateStatus('graduated_date', 'NOT_VALIDATED', null)
                 // Validate the field
-                .validateField('graduatedDate');
+                .validateField('graduated_date');
         });
 		
 		$('#tbResult').dataTable({ 
@@ -256,13 +256,13 @@
 					gpa :$("#gpa").val(),
 					faculty :$("#faculty").val(),
 					major :$("#major").val(),
-					masDegreeTypeId :$("#masdegreetype").val(),
+					masdegreetypeId :$("#masdegreetype").val(),
 					masdegreetype :$("#masdegreetype option:selected").text(),
-					certificate :$("#certificate").val(),
-					description :$("#description").val(),
-					startDate :$("#startDate").val(),
-					graduatedDate :$("#graduatedDate").val(),
-					employeeId : id
+					//certificate :$("#certificate").val(),
+					//description :$("#description").val(),
+					start_date :$("#startDate").val(),
+					graduated_date :$("#graduatedDate").val(),
+					applicantId : id
 					
 				}),
 				type : "POST",
@@ -337,13 +337,13 @@
 					gpa :$("#gpa").val(),
 					faculty :$("#faculty").val(),
 					major :$("#major").val(),
-					masDegreeTypeId :$("#masdegreetype").val(),
+					masdegreetypeId :$("#masdegreetype").val(),
 					masdegreetype :$("#masdegreetype option:selected").text(),
-					certificate :$("#certificate").val(),
-					description :$("#description").val(),
-					startDate :$("#startDate").val(),
-					graduatedDate :$("#graduatedDate").val(),
-					employeeId : id
+					//certificate :$("#certificate").val(),
+					//description :$("#description").val(),
+					start_date :$("#startDate").val(),
+					graduated_date :$("#graduatedDate").val(),
+					applicantId : id
 					
 				}),
 				type : "POST",
@@ -396,22 +396,25 @@
 		
 		function getId(educationid){
 			$.ajax({
-				url : $getContextPath+"/education/findById",
-				data : "educationid=" + educationid,
+				url : $getContextPath+"/education/findById/"+ educationid,
+				//data : "educationid=" + educationid,
 				type : "POST",
 				success : function(data) {
 	 				//alert(JSON.stringify(data));
 					//alert("ok");
+					
+					//alert("masDegreeTypeId: "+data.masdegreetypeId);
+					
 					$("#university").val(data.university),
 					$("#gpa").val(data.gpa),
 					$("#faculty").val(data.faculty),
 					$("#major").val(data.major);
-					$("#masdegreetype").val(data.masDegreeTypeId);
-					$("#certificate").val(data.certificate);
-					$("#description").val(data.description);
-					$("#startDate").val(data.startDate);
-					$("#graduatedDate").val(data.graduatedDate);
-					
+					$("#masdegreetype").val(data.masdegreetypeId);
+					$("#certificate").val(data.certification);
+					//$("#description").val(data.description);
+					$("#startDate").val(data.start_date);
+					$("#graduatedDate").val(data.graduated_date);
+					applicantId: data.applicantId;
 				}/* ,
 				error : function() {
 					$(function(){ new PNotify({
@@ -482,11 +485,12 @@
 					dt.fnClearTable();
 				for (var i=0;i< data.length; i++) {
 					dt.fnAddData([
-								  data[i].startDate,
-								  data[i].graduatedDate,
+								  data[i].start_date,
+								  data[i].graduated_date,
 								  data[i].masdegreetype,
 					              data[i].university,
 					              data[i].major,
+					              data[i].gpa,
 						 '<button type="button" style="margin-right :15px;" class="btn btn-warning btn-sm active" data-id="' + data[i].id + '" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>'+
 						'<button type="button" class="btn btn-danger btn-sm active" data-id="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
 			 

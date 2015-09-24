@@ -11,6 +11,7 @@
 <script src="<c:url value="/resources/js/education.js" />"></script>
 
 <input id="empId" type="hidden" value="${id}">
+<input id="appId" type="hidden" value="${appId}"/>
 
 <form:form id ="listForm" method="post" commandName="education" action="education">
 
@@ -38,6 +39,7 @@
 			<th><spring:message code="education.deegreetype" /></th>
 			<th><spring:message code="education.university" /></th>
 			<th><spring:message code="education.major" /></th>
+			<th><spring:message code="education.gpa" /></th>
 			<th><spring:message code="label.action" /></th>
 			<!-- <th></th> -->
 		</tr>
@@ -67,7 +69,7 @@
    	  <div class="form-group col-md-6">
 	    <label class="required"><spring:message code="education.start.date" /> :</label>
 	    <div class='input-group date' id='datetimepickerStart'>
-	    <form:input path="startDate" type="text" class="form-control" id="startDate" name="startDate" placeholder="${date}"/>
+	    <form:input path="start_date" type="text" class="form-control" id="startDate" name="startDate" placeholder="${date}"/>
 	    <span class="input-group-addon">
             <span class="glyphicon glyphicon-calendar"></span>
         </span>
@@ -77,7 +79,7 @@
 	   <div class="form-group col-md-6">
 	    <label class="required"><spring:message code="education.finish.date" /> :</label>
 	    <div class='input-group date' id='datetimepickerGrad'>
-	    <form:input path="graduatedDate" type="text" class="form-control" id="graduatedDate" name="graduatedDate" placeholder="${date}"/>
+	    <form:input path="graduated_date" type="text" class="form-control" id="graduatedDate" name="graduatedDate" placeholder="${date}"/>
 	    <span class="input-group-addon">
             <span class="glyphicon glyphicon-calendar"></span>
         </span>
@@ -104,20 +106,24 @@
 	  <div class="form-group col-md-12">
 	    <label class="required"><spring:message code="education.deegreetype" /> :</label>
 	    
-		  <%-- <form:select path="masdegreetype" class="form-control"
+	    <div class="form-group">
+		  <form:select path="masdegreetype" class="form-control"
 			id="masdegreetype">
-			<form:option value="-1" label="---Select Degree---" />
+			<form:option value="" label="--- Select  Degreetype ---" />
 			<c:forEach var="obj" items="${ masdegreetypeList }">
 				<option value="${obj.id }">${ obj.name}</option>
 			</c:forEach>
-		</form:select> --%>
-		<form:select  id="masdegreetype" name="masdegreetype" path="masdegreetype" cssClass="form-control">
-<%-- 		<form:option value="-1" label="--- Select  Degreetype ---"/> --%>
+		</form:select>
+		</div>
+		
+		<%-- <form:select  id="masdegreetype" name="masdegreetype" path="masdegreetype" cssClass="form-control">
+		<form:option value="-1" label="--- Select  Degreetype ---"/>
 		<option value=""><spring:message code="education.enter.deegreetype" /></option>
 	    <form:options items="${masdegreetypeList}" itemValue="id" itemLabel="name"/>
-	    </form:select>
+	    </form:select> --%>
 	    
 	  </div>
+	  
 	  
 	   <div class="form-group col-md-6">
 	    <label><spring:message code="education.gpa" var="gpa"/>${gpa} :</label>
@@ -126,15 +132,15 @@
 	  
 	  <div class="form-group col-md-6">
 	    <label><spring:message code="education.certification" var="certification"/>${certification} :</label>
-	    <form:input path="certificate" type="text" class="form-control" id="certificate" name="certificate" placeholder="${enter}${certification}"/>
+	    <form:input path="certification" type="text" class="form-control" id="certificate" name="certificate" placeholder="${enter}${certification}"/>
 	  </div>
 	  
-	  <div class="form-group col-md-12">
+	  <%-- <div class="form-group col-md-12">
 	    <label><spring:message code="education.description" var="description"/>${description} :</label>
 	    <form:input path="description" type="text" class="form-control" id="description" name="description" placeholder="${enter}${description}"/>
 	  </div>
 	  
-      </div>
+      </div> --%>
       
       <div class="modal-footer">
         <button type="button" class="btn btn-default btnClose" data-dismiss="modal"><spring:message code="label.close" /></button>
