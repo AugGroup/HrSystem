@@ -13,6 +13,7 @@
  
  
 <input id="empId" type="hidden" value="${id}">
+<input id="appId" type="text" value="${appId}">
 
 
 <div class="row">
@@ -72,12 +73,12 @@
 			<div class="row">
 			        
 			      <label class="col-lg-3 col-md-3 col-sm-4 col-xs-4 control-label required" >
-			           <spring:message code="label.firstname" />: 
+			           <spring:message code="label.fullname" />: 
 			      </label>	 		
 			     
 				     
 			     <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">		  
-			     		<f:input  id="firstName" name="firstName" path="firstName" cssClass="form-control required" placeholder="First Name" />   		
+			     		<f:input  id="familyName"  path="familyName" cssClass="form-control required" placeholder="Full Name" />   		
 			     </div>
 		  
 		  
@@ -86,29 +87,8 @@
 		   
 		   </div>
 	     
-	     
-	     
-	     
-	     
-	      <div class="form-group form-group-sm col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			    
-			<div class="row">
-			 
-		  
-		  	     <label class="col-lg-3 col-md-3 col-sm-4 col-xs-4 control-label required" >
-			     		 <spring:message code="label.lastname" />:
-			     </label>	 		
-			    
-			     
-			     <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">
-			     		<f:input id="lastName" path="lastName" cssClass="form-control required" placeholder="Last Name" />		     		
-			     </div>
-		  
-		  	</div>
-		   
-		   </div>
-	     
-	     
+
+
 	     
 	     <div class="form-group form-group-sm col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			    
@@ -255,7 +235,7 @@
 			     
 			     <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">		     		
 
-			     		 <f:select id="masRelation" path="masRelation" cssClass="form-control">
+			     		 <f:select id="masRelation" path="masRelationType" cssClass="form-control">
 						  <option  value="">${Relation }</option>							
 							<c:forEach var="obj" items="${ masRelationTypeList }">									
 									<option value="${obj.id}" >${obj.relationType}</option> 									

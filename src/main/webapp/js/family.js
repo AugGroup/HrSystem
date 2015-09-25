@@ -9,8 +9,7 @@
 	    var idUpdate;
 	    var idDelete ;
 	    var $form = $('#formAdd');
-	    var $firstName = $('#firstName');
-        var $lastName  = $('#lastName');
+	    var $fullName = $('#familyName');
         var $address   =  $('#address');
         var $relation  =  $('#relation');
         var $occupation  =  $('#occupation');
@@ -44,17 +43,10 @@
 			        },
 			        fields: {
 			        	
-			        	firstName: {
+			        	familyName: {
 			                validators: {
 			                    notEmpty: {
 			                        message: $requiredFamilyName
-			                    }
-			                }
-			            },
-			            lastName: {
-			                validators: {
-			                    notEmpty: {
-			                        message: $requiredLastName  
 			                    }
 			                }
 			            },
@@ -93,7 +85,7 @@
 			                  
 			                }
 			            },
-			            masRelation: {
+			            masRelationType: {
 			                validators: {
 			                    notEmpty: {
 			                        message: $requiredMasRelation 
@@ -126,8 +118,7 @@
 			 function clearModal() {
 		    	  
 		          $(this).removeData('bs.modal');
-		          $firstName.val("");
-		          $lastName.val("");
+		          $fullName.val("");
 		          $("#genderMale").prop("checked", true);
 		          $address.val("");
 		          $relation.val("");
@@ -159,7 +150,7 @@
 				  			 	
 				  			        
 			  	        	   dt.fnAddData([  
-						  			           data[i].firstName+" "+data[i].lastName,					  			          
+						  			           data[i].familyName,					  			          
 						  			           data[i].occupation,
 						  			           data[i].mobile,
 						  			           data[i].masRelationTypeName,
@@ -236,9 +227,10 @@
 			   	   
 		    	    
 		    	    var id = $("#empId").val();
+		    	    var appid=$("#appId").val();
+		    	    alert("aapId"+appid);
 			   	   		  		
-			  		var firstName = $firstName.val();
-			  		var lastName =  $lastName.val();
+			  		var familyName = $fullName.val();
 			  		var gender;
 			  		
 			  		
@@ -262,7 +254,7 @@
 			  		var relation = $masRelation.val();
 			  		var relationName = $("#masRelation option:selected").text();
 			  			  	    
-			  	    var json = {"firstName":firstName,"lastName" : lastName,"gender":gender,"age":age,"mobile":mobile,"address":address,"occupation":occupation,"position":position,"masRelationTypeId":relation,"employeeId":id};
+			  	    var json = {"familyName":familyName,"gender":gender,"age":age,"mobile":mobile,"address":address,"occupation":occupation,"position":position,"masRelationTypeId":relation,"employeeId":id,"appId":appid};
 			  	   
 			  	    
 			  	    
@@ -318,8 +310,7 @@
 			    		
 			  	    	
 			  	    	
-			  	    	$firstName.val(data.firstName);
-			  	    	$lastName.val(data.lastName);
+			  	    	$fullName.val(data.familyName);
 			  	    	
 			  	   
 			  	    	
@@ -353,9 +344,9 @@
 		      
 		      function doEditDataPost(idUpdate) {  
 		    	    var idEmp = $("#empId").val();
+		    	    var appid = $('#appId').val();
 			    	var id = idUpdate;
-			  		var firstName = $firstName.val();
-			  		var lastName = $lastName.val();
+			  		var familyName = $fullName.val();
 			  		var gender;
 			  		
 			  		if($('#genderMale:checked').val()!=null){
@@ -377,7 +368,7 @@
 			  		
 
 			  	    
-			  	    var json = {"id":id,"firstName":firstName,"lastName":lastName,"gender":gender,"age":age,"mobile":mobile,"address":address,"occupation":occupation,"position":position,"masRelationTypeId":relation,"employeeId":idEmp};
+			  	    var json = {"id":id,"firstName":firstName,"lastName":lastName,"gender":gender,"age":age,"mobile":mobile,"address":address,"occupation":occupation,"position":position,"masRelationTypeId":relation,"employeeId":idEmp,"appId":appid};
 			  	     
 			  	    
 			  	    $.ajax({  

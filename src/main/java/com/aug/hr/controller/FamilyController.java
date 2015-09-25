@@ -24,6 +24,7 @@ import com.aug.exception.CustomException;
 import com.aug.hr.entity.editor.FamilyEditor;
 //import com.aug.hr.entity.validator.FamilyValidator;
 import com.aug.hrdb.dto.FamilyDto;
+import com.aug.hrdb.entities.Employee;
 import com.aug.hrdb.entities.Family;
 import com.aug.hrdb.entities.MasRelationType;
 import com.aug.hrdb.services.EmployeeService;
@@ -56,7 +57,6 @@ public class FamilyController {
 
 	
 	
-	
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
 		SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy",
@@ -78,12 +78,16 @@ public class FamilyController {
 		//init page for display page 
 		
 		logger.info("Welcome to employee family(list) locale: " + locale);
+		
+		Employee employee = employeeService.findById(id);
+		
 		List<MasRelationType> masRelationTypeList = masRelationService.findAll();
 		model.addAttribute("family", family);
 		model.addAttribute("masRelationTypeList", masRelationTypeList);
-		
+		model.addAttribute("appId", employee.getApplicant().getId());
 		familyDto.setEmployeeId(id);
 		model.addAttribute("id", familyDto.getEmployeeId());
+	
 		return "/family/familychange";
 
 	}
