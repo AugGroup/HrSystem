@@ -433,8 +433,8 @@
 		
 		function deleteEducation(button, educationid){
 			$.ajax({
-				url : $getContextPath+"/education/delete",
-				data : "educationid=" + educationid,
+				url : $getContextPath+"/education/delete/"+ educationid,
+				//data : "educationid=" + educationid,
 				type : "POST",
 				success : function(data) {
 //	 					alert(JSON.stringify(data));
@@ -492,8 +492,9 @@
 					              data[i].major,
 					              data[i].gpa,
 						 '<button type="button" style="margin-right :15px;" class="btn btn-warning btn-sm active" data-id="' + data[i].id + '" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>'+
-						'<button type="button" class="btn btn-danger btn-sm active" data-id="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
-			 
+						 '<button type="button" class="btn btn-danger btn-sm active" data-id="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
+					 
+					 
 			 
 			 
 				}

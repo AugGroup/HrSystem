@@ -33,7 +33,9 @@ import com.aug.hrdb.dto.ReferenceDto;
 import com.aug.hrdb.entities.Applicant;
 import com.aug.hrdb.entities.Education;
 import com.aug.hrdb.entities.Employee;
+import com.aug.hrdb.entities.MasDegreetype;
 import com.aug.hrdb.entities.Reference;
+import com.aug.hrdb.services.ApplicantService;
 import com.aug.hrdb.services.EducationService;
 import com.aug.hrdb.services.EmployeeService;
 import com.aug.hrdb.services.MasDegreetypeService;
@@ -53,6 +55,14 @@ public class EducationController {
 	@Autowired
 	private EmployeeService employeeService;
 
+	@Autowired
+	private ApplicantService applicantService;
+	
+	
+	@Autowired
+	private MasDegreetypeService masDegreeTypeService;
+	
+	
 	@InitBinder
 	public void initBinder(WebDataBinder binder) {
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy",Locale.ENGLISH);
@@ -106,10 +116,22 @@ public class EducationController {
 	@RequestMapping(value = "/education/add", method = RequestMethod.POST)
 	public @ResponseBody EducationDto addEducation(@RequestBody EducationDto educationDto) {
 		Education education = new Education();
+		Applicant applicant=applicantService.findById(educationDto.getApplicantId());
+		MasDegreetype masDegreeType = masDegreeTypeService.find(educationDto.getMasdegreetypeId());
+		
+		education.setApplicant(applicant);
+		
+		education.setStart_date(educationDto.getStart_date());
+		education.setGraduated_date(educationDto.getGraduated_date());
+		education.setUniversity(educationDto.getUniversity());
+		education.setMajor(educationDto.getMajor());
+		education.setFaculty(educationDto.getFaculty());
+		education.setMasdegreetype(masDegreeType);
+		education.setGpa(educationDto.getGpa());
+		education.setCertification(educationDto.getCertification());
+		educationService.create(education);
 		
 		
-		
-		educationService.create(education.fromEducationDto(education, educationDto));
 		return educationDto;
 	}
 
@@ -159,8 +181,8 @@ public class EducationController {
 		return educationService.findById(educationid);
 	}*/
 		
-	@RequestMapping(value = "/education/delete", method = RequestMethod.POST)
-	public @ResponseBody String deleteEducation(@RequestParam Integer educationid) {
+	@RequestMapping(value = "/education/delete/{educationid}", method = RequestMethod.POST)
+	public @ResponseBody String deleteEducation(@PathVariable Integer educationid) {
 		educationService.deleteById(educationid);
 		return "{success:true}";
 	}
