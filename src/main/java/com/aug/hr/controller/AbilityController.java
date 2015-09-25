@@ -8,7 +8,9 @@ package com.aug.hr.controller;
 
 import java.util.List;
 import java.util.Locale;
+
 import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -18,10 +20,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import com.aug.hrdb.services.AbilityDtoService;
 import com.aug.hrdb.entities.Ability;
+import com.aug.hrdb.entities.Applicant;
+import com.aug.hrdb.entities.Certification;
+import com.aug.hrdb.entities.MasSpecialty;
 import com.aug.hrdb.dto.AbilityDto;
 import com.aug.hrdb.services.AbilityService;
+import com.aug.hrdb.services.ApplicantService;
 import com.aug.hrdb.services.MasSpecialtyService;
 
 
@@ -33,6 +40,9 @@ public class AbilityController {
 	@Autowired private AbilityDtoService abilityDtoService;
 	
 	@Autowired private MasSpecialtyService masSpecialtyService;
+	
+	@Autowired private ApplicantService applicantService;
+	
 	
 	//@Autowired private UploadService uploadService;
 
@@ -75,7 +85,15 @@ public class AbilityController {
 	public @ResponseBody AbilityDto addAbility(@RequestBody AbilityDto abilityDto){
 
 		Ability ability = new Ability();
-		abilityService.create(ability.fromAbilityDto(abilityDto, ability));
+		Applicant applicant=applicantService.findById(abilityDto.getApplicantId());
+		MasSpecialty masSpecialty=masSpecialtyService.findById(abilityDto.getMasspecialtyId());
+		
+		ability.setApplicant(applicant);
+		ability.setRank(abilityDto.getRank());
+		ability.setMasspecialty(masSpecialty);
+		
+		abilityService.create(ability);
+		//abilityService.create(ability.fromAbilityDto(abilityDto, ability));
 		return abilityDto;
 		
 	}
@@ -108,9 +126,24 @@ public class AbilityController {
 	
 	@RequestMapping(value = "/ability/update", method = {RequestMethod.GET, RequestMethod.POST})
 	public @ResponseBody AbilityDto updateAbility(@RequestBody  AbilityDto abilityDto) {
-		Ability ability  = abilityService.find(abilityDto.getId());
+		
+		Ability ability = abilityService.find(abilityDto.getId());
+		
+		Applicant applicant=applicantService.findById(abilityDto.getApplicantId());
+		MasSpecialty masSpecialty=masSpecialtyService.findById(abilityDto.getMasspecialtyId());
+		
+		ability.setApplicant(applicant);
+		ability.setRank(abilityDto.getRank());
+		ability.setMasspecialty(masSpecialty);
+		
+		abilityService.update(ability);
+		
+		/*Ability ability  = abilityService.find(abilityDto.getId());
 		Ability abilityUpdate = ability.fromAbilityDto(abilityDto, ability);
-		abilityService.update(abilityUpdate);
+		abilityService.update(abilityUpdate);*/
+		
+		
+		
 		return ability.toAbilityDto();
 	}
 	
