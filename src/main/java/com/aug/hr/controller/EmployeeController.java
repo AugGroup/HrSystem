@@ -597,10 +597,9 @@ public class EmployeeController {
 
 	}
 
-	@RequestMapping(value = "/employee/searchEmpStatusByStatus/{searchText}", method = { RequestMethod.GET,
-			RequestMethod.POST })
-	public @ResponseBody List<ReportStatusEmployeeDto> searchNameStatusEmp(
-			@PathVariable("searchText") String searchText, @ModelAttribute(value = "employee") Employee employee,
+	@RequestMapping(value = "/employee/searchEmpStatusByStatus/{searchText}", method = { RequestMethod.GET,RequestMethod.POST })
+	public @ResponseBody List<ReportStatusEmployeeDto> searchNameStatusEmp(@PathVariable("searchText") String searchText, 
+			@ModelAttribute(value = "employee") Employee employee,
 			ModelMap map, HttpSession session, Locale locale) {
 		List<ReportStatusEmployeeDto> employeeList;
 		if (searchText.equals("forEmptySearch")) {
@@ -612,6 +611,9 @@ public class EmployeeController {
 		// "+searchText);
 		return employeeList;
 	}
+	
+	
+	
 	// ------------------------------------------------------------------------------------------------------------------------------------
 
 	@RequestMapping(value = "/employee/ReportLeave", method = { RequestMethod.GET, RequestMethod.POST })
