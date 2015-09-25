@@ -431,17 +431,17 @@
 			});
 		}
 		
-		function deleteEducation(button, educationid){
+		function deleteEducation(button,educationid){
 			$.ajax({
-				url : $getContextPath+"/education/delete/"+ educationid,
+				url : $getContextPath+"/education/delete/"+educationid,
 				//data : "educationid=" + educationid,
 				type : "POST",
 				success : function(data) {
 //	 					alert(JSON.stringify(data));
 					
-					var tr = button.closest("tr")
+					/*var tr = button.closest("tr")
 					
-					dt.fnDeleteRow(tr);
+					dt.fnDeleteRow(tr);*/
 					
 					$('#deleteModal').modal('toggle');
 					$(function(){ new PNotify({
@@ -491,10 +491,12 @@
 					              data[i].university,
 					              data[i].major,
 					              data[i].gpa,
-						 '<button type="button" style="margin-right :15px;" class="btn btn-warning btn-sm active" data-id="' + data[i].id + '" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>'+
+						 '<button type="button" style="margin-right :15px;" class="btn btn-warning" data-id="'+ data[i].id +'" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>'+
 						 '<button type="button" class="btn btn-danger btn-sm active" data-id="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
 					 
-					 
+					      
+			 
+			 
 			 
 			 
 				}

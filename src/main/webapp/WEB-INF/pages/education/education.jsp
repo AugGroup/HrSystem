@@ -150,7 +150,7 @@
     </div>
   </div>
 </div>
-
+</div>
 </form:form>
 
 <form:form id="deleteForm" commandName="education" method="post">
