@@ -175,7 +175,7 @@ $(document).ready(function(){
 				masspecialtyId : $("#masspecialty").val(), 
 				masspecialty : $("#masspecialty option:selected").text(),
 				rank : rank,
-				employeeId :id
+				applicantId :id
 			}),
 			type : "POST",
 			contentType : "application/json",
@@ -246,7 +246,7 @@ function getId(abilityid){
 				
 				 $("#masspecialty").val(data.masspecialtyId);
 				/* rank.val(data.rank); */
-				employeeId: data.employeeId; 
+				 applicantId: data.applicantId;
 				
 				
 				if(data.rank == "1"){
@@ -366,7 +366,7 @@ function updateAbility(button,abilityid) {
 			masspecialty : $("#masspecialty option:selected").text(),
 			rank : rank,
 			//employee : {id:2},
-			employeeId: id
+			applicantId: id
 		}),
 		type : "POST",
 		contentType : "application/json",
