@@ -19,8 +19,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.aug.hrdb.services.ApplicantService;
 import com.aug.hrdb.services.CertificationDtoService;
 import com.aug.hrdb.services.EmployeeService;
+import com.aug.hrdb.entities.Applicant;
 import com.aug.hrdb.entities.Certification;
 import com.aug.hrdb.entities.Employee;
 import com.aug.hrdb.dto.CertificationDto;
@@ -35,6 +37,8 @@ public class CertificationController {
 	private CertificationDtoService certificationDtoService;
 	@Autowired
 	private EmployeeService employeeService;
+	@Autowired
+	private ApplicantService applicantService;
 	
 	@RequestMapping(value = "/certification/{id}", method = { RequestMethod.GET,
 			RequestMethod.POST })
@@ -45,7 +49,7 @@ public class CertificationController {
 		Employee employee = employeeService.findById(id);
 		//certificationDto.setApplicantId(employee.getApplicant().getId());
 		model.addAttribute("appId", employee.getApplicant().getId());
-		//model.addAttribute("id", certificationDto.getApplicantId());
+		model.addAttribute("id",employee.getId());
 		return "/certification/certification";
 	}
 	
@@ -58,16 +62,36 @@ public class CertificationController {
 	
 	@RequestMapping(value = "/certification/add", method = RequestMethod.POST)
 	public @ResponseBody CertificationDto addCertification(@RequestBody CertificationDto certificationDto) {
+		
+		//System.out.println("certificationDto: "+certificationDto.getName());
+		
 		Certification certification = new Certification();
-		certificationService.create(certification.fromCertificationDto(certification,certificationDto));
+	
+		Applicant applicant = applicantService.findById(certificationDto.getApplicantId());
+		certification.setApplicant(applicant);
+		certification.setName(certificationDto.getName());
+		certification.setDescription(certificationDto.getDescription());
+		certification.setYear(certificationDto.getYear());
+		certification.setCertificationForm(certificationDto.getCertificationForm());
+		//certificationService.create(certification.fromCertificationDto(certification,certificationDto));
+		certificationService.create(certification);
 		return certificationDto;
 	}
 
 	@RequestMapping(value = "/certification/update", method = {RequestMethod.GET, RequestMethod.POST})
 	public @ResponseBody CertificationDto updateCertification(@RequestBody CertificationDto certificationDto) {
 		Certification certification = certificationService.findById(certificationDto.getId());
-		certificationService.update(certification.fromCertificationDto(certification,certificationDto));
-		return certification.toCertificationDto();
+		
+		Applicant applicant = applicantService.findById(certificationDto.getApplicantId());
+		certification.setApplicant(applicant);
+		certification.setName(certificationDto.getName());
+		certification.setDescription(certificationDto.getDescription());
+		certification.setYear(certificationDto.getYear());
+		certification.setCertificationForm(certificationDto.getCertificationForm());
+		
+		certificationService.update(certification);
+		//certificationService.update(certification.fromCertificationDto(certification,certificationDto));
+		return certificationDto;
 	}
 	
 	@RequestMapping(value = "/certification/findById", method = {RequestMethod.GET, RequestMethod.POST})

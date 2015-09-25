@@ -10,7 +10,7 @@
 
 <script src="<c:url value="/resources/js/certification.js" />"></script>
 
-<input id="empId" type="hidden" value="${id}">
+<input id="empId" type="hidden" value="${id}"> 
 <input id="appId" type="hidden" value="${appId}">
 
 <form:form id ="listForm" method="post" commandName="certification">
