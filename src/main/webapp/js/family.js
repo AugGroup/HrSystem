@@ -16,7 +16,7 @@
         var $position = $('#position');
         var $age = $('#age');
         var $mobile  = $('#mobile');
-        var $masRelation  = $('#masRelation');
+        var $masRelation  = $('#masRelationType');
 			
 		
 			
@@ -228,7 +228,7 @@
 		    	    
 		    	    var id = $("#empId").val();
 		    	    var appid=$("#appId").val();
-		    	    alert("aapId"+appid);
+		    	    //alert("aapId"+appid);
 			   	   		  		
 			  		var familyName = $fullName.val();
 			  		var gender;
@@ -310,6 +310,8 @@
 			    		
 			  	    	
 			  	    	
+			  	    	//alert("masId: "+data.masRelationTypeId);
+			  	    	  
 			  	    	$fullName.val(data.familyName);
 			  	    	
 			  	   
@@ -368,7 +370,7 @@
 			  		
 
 			  	    
-			  	    var json = {"id":id,"firstName":firstName,"lastName":lastName,"gender":gender,"age":age,"mobile":mobile,"address":address,"occupation":occupation,"position":position,"masRelationTypeId":relation,"employeeId":idEmp,"appId":appid};
+			  	    var json = {"id":id,"familyName":familyName,"gender":gender,"age":age,"mobile":mobile,"address":address,"occupation":occupation,"position":position,"masRelationTypeId":relation,"employeeId":idEmp,"appId":appid};
 			  	     
 			  	    
 			  	    $.ajax({  

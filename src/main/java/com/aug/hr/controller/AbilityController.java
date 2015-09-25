@@ -51,10 +51,11 @@ public class AbilityController {
 			@ModelAttribute AbilityDto abilityDto){
 		model.addAttribute("masspecialtyList",
 				masSpecialtyService.findAll());
-		
+
 		/*abilityDto.setEmployeeId(id);
 		model.addAttribute("id", abilityDto.getEmployeeId());
 		*/
+
 		return "/ability/ability";
 	}
 	

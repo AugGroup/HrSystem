@@ -13,7 +13,7 @@
  
  
 <input id="empId" type="hidden" value="${id}">
-<input id="appId" type="text" value="${appId}">
+<input id="appId" type="hidden" value="${appId}">
 
 
 <div class="row">
@@ -235,7 +235,7 @@
 			     
 			     <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">		     		
 
-			     		 <f:select id="masRelation" path="masRelationType" cssClass="form-control">
+			     		 <f:select id="masRelationType" path="masRelationType" cssClass="form-control">
 						  <option  value="">${Relation }</option>							
 							<c:forEach var="obj" items="${ masRelationTypeList }">									
 									<option value="${obj.id}" >${obj.relationType}</option> 									
