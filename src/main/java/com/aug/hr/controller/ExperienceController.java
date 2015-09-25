@@ -7,11 +7,8 @@ import java.util.Locale;
 
 import javax.servlet.http.HttpSession;
 
-import org.hibernate.Hibernate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.stereotype.Controller;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.ModelMap;
@@ -22,15 +19,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-
-
-
-import com.aug.hrdb.services.ExperienceDtoService;
 import com.aug.hrdb.dto.ExperienceDto;
 import com.aug.hrdb.entities.Experience;
+import com.aug.hrdb.services.ApplicantService;
+import com.aug.hrdb.services.ExperienceDtoService;
 import com.aug.hrdb.services.ExperienceService;
 
 
@@ -39,14 +33,15 @@ import com.aug.hrdb.services.ExperienceService;
 public class ExperienceController {
 	@Autowired private ExperienceService experienceService;
 	@Autowired private ExperienceDtoService experienceDtoService;
+	@Autowired private ApplicantService applicantService;
 	
 	@RequestMapping(value = "/experience/{id}", method =  RequestMethod.GET)
     public String init(HttpSession session,Locale locale,ModelMap model, 
 			@PathVariable("id") Integer id, 
 			@ModelAttribute ExperienceDto experienceDto) {		
 		
-		experienceDto.setApplicant(id);;
-		model.addAttribute("id", experienceDto.getApplicant());
+		experienceDto.setApplicantId(id);;
+		model.addAttribute("id", experienceDto.getApplicantId());
 		return "/experience/experience";
 	}
 	
@@ -86,6 +81,7 @@ public class ExperienceController {
 //	Hibernate.initialize(experience.getEmployee().getNameEng());
 		Experience experience = new Experience();
 		experience = experience.fromExperienceDto(experience, experienceDto);
+		experience.setApplicant(applicantService.findById(experienceDto.getApplicantId()));
 		experienceService.create(experience);
 		return experienceDto;
 	}

@@ -123,9 +123,9 @@ var dt;
     	
     	dt=$("#tdResult").dataTable();
  		listAll();
-	
 		
      	$("#addModal").on("show.bs.modal", function(event){
+     		
     		var button = $(event.relatedTarget);
     		expId = button.data("expid"); 
     		//alert("Check"+expId);
@@ -140,6 +140,9 @@ var dt;
      		
     		$(this).find(".saveButton").off("click").on("click", function()
     		{
+    			//alert("click");
+    			
+    			console.log(".saveButton");
     			if(expId != null){
     				$('#validate').bootstrapValidator();
     				$('#validate').data('bootstrapValidator').validate();
@@ -165,6 +168,7 @@ var dt;
     		function addExperience() {
 //     			var id = getUrlParameter('Id');
     			var id = $("#empId").val();
+    			//debugger;
     			$.ajax({
     				url : $getContextPath+"/experience/add",
     				type : "POST",
@@ -270,7 +274,7 @@ var dt;
     		function editExperience() {
 //     			var id = getUrlParameter('Id');
     			var id = $("#empId").val();
-    			//alert(expId+" edit");
+    			console.log(expId+" edit");
 				$.ajax({
 					url : $getContextPath+"/experience/edit",
 					type : "POST",
