@@ -66,10 +66,10 @@
 
 
 
-					<div class='form-group form-group-sm col col-lg-12 col-md-12 col-sm-12 col-xs-12'>
+					<div class="form-group col-md-12">
 					
-				       <div class="row">  
-							<div class='.col-md-2  col-lg-4 col-md-4 col-sm-4 col-xs-4'>
+				       
+							<div class='col-sm-6' align="left">
 								
 									<select id="masSkillLanguage" name="masSkillLanguage" class="form-control ">
 										<option value=""><spring:message code="skilllanguage.enter.skill" /></option>
@@ -81,7 +81,7 @@
 				
 							</div>
 	
-						  <div class='col col-lg-3 col-md-3 col-sm-3 col-xs-3'>
+						  <div class="form-group col-md-6">
 							
 								<!-- <input id="LangName" type="text" class="form-control" /> -->
 								<f:input path="nameLanguage" type="text" class="form-control" id="nameLanguage" name="nameLanguage"/>
@@ -89,7 +89,7 @@
 	
 						
 						</div>
-					</div>
+					
 					
 				</div>
 

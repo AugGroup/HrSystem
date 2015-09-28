@@ -64,7 +64,7 @@ var dt;
 			  
 			  if($("#masSkillLanguage option:selected").text()=='Other'){
 				  
-				  	alert('aaaa');
+				  //	alert('aaaa');
 	
 					$("#nameLanguage").prop('readonly',false);
 				    $('#nameLanguage').val('');
@@ -73,7 +73,7 @@ var dt;
 			  
 			  if($("#masSkillLanguage option:selected").text()=='English'){
 				  
-				  	alert('aaaa');
+				  //	alert('aaaa');
 	
 					$("#nameLanguage").prop('readonly',true);
 				    $('#nameLanguage').val($("#masSkillLanguage option:selected").text());
@@ -82,7 +82,7 @@ var dt;
 			  
 			  if($("#masSkillLanguage option:selected").text()=='Thai'){
 				  
-				  	alert('aaaa');
+				  //	alert('aaaa');
 	
 					$("#nameLanguage").prop('readonly',true);
 				    $('#nameLanguage').val($("#masSkillLanguage option:selected").text());
@@ -103,7 +103,7 @@ var dt;
 			  	  var id = $("#empId").val();
 			  	  var applicantId = $("#appId").val();
 			  	  
-			  	  alert("appId: "+applicantId);
+			  	//  alert("appId: "+applicantId);
 		  	      
 			  	  $.ajax({  
 		  	      type : "POST",   
@@ -170,7 +170,7 @@ var dt;
 	    				$('#formAddUpdate').data('bootstrapValidator').validate();
 	    				if($('#formAddUpdate').data('bootstrapValidator').isValid()){
 	    					
-	    					alert('aaa');
+	    				//	alert('aaa');
 	    					addSkilllanguage();
 	    				}
 	    			}
@@ -331,7 +331,7 @@ var dt;
 		   	   
 			     		  	   
 		  	    var language = "id="+idUpdate;
-		  	    alert("id: "+idUpdate);
+		  	  //  alert("id: "+idUpdate);
 		  	    
 		  	   
 		  	     $.ajax({  
