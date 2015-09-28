@@ -188,7 +188,7 @@
 		/* --- addProduct,updateProduct --- */
 		$("#addModal").on("show.bs.modal",function(event) {
 			
-			//clearModal();
+			clearModal();
 			
 			var button = $(event.relatedTarget) //Button that triggered the model เพื่อดูว่า evet ของ ปุ่มไหน
 			var educationid = button.data("id") //Extract info from data-* attribute

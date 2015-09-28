@@ -141,13 +141,12 @@
 	  </div>
 	  
       </div> --%>
-      
+     </div>  
       <div class="modal-footer">
         <button type="button" class="btn btn-default btnClose" data-dismiss="modal"><spring:message code="label.close" /></button>
       	<button type="button" class="btn btn-info btnSave"><spring:message code="label.save" /></button>
       </div>
       
-    </div>
   </div>
 </div>
 </div>
