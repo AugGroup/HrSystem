@@ -49,6 +49,7 @@ $("#validateAddress").validate({
 		road: "required",
 		district: "required",
 		subDistrict: "required",
+		province: "required",
 		zipcode: {
 			required: true,
 			 digits: true,
@@ -779,7 +780,7 @@ if($('#previousEmployer').val()=="No"){
 							 
 							 var appId = $('#appId').val();
 							 
-							 alert("app: "+appId);
+							// alert("app: "+appId);
 							 
 							 var id=0;
 							 var status="add";
@@ -939,7 +940,7 @@ if($('#previousEmployer').val()=="No"){
 				    var zipcode= $("#zipcode").val();
 				    
 				    var appId = $("#appId").val();
-				    alert("appId: "+appId);
+				   // alert("appId: "+appId);
 			   		
 				    
 			   		
