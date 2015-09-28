@@ -30,6 +30,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.aug.hrdb.services.EducationDtoService;
 import com.aug.hrdb.dto.EducationDto;
 import com.aug.hrdb.dto.ReferenceDto;
+import com.aug.hrdb.entities.Ability;
 import com.aug.hrdb.entities.Applicant;
 import com.aug.hrdb.entities.Education;
 import com.aug.hrdb.entities.Employee;
@@ -139,9 +140,31 @@ public class EducationController {
 	@RequestMapping(value = "/education/update", method = {RequestMethod.GET, RequestMethod.POST})
 	public @ResponseBody EducationDto updateEducation(@RequestBody EducationDto educationDto) {
 		
-		Education entityLOaded=educationService.findById(educationDto.getId());
+		Education education = educationService.findById(educationDto.getId());
+		Applicant applicant=applicantService.findById(educationDto.getApplicantId());
+		MasDegreetype masDegreeType = masDegreeTypeService.find(educationDto.getMasdegreetypeId());
+		
+		education.setApplicant(applicant);
+		
+		education.setStart_date(educationDto.getStart_date());
+		education.setGraduated_date(educationDto.getGraduated_date());
+		education.setUniversity(educationDto.getUniversity());
+		education.setMajor(educationDto.getMajor());
+		education.setFaculty(educationDto.getFaculty());
+		education.setMasdegreetype(masDegreeType);
+		education.setGpa(educationDto.getGpa());
+		education.setCertification(educationDto.getCertification());
+		educationService.update(education);
+		
+		
+		return educationDto;
+		
+		/*Education entityLOaded=educationService.findById(educationDto.getId());
 		Education education = new Education();
-		educationService.update(education.fromEducationDto(entityLOaded, educationDto));
+		educationService.update(education.fromEducationDto(entityLOaded, educationDto));*/
+		
+		
+		
 		/*entityLOaded.setStart_date(educationDto.getStart_date());
 		entityLOaded.setGraduated_date(educationDto.getGraduated_date());
 		entityLOaded.setUniversity(educationDto.getUniversity());
@@ -151,8 +174,11 @@ public class EducationController {
 		entityLOaded.setMasdegreetype(educationDto.getDegreeType());
 		entityLOaded.setGpa(educationDto.getGpa());
 		entityLOaded.setCertification(educationDto.getCertification());*/
-		educationService.update(entityLOaded);
-		return educationDto;
+		
+		
+		/*educationService.update(entityLOaded);
+		return educationDto;*/
+		
 		/*Education education = educationService.findById(educationDto.getId());
 		Education educationUpdate = education.fromEducationDto(education, educationDto);
 		educationService.update(educationUpdate);
