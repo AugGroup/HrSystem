@@ -83,7 +83,7 @@ public class LeaveController {
 	@RequestMapping(value ="/leave/listAll/{id}", method = {RequestMethod.GET, RequestMethod.POST})
 	public @ResponseBody List<LeaveDto> listAll(@PathVariable("id") Integer id){
 		
-		findOfficial(id);
+		//findOfficial(id);
 		return (List<LeaveDto>) leaveDtoService.searchLeave(id);
 	}
 	
@@ -159,7 +159,7 @@ public class LeaveController {
 		}
 		
 		
-		int perSumTime =0 ;
+		/*int perSumTime =0 ;
 		
 		for(Leave Leave:findLeaveTypeAmount)
 			
@@ -168,10 +168,10 @@ public class LeaveController {
 			perSumTime+=leave.getSumTime();
 			logger.info("perSumTime"+" "+perSumTime);
 			
-			/*logger.info("findLeaveTypeAmount"+" "+Leave.getSumTime());*/
+			logger.info("findLeaveTypeAmount"+" "+Leave.getSumTime());
 			
 		
-		}
+		}*/
 		
 	
 		
@@ -272,7 +272,7 @@ public class LeaveController {
 	
 	
 	
-	public int findOfficial(Integer id){
+	/*public int findOfficial(Integer id){
 		
 		Employee employeeOff = employeeDtoService.findOfficial(id);
 		
@@ -338,10 +338,10 @@ public class LeaveController {
 //		Integer currentYear=gc.get(Calendar.YEAR);
 //		Integer currentMonth=gc.get(Calendar.MONTH)+1;
 		
-		 /*Calendar cal = Calendar.getInstance();
+		 Calendar cal = Calendar.getInstance();
 			
 		Integer currentYear1=cal.get(Calendar.YEAR);
-		Integer currentMonth1=cal.get(Calendar.MONTH);*/
+		Integer currentMonth1=cal.get(Calendar.MONTH);
 		
 	
 		
@@ -350,9 +350,9 @@ public class LeaveController {
 	
 		
 		
-	/*	Integer	years1=employeeOff.getOfficial().getStartWorkDate().getYear();
-		*/
-	/*	
+		Integer	years1=employeeOff.getOfficial().getStartWorkDate().getYear();
+		
+		
 		Integer	months=startWork.getMonth()+1;
 		
 		
@@ -371,12 +371,12 @@ public class LeaveController {
 		logger.info("currentMonth"+" "+currentMonth);
 		logger.info("currentMonth1"+""+currentMonth1);
 		logger.info("months"+" "+months);
-		logger.info("diffMonth"+" "+diffMonth);*/
+		logger.info("diffMonth"+" "+diffMonth);
 		int a=1;
 		
 		return a;
 		
-	}
+	}*/
 	
 	
 	

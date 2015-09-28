@@ -180,11 +180,7 @@ $(document).ready(function() {
 			
 			var d = new Date($('#startTime1').data("DateTimePicker").date());
 			d.setDate(d.getDate()+1);
-    		//$('#endTime1').data("DateTimePicker").minDate(d);
-    		//$('#endTime1').data("DateTimePicker").date(d);
-			
-    		/* startTime1
-    		endTime1 */
+   
     		
 			if(leaveid != null){
 				getId(leaveid);
@@ -234,55 +230,19 @@ $(document).ready(function() {
 		
 		
 		function addLeave(){
-// 			var id = getUrlParameter('Id');
 			var id = $("#empId").val();
-			//var leave="masleavetypeId="+$("#masleavetype").val()+"&masleavetype="+$("#masleavetype option:selected").text()+"&startDate="+$("#startDate").val()+"&endDate="+$("#endDate").val()+"&startTime="+$("#startTime").val()+"&endTime="+$("#endTime").val()+"&reason="+$("#reason").val()+"&aim="+$("#aim").val()+"&employeeId="+id;
 			var leave="masleavetypeId="+$("#masleavetype").val()+"&masleavetype="+$("#masleavetype option:selected").text()+"&startTime="+$("#startTime").val()+"&endTime="+$("#endTime").val()+"&reason="+$("#reason").val()+"&aim="+$("#aim").val()+"&employeeId="+id;
 
 			
 			$.ajax({
 				url : $getContextPath+"/leave/add",
 				data :leave,
-					/* JSON.stringify({
-					
-
-					masleavetypeId:$("#masleavetype").val(),
-					masleavetype:$("#masleavetype option:selected").text(),
-					//startDate:$("#startDate").val(),
-					//endDate:$("#endDate").val(),
-					startTime:$("#startTime").val(),
-					endTime:$("#endTime").val(),
-					reason:$("#reason").val(),
-					aim:$("#aim").val(),
-					employeeId :id 
-				}) ,*/
 				type : "POST",
-				/* contentType : "application/json", */
-				/* dataType: "json", */
 				success : function(data) {
 					
 					 //duration();
 					$('#addForm').bootstrapValidator('resetForm', true);
-				//alert(JSON.stringify(data));
-						
-				/* 
-					 dt.fnClearTable();
-					
-					dt.fnAddData([
-					
-					              
-						data.masleavetype,
-						data.startDate,
-						data.endDate,			
-						data.startTime,
-						data.endTime,
-						data.reason,
-						data.aim,
-					
-						
-						'<button type="button" class="btn btn-warning" data-id="'+data.id+'" data-toggle="modal" data-target="#addModal" > Edit</button>',
-						'<button type="button" class="btn btn-danger" data-id="'+data.id+'" data-toggle="modal" data-target="#deleteModal"> Delete</button>'
-					]); */
+			
 					
 					$('#addModal').modal('toggle');
 					$(function(){ new PNotify({
@@ -295,20 +255,7 @@ $(document).ready(function() {
 						});
 					});
 					listAll();
-				}/* ,
-				error : function() {
-					$(function(){ new PNotify({
-					    title: 'Error!',
-					    type: 'error',
-						animation: {
-							effect_in: 'show',
-							effect_out: 'slide'
-						}
-						});
-					});
-// 					alert("ERROR");
-					$('#addForm').bootstrapValidator('validate');
-				} */
+				}
 			});
 		}
 		
@@ -318,45 +265,24 @@ $(document).ready(function() {
 			$.ajax({
 				
 				url : $getContextPath+"/leave/findById/"+ leaveid,
-				//data : "id=" + abilityid,
 				type : "POST",
 				success : function(data) {
-					//alert(JSON.stringify(data));
 					
 					$("#masleavetype").val(data.masleavetypeId);
-					//$("#startDate").val(data.startDate);
-					//$("#endDate").val(data.endDate);
 					$("#startTime").val(data.startTimeString);
 					$("#endTime").val(data.endTimeString);
-					//$("#endTime").val(data.endTime);
 					$("#reason").val(data.reason);
 					$("#aim").val(data.aim);
 					
 					employeeId: data.employeeId;
-				}/* ,
-				error : function(data, textStatus, jqXML) {
-					{
-						$(function(){ new PNotify({
-						    title: 'Error!',
-						    type: 'error',
-							animation: {
-								effect_in: 'show',
-								effect_out: 'slide'
-							}
-							});
-						});
-// 						alert("error");
-					}
-					;
-				} */
+				}
 			});
 		}
 		
 		
 		
 		function updateLeave(button,leaveid) {
-			/* alert("fn up"); */
-// 				var id = getUrlParameter('Id');
+		
 				var id = $("#empId").val();
 				
 				var leave="id="+leaveid+"&masleavetypeId="+$("#masleavetype").val()+"&masleavetype="+$("#masleavetype option:selected").text()+"&startTime="+$("#startTime").val()+"&endTime="+$("#endTime").val()+"&reason="+$("#reason").val()+"&aim="+$("#aim").val()+"&employeeId="+id;
@@ -364,36 +290,12 @@ $(document).ready(function() {
 				$.ajax({
 					url : $getContextPath+"/leave/update",
 					data : leave ,
-					/* JSON.stringify({
-						id:leaveid,
-						masleavetypeId : $("#masleavetype").val(),
-						masleavetype : $("#masleavetype option:selected").text(),
-						//startDate:$("#startDate").val(),
-						//endDate:$("#endDate").val(),
-						startTime:$("#startTime").val(),
-					//	endTime:$("#endTime").val(),
-						reason:$("#reason").val(),
-						aim:$("#aim").val(),
-						employeeId: id
-					}), */
 					type : "POST",
-					/* contentType : "application/json",
-					dataType : "json", */
 					success : function(data) {
-						//alert(abilityid);
-						//alert(JSON.stringify(data));
-						
+					
 						$('#addForm').bootstrapValidator('resetForm', true);
 
-						/* 
-						var tr = button.closest("tr");						
-						dt.fnUpdate(data.startDate, tr, 0 );
-						dt.fnUpdate(data.startTime, tr, 1 );
-						dt.fnUpdate(data.endDate, tr, 2 );
-						dt.fnUpdate(data.endTime, tr, 3 );
-						dt.fnUpdate(data.masleavetype.name, tr, 4);
-						dt.fnUpdate(data.reason, tr, 5 );
-						dt.fnUpdate(data.aim, tr, 6 ); */
+						
 						$('#addModal').modal('toggle');
 						$(function(){ new PNotify({
 							title: 'Success',
@@ -405,19 +307,7 @@ $(document).ready(function() {
 							});
 						});
 						listAll();
-					}/* ,
-					error : function() {
-						$(function(){ new PNotify({
-						    title: 'Error!',
-						    type: 'error',
-							animation: {
-								effect_in: 'show',
-								effect_out: 'slide'
-							}
-							});
-						});
-// 						alert("ERROR");
-					} */
+					}
 				});
 			}
 		
@@ -447,30 +337,15 @@ $(document).ready(function() {
 					});
 					
 					listAll();
-				}/* ,
-				error : function() {
-					$(function(){ new PNotify({
-					    title: 'Error!',
-					    type: 'error',
-						animation: {
-							effect_in: 'show',
-							effect_out: 'slide'
-						}
-						});
-					});
-
-// 					alert("ERROR");
-				} */
+				}
 			
 				});
 		}
 		
 		
 		function listAll(){
-			//var id=2;
-// 			var id = getUrlParameter('Id');
+			
 			var id = $("#empId").val();
-			//alert("id >>>>"+id);	
 			$.ajax({
 					url : $getContextPath+"/leave/listAll/"+id,
 					type : "POST",
@@ -479,33 +354,17 @@ $(document).ready(function() {
 					for (var i=0;i< data.length; i++) {
 						dt.fnAddData([
 						              
-						             
-						              //data[i].startDate,
 						              data[i].startTimeString,
-						              //data[i].endDate,
-						             // data[i].endTime,
-						             data[i].endTimeString,
+						              data[i].endTimeString,
 						              data[i].masleavetype,
 						              data[i].reason,
 						              data[i].nameEng,
 						              
 						              
-									    '<button type="button" style="margin-right :15px;" class="btn btn-warning" data-id="'+data.id+'" data-toggle="modal" data-target="#addModal" >'+$msgEdit+'</button>'+
-							'<button type="button" class="btn btn-danger btn-sm active" data-id="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
+									  '<button type="button" style="margin-right :15px;" class="btn btn-warning" data-id="'+data[i].id+'" data-toggle="modal" data-target="#addModal" >'+$msgEdit+'</button>'+
+									  '<button type="button" class="btn btn-danger btn-sm active" data-id="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
 				 	}
-					}/* ,
-					error : function() { 
-						$(function(){ new PNotify({
-						    title: 'Error!',
-						    type: 'error',
-							animation: {
-								effect_in: 'show',
-								effect_out: 'slide'
-							}
-							});
-						});
-// 						alert("ERROR");
-					} */
+					}
 				}); 
 			}
 		
