@@ -68,7 +68,7 @@ join emp_experience as exp on exp.employee_id =emp.id]]>
 			<textField pattern="">
 				<reportElement uuid="e78f65c2-e9af-421b-a95b-24974f2a8ede" x="756" y="0" width="450" height="79" forecolor="#333333"/>
 				<textElement>
-					<font fontName="Angsana New" size="30" isBold="false" pdfFontName="..\AugHrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<font fontName="Angsana New" size="30" isBold="false" pdfFontName="..\HrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{report.empName}]]></textFieldExpression>
 			</textField>
@@ -85,133 +85,133 @@ join emp_experience as exp on exp.employee_id =emp.id]]>
 			<textField pattern="">
 				<reportElement uuid="937c4777-05ba-4cf9-847f-89538087893a" x="0" y="0" width="114" height="60" forecolor="#333333"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\AugHrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\HrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{report.resourceId}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="d551f6dc-7c41-4485-bdf0-794ea7436723" x="114" y="0" width="138" height="60" forecolor="#333333"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\AugHrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\HrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{report.DateStartWork}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="d052d876-a27e-4fe3-ab45-15504062889b" x="252" y="0" width="41" height="60" forecolor="#333333"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Angsana New" size="14" isBold="false" pdfFontName="..\AugHrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<font fontName="Angsana New" size="14" isBold="false" pdfFontName="..\HrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{report.durationYear}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="a88f6a21-beaa-4e80-9c74-eee3a04aff96" x="293" y="0" width="43" height="60" forecolor="#333333"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Angsana New" size="14" isBold="false" pdfFontName="..\AugHrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<font fontName="Angsana New" size="14" isBold="false" pdfFontName="..\HrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{report.durationMonth}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="2c587e82-d5ba-4cd6-837d-411363dc7938" x="336" y="0" width="44" height="60" forecolor="#333333"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Angsana New" size="14" isBold="false" pdfFontName="..\AugHrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<font fontName="Angsana New" size="14" isBold="false" pdfFontName="..\HrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{report.durationDay}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="ee9ec657-b598-48aa-a82c-5c1e7b9627e8" x="380" y="0" width="167" height="60" forecolor="#333333"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\AugHrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\HrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{reportstatus.birthdate}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="8f166350-46b6-4a05-86b9-f5e98613932d" x="631" y="0" width="44" height="61" forecolor="#333333"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Angsana New" size="14" isBold="false" pdfFontName="..\AugHrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<font fontName="Angsana New" size="14" isBold="false" pdfFontName="..\HrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{report.ageDay}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="26179892-3462-4655-99c4-2f85adb1431d" x="588" y="0" width="43" height="61" forecolor="#333333"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Angsana New" size="14" isBold="false" pdfFontName="..\AugHrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<font fontName="Angsana New" size="14" isBold="false" pdfFontName="..\HrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{report.ageMonth}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="12f56079-5ae7-492e-80fa-00b671231af8" x="547" y="0" width="41" height="61" forecolor="#333333"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Angsana New" size="14" isBold="false" pdfFontName="..\AugHrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<font fontName="Angsana New" size="14" isBold="false" pdfFontName="..\HrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{report.ageYear}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="f421960e-c035-40a3-b81a-8486baf3dfec" x="675" y="0" width="167" height="60" forecolor="#333333"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\AugHrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\HrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{reportstatus.resourcenameth}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="73c35ae0-88e6-4e5b-b15c-1949fb65cdcd" x="842" y="0" width="167" height="60" forecolor="#333333"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\AugHrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\HrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{reportstatus.resourcenameen}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="03df5fdb-4678-4dae-b1fe-d43d55cfd93f" x="1009" y="0" width="105" height="61" forecolor="#333333"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\AugHrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\HrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{employee.nicknameEng}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="8555c41a-74c8-4261-b91d-fd9864c20cb9" x="1114" y="0" width="142" height="61" forecolor="#333333"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\AugHrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\HrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{family.list.tel}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="274bfae9-1230-4078-8a1e-82c8673d76e4" x="1256" y="0" width="180" height="61" forecolor="#333333"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\AugHrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\HrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{employee.email}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="384a08eb-cd0d-47cd-9be4-b1afbd27792a" x="1436" y="0" width="139" height="61" forecolor="#333333"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\AugHrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\HrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{report.type}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="bcb517d5-3f36-4ed5-899e-6eade00bf742" x="1575" y="0" width="139" height="61" forecolor="#333333"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\AugHrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\HrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{report.position}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="a4279fde-9364-4acc-a45a-1fa1820d18d7" x="1714" y="0" width="76" height="61" forecolor="#333333"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\AugHrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\HrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{report.skill}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="0496522f-deb4-43d6-993d-30aceebe7248" x="1790" y="0" width="113" height="61" forecolor="#333333"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\AugHrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\HrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{experience.salary}]]></textFieldExpression>
 			</textField>
 			<textField pattern="">
 				<reportElement uuid="239f779e-292d-4016-ba9f-740fa6006845" x="1903" y="0" width="157" height="60" forecolor="#333333"/>
 				<textElement textAlignment="Center" verticalAlignment="Middle">
-					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\AugHrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
+					<font fontName="Angsana New" size="16" isBold="false" pdfFontName="..\HrSystem\src\main\resources\fonts\ANGSA.TTF" pdfEncoding="Identity-H" isPdfEmbedded="true"/>
 				</textElement>
 				<textFieldExpression><![CDATA[$R{report.Certification}]]></textFieldExpression>
 			</textField>
