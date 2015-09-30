@@ -73,42 +73,42 @@ $("#validateAddress").validate({
 $("#addForm").validate({
 	rules: {
 		nameThai: "required",
-		surnameThai: "required",
-		nicknameThai: "required",
+		/*surnameThai: "required",
+		nicknameThai: "required",*/
 		nameEng: "required",
-		surnameEng: "required",
+		/*surnameEng: "required",
 		nicknameEng: "required",
 		congenitalDisease: "required",
-		hospital: "required",
+		hospital: "required",*/
 		
 		emergencyContact: "required",
-		relationshipWithEmergencyContact: "required",
-		emergencyContactAddress: "required",
+		/*relationshipWithEmergencyContact: "required",
+		emergencyContactAddress: "required",*/
 		dateOfBirth: "required",
-		placeOfBirth: "required",
-		fromYear: "required",
-		toYear: "required",
+		/*placeOfBirth: "required",*/
+		/*fromYear: "required",
+		toYear: "required",*/
 		
-		religion: "required",
+		/*religion: "required",
 		issuedOffice: "required",
-		expiryDate: "required",
+		expiryDate: "required",*/
 		
-		sex:{ required:true},
+		/*sex:{ required:true},
 		maritalStatus:{ required:true},
 		spouseName: "required",
-		marriageCertificateNo: "required",
+		marriageCertificateNo: "required",*/
 		
-		issuedOffice2: "required",
+		/*issuedOffice2: "required",
 		address: "required",
 		occupation: "required",
-		militaryServiceYes: "required",
-		descriptionYes: "required",
+		militaryServiceYes: "required",*/
+		/*descriptionYes: "required",*/
 		
-		branchOfService: "required",
+		/*branchOfService: "required",
 		serviceNo: "required",
 		reasonsNo: "required",
 		dateToBeDrafted: "required",
-		previousEmpreasonsNo: "required",
+		previousEmpreasonsNo: "required",*/
 		
 		officialDate: "required",
 		startWorkDate: "required",
@@ -147,13 +147,13 @@ $("#addForm").validate({
 			 maxlength: 10 */
 		},
 		
-		telFax: {
+		/*telFax: {
 			required: true,
 			rangelength : [11, 11]
-			 /* digits: true,
+			  digits: true,
 			 minlength: 10,
-			 maxlength: 10 */
-		},
+			 maxlength: 10 
+		},*/
 		
 		idCard: {
 			required: true,
@@ -163,7 +163,7 @@ $("#addForm").validate({
 			 maxlength: 13 */
 		},
 		
-		age: {
+		/*age: {
 			required: true,
 			 digits: true,
 			 minlength: 2
@@ -177,7 +177,7 @@ $("#addForm").validate({
 		weigth: {
 			required: true,
 			 digits: true
-		},
+		},*/
 		
 		emergencyContactPhoneNumber: {
 			required: true,
@@ -187,10 +187,10 @@ $("#addForm").validate({
 			 maxlength: 10 */
 		},
 		
-		numberOfChildren: {
+		/*numberOfChildren: {
 			required: true,
 			 digits: true
-		},
+		},*/
 		
 		salaryExpected: {
 			required: true
@@ -202,41 +202,41 @@ $("#addForm").validate({
 	
 	messages: {
 		nameThai: $validatenameThai,
-		surnameThai: $validatesurnameThai,
-		nicknameThai: $validatenicknameThai,
+		/*surnameThai: $validatesurnameThai,
+		nicknameThai: $validatenicknameThai,*/
 		nameEng: $validatenameEng,
-		surnameEng: $validatesurnameEng,
-		nicknameEng: $validatenicknameEng,
+		/*surnameEng: $validatesurnameEng,
+		nicknameEng: $validatenicknameEng,*/
 		
 		email: $validateemail,
 		telHome: $validatetelHome,
 		telMobile: $validatetelMobile,
-		telFax: $validatetelFax,
+		/*telFax: $validatetelFax,
 		congenitalDisease: $validatecongenitalDisease,
-		hospital: $validatehospital,
+		hospital: $validatehospital,*/
 		
 		emergencyContact: $validateemergencyContact,
-		relationshipWithEmergencyContact: $validaterelationshipWithEmergencyContact,
-		emergencyContactAddress: $validateemergencyContactAddress,
+		/*relationshipWithEmergencyContact: $validaterelationshipWithEmergencyContact,
+		emergencyContactAddress: $validateemergencyContactAddress,*/
 		emergencyContactPhoneNumber: $validateemergencyContactPhoneNumber,
 		dateOfBirth: $validatedateOfBirth,
-		fromYear: $validatefromYear,
+		/*fromYear: $validatefromYear,
 		
 		toYear: $validatetoYear,
 		placeOfBirth: $validateplaceOfBirth,
 		age: $validateage,
-		religion: $validatereligion,
+		religion: $validatereligion,*/
 		idCard: $validateidCard,
-		issuedOffice: $validateissuedOffice,
+		/*issuedOffice: $validateissuedOffice,
 		
 		expiryDate: $validateexpiryDate,
 		height: $validateheight,
 		weigth: $validateweigth,
 		sex: $validatesex,
 		maritalStatus: $validatemaritalStatus,
-		numberOfChildren: $validatenumberOfChildren,
+		numberOfChildren: $validatenumberOfChildren,*/
 		
-		spouseName: $validatespouseName,
+		/*spouseName: $validatespouseName,
 		marriageCertificateNo: $validatemarriageCertificateNo,
 		issuedOffice2: $validateissuedOffice2,
 		address: $validateaddress,
@@ -248,7 +248,7 @@ $("#addForm").validate({
 		serviceNo: $validateserviceNo,
 		reasonsNo: $validatereasonsNo,
 		dateToBeDrafted: $validatedateToBeDrafted,
-		previousEmpreasonsNo: $validatepreviousEmpreasonsNo,
+		previousEmpreasonsNo: $validatepreviousEmpreasonsNo,*/
 		
 		officialDate: $validateofficialDate,
 		startWorkDate: $validatestartWorkDate,
