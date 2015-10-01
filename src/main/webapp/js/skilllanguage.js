@@ -217,7 +217,7 @@ var dt;
 			  		var understanding;
 			  		var masSkillLanguageName= $("#masSkillLanguage option:selected").text();
 			  		var nameLanguage=$("#nameLanguage").val();
-			  		alert("nameee: "+nameLanguage);
+			  		//alert("nameee: "+nameLanguage);
 			  		
 			  		
 			  		if($('#excSpeaking:checked').val()!=null){
