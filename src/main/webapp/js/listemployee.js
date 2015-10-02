@@ -3,7 +3,7 @@ var empId;
 	$(document).ready(function() {
 		
 		$.ajaxSetup({
-		    timeout: 3000,
+		    timeout: 5000,
 		    error : function(XMLHttpRequest,e,testStatus,jqXHR,xhr,errorThrown,thrownError) {  
 		          
 		    	  if(testStatus==="timeout") {
@@ -38,7 +38,7 @@ var empId;
 		   	   }else {
 		     		
 		   		      alert(testStatus);
-			          //myRedirect($getContextPath+'/httperror',testStatus);
+			          myRedirect($getContextPath+'/httperror',testStatus);
 		   	   
 		   	   }
 

@@ -103,7 +103,7 @@ body {
 
 
 $.ajaxSetup({
-    timeout: 3000,
+    timeout: 5000,
     error : function(XMLHttpRequest,e,testStatus,jqXHR,xhr,errorThrown,thrownError) {  
           
     	  if(testStatus==="timeout") {
@@ -138,7 +138,7 @@ $.ajaxSetup({
      		
 
    		  alert(testStatus);
-	      //myRedirect('${pageContext.request.contextPath}/httperror',testStatus);
+	      myRedirect('${pageContext.request.contextPath}/httperror',testStatus);
 
    	   
    	   }

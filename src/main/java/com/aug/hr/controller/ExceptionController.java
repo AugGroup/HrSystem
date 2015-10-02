@@ -11,9 +11,9 @@ import com.aug.hr.entity.dto.ExceptionDto;
 public class ExceptionController {
 	
 	
-	 //@RequestMapping(value="/httperror")
-	 // public ModelAndView httpErrorAndException(@ModelAttribute("exceptionDto") ExceptionDto exceptionDto){
-		 /* System.out.println("custom error handler");
+	 @RequestMapping(value="/httperror")
+	  public ModelAndView httpErrorAndException(@ModelAttribute("exceptionDto") ExceptionDto exceptionDto){
+		  System.out.println("custom error handler");
 		  System.out.println("exception: "+exceptionDto.getError());
 		  ModelAndView andView = new ModelAndView();
 		
@@ -33,7 +33,7 @@ public class ExceptionController {
 			
 			andView.setViewName("/error/exception_error");
 			return andView;
-		  }*/
+		  }
 	 }
 
 

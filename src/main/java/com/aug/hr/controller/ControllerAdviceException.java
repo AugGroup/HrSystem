@@ -32,12 +32,12 @@ import com.aug.exception.CustomException;
 
 
 
-//@ControllerAdvice
-//@EnableWebMvc
+@ControllerAdvice
+@EnableWebMvc
 public class ControllerAdviceException {
 	
 	
-			/*private static final long serialVersionUID = 1L;
+			private static final long serialVersionUID = 1L;
 		
 			
 			//500
@@ -283,6 +283,6 @@ public class ControllerAdviceException {
 				  System.out.println("msg: "+msg);			 
 				  return msg;		
 	
-			}*/
+			}
 }
 				
