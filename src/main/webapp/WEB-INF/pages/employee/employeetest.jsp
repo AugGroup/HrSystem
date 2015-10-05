@@ -718,21 +718,20 @@
     									 <label style="margin-right: 25px;"> <spring:message code="employee.dateToBeDrafted"></spring:message> :</label>
 
     									 <div class='input-group date' id='dateToBeDrafted'>
-    									 <f:input  class="form-control" id="dateToBeDrafted" path="dateToBeDrafted"  placeholder="${please} ${enter} ${datedrafted}" 
+    									 <input type="text" class="form-control" id="dateToBeDrafted" name="dateToBeDrafted"  placeholder="${please} ${enter} ${datedrafted}" 
     									 value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.dateToBeDrafted}" />'  />
     							      	 <span class="input-group-addon">
 										 <span class="glyphicon glyphicon-calendar"></span>
 										 </span></div></div>
 
 										<input id="militaryService" type="hidden" value="${employeeDto.militaryService}"/>
-    									<%--  <input type="text" class="form-control" id="dateToBeDrafted" name="dateToBeDrafted" placeholder="Enter Date Drafted" value="${allEmployeeDto.dateToBeDrafted}">
-    									</div> --%>
-
+    									
+    									
     						</div>	
 					
 	        </div>
 	        </div>
-
+	        
 
 	 <div class="row">
 			<div class="col-md-12">
