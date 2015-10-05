@@ -69,13 +69,24 @@ $(document).ready(function(){
 		$(this).find(".btnSave").off("click").on("click",function() {
 			 if(abilityid != null){
 				/*  alert("be up"); */
+				 var masSpec1 = $("#masspecialty option:selected").text();
+					var count1 = onlyAbility(masSpec1);
+					  if(count1==0){
 				updateAbility(button,abilityid);
-				
+					  }else{
+						  alert("not repeat");
+					  }
 			}else{ 
 				$('#addForm').bootstrapValidator();
 				$('#addForm').data('bootstrapValidator').validate();
 				if($('#addForm').data('bootstrapValidator').isValid()){
-					addAbility();
+					var masSpec = $("#masspecialty option:selected").text();
+					var count = onlyAbility(masSpec);
+					  if(count==0){
+						addAbility();
+					  }else{
+						  alert("not repeat");
+					  }
 				}
 				
 				
@@ -117,6 +128,25 @@ $(document).ready(function(){
 	
 	
 	/* ---------------------------------------------------------------------------------------------------------------------------------------------- */
+	
+	
+	function onlyAbility(masSpecility){
+		
+		var data1=dt.fnGetData();
+		var count=0;
+		for(var i=0;i<data1.length;i++){
+		/*alert("data: "+data1[i][0]);*/
+			
+			if(masSpecility==data1[i][0]){
+				count+=1;
+			}
+		
+		}
+		
+		return count;
+		
+	}
+	
 	
 	function addAbility(){
 		
@@ -167,8 +197,8 @@ $(document).ready(function(){
 		
 		
 		
-// 		var id = getUrlParameter('Id');
 		var id = $("#empId").val();
+		
 		$.ajax({
 			url : $getContextPath+"/ability/add",
 			data : JSON.stringify({
@@ -470,6 +500,7 @@ function listAll(){
 		 
 		 
 				}
+						
 			}/* ,
 			error : function() {
 				$(function(){ new PNotify({
