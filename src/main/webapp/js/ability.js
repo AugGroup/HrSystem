@@ -39,12 +39,40 @@ $(document).ready(function(){
 	                validators: {
 	                    notEmpty: {
 	                        message: $validateabilitymasspecialty
-	                    }
-	                }
-	            },
-	          
+	                    },
+		        callback: {
+	                message: $msgAbility,
+	                callback: function(value, validator) {
+	                	var data = dt.fnGetData();
+	                	var count = 0;
+	                	var masSpec11 = $("#masspecialty option:selected").text();
+	                	var dataMas=null;
+	                	for(var i=0;i<data.length;i++){
+	                		
+	                		if(masSpec11==data[i][0]){
+	                				
+	                			count = count+1;
+	                		
+	                		}
+		                }
+	                	
+	                	if(count==0){
+	                		dataMas =  $("#masspecialty").val();
+	                	}else{
+	                		dataMas = 0;
+	                	}
+	                     return value==dataMas;
+	                   
+	                  }
+	                	
+	              
+		            },
+	            }
+		          
 	        }
-		
+	       
+	      }
+	        	
 	});
 	
 	
@@ -69,24 +97,25 @@ $(document).ready(function(){
 		$(this).find(".btnSave").off("click").on("click",function() {
 			 if(abilityid != null){
 				/*  alert("be up"); */
-				 var masSpec1 = $("#masspecialty option:selected").text();
-					var count1 = onlyAbility(masSpec1);
-					  if(count1==0){
+				// var masSpec1 = $("#masspecialty option:selected").text();
+					//var count1 = onlyAbility(masSpec1);
+					//  if(count1==0){
 				updateAbility(button,abilityid);
-					  }else{
-						  alert("not repeat");
-					  }
+					 // }else{
+						//  alert("not repeat");
+					  //}
 			}else{ 
 				$('#addForm').bootstrapValidator();
 				$('#addForm').data('bootstrapValidator').validate();
 				if($('#addForm').data('bootstrapValidator').isValid()){
-					var masSpec = $("#masspecialty option:selected").text();
-					var count = onlyAbility(masSpec);
-					  if(count==0){
+					//var masSpec = $("#masspecialty option:selected").text();
+					//var count = onlyAbility(masSpec);
+					 // if(count==0){
 						addAbility();
-					  }else{
-						  alert("not repeat");
-					  }
+					 // }else{
+						 // alert("not repeat");
+						//  alert($msgAbility);
+					  //}
 				}
 				
 				

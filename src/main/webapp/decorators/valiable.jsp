@@ -13,6 +13,7 @@
 	var $msgUpdate = '<spring:message code="label.update" />';
 	var $msgSave = '<spring:message code="label.save" />';
 	var $msgDelete = '<spring:message code="label.delete" />';
+	var $msgAbility='<spring:message code="alert.repeat" />';
 	
 	
 	/* family-massage validate*/
