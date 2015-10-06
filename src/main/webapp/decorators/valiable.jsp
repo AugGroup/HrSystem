@@ -31,6 +31,8 @@
 	/* language-massage validate */
 	var $requiredMasSkillLanguage = '<spring:message code="skilllanguage.required.masSkillLanguage" />';
 	var $requiredLanguage = '<spring:message code="skilllanguage.required.Language" />';
+	var $dupicateLanguage = '<spring:message code="duplicate.language.namelanguage" />';
+
 	
 	/* site-message validate */
 	var $requiredProjectname = '<spring:message code="site.required.projectname" />';

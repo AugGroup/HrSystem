@@ -22,7 +22,7 @@ var dt;
 		 $("div.toolbar").html('<b><button type="button"  class="btn btn-warning" data-toggle="modal" data-target="#addModal">'+$msgNewRecord+'</button> </b>');
 			
 
-		$("#saveBtn").on("click",function(){
+		$("#saveBtn").off("click").on("click",function(){
 			
 			$('#formAddUpdate').bootstrapValidator();
 			$('#formAddUpdate').data('bootstrapValidator').resetForm();
@@ -31,6 +31,7 @@ var dt;
 		});
 		
 		
+	
 		 
 		 $("#formAddUpdate").bootstrapValidator({
 			   
@@ -50,6 +51,39 @@ var dt;
 		                    }
 		                }
 		            },
+		            nameLanguage: {
+		                validators: {
+		                    notEmpty: {
+		                        message: $requiredMasSkillLanguage
+		                    },
+		                    callback: {
+		                        message: $dupicateLanguage,
+		                        callback: function(value, validator) {
+		                        	var data = dt.fnGetData();
+		                        	var count = 0;
+		                        	var nameLang = null;
+		                        	for(var i=0;i<data.length;i++){
+		                        		
+		                        		if($("#nameLanguage").val()==data[i][0]){
+		                        				
+		                        			count = count+1;
+		                        		
+		                        		}
+		                        	}
+		                        	
+		                        	
+		                        	if(count==0){
+		                        		nameLang = $("#nameLanguage").val();
+		                        	}else{
+		                        		nameLang = 0;	                        				                        		
+		                        	}
+		                        
+		                            return value == nameLang;
+		                        }
+		                    },
+		                
+		                }
+		            },
 		        }
 		 
     });
@@ -61,6 +95,10 @@ var dt;
 		
 					
 		  $('#masSkillLanguage').change(function() {
+			  
+			  $('#formAddUpdate').bootstrapValidator();
+			  $('#formAddUpdate').data('bootstrapValidator').resetForm();
+			 
 			  
 			  if($("#masSkillLanguage option:selected").text()=='Other'){
 				  
@@ -88,6 +126,11 @@ var dt;
 				    $('#nameLanguage').val($("#masSkillLanguage option:selected").text());
 		
 			   }
+			  
+			  
+			  $('#formAddUpdate').bootstrapValidator();
+			  $('#formAddUpdate').data('bootstrapValidator').validate();
+
 					
 			});
 			
