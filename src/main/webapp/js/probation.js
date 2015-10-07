@@ -162,7 +162,8 @@ var dt;
     					$('#validate').bootstrapValidator('resetForm', true);
     					$('#addModal').modal('toggle');
     					$(function(){ new PNotify({
-    						title: 'Success',
+    						title: $notifySuccess,
+    						text: $notifyAdd,
     						type: 'success',
     						animation: {
     							effect_in: 'show',
@@ -234,7 +235,8 @@ var dt;
 						$('#validate').bootstrapValidator('resetForm', true);
 						$('#addModal').modal('toggle');
 						$(function(){ new PNotify({
-    						title: 'Success',
+    						title: $notifySuccess,
+    						text: $notifyUpdate,
     						type: 'success',
     						animation: {
     							effect_in: 'show',
@@ -283,7 +285,8 @@ var dt;
 						success : function(data) {
 							$('#deleteModal').modal('toggle');
 							$(function(){ new PNotify({
-								title: 'Success',
+								title:$notifySuccess,
+								text: $notifyDelete,
 								type: 'success',
 								animation: {
 									effect_in: 'show',

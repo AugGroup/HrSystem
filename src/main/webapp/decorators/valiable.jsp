@@ -199,5 +199,10 @@
 	var $validateProDateTo = '<spring:message code="probation.required.dateTo" />';
 	var $validateProStatus = '<spring:message code="probation.required.status" />';
 	
+	/* PNotify */
+	var $notifySuccess =  '<spring:message code="PNotify.success" />';
+	var $notifyAdd='<spring:message code="PNotify.add" />';
+	var $notifyUpdate='<spring:message code="PNotify.update" />';
+	var $notifyDelete='<spring:message code="PNotify.delete" />';
 	
 </script>

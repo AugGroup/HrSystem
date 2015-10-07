@@ -421,7 +421,8 @@ $(function(){
 	  	    	   idHealth = data.id;
 	  	    	   callback(idHealth);
 	  	    	   $(function(){ new PNotify({
-						 title: 'Success',
+						 title:$notifySuccess,
+						 text: $notifyAdd,
 						 type: 'success',
 						 animation: {
 							effect_in: 'show',
@@ -604,7 +605,8 @@ $(function(){
 	  	    	/* $("#createModal").modal('hide'); */
 	  	    	doInitEdit($('#idHealth').val());
 	  	    	$(function(){ new PNotify({
-					 title: 'Success',
+					 title: $notifySuccess,
+					 text: $notifyUpdate,
 					 type: 'success',
 					 animation: {
 						effect_in: 'show',
@@ -643,7 +645,8 @@ $(function(){
 				  				    	 clear();
 					  	    		     $("#idHealth").val('');
 					  	    		  	 $(function(){ new PNotify({
-											 title: 'Success',
+											 title:$notifySuccess,
+											 text: $notifyDelete,
 											 type: 'success',
 											 animation: {
 												effect_in: 'show',

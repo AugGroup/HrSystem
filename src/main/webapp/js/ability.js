@@ -262,8 +262,11 @@ $(document).ready(function(){
 				
 				$('#addModal').modal('toggle');
 				$(function(){ new PNotify({
-					title: 'Success',
+					title: $notifySuccess,
+					text: $notifyAdd,
 					type: 'success',
+					
+					
 					animation: {
 						effect_in: 'show',
 						effect_out: 'slide'
@@ -444,8 +447,10 @@ function updateAbility(button,abilityid) {
 			
 			$('#addModal').modal('toggle');
 			$(function(){ new PNotify({
-				title: 'Success',
+				title: $notifySuccess,
+				text: $notifyUpdate,
 				type: 'success',
+				
 				animation: {
 					effect_in: 'show',
 					effect_out: 'slide'
@@ -485,8 +490,10 @@ function deleteAbility(button,abilityid) {
 			
 			$('#deleteModal').modal('toggle');
 			$(function(){ new PNotify({
-				title: 'Success',
+				title: $notifySuccess,
+				text: $notifyDelete,
 				type: 'success',
+				
 				animation: {
 					effect_in: 'show',
 					effect_out: 'slide'
