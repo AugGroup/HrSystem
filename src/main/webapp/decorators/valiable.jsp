@@ -113,6 +113,7 @@
 	var $validatesubDistrict = '<spring:message code="address.required.subDistrict" />';
 	var $validateprovince = '<spring:message code="address.required.province" />';
 	var $validatezipcode = '<spring:message code="address.required.zipcode" />';
+	var $validatealertmessage = '<spring:message code="address.required.alertAddress" />';
 	
 	
 	/* employee-message validate*/

@@ -763,7 +763,7 @@ if($('#previousEmployer').val()=="No"){
 			   	/* ----------------------------------------------------- Add Address Function --------------------------------------------------- */		
 						
 						function addAddress() {
-							alert("Do you want to Add Address ?"); 
+							alert($validatealertmessage); 
 							
 			 				 var addressId = $("#addressType").val();
 							 var addressType = $("#addressType option:selected").text();

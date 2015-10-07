@@ -306,7 +306,7 @@ public class EmployeeController {
 		System.out.println("locations: " + employeeDto.getMasLocation());
 
 
-		if (employeeDto.getId() == null) {
+		/*if (employeeDto.getId() == null) {
 
 			logger.info("create employee");
 
@@ -407,7 +407,11 @@ public class EmployeeController {
 				throw new Exception();
 			}
 
-		} else if (employeeDto.getId() > 0) {
+		} else */
+		
+		
+		
+		if (employeeDto.getId() > 0) {
 
 			logger.info("update emp");
 			employee1 = employeeService.findById(employeeDto.getId());
@@ -425,13 +429,13 @@ public class EmployeeController {
 					
 					
 					if(employeeDto.getFileupload().getOriginalFilename()==null){
-						if(employee.getImage()==null||employee.getImage().equals("")){
+						if(employee.getApplicant().getImage()==null||employee.getApplicant().getImage().equals("")){
 						
 							img=null;
 						
-						}else if(employee.getImage()!=null||employee.getImage().equals("")==false){
+						}else if(employee.getApplicant().getImage()!=null||employee.getApplicant().getImage().equals("")==false){
 						
-							img = employee.getImage();
+							img = employee.getApplicant().getImage();
 						
 						}
 					
@@ -443,11 +447,11 @@ public class EmployeeController {
 											
 							if(result1.length==2){
 								
-								if(employee.getImage()==null){
+								if(employee.getApplicant().getImage()==null){
 										
 									img=  employeeCode+"."+result1[1];
 									
-								}else if(employee.getImage()!=null){
+								}else if(employee.getApplicant().getImage()!=null){
 									
 									img=  employeeCode+"."+result1[1];
 									
@@ -475,7 +479,7 @@ public class EmployeeController {
 											if(result.length==2){
 												
 												
-												if(employee.getImage()==null){
+												if(employee.getApplicant().getImage()==null){
 													
 													
 													   
@@ -493,13 +497,13 @@ public class EmployeeController {
 													
 														
 													
-												}else if(employee.getImage()!=null){
+												}else if(employee.getApplicant().getImage()!=null){
 													
 							
 												//delete file upload
 				
 												   try {
-														uploadService .deleteImage("EMPLOYEE", employee.getImage());
+														uploadService .deleteImage("EMPLOYEE", employee.getApplicant().getImage());
 													} catch (RuntimeException e1) {
 														// TODO Auto-generated catch block
 														e1.printStackTrace();
@@ -546,13 +550,13 @@ public class EmployeeController {
 					
 					
 					if(employeeDto.getFileupload().getOriginalFilename()==null){
-						if(employee.getImage()==null||employee.getImage().equals("")){
+						if(employee.getApplicant().getImage()==null||employee.getApplicant().getImage().equals("")){
 						
 							img=null;
 						
-						}else if(employee.getImage()!=null||employee.getImage().equals("")==false){
+						}else if(employee.getApplicant().getImage()!=null||employee.getApplicant().getImage().equals("")==false){
 						
-							img = employee.getImage();
+							img = employee.getApplicant().getImage();
 						
 						}
 					
@@ -564,11 +568,11 @@ public class EmployeeController {
 											
 							if(result1.length==2){
 								
-								if(employee.getImage()==null){
+								if(employee.getApplicant().getImage()==null){
 										
 									img=  employeeCode+"."+result1[1];
 									
-								}else if(employee.getImage()!=null){
+								}else if(employee.getApplicant().getImage()!=null){
 									
 									img=  employeeCode+"."+result1[1];
 									
@@ -584,13 +588,13 @@ public class EmployeeController {
 
 					
 					if(employeeDto.getFileupload().getOriginalFilename()==null){
-						if(employee.getImage()==null||employee.getImage().equals("")){
+						if(employee.getApplicant().getImage()==null||employee.getApplicant().getImage().equals("")){
 						
 							img=null;
 						
-						}else if(employee.getImage()!=null||employee.getImage().equals("")==false){
+						}else if(employee.getApplicant().getImage()!=null||employee.getApplicant().getImage().equals("")==false){
 						
-							img = employee.getImage();
+							img = employee.getApplicant().getImage();
 						
 						}
 					
@@ -602,11 +606,11 @@ public class EmployeeController {
 											
 							if(result1.length==2){
 								
-								if(employee.getImage()==null){
+								if(employee.getApplicant().getImage()==null){
 										
 									img=  employeeCode+"."+result1[1];
 									
-								}else if(employee.getImage()!=null){
+								}else if(employee.getApplicant().getImage()!=null){
 									
 									img=  employeeCode+"."+result1[1];
 									
@@ -627,7 +631,7 @@ public class EmployeeController {
 							if(result.length==2){
 								
 								
-								if(employee.getImage()==null){
+								if(employee.getApplicant().getImage()==null){
 									
 									
 									   
@@ -645,13 +649,13 @@ public class EmployeeController {
 									
 										
 									
-								}else if(employee.getImage()!=null){
+								}else if(employee.getApplicant().getImage()!=null){
 									
 			
 								//delete file upload
 
 								   try {
-										uploadService .deleteImage("EMPLOYEE", employee.getImage());
+										uploadService .deleteImage("EMPLOYEE", employee.getApplicant().getImage());
 									} catch (RuntimeException e1) {
 										// TODO Auto-generated catch block
 										e1.printStackTrace();
@@ -695,13 +699,13 @@ public class EmployeeController {
 						
 
 						if(employeeDto.getFileupload().getOriginalFilename()==null){
-							if(employee.getImage()==null||employee.getImage().equals("")){
+							if(employee.getApplicant().getImage()==null||employee.getApplicant().getImage().equals("")){
 							
 								img=null;
 							
-							}else if(employee.getImage()!=null||employee.getImage().equals("")==false){
+							}else if(employee.getApplicant().getImage()!=null||employee.getApplicant().getImage().equals("")==false){
 							
-								img = employee.getImage();
+								img = employee.getApplicant().getImage();
 							
 							}
 						
@@ -713,11 +717,11 @@ public class EmployeeController {
 												
 								if(result1.length==2){
 									
-									if(employee.getImage()==null){
+									if(employee.getApplicant().getImage()==null){
 											
 										img=  employeeCode+"."+result1[1];
 										
-									}else if(employee.getImage()!=null){
+									}else if(employee.getApplicant().getImage()!=null){
 										
 										img=  employeeCode+"."+result1[1];
 										
@@ -743,7 +747,7 @@ public class EmployeeController {
 									if(result.length==2){
 										
 										
-										if(employee.getImage()==null){
+										if(employee.getApplicant().getImage()==null){
 											
 											
 											   
@@ -761,13 +765,13 @@ public class EmployeeController {
 											
 												
 											
-										}else if(employee.getImage()!=null){
+										}else if(employee.getApplicant().getImage()!=null){
 											
 					
 										//delete file upload
 		
 										   try {
-												uploadService .deleteImage("EMPLOYEE", employee.getImage());
+												uploadService .deleteImage("EMPLOYEE", employee.getApplicant().getImage());
 											} catch (RuntimeException e1) {
 												// TODO Auto-generated catch block
 												e1.printStackTrace();
@@ -804,13 +808,13 @@ public class EmployeeController {
 						
 						
 						if(employeeDto.getFileupload().getOriginalFilename()==null){
-							if(employee.getImage()==null||employee.getImage().equals("")){
+							if(employee.getApplicant().getImage()==null||employee.getApplicant().getImage().equals("")){
 							
 								img=null;
 							
-							}else if(employee.getImage()!=null||employee.getImage().equals("")==false){
+							}else if(employee.getApplicant().getImage()!=null||employee.getApplicant().getImage().equals("")==false){
 							
-								img = employee.getImage();
+								img = employee.getApplicant().getImage();
 							
 							}
 						
@@ -822,11 +826,11 @@ public class EmployeeController {
 												
 								if(result1.length==2){
 									
-									if(employee.getImage()==null){
+									if(employee.getApplicant().getImage()==null){
 											
 										img=  employeeCode+"."+result1[1];
 										
-									}else if(employee.getImage()!=null){
+									}else if(employee.getApplicant().getImage()!=null){
 										
 										img=  employeeCode+"."+result1[1];
 										
@@ -852,7 +856,7 @@ public class EmployeeController {
 								if(result.length==2){
 									
 									
-									if(employee.getImage()==null){
+									if(employee.getApplicant().getImage()==null){
 										
 										
 										   
@@ -870,13 +874,13 @@ public class EmployeeController {
 										
 											
 										
-									}else if(employee.getImage()!=null){
+									}else if(employee.getApplicant().getImage()!=null){
 										
 				
 									//delete file upload
 	
 									   try {
-											uploadService .deleteImage("EMPLOYEE", employee.getImage());
+											uploadService .deleteImage("EMPLOYEE",employee.getApplicant().getImage());
 										} catch (RuntimeException e1) {
 											// TODO Auto-generated catch block
 											e1.printStackTrace();
@@ -947,9 +951,9 @@ public class EmployeeController {
 
 		employee = employeeService.findAndinitializeOfficial(id);
 
-		if (employee.getImage() != null) {
+		if (employee.getApplicant().getImage() != null) {
 			try {
-				uploadService.deleteImage("EMPLOYEE", employee.getImage());
+				uploadService.deleteImage("EMPLOYEE", employee.getApplicant().getImage());
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				throw new Exception();
@@ -986,7 +990,11 @@ public class EmployeeController {
 		// List<ReportEmployeeDto> employeeList =
 		// employeeDtoService.findByName(employee);
 		List<ReportEmployeeDto> employeeList;
-		String searchText = employee.getNameEng();
+		
+		
+		//map กับ name แทน nameeng
+		/**********************************************/
+		String searchText = employee.getName();
 		if (searchText.equals("forEmptySearch")) {
 			employeeList = employeeDtoService.reportEmployee(searchText);
 		} else {
@@ -1097,7 +1105,10 @@ public class EmployeeController {
 			HttpSession session, Locale locale) {
 		// List<ReportLeaveDto> leaveList = employeeDtoService.reportLeave();
 		List<ReportLeaveDto> employeeList;
-		String searchText = employee.getNameEng();
+		//String searchText = employee.getNameEng();
+		//map กับ name แทน nameeng
+		/**********************************************/
+		String searchText = employee.getName();
 		if (searchText.equals("forEmptySearch")) {
 			employeeList = leaveDtoService.reportLeave(searchText);
 		} else {
