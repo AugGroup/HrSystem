@@ -347,22 +347,35 @@ if($('#Other').prop( "checked" )){
 }
 /* -------------------------------------------- Validate radio Yes/No ----------------------------------------------------------- */		
 
-$("#descriptionYes").hide();//descriptionYes ชื่อกล่อง
-$("input:radio[name=knowEmployed]").change(function(){//name= ชื่อ group radio
+$("#descriptionYesNameDiv").hide();//descriptionYes ชื่อกล่อง
+$("#positionYesDiv").hide();
+$("#relationYesDiv").hide();
 
+$("input:radio[name=knowEmployed]").change(function(){//name= ชื่อ group radio
+    
+	
 	if(this.value == 'Yes' && this.checked){
-	 $("#descriptionYes").show();
+	 $("#descriptionYesNameDiv").show();
+	 $("#positionYesDiv").show();
+	 $("#relationYesDiv").show();
+	 
 	}else{
-	$("#descriptionYes").hide();
+		$("#descriptionYesNameDiv").hide();
+		$("#positionYesDiv").hide();
+		$("#relationYesDiv").hide();
 }
 });
 
 
 if($('#knowEmployed').val()=="Yes"){
-	$("#descriptionYes").show();
+	 $("#descriptionYesNameDiv").show();
+	 $("#positionYesDiv").show();
+	 $("#relationYesDiv").show();
 	
 }else if($('#knowEmployed').val()=="No"){
-	$("#descriptionYes").hide();
+	$("#descriptionYesNameDiv").hide();//descriptionYes ชื่อกล่อง
+	$("#positionYesDiv").hide();
+	$("#relationYesDiv").hide();
 	
 }
 
@@ -375,6 +388,8 @@ $("#serviceNo").hide();
 $("input:radio[name=militaryService]").change(function(){//name= ชื่อ group radio
 
 	if(this.value == 'Yes' && this.checked){
+		
+	
 	 $("#fromYear").show();
 	 $("#toYear").show();
 	 $("#branchOfService").show();

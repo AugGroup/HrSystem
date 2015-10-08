@@ -92,10 +92,14 @@
 		 	<spring:message code="default.enter" var="enter"/>
 		 	<spring:message code="default.please" var="please"/>
 		 	<spring:message code="employee.pleasewrite" var="write"/>
+		 	<spring:message code="employee.pleaseEmployeeName" var="empname"/>
+		 	<spring:message code="employee.pleaseEmployeeRelation" var="emprelation"/>
+		 	<spring:message code="employee.pleaseEmployeePosition" var="empposition"/>
 		 	<spring:message code="employee.givethereason" var="reason"/>
 		 	<spring:message code="employee.pleasestatethereasons" var="pleasereason"/>
 		 	<spring:message code="employee.datedrafted" var="datedrafted"/>
 		 	<spring:message code="employee.selectempstatus" var="empstatuslabel"/>
+		 	
 		 	
 		 	
 		 	
@@ -621,16 +625,40 @@
 	     									  </label>
 	     									  </div>
 	     									  
-	     									  <div class="col-md-11">
-	     									  <f:input  class="form-control" id="descriptionYes" path="descriptionYes" value="${employeeDto.descriptionYes}" placeholder="${please} ${enter} ${write}" />
+	     									  <div class="form-group">
+	     									  <div class="col-md-12">
+	     									  <div class="col-md-4">
 	     									  
+	     									    <div id="descriptionYesNameDiv">
+	     									  	  <label> <spring:message code="employee.empName"></spring:message> :</label>
+	     										  <f:input  class="form-control" id="descriptionYesName" path="descriptionYesName" value="${employeeDto.descriptionYesName}" placeholder="${please} ${enter} ${empname}" />	     									  
+	     									    </div>
+	     									  
+	     									  </div>
+	     									  
+	     									  <div class="col-md-4">
+	     									     <div id="positionYesDiv">
+	     									  		<label> <spring:message code="employee.empPosition"></spring:message> :</label>
+	     									  		<f:input  class="form-control" id="positionYes" path="positionYes" value="${employeeDto.positionYes}" placeholder="${please} ${enter} ${empposition}" />
+	     									  	  </div>
+	     									  </div>
+	     									  
+	     									  <div class="col-md-4">
+	     									    
+	     									     <div id="relationYesDiv">
+	     									  		<label> <spring:message code="employee.empRelation"></spring:message> :</label>
+	     									  		<f:input  class="form-control" id="relationYes" path="relationYes" value="${employeeDto.relationYes}" placeholder="${please} ${enter} ${emprelation}" /> 
+	     									  	 </div>
+	     									  </div> 
+	     									  
+	     									  </div>
 	     									  </div>
 	     									  </div>
 	     									  
 	     					<div class="col-md-12">
 								<div class="col-md-12">
 	     									  <label style="margin-right: 25px;">
-	     									  <f:radiobutton id="No" path="knowEmployed"  value="No" /><spring:message code="employee.no"></spring:message>
+	     									  		<f:radiobutton id="No" path="knowEmployed" value="No" /><spring:message code="employee.no"></spring:message>
 	     									  </label>
     										  
 											  <input id="knowEmployed" type="hidden" value="${employeeDto.knowEmployed}"/>
