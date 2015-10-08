@@ -1102,14 +1102,14 @@ public class EmployeeController {
 	}
 
 	@RequestMapping(value = "/employee/searchReportEmpLeave", method = { RequestMethod.GET, RequestMethod.POST })
-	public ModelAndView searchLeaveReport(@ModelAttribute(value = "employee") Employee employee, ModelMap map,
+	public ModelAndView searchLeaveReport(@ModelAttribute(value = "applicant") Applicant applicant, ModelMap map,
 			HttpSession session, Locale locale) {
 		// List<ReportLeaveDto> leaveList = employeeDtoService.reportLeave();
 		List<ReportLeaveDto> employeeList;
 		//String searchText = employee.getNameEng();
 		//map กับ name แทน nameeng
 		/**********************************************/
-		String searchText = employee.getName();
+		String searchText = applicant.getFirstNameEN();
 		if (searchText.equals("forEmptySearch")) {
 			employeeList = leaveDtoService.reportLeave(searchText);
 		} else {
@@ -1118,7 +1118,7 @@ public class EmployeeController {
 		Map<String, Object> parameterMap = new HashMap<String, Object>();
 		ResourceBundle bundle = ResourceBundle.getBundle("messages", locale);
 		parameterMap.put(JRParameter.REPORT_RESOURCE_BUNDLE, bundle);
-		ModelAndView mv = reportService.getReport(employeeList, "leaveReport1", employee.getReportType(), parameterMap);
+		ModelAndView mv = reportService.getReport(employeeList, "leaveReport1", applicant.getReportType(), parameterMap);
 		return mv;
 	}
 
