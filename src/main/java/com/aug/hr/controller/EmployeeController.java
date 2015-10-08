@@ -429,13 +429,13 @@ public class EmployeeController {
 					
 					
 					if(employeeDto.getFileupload().getOriginalFilename()==null){
-						if(employee.getApplicant().getImage()==null||employee.getApplicant().getImage().equals("")){
+						if(employee1.getApplicant().getImage()==null||employee1.getApplicant().getImage().equals("")){
 						
 							img=null;
 						
-						}else if(employee.getApplicant().getImage()!=null||employee.getApplicant().getImage().equals("")==false){
+						}else if(employee1.getApplicant().getImage()!=null||employee1.getApplicant().getImage().equals("")==false){
 						
-							img = employee.getApplicant().getImage();
+							img = employee1.getApplicant().getImage();
 						
 						}
 					
@@ -447,11 +447,11 @@ public class EmployeeController {
 											
 							if(result1.length==2){
 								
-								if(employee.getApplicant().getImage()==null){
+								if(employee1.getApplicant().getImage()==null){
 										
 									img=  employeeCode+"."+result1[1];
 									
-								}else if(employee.getApplicant().getImage()!=null){
+								}else if(employee1.getApplicant().getImage()!=null){
 									
 									img=  employeeCode+"."+result1[1];
 									
@@ -479,7 +479,7 @@ public class EmployeeController {
 											if(result.length==2){
 												
 												
-												if(employee.getApplicant().getImage()==null){
+												if(employee1.getApplicant().getImage()==null){
 													
 													
 													   
@@ -497,13 +497,13 @@ public class EmployeeController {
 													
 														
 													
-												}else if(employee.getApplicant().getImage()!=null){
+												}else if(employee1.getApplicant().getImage()!=null){
 													
 							
 												//delete file upload
 				
 												   try {
-														uploadService .deleteImage("EMPLOYEE", employee.getApplicant().getImage());
+														uploadService .deleteImage("EMPLOYEE", employee1.getApplicant().getImage());
 													} catch (RuntimeException e1) {
 														// TODO Auto-generated catch block
 														e1.printStackTrace();
@@ -550,13 +550,13 @@ public class EmployeeController {
 					
 					
 					if(employeeDto.getFileupload().getOriginalFilename()==null){
-						if(employee.getApplicant().getImage()==null||employee.getApplicant().getImage().equals("")){
+						if(employee1.getApplicant().getImage()==null||employee1.getApplicant().getImage().equals("")){
 						
 							img=null;
 						
-						}else if(employee.getApplicant().getImage()!=null||employee.getApplicant().getImage().equals("")==false){
+						}else if(employee1.getApplicant().getImage()!=null||employee1.getApplicant().getImage().equals("")==false){
 						
-							img = employee.getApplicant().getImage();
+							img = employee1.getApplicant().getImage();
 						
 						}
 					
@@ -568,11 +568,11 @@ public class EmployeeController {
 											
 							if(result1.length==2){
 								
-								if(employee.getApplicant().getImage()==null){
+								if(employee1.getApplicant().getImage()==null){
 										
 									img=  employeeCode+"."+result1[1];
 									
-								}else if(employee.getApplicant().getImage()!=null){
+								}else if(employee1.getApplicant().getImage()!=null){
 									
 									img=  employeeCode+"."+result1[1];
 									
@@ -588,13 +588,13 @@ public class EmployeeController {
 
 					
 					if(employeeDto.getFileupload().getOriginalFilename()==null){
-						if(employee.getApplicant().getImage()==null||employee.getApplicant().getImage().equals("")){
+						if(employee1.getApplicant().getImage()==null||employee1.getApplicant().getImage().equals("")){
 						
 							img=null;
 						
-						}else if(employee.getApplicant().getImage()!=null||employee.getApplicant().getImage().equals("")==false){
+						}else if(employee1.getApplicant().getImage()!=null||employee1.getApplicant().getImage().equals("")==false){
 						
-							img = employee.getApplicant().getImage();
+							img = employee1.getApplicant().getImage();
 						
 						}
 					
@@ -606,11 +606,11 @@ public class EmployeeController {
 											
 							if(result1.length==2){
 								
-								if(employee.getApplicant().getImage()==null){
+								if(employee1.getApplicant().getImage()==null){
 										
 									img=  employeeCode+"."+result1[1];
 									
-								}else if(employee.getApplicant().getImage()!=null){
+								}else if(employee1.getApplicant().getImage()!=null){
 									
 									img=  employeeCode+"."+result1[1];
 									
@@ -631,7 +631,7 @@ public class EmployeeController {
 							if(result.length==2){
 								
 								
-								if(employee.getApplicant().getImage()==null){
+								if(employee1.getApplicant().getImage()==null){
 									
 									
 									   
@@ -649,13 +649,13 @@ public class EmployeeController {
 									
 										
 									
-								}else if(employee.getApplicant().getImage()!=null){
+								}else if(employee1.getApplicant().getImage()!=null){
 									
 			
 								//delete file upload
 
 								   try {
-										uploadService .deleteImage("EMPLOYEE", employee.getApplicant().getImage());
+										uploadService .deleteImage("EMPLOYEE", employee1.getApplicant().getImage());
 									} catch (RuntimeException e1) {
 										// TODO Auto-generated catch block
 										e1.printStackTrace();
@@ -699,13 +699,13 @@ public class EmployeeController {
 						
 
 						if(employeeDto.getFileupload().getOriginalFilename()==null){
-							if(employee.getApplicant().getImage()==null||employee.getApplicant().getImage().equals("")){
+							if(employee1.getApplicant().getImage()==null||employee1.getApplicant().getImage().equals("")){
 							
 								img=null;
 							
-							}else if(employee.getApplicant().getImage()!=null||employee.getApplicant().getImage().equals("")==false){
+							}else if(employee1.getApplicant().getImage()!=null||employee1.getApplicant().getImage().equals("")==false){
 							
-								img = employee.getApplicant().getImage();
+								img = employee1.getApplicant().getImage();
 							
 							}
 						
@@ -717,11 +717,11 @@ public class EmployeeController {
 												
 								if(result1.length==2){
 									
-									if(employee.getApplicant().getImage()==null){
+									if(employee1.getApplicant().getImage()==null){
 											
 										img=  employeeCode+"."+result1[1];
 										
-									}else if(employee.getApplicant().getImage()!=null){
+									}else if(employee1.getApplicant().getImage()!=null){
 										
 										img=  employeeCode+"."+result1[1];
 										
@@ -747,7 +747,7 @@ public class EmployeeController {
 									if(result.length==2){
 										
 										
-										if(employee.getApplicant().getImage()==null){
+										if(employee1.getApplicant().getImage()==null){
 											
 											
 											   
@@ -765,13 +765,13 @@ public class EmployeeController {
 											
 												
 											
-										}else if(employee.getApplicant().getImage()!=null){
+										}else if(employee1.getApplicant().getImage()!=null){
 											
 					
 										//delete file upload
 		
 										   try {
-												uploadService .deleteImage("EMPLOYEE", employee.getApplicant().getImage());
+												uploadService .deleteImage("EMPLOYEE", employee1.getApplicant().getImage());
 											} catch (RuntimeException e1) {
 												// TODO Auto-generated catch block
 												e1.printStackTrace();
@@ -808,13 +808,13 @@ public class EmployeeController {
 						
 						
 						if(employeeDto.getFileupload().getOriginalFilename()==null){
-							if(employee.getApplicant().getImage()==null||employee.getApplicant().getImage().equals("")){
+							if(employee1.getApplicant().getImage()==null||employee1.getApplicant().getImage().equals("")){
 							
 								img=null;
 							
-							}else if(employee.getApplicant().getImage()!=null||employee.getApplicant().getImage().equals("")==false){
+							}else if(employee1.getApplicant().getImage()!=null||employee1.getApplicant().getImage().equals("")==false){
 							
-								img = employee.getApplicant().getImage();
+								img = employee1.getApplicant().getImage();
 							
 							}
 						
@@ -826,11 +826,11 @@ public class EmployeeController {
 												
 								if(result1.length==2){
 									
-									if(employee.getApplicant().getImage()==null){
+									if(employee1.getApplicant().getImage()==null){
 											
 										img=  employeeCode+"."+result1[1];
 										
-									}else if(employee.getApplicant().getImage()!=null){
+									}else if(employee1.getApplicant().getImage()!=null){
 										
 										img=  employeeCode+"."+result1[1];
 										
@@ -856,7 +856,7 @@ public class EmployeeController {
 								if(result.length==2){
 									
 									
-									if(employee.getApplicant().getImage()==null){
+									if(employee1.getApplicant().getImage()==null){
 										
 										
 										   
@@ -874,13 +874,13 @@ public class EmployeeController {
 										
 											
 										
-									}else if(employee.getApplicant().getImage()!=null){
+									}else if(employee1.getApplicant().getImage()!=null){
 										
 				
 									//delete file upload
 	
 									   try {
-											uploadService .deleteImage("EMPLOYEE",employee.getApplicant().getImage());
+											uploadService .deleteImage("EMPLOYEE",employee1.getApplicant().getImage());
 										} catch (RuntimeException e1) {
 											// TODO Auto-generated catch block
 											e1.printStackTrace();

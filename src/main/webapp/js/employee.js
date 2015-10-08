@@ -8,11 +8,11 @@ var getIndex = 0;
 
 
 		
-		$("#telHome").mask("99-999-9999");
-		$("#telMobile").mask("999-999-9999");
-		$("#telFax").mask("99-999-9999");
+		$("#telHome").mask("(99) 999-9999");
+		$("#telMobile").mask("(999) 999-9999");
+		$("#telFax").mask("(99) 999-9999");
 		$("#idCard").mask("9-9999-99999-99-9");
-		$("#emergencyContactPhoneNumber").mask("999-999-9999"); 
+		$("#emergencyContactPhoneNumber").mask("(999) 999-9999"); 
 		
 		$('#salaryExpected').mask('0,000,000.00', {reverse: true});
 		
@@ -132,7 +132,7 @@ $("#addForm").validate({
 		
 	 	telHome: {
 			required: true,
-			rangelength : [11, 11]
+			rangelength : [13, 13]
 			/*  digits: true, 
 			 minlength: 9,
 			 maxlength: 9  */ 
@@ -141,7 +141,7 @@ $("#addForm").validate({
 		
 		telMobile: {
 			required: true,
-			rangelength : [12, 12]
+			rangelength : [14, 14]
 			 /* digits: true,
 			 minlength: 10,
 			 maxlength: 10 */
@@ -181,7 +181,7 @@ $("#addForm").validate({
 		
 		emergencyContactPhoneNumber: {
 			required: true,
-			rangelength : [12, 12]
+			rangelength : [14, 14]
 			 /* digits: true,
 			 minlength: 10,
 			 maxlength: 10 */
