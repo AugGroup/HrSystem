@@ -82,6 +82,18 @@
 <!-- Accounting Plugin -->
 <script src="<c:url value="/resource/accounting/accounting.js" />"></script>
 
+<!-- Fontawesome -->
+<link href="<c:url value="/resource/fontawesome/css/font-awesome.css" />" rel="stylesheet" media="all">
+
+
+
+<!-- Alertify Plugin -->
+<%-- <script src="<c:url value="/resource/alertify/js/alertify.min.js" />"></script>
+<link href="<c:url value="/resource/alertify/css/alertify.core.css" />" rel="stylesheet" media="all">
+<link href="<c:url value="/resource/alertify/css/alertify.default.css" />" rel="stylesheet" media="all"> 
+<link href="<c:url value="/resource/alertify/css/alertify.bootstrap.css" />" rel="stylesheet" media="all"> --%>
+
+
 
 <style >
 
