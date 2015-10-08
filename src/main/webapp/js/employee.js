@@ -70,7 +70,7 @@ $("#validateAddress").validate({
 });		
 		
 		
-$("#addForm").validate({
+	$("#addForm").validate({
 	rules: {
 		nameThai: "required",
 		/*surnameThai: "required",
