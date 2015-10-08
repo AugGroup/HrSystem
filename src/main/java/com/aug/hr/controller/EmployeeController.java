@@ -45,7 +45,6 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.aug.exception.CustomException;
-
 import com.aug.hr.entity.editor.AddressEditor;
 import com.aug.hrdb.services.MasJoblevelService;
 import com.aug.hr.services.ReportService;
@@ -55,9 +54,7 @@ import com.aug.hrdb.services.AimEmployeeDtoService;
 import com.aug.hrdb.services.EmployeeCodeDtoService;
 import com.aug.hrdb.services.EmployeeIdDtoService;
 import com.aug.hrdb.services.LeaveDtoService;
-
 import com.aug.hrdb.dto.AddressDto;
-
 import com.aug.hrdb.dto.EmployeeCodeDto;
 import com.aug.hrdb.dto.EmployeeDto;
 import com.aug.hrdb.dto.EmployeeListDto;
@@ -65,9 +62,11 @@ import com.aug.hrdb.dto.ReportEmployeeDto;
 import com.aug.hrdb.dto.ReportLeaveDto;
 import com.aug.hrdb.dto.ReportStatusEmployeeDto;
 import com.aug.hrdb.entities.Address;
+import com.aug.hrdb.entities.Applicant;
 import com.aug.hrdb.entities.Employee;
 import com.aug.hrdb.entities.Leave;
 import com.aug.hrdb.services.AddressService;
+import com.aug.hrdb.services.ApplicantService;
 import com.aug.hrdb.services.EmployeeService;
 import com.aug.hrdb.services.MasAddressTypeService;
 import com.aug.hrdb.services.MasCoreSkillService;
@@ -123,7 +122,9 @@ public class EmployeeController {
 	private LeaveDtoService leaveDtoService;
 	@Autowired
 	private EmployeeDtoService employeeDtoService;
-
+	@Autowired
+	private ApplicantService applicantService;
+	
 	private static final Logger logger = Logger.getLogger(Employee.class);
 
 	// @RequestMapping(value = "/listemployee", method =
@@ -983,7 +984,7 @@ public class EmployeeController {
 	}
 
 	@RequestMapping(value = "/employee/searchReportEmpName", method = { RequestMethod.POST, RequestMethod.GET })
-	public ModelAndView searchEmployeeNameReport(@ModelAttribute(value = "employee") Employee employee, ModelMap map,
+	public ModelAndView searchEmployeeNameReport(@ModelAttribute(value = "applicant") Applicant applicant, ModelMap map,
 			HttpSession session, Locale locale) {
 		// List<ReportEmployeeDto> employeeList =
 		// employeeDtoService.reportEmployee(searchText);
@@ -994,7 +995,7 @@ public class EmployeeController {
 		
 		//map กับ name แทน nameeng
 		/**********************************************/
-		String searchText = employee.getName();
+		String searchText = applicant.getFirstNameEN();
 		if (searchText.equals("forEmptySearch")) {
 			employeeList = employeeDtoService.reportEmployee(searchText);
 		} else {
@@ -1003,16 +1004,16 @@ public class EmployeeController {
 		Map<String, Object> parameterMap = new HashMap<String, Object>();
 		ResourceBundle bundle = ResourceBundle.getBundle("messages", locale);
 		parameterMap.put(JRParameter.REPORT_RESOURCE_BUNDLE, bundle);
-		ModelAndView mv = reportService.getReport(employeeList, "employeeReport", employee.getReportType(),
+		ModelAndView mv = reportService.getReport(employeeList, "employeeReport", applicant.getReportType(),
 				parameterMap);
 		return mv;
 	}
 
 	@RequestMapping(value = "/employee/searchReportEmpCode", method = { RequestMethod.POST, RequestMethod.GET })
-	public ModelAndView searchEmployeeCodeReport(@ModelAttribute(value = "employee") Employee employee, ModelMap map,
+	public ModelAndView searchEmployeeCodeReport(@ModelAttribute(value = "applicant") Applicant applicant, ModelMap map,
 			HttpSession session, Locale locale) {
 		List<ReportEmployeeDto> employeeList;
-		String searchText = employee.getEmployeeCode();
+		String searchText = applicant.getCode();
 		if (searchText.equals("forEmptySearch")) {
 			employeeList = employeeDtoService.reportEmployeeCode(searchText);
 		} else {
@@ -1021,7 +1022,7 @@ public class EmployeeController {
 		Map<String, Object> parameterMap = new HashMap<String, Object>();
 		ResourceBundle bundle = ResourceBundle.getBundle("messages", locale);
 		parameterMap.put(JRParameter.REPORT_RESOURCE_BUNDLE, bundle);
-		ModelAndView mv = reportService.getReport(employeeList, "employeeCodeReport", employee.getReportType(),
+		ModelAndView mv = reportService.getReport(employeeList, "employeeCodeReport", applicant.getReportType(),
 				parameterMap);
 		return mv;
 	}
@@ -1123,7 +1124,7 @@ public class EmployeeController {
 
 	@RequestMapping(value = "/employee/searchName/{searchText}", method = { RequestMethod.GET, RequestMethod.POST })
 	public @ResponseBody List<ReportEmployeeDto> searchName(@PathVariable("searchText") String searchText,
-			@ModelAttribute(value = "employee") Employee employee, ModelMap map, HttpSession session, Locale locale) {
+			@ModelAttribute(value = "applicant") Applicant applicant, ModelMap map, HttpSession session, Locale locale) {
 		List<ReportEmployeeDto> employeeList;
 		if (searchText.equals("forEmptySearch")) {
 			employeeList = employeeDtoService.reportEmployee("");
@@ -1165,6 +1166,11 @@ public class EmployeeController {
 	@ModelAttribute("employee")
 	Employee setupForm() {
 		return new Employee();
+	}
+	
+	@ModelAttribute("applicant")
+	Applicant setupApplicant() {
+		return new Applicant();
 	}
 
 }

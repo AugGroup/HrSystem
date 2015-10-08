@@ -6,7 +6,7 @@
 <!-- <div class="modal-header"> -->
 <%-- 	<h4 class="modal-title"><spring:message code="report.empName" /></h4> --%>
 <!-- </div> -->
-<f:form method="post" id="reportForm" name="reportForm" target="_blank" commandName="employee" action="${pageContext.request.contextPath}/employee/searchReportEmpName" cssClass="form-horizontal">
+<f:form method="post" id="reportForm" name="reportForm" target="_blank" commandName="applicant" action="${pageContext.request.contextPath}/employee/searchReportEmpName" cssClass="form-horizontal">
 
 	 <div class="modal-body">
 	 <div class="form-group form-group-sm">
@@ -20,7 +20,7 @@
         		${ searchfor }${ entity }
         	</div>
         	<div class="col-sm-6">
-        		<f:input id="searchText" path="nameEng" cssClass="form-control" placeholder="${ searchfor }${ entity }"/>
+        		<f:input id="searchText" path="firstNameEN" cssClass="form-control" placeholder="${ searchfor }${ entity }"/>
         	</div>
         </div>
         
@@ -36,7 +36,7 @@
         
         
        <div>  
-        <f:form id ="listTable" method="post" commandName="employee" class="form-horizontal" action="employee">		
+        <f:form id ="listTable" method="post" commandName="applicant" class="form-horizontal" action="employee">		
 			<div class="row">
 				<!-- <h2 class="col-md-6">Report</h2>	 -->			
 				<br>
