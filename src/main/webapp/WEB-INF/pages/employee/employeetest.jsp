@@ -397,7 +397,7 @@
 									  
 									  <c:if test="${not empty employeeDto.sex}">
 
-										 <c:if test="${allEmployeeDto.sex =='Male'}">
+										 <c:if test="${employeeDto.sex =='Male'}">
 										        <label><input type="radio" name="sex" id="Male" value="Male" checked="checked"><spring:message code="employee.male"></spring:message></label>
 										        <label><input type="radio" name="sex" id="Female" value="Female"><spring:message code="employee.female"></spring:message></label>
 										  </c:if>
