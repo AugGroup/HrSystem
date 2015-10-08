@@ -689,17 +689,24 @@
     								
     							<div class="col-md-12">
      								<div class="col-md-3">
-    									 <label style="margin-right: 25px;"> <spring:message code="employee.fromYear"></spring:message> :</label>
-
-    									 <div class='input-group date' id='fromYear'>
-    									 <input type="text" class="form-control" id="fromYear" name="fromYear" placeholder="${please} ${enter} <spring:message code="employee.fromYear"></spring:message>"
-    									  value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.fromYear}" />' />
-    								     <span class="input-group-addon">
-										 <span class="glyphicon glyphicon-calendar"></span>
-										 </span></div>
+     								
+     								  <div id="fromYearDiv">
+     									 <label  style="margin-right: 25px;"> <spring:message code="employee.fromYear"></spring:message> :</label>
+	
+	   									 <div class='input-group date' id='fromYear'>
+	    									 <input type="text" class="form-control" id="fromYear" name="fromYear" placeholder="${please} ${enter} <spring:message code="employee.fromYear"></spring:message>"
+	    									  value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.fromYear}" />' />
+	    								     <span class="input-group-addon">
+											 <span class="glyphicon glyphicon-calendar"></span>
+											 </span>
+										 </div>
+									   </div>
+										 
+										 
 									</div>
 									
     								<div class="col-md-3">
+    							      <div id="toYearDiv">
     									 <label style="margin-right: 25px;"> <spring:message code="employee.toYear"></spring:message> :</label>
     									 <div class='input-group date' id='toYear'>
     									 <input type="text" class="form-control" id="toYear" name="toYear" placeholder="${please} ${enter} <spring:message code="employee.toYear"></spring:message>"
@@ -708,17 +715,22 @@
     									 <span class="glyphicon glyphicon-calendar"></span>
     									 </span>
 										</div>
+									  </div>
 									</div>
 
 
     								<div class="col-md-3">
+    								  <div id="branchOfServiceDiv">
     									 <label style="margin-right: 25px;"> <spring:message code="employee.branchOfService"></spring:message> :</label>
     									 <input type="text" class="form-control" id="branchOfService" name="branchOfService" placeholder="${please} ${enter} <spring:message code="employee.branchOfService"></spring:message>" value="${employeeDto.branchOfService}">
+    								  </div>
     								</div>
     								
     								<div class="col-md-3">
+    								   <div id="serviceNoDiv">
      									 <label style="margin-right: 25px;"> <spring:message code="employee.serviceNo"></spring:message> :</label>
     									 <input type="text" class="form-control" id="serviceNo" name="serviceNo" placeholder="${please} ${enter} <spring:message code="employee.serviceNo"></spring:message>" value="${employeeDto.serviceNo}">
+    							       </div>
     							    </div>
     						</div>	
 					

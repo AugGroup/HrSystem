@@ -380,42 +380,41 @@ if($('#knowEmployed').val()=="Yes"){
 }
 
 
-
-$("#fromYear").hide();//descriptionYes ชื่อกล่อง
-$("#toYear").hide();
-$("#branchOfService").hide();
-$("#serviceNo").hide();
+$("#fromYearDiv").hide();
+$("#toYearDiv").hide();
+$("#branchOfServiceDiv").hide();
+$("#serviceNoDiv").hide();
 $("input:radio[name=militaryService]").change(function(){//name= ชื่อ group radio
 
 	if(this.value == 'Yes' && this.checked){
-		
-	
-	 $("#fromYear").show();
-	 $("#toYear").show();
-	 $("#branchOfService").show();
-	 $("#serviceNo").show();
+
+	 $("#fromYearDiv").show();
+	 $("#toYearDiv").show();
+	 $("#branchOfServiceDiv").show();
+	 $("#serviceNoDiv").show();
 	 
 	}else{
-		 $("#fromYear").hide();
-		 $("#toYear").hide();
-		 $("#branchOfService").hide();
-		 $("#serviceNo").hide();
+		 $("#fromYearDiv").hide();
+		 $("#toYearDiv").hide();
+		 $("#branchOfServiceDiv").hide();
+		 $("#serviceNoDiv").hide();
   }
 });
 
 
 if($('#militaryService').val()=="Yes"){
-	 $("#fromYear").show();
-	 $("#toYear").show();
-	 $("#branchOfService").show();
-	 $("#serviceNo").show();
+	
+	 $("#fromYearDiv").show();
+	 $("#toYearDiv").show();
+	 $("#branchOfServiceDiv").show();
+	 $("#serviceNoDiv").show();
 	
 	
 }else if($('#knowEmployed').val()=="No"){
-	 $("#fromYear").hide();
-	 $("#toYear").hide();
-	 $("#branchOfService").hide();
-	 $("#serviceNo").hide();
+	
+	 $("#fromYearDiv").hide();
+	 $("#branchOfServiceDiv").hide();
+	 $("#serviceNoDiv").hide();
 	
 }
 
