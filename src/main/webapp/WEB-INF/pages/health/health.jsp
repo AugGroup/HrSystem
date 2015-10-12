@@ -30,66 +30,46 @@
 	  
 		    <div  class="form-group form-group-sm col col-lg-12 col-md-12 col-sm-12 col-xs-12 divHealth">
 		   	
-		     <div class="row">  
-		     
-		          
-		        <%-- <label class="col-lg-5 col-md-5 col-sm-5 col-xs-5 control-label required" for="congenitalDisease" >
-			            <spring:message code="health.question.congenitalDisease" />?
-			    </label> --%>	
-			    
-			   
-				    <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6 control-label required" for="congenitalDisease" >
-				        <spring:message code="health.question.congenitalDisease" />?
-				    </label> 		
-			    
-			     
-			     <div class="form-group form-group-sm col col-lg-6 col-md-6 col-sm-6 col-xs-6">	
-			     
-			     	<%-- <div class="col col-lg-8 col-md-8 col-sm-8 col-xs-8">			     				 	   	 
-				 	   	   <f:input  id="congenitalDisease" path="congenitalDisease" cssClass="form-control required" placeholder="congenitalDisease" value="${healthDto.congenitalDisease}"/>					     													 		   				 	   	   				 	   	 
-				 	</div>		
-			     
-			     
-			         <div class="col col-lg-4 col-md-4 col-sm-4 col-xs-4">			     
-				 	   	  <p>
-				 	   	   <button id="btnOkCongenital" type="button" class="btn btn-link btn-md btnhealth btnconok"> <!-- data-toggle="modal" data-target="#congentailModal" --><span class="glyphicon glyphicon-ok">Yes/Update</span></button>	
-				 	   	   <button id="btnNoCongenital" type="button" class="btn btn-link btn-md btnhealth btnconremove"><span id="remove" class="glyphicon glyphicon-remove">No</span></button>				 	   	  
-				 	   	  <p>
-				 	 </div> --%>	
-				 	 
-				 	 
-				 	 <div id="radioinline">
-				 	    
-				 	      <label class="radio-inline col-lg-1 col-md-1 col-sm-1 col-xs-1 control-label">			    
-						  	<f:radiobutton id="congenitalDiseaseYes" path="congenitalDisease" value="Yes"/>Yes
-						  </label>
-						  <label class="radio-inline col-lg-1 col-md-1 col-sm-1 col-xs-1 control-label"> 
-						  	<f:radiobutton id="congenitalDiseaseNo" path="congenitalDisease" value="No"/>No
-						  </label>
-						
-					 </div>
-				 	 
-				 	 
-				 	 				 
-		         </div>	     
-		          
-		    </div>
+			     <div class="row">  
+	
+				   
+					    <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6 control-label required" for="congenitalDisease" >
+					        <spring:message code="health.question.congenitalDisease" />?
+					    </label> 		
+				    
+				     
+				    	 <div class="form-group form-group-sm col col-lg-6 col-md-6 col-sm-6 col-xs-6">	
+		
+						 	 <div class="radio">
+						 	    
+						 	      <label >			    
+								  	<f:radiobutton id="congenitalDiseaseYes" path="congenitalDisease" value="Yes"/>Yes
+								  </label>
+								
+							 </div>	
+							 
+							  <div class="radio">					 	    
+						 	     
+								  <label> 
+								  	<f:radiobutton id="congenitalDiseaseNo" path="congenitalDisease" value="No"/>No
+								  </label>
+								
+							 </div>	
+	
+			         	 </div>	     
+			          
+			    </div>
 		       	  
 		  </div> 
 		  
 		 
-		             
-		   
-		   
+		 
 		   
 		   
 		   <div id="congenitaldiv" class="form-group form-group-sm col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 		   
 			     <div class="row">
 			           
-			        <%-- <label  class="col-lg-5 col-md-5 col-sm-5 col-xs-5 control-label required congenitalDiseaseExplain" for="congenitalDisease" >
-				            <spring:message code="health.congenitalDiseaseExplain1" var="congenitalDiseaseExplain1"/>${congenitalDiseaseExplain1 }:
-				    </label> --%>
 				    <label  class="col-lg-6 col-md-6 col-sm-6 col-xs-6 control-label required congenitalDiseaseExplain" for="congenitalDisease" >
 				            <spring:message code="health.congenitalDiseaseExplain1" var="congenitalDiseaseExplain1"/>${congenitalDiseaseExplain1 }:
 				    </label>	 		
@@ -105,10 +85,7 @@
 			 
 		   <div id="congenital2div" class="form-group form-group-sm col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			      <div class="row">
-			         <%-- <label class="col-lg-5 col-md-5 col-sm-5 col-xs-5 control-label required congenitalDiseaseExplain" for="congenitalDisease2" >
-			           		<spring:message code="health.congenitalDiseaseExplain2" var="congenitalDiseaseExplain2"/>${congenitalDiseaseExplain2 }: 
-			   		 </label> --%>	 	
-			   		 
+			         
 			   		 <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6 control-label required congenitalDiseaseExplain" for="congenitalDisease2" >
 			           		<spring:message code="health.congenitalDiseaseExplain2" var="congenitalDiseaseExplain2"/>${congenitalDiseaseExplain2 }: 
 			   		 </label>	
@@ -127,10 +104,6 @@
 		   
 			     <div class="row">
 		   
-			         <%-- <label class="col-lg-5 col-md-5 col-sm-5 col-xs-5 control-label required congenitalDiseaseExplain" for="congenitalDisease3" >
-			           		<spring:message code="health.congenitalDiseaseExplain3" var="congenitalDiseaseExplain3"/>${congenitalDiseaseExplain3 }: 
-			   		 </label> --%>	 
-			   		 
 			   		 <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6 control-label required congenitalDiseaseExplain" for="congenitalDisease3" >
 			           		<spring:message code="health.congenitalDiseaseExplain3" var="congenitalDiseaseExplain3"/>${congenitalDiseaseExplain3 }: 
 			   		 </label>		
@@ -152,10 +125,7 @@
 		   
 		      <div class="row">
 		           
-		        <%-- <label class="col-lg-5 col-md-5 col-sm-5 col-xs-5 control-label required" for="geneticDisease" >
-			           <spring:message code="health.question.GeneticDisease" />?
-			    </label> --%>	
-			    
+		       
 			    <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6 control-label required" for="geneticDisease" >
 			           <spring:message code="health.question.GeneticDisease" />?
 			    </label> 		
@@ -164,28 +134,18 @@
 			     
 			    <div class="form-group form-group-sm col col-lg-6 col-md-6 col-sm-6 col-xs-6">	
 			     
-			     	<%-- <div class="col col-lg-8 col-md-8 col-sm-8 col-xs-8">			     				 	   	 
-				 	   	   <f:input  id="geneticDisease" path="geneticDisease" cssClass="form-control required" placeholder="geneticDisease" value="${healthDto.geneticDisease}"/>					     													 		   				 	   	   				 	   	 
-				 	</div>		
-			     
-			     
-			         <div class="col col-lg-4 col-md-4 col-sm-4 col-xs-4">			     
-				 	   	  <p>
-				 	   	   <button id="geneticDiseaseBtnOk" type="button" class="btn btn-link btn-md btnhealth btngenok" data-toggle="modal" data-target="#geneticModal"><span class="glyphicon glyphicon-ok">Yes/Update</span></button>	
-				 	   	   <button id="geneticDiseaseBtnNo" type="button" class="btn btn-link btn-md btnhealth btngenremove"><span id="remove" class="glyphicon glyphicon-remove">No</span></button>				 	   	  
-				 	   	  <p>
-				 	 </div> --%>
 				 	 
-				 	 
-				 	 
-				 	  <div id="radioinline">			 	  
-				 	      <label class="radio-inline col-lg-1 col-md-1 col-sm-1 col-xs-1 control-label">			    
+				 	  <div class="radio">			 	  
+				 	      <label>			    
 						  	<f:radiobutton id="geneticDiseaseYes" path="geneticDisease" value="Yes"/>Yes
-						  </label>
-						  <label class="radio-inline col-lg-1 col-md-1 col-sm-1 col-xs-1 control-label"> 
+						  </label>						 
+					 </div>
+				 	 
+				 	 
+				 	  <div class="radio">			 	  			 	     
+						  <label > 
 						  	<f:radiobutton id="geneticDiseaseNo" path="geneticDisease" value="No"/>No
-						  </label>
-						
+						  </label>						
 					 </div>
 				 	 
 				 	 					 
@@ -204,10 +164,6 @@
 		   
 			     <div class="row">
 			           
-			        <%-- <label class="col-lg-5 col-md-5 col-sm-5 col-xs-5 control-label required" for="geneticDisease" >
-				           <spring:message code="health.geneticDiseaseExplain1" var="geneticDiseaseExplain1"/>${geneticDiseaseExplain1 }: 
-				    </label> --%>	 
-				    
 				    <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6 control-label required" for="geneticDisease" >
 				           <spring:message code="health.geneticDiseaseExplain1" var="geneticDiseaseExplain1"/>${geneticDiseaseExplain1 }: 
 				    </label>		
@@ -228,11 +184,6 @@
 		   
 			     <div class="row">
 			           
-			     
-		           
-			         <%-- <label class="col-lg-5 col-md-5 col-sm-5 col-xs-5 control-label required" for="congenitalDisease2" >
-			           		<spring:message code="health.geneticDiseaseExplain2" var="geneticDiseaseExplain2"/>${geneticDiseaseExplain2 }: 
-			   		 </label> --%>
 			   		 
 			   		 <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6 control-label required" for="congenitalDisease2" >
 			           		<spring:message code="health.geneticDiseaseExplain2" var="geneticDiseaseExplain2"/>${geneticDiseaseExplain2 }: 
@@ -252,10 +203,6 @@
 		   
 			     <div class="row">
 		   
-				    <%-- <label class="col-lg-5 col-md-5 col-sm-5 col-xs-5 control-label required" for="congenitalDisease3" >
-					    <spring:message code="health.geneticDiseaseExplain3" var="geneticDiseaseExplain3"/>${geneticDiseaseExplain3 }: 
-				    </label> --%>
-					
 					<label class="col-lg-6 col-md-6 col-sm-6 col-xs-6 control-label required" for="congenitalDisease3" >
 					    <spring:message code="health.geneticDiseaseExplain3" var="geneticDiseaseExplain3"/>${geneticDiseaseExplain3 }: 
 				    </label> 		
@@ -273,36 +220,22 @@
 		    <div class="form-group form-group-sm col col-lg-12 col-md-12 col-sm-12 col-xs-12 divHealth">
 		   
 		       <div class="row">
-		           
-			        <%-- <label class="col-lg-5 col-md-5 col-sm-5 col-xs-5 control-label required" for="geneticDisease" >
-				          <spring:message code="health.question.TakeMedicine" />?			          
-				    </label> --%>	 
 				    
 				    <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6 control-label required" for="geneticDisease" >
 				          <spring:message code="health.question.TakeMedicine" />?			          
 				    </label>		
 				    
 				    <div class="form-group form-group-sm col col-lg-6 col-md-6 col-sm-6 col-xs-6">				     
-			     	
-			     		<%-- <div class="col col-lg-8 col-md-8 col-sm-8 col-xs-8">			     				 	   	 
-				 	   	   <f:input  id="takeMedicine" path="takeMedicine" cssClass="form-control required" placeholder="takeMedicine" value="${healthDto.takeMedicine}"/>					     													 		   				 	   	   				 	   	 
-				 		</div>		
-			     
-			     
-			         	<div class="col col-lg-4 col-md-4 col-sm-4 col-xs-4">			     
-				 	   	  <p>
-				 	   	   <button id="takeMedicineOk" type="button" class="btn btn-link btn-md btnhealth btntakeok"><span class="glyphicon glyphicon-ok">Yes/Update</span></button>	
-				 	   	   <button id="takeMedicineNo" type="button" class="btn btn-link btn-md btnhealth btntakeremove"><span id="remove" class="glyphicon glyphicon-remove">No</span></button>				 	   	  
-				 	   	  <p>
-				 		</div> --%>	
-				 		
-				 		
-				 		
-				 	  <div id="radioinline">			 	  
-				 	      <label class="radio-inline col-lg-1 col-md-1 col-sm-1 col-xs-1 control-label">			    
+			 		
+				 	  <div class="radio">			 	  
+				 	      <label >			    
 						  	<f:radiobutton id="takeMedicineYes" path="takeMedicine" value="Yes"/>Yes
-						  </label>
-						  <label class="radio-inline col-lg-1 col-md-1 col-sm-1 col-xs-1 control-label"> 
+						  </label>				
+					 </div>
+					 
+					 
+					 <div class="radio">			 	  
+						  <label > 
 						  	<f:radiobutton id="takeMedicineNo" path="takeMedicine" value="No"/>No
 						  </label>						
 					 </div>
@@ -317,10 +250,7 @@
 			    
 			     <div id="takeMedicineDiv" class="form-group form-group-sm col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			         <div class="row">
-				        <%-- <label class="col-lg-5 col-md-5 col-sm-5 col-xs-5 control-label required" for="takeMedicineExplain" >
-					           <spring:message code="health.takeMedicineExplain1" var="takeMedicineExplain1"/>${takeMedicineExplain1 }: 
-					    </label> --%>	
-					    
+						    
 					    <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6 control-label required" for="takeMedicineExplain" >
 					           <spring:message code="health.takeMedicineExplain1" var="takeMedicineExplain1"/>${takeMedicineExplain1 }: 
 					    </label> 		
@@ -341,11 +271,7 @@
 			    
 			     <div class="form-group form-group-sm col col-lg-12 col-md-12 col-sm-12 col-xs-12 divHealth">
 		   
-		     	  <div class="row">
-		           
-			        <%-- <label class="col-lg-5 col-md-5 col-sm-5 col-xs-5 control-label required" for="intolerance" >
-				          <spring:message code="health.question.Intolerance" />?
-				    </label> --%>	 
+		     	   <div class="row">
 				    
 				    <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6 control-label required" for="intolerance" >
 				          <spring:message code="health.question.Intolerance" />?
@@ -353,26 +279,19 @@
 				    		
 				    
 				      <div class="form-group form-group-sm col col-lg-6 col-md-6 col-sm-6 col-xs-6">				     
-			     	
-				     		<%-- <div class="col col-lg-8 col-md-8 col-sm-8 col-xs-8">			     				 	   	 
-					 	   	   <f:input  id="intolerance" path="intolerance" cssClass="form-control required" placeholder="intolerance" value="${healthDto.intolerance}"/>					     													 		   				 	   	   				 	   	 
-					 		</div>		
-				     
-				     
-				         	<div class="col col-lg-4 col-md-4 col-sm-4 col-xs-4">			     
-					 	   	  <p>
-					 	   	   <button id="intoOk" type="button" class="btn btn-link btn-md btnhealth btninok"><span class="glyphicon glyphicon-ok">Yes/Update</span></button>	
-					 	   	   <button id="intoNo" type="button" class="btn btn-link btn-md btnhealth btninremove"><span id="remove" class="glyphicon glyphicon-remove">No</span></button>				 	   	  
-					 	   	  <p>
-					 		</div> --%>
+				 		
 					 		
-					 		
-					 		<div id="radioinline">			 	  
-						 	      <label class="radio-inline col-lg-1 col-md-1 col-sm-1 col-xs-1 control-label">			    
-								  	<f:radiobutton id="intoleranceYes" path="intolerance" value="Yes"/>Yes
+					 		<div class="radio">			 	  
+						 	      <label >			    
+								  	<input type="radio" id="intoleranceYes" name="intolerance" value="Yes"/>Yes
 								  </label>
-								  <label class="radio-inline col-lg-1 col-md-1 col-sm-1 col-xs-1 control-label"> 
-								  	<f:radiobutton id="intoleranceNo" path="intolerance" value="No"/>No
+											
+							 </div>
+							 
+							 <div class="radio">			 	  
+						 	    
+								  <label > 
+								  	<input type="radio" id="intoleranceNo" name="intolerance" value="No"/>No
 								  </label>						
 							 </div>
 					 							 
@@ -387,10 +306,6 @@
 			    
 			     <div id="intoleranceDiv"  class="form-group form-group-sm col col-lg-12 col-md-12 col-sm-12 col-xs-12">
 			      <div class="row">
-			           
-			        <%-- <label class="col-lg-5 col-md-5 col-sm-5 col-xs-5 control-label required" for="intoleranceExplain" >
-				          <spring:message code="health.intoleranceExplain" var="intoleranceExplain"/>${intoleranceExplain }: 
-				    </label> --%>
 				    
 				    <label class="col-lg-6 col-md-6 col-sm-6 col-xs-6 control-label required" for="intoleranceExplain" >
 				          <spring:message code="health.intoleranceExplain" var="intoleranceExplain"/>${intoleranceExplain }: 

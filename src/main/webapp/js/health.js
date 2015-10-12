@@ -57,403 +57,81 @@ $(function(){
 	var $btnOkCongenital = $('#btnOkCongenital');
 	var $geneticDiseaseBtnOk = $('#geneticDiseaseBtnOk');
 	
-	
-	//readonly();
-	
-	function  readonly(){
-			$congenitalDisease.prop('readonly','readonly');
-			$geneticDisease.prop('readonly','readonly');		
-			$takeMedicine.prop('readonly','readonly');
-			$intolerance.prop('readonly','readonly');
-	}
-		
-
-	//event();
-	
-	/*function event(){
-
-	Event of CongenitalDiseaseExplain
-
-	if($congenitalDisease.val()==null||$congenitalDisease.val()===''){
-		
-		$congenitalDiseaseExplain.val('');
-		$congenitalDiseaseExplain2.val('');
-		$congenitalDiseaseExplain2.prop("readonly",true);
-		$congenitalDiseaseExplain3.val('');
-		$congenitalDiseaseExplain3.prop("readonly",true);
-		 
-		$congenitaldiv.hide();
-		$congenital2div.hide();
-		$congenital3div.hide();
-	}
+	var $form = $('#formAddUpdate');
 	
 	
-	if($congenitalDisease.val()=='Yes'){
-		
-		if($congenitalDiseaseExplain.val()!=null&&$congenitalDiseaseExplain.val()!==''){
-			
-			$congenitaldiv.show();
-			
-		}
-		
-		
-		if($congenitalDiseaseExplain2.val()!=null&&$congenitalDiseaseExplain2.val()!==''){
-			
-			$congenital2div.show();
-			
-		}
-		
-		if($congenitalDiseaseExplain3.val()!=null&&$congenitalDiseaseExplain.val()!==''){
-			
-			$congenital3div.show();
-			
-		}
-		
-		
-	}else{
-		 $congenitaldiv.hide();
-		 $congenital2div.hide();
-		 $congenital3div.hide();
-		 
-		 $('#congenitalDiseaseExplain').val('');
-	     $('#congenitalDiseaseExplain2').val('');
-		 $('#congenitalDiseaseExplain3').val('');	
-		 
-		
-		 $('#congenitalDiseaseExplain2').prop('readonly','readonly');
-		 $('#congenitalDiseaseExplain3').prop('readonly','readonly');	
-		 
-	}
+	 $form.bootstrapValidator({
+		   
+		   message: 'This value is not valid',
+	        //container: 'tooltip',
+	        feedbackIcons: {
+	            valid: 'glyphicon glyphicon-ok',
+	            invalid: 'glyphicon glyphicon-remove',
+	            validating: 'glyphicon glyphicon-refresh'
+	        },
+	        fields: {
+	        	
+	        	congenitalDisease: {
+	                validators: {
+	                    notEmpty: {
+	                        message: 'not empty'
+	                    }
+	                }
+	            },
+	            congenitalDiseaseExplain: {
+	                validators: {
+	                    notEmpty: {
+	                        message: 'not empty'
+	                    }
+	                }
+	            },
+	            geneticDisease: {
+	                validators: {
+	                    notEmpty: {
+	                        message: 'not empty'	
+	                    }	                   	                  
+	                }
+	            },
+	            geneticDiseaseExplain: {
+	                validators: {
+	                    notEmpty: {
+	                        message:  'not empty'	
+	                    }	                  
+	                }
+	            },
+	            takeMedicine: {
+	                validators: {
+	                    notEmpty: {
+	                        message:  'not empty'	
+	                    }	                  
+	                }
+	            },
+	            takeMedicineExplain: {
+	                validators: {
+	                    notEmpty: {
+	                        message:  'not empty'	
+	                    }	                  
+	                }
+	            },
+	            intolerance: {
+	                validators: {
+	                    notEmpty: {
+	                        message:  'not empty'	
+	                    }	                  
+	                }
+	            },
+	            intoleranceExplain: {
+	                validators: {
+	                    notEmpty: {
+	                        message:  'not empty'	
+	                    }	                  
+	                }
+	            },
+	        }
+	 
+}); 
 	
 	
-	
-	
-	 $btnOkCongenital.click(function(){
-		 
-		 $congenitalDisease.val('Yes');
-		 $congenitaldiv.show();
-		 $congenital2div.show();
-		 $congenital3div.show();
-		
-	});
-	 
-	 $('#btnNoCongenital').click(function(){
-		 
-		 $congenitalDisease.val('No');
-		 $congenitaldiv.hide();
-		 $congenital2div.hide();
-		 $congenital3div.hide();
-		 $congenitalDiseaseExplain.val('');
-		 $congenitalDiseaseExplain2.val('');
-		 $congenitalDiseaseExplain2.prop("readonly",true)
-	     $congenitalDiseaseExplain3.val('');	
-		 $congenitalDiseaseExplain3.prop("readonly",true)
-		
-	});
-	 
-	 
-	 
-	  $($congenitalDiseaseExplain).keyup(function() {
-						 
-			 if($congenitalDiseaseExplain.val()!=null&&$congenitalDiseaseExplain.val()!==''){
-				 
-				 $congenitalDiseaseExplain2.prop("readonly",false);
-				 
-			 }else{
-				 
-				 $congenitalDisease.val('');
-				 
-				 $congenitalDiseaseExplain.val('');
-				 $congenitalDiseaseExplain2.val('');
-				 $congenitalDiseaseExplain2.prop("readonly",true);
-				 $congenitalDiseaseExplain3.val('');
-				 $congenitalDiseaseExplain3.prop("readonly",true);
-				 
-				 $congenitaldiv.hide();
-				 $congenital2div.hide();
-				 $congenital3div.hide();
-			 }
-			 
-		});
-		
-		 
-		 $($congenitalDiseaseExplain2).keyup(function() {
-			 
-			 
-			 if($congenitalDiseaseExplain2.val()!=null&&$congenitalDiseaseExplain2.val()!==''){
-				
-				 $congenitalDiseaseExplain3.prop("readonly",false);
-			 }else{
-				 $congenitalDiseaseExplain3.val('');
-				 $congenitalDiseaseExplain3.prop("readonly",true);
-			 }
-			 
-		 });
-		 
-	 
-	 
-	 
-	 
-	 
-	 
-	 Event of GeneticDiseaseExplain
-
-		if($geneticDisease.val()==null||$geneticDisease.val()===''){
-			
-			$geneticDiseaseExplain.val('');
-			$geneticDiseaseExplain2.val('');
-			$geneticDiseaseExplain2.prop("readonly",true);
-			$geneticDiseaseExplain3.val('');
-			$geneticDiseaseExplain3.prop("readonly",true);
-			 
-			$geneticDiseaseExplainDiv.hide();
-			$geneticDiseaseExplainDiv2.hide();
-			$geneticDiseaseExplainDiv3.hide();
-		}
-		
-		
-		if($geneticDisease.val()=='Yes'){
-			
-			if($geneticDiseaseExplain.val()!=null&&$geneticDiseaseExplain.val()!==''){
-				
-				$geneticDiseaseExplainDiv.show();
-				
-			}
-			
-			
-			if($geneticDiseaseExplain2.val()!=null&&$geneticDiseaseExplain2.val()!==''){
-				
-				$geneticDiseaseExplainDiv2.show();
-				
-			}
-			
-			if($geneticDiseaseExplain3.val()!=null&&$geneticDiseaseExplain.val()!==''){
-				
-				$geneticDiseaseExplainDiv3.show();
-				
-			}
-			
-			
-		}else{
-			
-			
-			 $geneticDiseaseExplainDiv.hide();
-			 $geneticDiseaseExplainDiv2.hide();
-			 $geneticDiseaseExplainDiv3.hide();
-			
-			
-			 
-			 $('#geneticDiseaseExplain').val('');
-		     $('#geneticDiseaseExplain2').val('');
-			 $('#geneticDiseaseExplain3').val('');	
-			 
-			
-			 $('#geneticDiseaseExplain2').prop('readonly','readonly');
-			 $('#geneticDiseaseExplain3').prop('readonly','readonly');	
-			 
-		}
-		
-		
-		
-		
-		
-		$geneticDiseaseBtnOk.click(function(){
-			 
-			 $geneticDisease.val('Yes');
-			 $geneticDiseaseExplainDiv.show();
-			 $geneticDiseaseExplainDiv2.show();
-			 $geneticDiseaseExplainDiv3.show();
-			
-		});
-		
-		
-		$('#geneticDiseaseBtnNo').click(function(){
-			 
-			 $geneticDisease.val('No');
-			 $geneticDiseaseExplainDiv.hide();
-			 $geneticDiseaseExplainDiv2.hide();
-			 $geneticDiseaseExplainDiv3.hide();
-			
-		});
-		
-		
-		
-		
-		
-		$($geneticDiseaseExplain).keyup(function() {
-			 
-			 if($geneticDiseaseExplain.val()!=null&&$geneticDiseaseExplain.val()!==''){
-				 
-				 $geneticDiseaseExplain2.prop("readonly",false);
-				 
-			 }else{
-				 
-				 $geneticDisease.val('');
-				 
-				 $geneticDiseaseExplain.val('');
-				 $geneticDiseaseExplain2.val('');
-				 $geneticDiseaseExplain2.prop("readonly",true);
-				 $geneticDiseaseExplain3.val('');
-				 $geneticDiseaseExplain3.prop("readonly",true);
-				 
-				 $geneticDiseaseExplainDiv.hide();
-				 $geneticDiseaseExplainDiv2.hide();
-				 $geneticDiseaseExplainDiv3.hide();
-			 }
-			 
-		});
-		
-		 
-		 $($geneticDiseaseExplain2).keyup(function() {
-			 
-			 
-			 if($geneticDiseaseExplain2.val()!=null&&$geneticDiseaseExplain2.val()!==''){
-				
-				 $geneticDiseaseExplain3.prop("readonly",false);
-			 }else{
-				 $geneticDiseaseExplain3.val('');
-				 $geneticDiseaseExplain3.prop("readonly",true);
-			 }
-			 
-		 });
-		 
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		Event of TakeMedicineExplain
-
-		if($takeMedicine.val()==null||$takeMedicine.val()===''){
-			
-			$takeMedicineExplain.val('');
-			$takeMedicineDiv.hide();
-
-		}
-		
-		
-		if($takeMedicine.val()=='Yes'){
-			
-			if($takeMedicineExplain.val()!=null&& $takeMedicineExplain.val()!==''){
-				
-				$takeMedicineDiv.show();
-				
-			}
-			
-		}else{
-			
-			$takeMedicineDiv.hide();
-			$takeMedicineExplain.val('');			
-		}
-		
-		
-		
-		
-		$takeMedicineOk.click(function(){
-			 
-			 $takeMedicine.val('Yes');
-			 $takeMedicineDiv.show();		
-			
-		});
-		
-		
-		$('#takeMedicineNo').click(function(){
-			 
-			 $takeMedicine.val('No');
-			 $takeMedicineDiv.hide();		
-			
-		});
-		 
-		 
-		 
-		$($takeMedicineExplain).keyup(function() {
-			 
-			 if($takeMedicineExplain.val()!=null&&$takeMedicineExplain.val()!==''){
-				 
-				 $takeMedicineExplain.prop("readonly",false);
-				 
-			 }else{
-				 
-				 $takeMedicine.val('');					 
-				 $takeMedicineExplain.val('');
-				 $takeMedicineDiv.hide();
-
-			 }
-			 
-		});			
-	 
-		
-		 
-		 
-		 Event of IntoleranceExplain
-
-			if($intolerance.val()==null||$intolerance.val()===''){
-				
-				$intoleranceExplain.val('');			
-				$intoleranceDiv.hide();
-
-			}
-			
-			
-			if($intolerance.val()=='Yes'){
-				
-				if($intoleranceExplain.val()!=null&& $intoleranceExplain.val()!==''){
-					
-					$intoleranceDiv.show();
-					
-				}
-				
-			}else{
-				
-				$intoleranceExplain.val('');			
-				$intoleranceDiv.hide();
-			}
-			
-			
-			
-			
-			 $intoOk.click(function(){
-				 
-				 $intolerance.val('Yes');
-				 $intoleranceDiv.show();
-				
-				
-			 });
-			 
-			 
-			 $('#intoNo').click(function(){
-				 
-				 $intolerance.val('No');
-				 $intoleranceDiv.hide();
-				
-				
-			 });
-			 
-			 
-			 
-			$($intoleranceExplain).keyup(function() {
-								 
-					 if($intoleranceExplain.val()!=null&&$intoleranceExplain.val()!==''){
-						 
-						 $intoleranceExplain.prop("readonly",false);
-						 
-					 }else{
-						 
-						 $intolerance.val('');					 
-						 $intoleranceExplain.val('');
-						 $intoleranceDiv.hide();
-
-					 }
-			 });
-	 
-	}*/
 	
 	
 	event1();
@@ -539,6 +217,10 @@ $(function(){
 		
 		 
 		  $($congenitalDiseaseExplain).keyup(function() {
+			  
+			  
+			    $('#formAddUpdate').bootstrapValidator();
+				$('#formAddUpdate').data('bootstrapValidator').resetForm();
 							 
 				 if($congenitalDiseaseExplain.val()!=null&&$congenitalDiseaseExplain.val()!==''){
 					 
@@ -561,10 +243,18 @@ $(function(){
 					 $('#congenitalDiseaseNo').prop('checked', false);
 				 }
 				 
+				 
+				  $('#formAddUpdate').bootstrapValidator();
+				  $('#formAddUpdate').data('bootstrapValidator').validate();
+				 
 			});
 			
 			 
 			 $($congenitalDiseaseExplain2).keyup(function() {
+				 
+				 
+				 $('#formAddUpdate').bootstrapValidator();
+				 $('#formAddUpdate').data('bootstrapValidator').resetForm();
 				 
 				 
 				 if($congenitalDiseaseExplain2.val()!=null&&$congenitalDiseaseExplain2.val()!==''){
@@ -575,6 +265,8 @@ $(function(){
 					 $congenitalDiseaseExplain3.prop("readonly",true);
 				 }
 				 
+				 $('#formAddUpdate').bootstrapValidator();
+				 $('#formAddUpdate').data('bootstrapValidator').validate();
 			 });
 			 
 		 
@@ -664,6 +356,10 @@ $(function(){
 			 
 			
 			$($geneticDiseaseExplain).keyup(function() {
+				
+				 
+			    $('#formAddUpdate').bootstrapValidator();
+				$('#formAddUpdate').data('bootstrapValidator').resetForm();
 				 
 				 if($geneticDiseaseExplain.val()!=null&&$geneticDiseaseExplain.val()!==''){
 					 
@@ -671,7 +367,7 @@ $(function(){
 					 
 				 }else{
 					 
-					 debugger;
+					 //debugger;
 					 
 					 $geneticDiseaseNo.prop('checked', false);
 					 $geneticDiseaseYes.prop('checked', false);
@@ -686,11 +382,16 @@ $(function(){
 					 $geneticDiseaseExplainDiv3.hide();
 				 }
 				 
+				 $('#formAddUpdate').bootstrapValidator();
+				 $('#formAddUpdate').data('bootstrapValidator').validate();
+				 
 			});
 			
 			 
 			 $($geneticDiseaseExplain2).keyup(function() {
 				 
+				 $('#formAddUpdate').bootstrapValidator();
+				 $('#formAddUpdate').data('bootstrapValidator').resetForm();
 				 
 				 if($geneticDiseaseExplain2.val()!=null&&$geneticDiseaseExplain2.val()!==''){
 					
@@ -700,6 +401,8 @@ $(function(){
 					 $geneticDiseaseExplain3.prop("readonly",true);
 				 }
 				 
+				 $('#formAddUpdate').bootstrapValidator();
+				 $('#formAddUpdate').data('bootstrapValidator').validate();
 			 });
 			 
 			
@@ -767,6 +470,10 @@ $(function(){
 			 
 			 
 			$($takeMedicineExplain).keyup(function() {
+				
+				
+				 $('#formAddUpdate').bootstrapValidator();
+				 $('#formAddUpdate').data('bootstrapValidator').resetForm();
 				 
 				 if($takeMedicineExplain.val()!=null&&$takeMedicineExplain.val()!==''){
 					 
@@ -779,6 +486,10 @@ $(function(){
 					 $takeMedicineExplain.val('');
 					 $takeMedicineDiv.hide();
 				 }				 
+				 
+				 
+				 $('#formAddUpdate').bootstrapValidator();
+				 $('#formAddUpdate').data('bootstrapValidator').validate();
 			});			
 		 
 			
@@ -837,6 +548,10 @@ $(function(){
 			 
 				 
 				$($intoleranceExplain).keyup(function() {
+					
+					
+						 $('#formAddUpdate').bootstrapValidator();
+						 $('#formAddUpdate').data('bootstrapValidator').resetForm();
 									 
 						 if($intoleranceExplain.val()!=null&&$intoleranceExplain.val()!==''){
 							 
@@ -849,6 +564,9 @@ $(function(){
 							 $intoleranceDiv.hide();
 
 						 }
+						 
+						 $('#formAddUpdate').bootstrapValidator();
+						 $('#formAddUpdate').data('bootstrapValidator').validate();
 				 });
 					
 		
@@ -885,28 +603,36 @@ $(function(){
 	      $(this).find("#create").off("click").on("click", function(){
 		
  	      $("#createModal").modal('hide');
-
 		  
 		  if($idHealth.val()==null||$idHealth.val()===''){
-			  addHealth(function(d) {
-		          //processing the data
-				 
-		          console.log(d);
-		          idHealth2 = d;
-		          if(idHealth2!=null&&idHealth2!==''){
-		        	  
-		        	  
-			    	  doInitEdit(idHealth2);
-			    	  $('#saveBtn').text($msgUpdate);
-			    	  $('#deleteBtn').show();
-			      }
-		      });
-			
+			  
+			  $form.bootstrapValidator();
+			  $('#formAddUpdate').data('bootstrapValidator').resetForm();
+			  $form.data('bootstrapValidator').validate();
+			  if($form.data('bootstrapValidator').isValid()){
+				  addHealth(function(d) {
+			          //processing the data
+					 
+			          console.log(d);
+			          idHealth2 = d;
+			          if(idHealth2!=null&&idHealth2!==''){
+			        	  			        	  
+				    	  doInitEdit(idHealth2);
+				    	  $('#saveBtn').text($msgUpdate);
+				    	  $('#deleteBtn').show();
+				      }
+			      });
+			  }
 			
 		  }else if($idHealth.val()!=null&&$idHealth.val()!==''){
 			  $('#saveBtn').text($msgUpdate);
 	    	  $('#deleteBtn').show();
-			  doEdit($idHealth.val());			  
+	    	  $form.bootstrapValidator();
+			  $('#formAddUpdate').data('bootstrapValidator').resetForm();
+			  $form.data('bootstrapValidator').validate();
+			  if($form.data('bootstrapValidator').isValid()){
+			  	doEdit($idHealth.val());	
+			  }
 		  }
 	    });
 	  });

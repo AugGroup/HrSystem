@@ -15,7 +15,7 @@
 	color: red;
 } */
 
-.explainLabel{
+ .explainLabel{
 	
 	font-family: Dosis-Regular;
 	font-size:14px;
@@ -47,8 +47,9 @@
 }
 
 
-/**************************************************************/
+************************************************************
 
 .form-group.form-group-sm.col.col-lg-6.col-md-6.col-sm-6.col-xs-6{
 	margin: auto;
 } 
+ 
