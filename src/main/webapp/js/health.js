@@ -19,34 +19,46 @@ $(function(){
 	
 	
 	
-	var $congenitalDisease = $('#congenitalDisease');
+	//var $congenitalDisease = $('#congenitalDisease');
 	var $congenitalDiseaseExplain  = $('#congenitalDiseaseExplain');
 	var $congenitalDiseaseExplain2 = $('#congenitalDiseaseExplain2');
 	var $congenitalDiseaseExplain3 = $('#congenitalDiseaseExplain3');
 	
+	var $congenitalDiseaseYes=$('#congenitalDiseaseYes');
+	var $congenitalDiseaseNo=$('#congenitalDiseaseNo');
 	
-	var $geneticDisease = $('#geneticDisease');
+	
+	//var $geneticDisease = $('#geneticDisease');
 	var $geneticDiseaseExplain = $('#geneticDiseaseExplain');
 	var $geneticDiseaseExplain2 = $('#geneticDiseaseExplain2');
 	var $geneticDiseaseExplain3 = $('#geneticDiseaseExplain3');
 	
-	var $takeMedicine = $("#takeMedicine");
+	var $geneticDiseaseYes = $('#geneticDiseaseYes');
+	var $geneticDiseaseNo = $('#geneticDiseaseNo');
+	
+	//var $takeMedicine = $("#takeMedicine");
 	var $takeMedicineExplain = $("#takeMedicineExplain");
 	var $takeMedicineDiv = $("#takeMedicineDiv");
 	var $takeMedicineOk = $('#takeMedicineOk');
 	
+	var $takeMedicineYes=$("#takeMedicineYes");
+	var $takeMedicineNo=$("#takeMedicineNo");
 	
-	var $intolerance = $("#intolerance");
+	
+	//var $intolerance = $("#intolerance");
 	var $intoleranceExplain = $("#intoleranceExplain");
 	var $intoleranceDiv = $("#intoleranceDiv");
 	var $intoOk = $('#intoOk');
+	
+	var $intoleranceYes=$('#intoleranceYes');
+	var $intoleranceNo=$('#intoleranceNo');
 	
 	
 	var $btnOkCongenital = $('#btnOkCongenital');
 	var $geneticDiseaseBtnOk = $('#geneticDiseaseBtnOk');
 	
 	
-	readonly();
+	//readonly();
 	
 	function  readonly(){
 			$congenitalDisease.prop('readonly','readonly');
@@ -56,11 +68,11 @@ $(function(){
 	}
 		
 
-	event();
+	//event();
 	
-	function event(){
+	/*function event(){
 
-	/*Event of CongenitalDiseaseExplain*/
+	Event of CongenitalDiseaseExplain
 
 	if($congenitalDisease.val()==null||$congenitalDisease.val()===''){
 		
@@ -184,7 +196,7 @@ $(function(){
 	 
 	 
 	 
-	 /*Event of GeneticDiseaseExplain*/
+	 Event of GeneticDiseaseExplain
 
 		if($geneticDisease.val()==null||$geneticDisease.val()===''){
 			
@@ -317,7 +329,7 @@ $(function(){
 		
 		
 		
-		/*Event of TakeMedicineExplain*/
+		Event of TakeMedicineExplain
 
 		if($takeMedicine.val()==null||$takeMedicine.val()===''){
 			
@@ -380,7 +392,7 @@ $(function(){
 		
 		 
 		 
-		 /*Event of IntoleranceExplain*/
+		 Event of IntoleranceExplain
 
 			if($intolerance.val()==null||$intolerance.val()===''){
 				
@@ -440,10 +452,416 @@ $(function(){
 
 					 }
 			 });
-				
-	
 	 
-	}
+	}*/
+	
+	
+	event1();
+	
+	function event1(){
+
+		/*Event of CongenitalDiseaseExplain*/
+		
+	
+		if($congenitalDiseaseYes.is(":checked")==false&&$congenitalDiseaseNo.is(":checked")==false){
+			
+			$congenitalDiseaseExplain.val('');
+			$congenitalDiseaseExplain2.val('');
+			$congenitalDiseaseExplain2.prop("readonly",true);
+			$congenitalDiseaseExplain3.val('');
+			$congenitalDiseaseExplain3.prop("readonly",true);
+			 
+			$congenitaldiv.hide();
+			$congenital2div.hide();
+			$congenital3div.hide();
+		}
+		
+		
+		
+		if($congenitalDiseaseYes.is(":checked")==true){
+			//debugger;
+			//alert('aaaaa');
+			
+			 $congenitalDiseaseYes.prop('checked', 'checked');
+			 $congenitalDiseaseNo.prop('checked', false);
+			 $congenitaldiv.show();
+			 $congenital2div.show();
+			 $congenital3div.show();
+		}
+		
+		if($congenitalDiseaseNo.is(":checked")==true){
+			
+			 $congenitalDiseaseNo.prop('checked', 'checked');
+			 $('#congenitalDiseaseYes').prop('checked', false);
+			 $congenitaldiv.hide();
+			 $congenital2div.hide();
+			 $congenital3div.hide();
+			 $congenitalDiseaseExplain.val('');
+			 $congenitalDiseaseExplain2.val('');
+			 $congenitalDiseaseExplain2.prop("readonly",true)
+		     $congenitalDiseaseExplain3.val('');	
+			 $congenitalDiseaseExplain3.prop("readonly",true)
+			
+		}
+		
+		
+		
+		$congenitalDiseaseYes.change(function () {
+			
+			 //debugger;
+			 //alert('Yes');
+			 $congenitalDiseaseYes.prop('checked', 'checked');
+			 $congenitalDiseaseNo.prop('checked', false);
+			 $congenitaldiv.show();
+			 $congenital2div.show();
+			 $congenital3div.show();
+			
+		});
+		
+		
+		$congenitalDiseaseNo.change(function () {
+				
+			 //alert('No');
+			 $congenitalDiseaseNo.prop('checked', 'checked');
+			 $('#congenitalDiseaseYes').prop('checked', false);
+			 $congenitaldiv.hide();
+			 $congenital2div.hide();
+			 $congenital3div.hide();
+			 $congenitalDiseaseExplain.val('');
+			 $congenitalDiseaseExplain2.val('');
+			 $congenitalDiseaseExplain2.prop("readonly",true)
+		     $congenitalDiseaseExplain3.val('');	
+			 $congenitalDiseaseExplain3.prop("readonly",true)
+			 
+		});
+		
+		
+		
+		 
+		  $($congenitalDiseaseExplain).keyup(function() {
+							 
+				 if($congenitalDiseaseExplain.val()!=null&&$congenitalDiseaseExplain.val()!==''){
+					 
+					 $congenitalDiseaseExplain2.prop("readonly",false);
+					 
+				 }else{
+					 
+		
+					 $congenitalDiseaseExplain.val('');
+					 $congenitalDiseaseExplain2.val('');
+					 $congenitalDiseaseExplain2.prop("readonly",true);
+					 $congenitalDiseaseExplain3.val('');
+					 $congenitalDiseaseExplain3.prop("readonly",true);
+					 
+					 $congenitaldiv.hide();
+					 $congenital2div.hide();
+					 $congenital3div.hide();
+					 
+					 $('#congenitalDiseaseYes').prop('checked', false);
+					 $('#congenitalDiseaseNo').prop('checked', false);
+				 }
+				 
+			});
+			
+			 
+			 $($congenitalDiseaseExplain2).keyup(function() {
+				 
+				 
+				 if($congenitalDiseaseExplain2.val()!=null&&$congenitalDiseaseExplain2.val()!==''){
+					
+					 $congenitalDiseaseExplain3.prop("readonly",false);
+				 }else{
+					 $congenitalDiseaseExplain3.val('');
+					 $congenitalDiseaseExplain3.prop("readonly",true);
+				 }
+				 
+			 });
+			 
+		 
+		 
+		 
+		 
+		 
+		 
+		 /*Event of GeneticDiseaseExplain*/
+			 
+			 
+			 
+			 
+			 if($geneticDiseaseYes.is(":checked")==false&& $geneticDiseaseNo.is(":checked")==false){
+					
+				    $geneticDiseaseExplain.val('');
+					$geneticDiseaseExplain2.val('');
+					$geneticDiseaseExplain2.prop("readonly",true);
+					$geneticDiseaseExplain3.val('');
+					$geneticDiseaseExplain3.prop("readonly",true);
+					 
+					$geneticDiseaseExplainDiv.hide();
+					$geneticDiseaseExplainDiv2.hide();
+					$geneticDiseaseExplainDiv3.hide();
+				}
+				
+				
+				
+				if($geneticDiseaseYes.is(":checked")==true){
+					
+					//debugger;					
+					 $geneticDiseaseYes.prop('checked', 'checked');
+					 $geneticDiseaseNo.prop('checked', false);
+					 $geneticDiseaseExplainDiv.show();
+					 $geneticDiseaseExplainDiv2.show();
+					 $geneticDiseaseExplainDiv3.show();
+				}
+				
+				if($geneticDiseaseNo.is(":checked")==true){
+					
+					 $geneticDiseaseNo.prop('checked', 'checked');
+					 $geneticDiseaseYes.prop('checked', false);
+					 $geneticDiseaseExplain.val('');
+					 $geneticDiseaseExplain2.val('');
+					 $geneticDiseaseExplain2.prop("readonly",true);
+					 $geneticDiseaseExplain3.val('');
+					 $geneticDiseaseExplain3.prop("readonly",true);
+						 
+					 $geneticDiseaseExplainDiv.hide();
+					 $geneticDiseaseExplainDiv2.hide();
+					 $geneticDiseaseExplainDiv3.hide();
+					
+				}
+				
+				
+				
+				$geneticDiseaseYes.change(function () {
+					
+					 //debugger;
+					 $geneticDiseaseYes.prop('checked', 'checked');
+					 $geneticDiseaseNo.prop('checked', false);
+					 $geneticDiseaseExplainDiv.show();
+					 $geneticDiseaseExplainDiv2.show();
+					 $geneticDiseaseExplainDiv3.show();
+					
+				});
+				
+				
+				$geneticDiseaseNo.change(function () {
+						
+					 //alert('No');
+					 $geneticDiseaseNo.prop('checked', 'checked');
+					 $geneticDiseaseYes.prop('checked', false);
+					 $geneticDiseaseExplain.val('');
+					 $geneticDiseaseExplain2.val('');
+					 $geneticDiseaseExplain2.prop("readonly",true);
+					 $geneticDiseaseExplain3.val('');
+					 $geneticDiseaseExplain3.prop("readonly",true);
+						 
+					 $geneticDiseaseExplainDiv.hide();
+					 $geneticDiseaseExplainDiv2.hide();
+					 $geneticDiseaseExplainDiv3.hide();
+					 
+				});
+			 
+		
+			 
+			
+			$($geneticDiseaseExplain).keyup(function() {
+				 
+				 if($geneticDiseaseExplain.val()!=null&&$geneticDiseaseExplain.val()!==''){
+					 
+					 $geneticDiseaseExplain2.prop("readonly",false);
+					 
+				 }else{
+					 
+					 debugger;
+					 
+					 $geneticDiseaseNo.prop('checked', false);
+					 $geneticDiseaseYes.prop('checked', false);
+					 $geneticDiseaseExplain.val('');
+					 $geneticDiseaseExplain2.val('');
+					 $geneticDiseaseExplain2.prop("readonly",true);
+					 $geneticDiseaseExplain3.val('');
+					 $geneticDiseaseExplain3.prop("readonly",true);
+					 
+					 $geneticDiseaseExplainDiv.hide();
+					 $geneticDiseaseExplainDiv2.hide();
+					 $geneticDiseaseExplainDiv3.hide();
+				 }
+				 
+			});
+			
+			 
+			 $($geneticDiseaseExplain2).keyup(function() {
+				 
+				 
+				 if($geneticDiseaseExplain2.val()!=null&&$geneticDiseaseExplain2.val()!==''){
+					
+					 $geneticDiseaseExplain3.prop("readonly",false);
+				 }else{
+					 $geneticDiseaseExplain3.val('');
+					 $geneticDiseaseExplain3.prop("readonly",true);
+				 }
+				 
+			 });
+			 
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			/*Event of TakeMedicineExplain*/
+
+			if($takeMedicineYes.is(":checked")==false||$takeMedicineNo.is(":checked")==false){
+				
+				$takeMedicineExplain.val('');
+				$takeMedicineDiv.hide();
+
+			}
+			
+			
+
+			if($takeMedicineYes.is(":checked")==true){
+				
+				//debugger;					
+				 $takeMedicineYes.prop('checked', 'checked');
+				 $takeMedicineNo.prop('checked', false);
+				 $takeMedicineDiv.show();
+			}
+			
+			
+			if($takeMedicineNo.is(":checked")==true){
+				
+				 $takeMedicineNo.prop('checked', 'checked');
+				 $takeMedicineYes.prop('checked', false);
+				 $takeMedicineExplain.val('');
+				
+				 $takeMedicineDiv.hide();	
+			}
+			
+			
+			
+			$takeMedicineYes.change(function () {
+				
+				 //debugger;
+				 $takeMedicineYes.prop('checked', 'checked');
+				 $takeMedicineNo.prop('checked', false);
+				 $takeMedicineDiv.show();
+			});
+			
+			
+			 $takeMedicineNo.change(function () {
+					
+				 //alert('No');
+				 $takeMedicineNo.prop('checked', 'checked');
+				 $takeMedicineYes.prop('checked', false);
+				 $takeMedicineExplain.val('');
+
+				 $takeMedicineDiv.hide();
+		
+			});
+
+			 
+			 
+			$($takeMedicineExplain).keyup(function() {
+				 
+				 if($takeMedicineExplain.val()!=null&&$takeMedicineExplain.val()!==''){
+					 
+					 $takeMedicineExplain.prop("readonly",false);
+					 
+				 }else{
+					 
+					 $takeMedicineYes.prop('checked', false);
+					 $takeMedicineNo.prop('checked', false);
+					 $takeMedicineExplain.val('');
+					 $takeMedicineDiv.hide();
+				 }				 
+			});			
+		 
+			
+			 
+			 
+			
+			
+			 /*Event of IntoleranceExplain*/
+
+				if($intoleranceYes.is(":checked")==false||$intoleranceNo.is(":checked")==false){
+					
+					$intoleranceExplain.val('');			
+					$intoleranceDiv.hide();
+
+				}
+				
+					
+				if($intoleranceYes.is(":checked")==true){
+					
+					//debugger;					
+					 $intoleranceYes.prop('checked', 'checked');
+					 $intoleranceNo.prop('checked', false);
+					 $intoleranceDiv.show();
+				}
+				
+				
+				if($intoleranceNo.is(":checked")==true){
+					
+					 $intoleranceNo.prop('checked', 'checked');
+					 $intoleranceYes.prop('checked', false);
+					 $intoleranceExplain.val('');
+					
+					 $intoleranceDiv.hide();	
+				}
+				
+				
+				$intoleranceYes.change(function () {
+					
+					 //debugger;
+					 $intoleranceYes.prop('checked', 'checked');
+					 $intoleranceNo.prop('checked', false);
+					 $intoleranceDiv.show();
+				});
+				
+				
+				 $intoleranceNo.change(function () {
+						
+					 //alert('No');
+					 $intoleranceNo.prop('checked', 'checked');
+					 $intoleranceYes.prop('checked', false);
+					 $intoleranceExplain.val('');
+					
+					 $intoleranceDiv.hide();
+			
+				});
+			 
+				 
+				$($intoleranceExplain).keyup(function() {
+									 
+						 if($intoleranceExplain.val()!=null&&$intoleranceExplain.val()!==''){
+							 
+							 $intoleranceExplain.prop("readonly",false);
+							 
+						 }else{
+							 
+							 $intolerance.val('');					 
+							 $intoleranceExplain.val('');
+							 $intoleranceDiv.hide();
+
+						 }
+				 });
+					
+		
+		 
+		}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 	  var idHealth2;
@@ -526,25 +944,30 @@ $(function(){
 	  	    	  
 	  	        for(var i=0;i<data.length;i++){
 		  	        	
-	  	        	$congenitalDisease.val(data[i].congenitalDisease);
+	  	        	//$congenitalDisease.val(data[i].congenitalDisease);
 					$congenitalDiseaseExplain.val(data[i].congenitalDiseaseExplain);
 					$congenitalDiseaseExplain2.val(data[i].congenitalDiseaseExplain2);
 					$congenitalDiseaseExplain3.val(data[i].congenitalDiseaseExplain3);
-					$geneticDisease.val(data[i].geneticDisease);
+					//$geneticDisease.val(data[i].geneticDisease);
 					$geneticDiseaseExplain.val(data[i].geneticDiseaseExplain);
 					$geneticDiseaseExplain2.val(data[i].geneticDiseaseExplain2);
 					$geneticDiseaseExplain3.val(data[i].geneticDiseaseExplain3);
-					$takeMedicine.val(data[i].takeMedicine);
+					//$takeMedicine.val(data[i].takeMedicine);
 					$takeMedicineExplain.val(data[i].takeMedicineExplain);
-					$intolerance.val(data[i].intolerance);
+					//$intolerance.val(data[i].intolerance);
 					$intoleranceExplain.val(data[i].intoleranceExplain);
+					
 					
 					
 					if(data[i].congenitalDisease=='Yes'){
 						
+						//debugger;
 						$congenitaldiv.show();
 						$congenital2div.show();
 						$congenital3div.show();
+						$congenitalDiseaseYes.prop('checked', 'checked');
+						$congenitalDiseaseNo.prop('checked', false);
+						
 						
 						if(data[i].congenitalDiseaseExplain!=null&&data[i].congenitalDiseaseExplain!==''){
 							
@@ -560,12 +983,95 @@ $(function(){
 						$congenital2div.hide();
 						$congenital3div.hide();
 						
+						$congenitalDiseaseNo.prop('checked', 'checked');
+						$congenitalDiseaseYes.prop('checked', false);
 						$congenitalDiseaseExplain.val('');
 					    $congenitalDiseaseExplain2.val('');
 					    $congenitalDiseaseExplain2.prop("readonly",true)
 						$congenitalDiseaseExplain3.val('');	
 					    $congenitalDiseaseExplain3.prop("readonly",true)
 					}
+					
+					
+					
+					
+					if(data[i].geneticDisease=='Yes'){
+						
+						//debugger;
+						$geneticDiseaseExplainDiv.show();
+						$geneticDiseaseExplainDiv2.show();
+						$geneticDiseaseExplainDiv3.show();
+						$geneticDiseaseYes.prop('checked', 'checked');
+						$geneticDiseaseNo.prop('checked', false);
+						
+						
+						if(data[i].geneticDiseaseExplain!=null&&data[i].geneticDiseaseExplain!==''){
+							
+							 $geneticDiseaseExplain2.prop("readonly",false);
+						}
+						
+					    if(data[i].geneticDiseaseExplain2!=null&&data[i].geneticDiseaseExplain2!==''){
+					    	 $geneticDiseaseExplain3.prop("readonly",false);
+					    }
+					}else{
+						
+						$geneticDiseaseExplainDiv.hide();
+						$geneticDiseaseExplainDiv2.hide();
+						$geneticDiseaseExplainDiv3.hide();
+						
+						$geneticDiseaseNo.prop('checked', 'checked');
+						$geneticDiseaseYes.prop('checked', false);
+
+						$geneticDiseaseExplain.val('');
+						$geneticDiseaseExplain2.val('');
+						$geneticDiseaseExplain2.prop("readonly",true)
+						$geneticDiseaseExplain3.val('');	
+						$geneticDiseaseExplain3.prop("readonly",true)
+					}
+					
+					
+					
+					
+					
+					if(data[i].takeMedicine=='Yes'){
+						
+						//debugger;
+						$takeMedicineDiv.show();						
+						$takeMedicineYes.prop('checked', 'checked');
+						$takeMedicineNo.prop('checked', false);
+						
+					}else{
+						
+						$takeMedicineDiv.hide();
+						
+						$takeMedicineNo.prop('checked', 'checked');
+						$takeMedicineYes.prop('checked', false);
+
+						$takeMedicineExplain.val('');
+				
+					}
+					
+					
+					
+					
+					if(data[i].intolerance =='Yes'){
+						
+						//debugger;
+						$intoleranceDiv.show();						
+						$intoleranceYes.prop('checked', 'checked');
+						$intoleranceNo.prop('checked', false);
+						
+					}else{
+						
+						$intoleranceDiv.hide();
+						
+						$intoleranceNo.prop('checked', 'checked');
+						$intoleranceYes.prop('checked', false);
+
+						$intoleranceExplain.val('');
+				
+					}
+					
 					
 					
 
@@ -587,23 +1093,72 @@ $(function(){
 		 
 		    var id = $("#empId").val();
 		    var idHealth;
+		    var congenitalDisease;
+		    var geneticDisease;
+		    var takeMedicine;
+		    var intolerance;
+		    
+		    
+		    if($congenitalDiseaseYes.is(':checked')==true){
+		    	
+		    	congenitalDisease="Yes";
+		    	
+		    }else if($congenitalDiseaseNo.is(':checked')==true){
+		    	
+		    	congenitalDisease="No";
+		    	
+		    }
+		    
+		    
+		    if($geneticDiseaseYes.is(':checked')==true){
+		    	
+		    	geneticDisease='Yes';
+		    }else if($geneticDiseaseNo.is(':checked')==true){
+		    	
+		    	geneticDisease='No';
+		    }
+		    
+		    
+		    if($takeMedicineYes.is(':checked')==true){		
+		    	
+		    	takeMedicine='Yes';
+		    	
+		    }else if($takeMedicineNo.is(':checked')==true){
+		    	
+		    	takeMedicine='No';
+		    }
+		    
+		    
+		    
+		    
+		    if($intoleranceYes.is(':checked')==true){		
+		    	
+		    	intolerance='Yes';
+		    	
+		    }else if($intoleranceNo.is(':checked')==true){
+		    	
+		    	intolerance='No';
+		    }
+		    
+		    
+		    
 		    
 	  	    $.ajax({  
 	  	      type : "POST",   
 	  	      url : $getContextPath+"/health/add",   
 	  	      dataType : 'json', 
 	  	      data : JSON.stringify(
-	  	    		{"congenitalDisease":$congenitalDisease.val(),
+	  	    		{"congenitalDisease":congenitalDisease,
 	    			"congenitalDiseaseExplain" : $congenitalDiseaseExplain.val(),
   	    			"congenitalDiseaseExplain2": $congenitalDiseaseExplain2.val(),
   	    			"congenitalDiseaseExplain3":$congenitalDiseaseExplain3.val(),
-  	    			"geneticDisease":$geneticDisease.val(),
+  	    			"geneticDisease":geneticDisease,
   	    			"geneticDiseaseExplain":$geneticDiseaseExplain.val(),
   	    			"geneticDiseaseExplain2":$geneticDiseaseExplain2.val(),
   	    			"geneticDiseaseExplain3":$geneticDiseaseExplain3.val(),
-  	    			"takeMedicine":$takeMedicine.val(),
+  	    			"takeMedicine":takeMedicine,
   	    			"takeMedicineExplain":$takeMedicineExplain.val(),
-  	    			"intolerance":$intolerance.val(),
+  	    			"intolerance":intolerance,
   	    			"intoleranceExplain":$intoleranceExplain.val(),
   	    			"employeeId":id}
 	  	    		),  
@@ -647,18 +1202,65 @@ $(function(){
 	  	     
 	  	      success : function(data) {  
 	  	    	  
-	  	    	    alert('bbb');
-	  	    	    $('#congenitalDisease').val(data.congenitalDisease);
+	  	    	    //alert('bbb');
+	
+	  	    	    if(data.congenitalDisease=='Yes'){
+	  	    	    	
+	  	    	    	$congenitalDiseaseYes.prop('checked', 'checked');
+	  	    	    	
+	  	    	    }else if(data.congenitalDisease=='No'){
+	  	    	    	
+	  	    	    	$congenitalDiseaseNo.prop('checked', 'checked');
+	  	    	    	
+	  	    	    }
+	  	    	    
+	  	    	    
 					$('#congenitalDiseaseExplain').val(data.congenitalDiseaseExplain);
 					$('#congenitalDiseaseExplain2').val(data.congenitalDiseaseExplain2);
 					$('#congenitalDiseaseExplain3').val(data.congenitalDiseaseExplain3);
-					$('#geneticDisease').val(data.geneticDisease);
+					
+					
+					if(data.geneticDisease=='Yes'){
+		  	    	    	
+		  	    	    $geneticDiseaseYes.prop('checked', 'checked');
+		  	    	    	
+		  	    	}else if(data.geneticDisease=='No'){
+		  	    	    	
+		  	    	    $geneticDiseaseNo.prop('checked', 'checked');
+		  	    	    	
+		  	    	}
+					
+					
 					$('#geneticDiseaseExplain').val(data.geneticDiseaseExplain);
 					$('#geneticDiseaseExplain2').val(data.geneticDiseaseExplain2);
 					$('#geneticDiseaseExplain3').val(data.geneticDiseaseExplain3);
-					$('#takeMedicine').val(data.takeMedicine);
+					
+					
+					
+					if(data.takeMedicine=='Yes'){
+	  	    	    	
+						$takeMedicineYes.prop('checked', 'checked');
+		  	    	    	
+		  	    	}else if(data.takeMedicine=='No'){
+		  	    	    	
+		  	    		$takeMedicineNo.prop('checked', 'checked');
+		  	    	    	
+		  	    	}
+					
+							
 					$('#takeMedicineExplain').val(data.takeMedicineExplain);
-					$('#intolerance').val(data.intolerance);
+					
+					
+					if(data.intolerance=='Yes'){
+	  	    	    	
+						$intoYes.prop('checked', 'checked');
+		  	    	    	
+		  	    	}else if(data.intolerance=='No'){
+		  	    	    	
+		  	    		$intoNo.prop('checked', 'checked');
+		  	    	    	
+		  	    	}
+		
 					$('#intoleranceExplain').val(data.intoleranceExplain);
 					
 					
@@ -672,7 +1274,56 @@ $(function(){
 	 
 	  function doEdit(idUpdate){
 		  
-		  var idemp =  $("#empId").val();
+		   var idemp =  $("#empId").val();
+		  
+		  
+		   var congenitalDisease;
+		   var geneticDisease;
+		   var takeMedicine;
+		   var intolerance;
+		    
+		    
+		    if($congenitalDiseaseYes.is(':checked')==true){
+		    	
+		    	congenitalDisease="Yes";
+		    	
+		    }else if($congenitalDiseaseNo.is(':checked')==true){
+		    	
+		    	congenitalDisease="No";
+		    	
+		    }
+		    
+		    
+		    if($geneticDiseaseYes.is(':checked')==true){
+		    	
+		    	geneticDisease='Yes';
+		    }else if($geneticDiseaseNo.is(':checked')==true){
+		    	
+		    	geneticDisease='No';
+		    }
+		    
+		    
+		    if($takeMedicineYes.is(':checked')==true){		
+		    	
+		    	takeMedicine='Yes';
+		    	
+		    }else if($takeMedicineNo.is(':checked')==true){
+		    	
+		    	takeMedicine='No';
+		    }
+		    
+		    
+		    
+		    
+		    if($intoleranceYes.is(':checked')==true){		
+		    	
+		    	intolerance='Yes';
+		    	
+		    }else if($intoleranceNo.is(':checked')==true){
+		    	
+		    	intolerance='No';
+		    }
+		    
 		 
 		  
 	  	    $.ajax({  
@@ -681,17 +1332,17 @@ $(function(){
 	  	      dataType : 'json', 
 	  	      data :  JSON.stringify(
 		  	    		{	"id":idUpdate,
-		  	    			"congenitalDisease":$congenitalDisease.val(),
+		  	    			"congenitalDisease":congenitalDisease,
 			    			"congenitalDiseaseExplain" : $congenitalDiseaseExplain.val(),
 		  	    			"congenitalDiseaseExplain2": $congenitalDiseaseExplain2.val(),
 		  	    			"congenitalDiseaseExplain3":$congenitalDiseaseExplain3.val(),
-		  	    			"geneticDisease":$geneticDisease.val(),
+		  	    			"geneticDisease":geneticDisease,
 		  	    			"geneticDiseaseExplain":$geneticDiseaseExplain.val(),
 		  	    			"geneticDiseaseExplain2":$geneticDiseaseExplain2.val(),
 		  	    			"geneticDiseaseExplain3":$geneticDiseaseExplain3.val(),
-		  	    			"takeMedicine":$takeMedicine.val(),
+		  	    			"takeMedicine":takeMedicine,
 		  	    			"takeMedicineExplain":$takeMedicineExplain.val(),
-		  	    			"intolerance":$intolerance.val(),
+		  	    			"intolerance":intolerance,
 		  	    			"intoleranceExplain":$intoleranceExplain.val(),
 		  	    			"employeeId":idemp}
 			  	    		),  
@@ -763,26 +1414,32 @@ $(function(){
 	
 	
 	function clear(){
+		
+		
+		 	 $congenitalDiseaseYes.prop('checked', false);
+		 	 $congenitalDiseaseNo.prop('checked', false);
+		 	 $geneticDiseaseYes.prop('checked', false);
+			 $geneticDiseaseNo.prop('checked', false);
+			 $takeMedicineYes.prop('checked', false);
+			 $takeMedicineNo.prop('checked', false);
+			 $intoleranceNo.prop('checked', false);
+			 $intoleranceYes.prop('checked', false);
 			 
-		     $('#congenitalDisease').val('');
 			 $('#congenitalDiseaseExplain').val('');
 		     $('#congenitalDiseaseExplain2').val('');
 			 $('#congenitalDiseaseExplain3').val('');	
 			 
 			 //read only congenitalDisease
 			 $("#congenitalDisease").prop('readonly','readonly');
-			 //$("#congenitalDiseaseExplain").prop('readonly','readonly');
 			 $('#congenitalDiseaseExplain2').prop('readonly','readonly');
 			 $('#congenitalDiseaseExplain3').prop('readonly','readonly');	
 			 
-			 $('#geneticDisease').val('');
 		 	 $('#geneticDiseaseExplain').val('');
 			 $('#geneticDiseaseExplain2').val('');
 			 $('#geneticDiseaseExplain3').val('');	
 			 
 			 //read only geneticDisease
 			 $("#geneticDisease").prop('readonly','readonly');
-			 //$("#geneticDiseaseExplain").prop('readonly','readonly');
 			 $('#geneticDiseaseExplain2').prop('readonly','readonly');
 			 $('#geneticDiseaseExplain3').prop('readonly','readonly');
 			 
@@ -792,14 +1449,12 @@ $(function(){
 		     
 			 //read only takeMedicine
 		     $("#takeMedicine").prop('readonly','readonly');
-		     //$("#takeMedicineExplain").prop('readonly','readonly');
 		     
 		     $('#intolerance').val('');
 		     $('#intoleranceExplain').val('');
 		     
 		     //read only intolerance
 			 $("#intolerance").prop('readonly','readonly');
-			 //$("#intoleranceExplain").prop('readonly','readonly');
 			 
 			  $congenitaldiv.hide();
 			  $congenital2div.hide();
@@ -811,25 +1466,6 @@ $(function(){
 			  $intoleranceDiv.hide();
 
 	}
-	
-	
-	
-	
-	function clearDataForList(){
-		 
-		
-		 
-		 
-	 	 $geneticDiseaseExplain.val('');
-		 $geneticDiseaseExplain2.val('');
-		 $geneticDiseaseExplain3.val('');	
-		 
-		
-	     $takeMedicineExplain.val('');
-		 
-	     $intoleranceExplain.val('');
-	     
-   }
 	 
 	
 });

@@ -1,4 +1,4 @@
-.btnhealth{
+/* .btnhealth{
 	padding: 3%;
 }
 
@@ -13,7 +13,7 @@
 
 #remove{
 	color: red;
-}
+} */
 
 .explainLabel{
 	
@@ -45,3 +45,10 @@
 	margin-top: 2%;
 	margin-bottom: 2%;
 }
+
+
+/**************************************************************/
+
+.form-group.form-group-sm.col.col-lg-6.col-md-6.col-sm-6.col-xs-6{
+	margin: auto;
+} 
