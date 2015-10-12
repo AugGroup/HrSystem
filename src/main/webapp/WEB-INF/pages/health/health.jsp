@@ -43,7 +43,7 @@
 						 	 <div class="radio">
 						 	    
 						 	      <label >			    
-								  	<f:radiobutton id="congenitalDiseaseYes" path="congenitalDisease" value="Yes"/>Yes
+								  	<f:radiobutton id="congenitalDiseaseYes" path="congenitalDisease" value="Yes"/><spring:message code="default.yes"/>
 								  </label>
 								
 							 </div>	
@@ -51,7 +51,7 @@
 							  <div class="radio">					 	    
 						 	     
 								  <label> 
-								  	<f:radiobutton id="congenitalDiseaseNo" path="congenitalDisease" value="No"/>No
+								  	<f:radiobutton id="congenitalDiseaseNo" path="congenitalDisease" value="No"/><spring:message code="default.no"/>
 								  </label>
 								
 							 </div>	
@@ -137,14 +137,14 @@
 				 	 
 				 	  <div class="radio">			 	  
 				 	      <label>			    
-						  	<f:radiobutton id="geneticDiseaseYes" path="geneticDisease" value="Yes"/>Yes
+						  	<f:radiobutton id="geneticDiseaseYes" path="geneticDisease" value="Yes"/><spring:message code="default.yes"/>
 						  </label>						 
 					 </div>
 				 	 
 				 	 
 				 	  <div class="radio">			 	  			 	     
 						  <label > 
-						  	<f:radiobutton id="geneticDiseaseNo" path="geneticDisease" value="No"/>No
+						  	<f:radiobutton id="geneticDiseaseNo" path="geneticDisease" value="No"/><spring:message code="default.no"/>
 						  </label>						
 					 </div>
 				 	 
@@ -229,14 +229,14 @@
 			 		
 				 	  <div class="radio">			 	  
 				 	      <label >			    
-						  	<f:radiobutton id="takeMedicineYes" path="takeMedicine" value="Yes"/>Yes
+						  	<f:radiobutton id="takeMedicineYes" path="takeMedicine" value="Yes"/><spring:message code="default.yes"/>
 						  </label>				
 					 </div>
 					 
 					 
 					 <div class="radio">			 	  
 						  <label > 
-						  	<f:radiobutton id="takeMedicineNo" path="takeMedicine" value="No"/>No
+						  	<f:radiobutton id="takeMedicineNo" path="takeMedicine" value="No"/><spring:message code="default.no"/>
 						  </label>						
 					 </div>
 				 	 				 
@@ -283,7 +283,7 @@
 					 		
 					 		<div class="radio">			 	  
 						 	      <label >			    
-								  	<input type="radio" id="intoleranceYes" name="intolerance" value="Yes"/>Yes
+								  	<input type="radio" id="intoleranceYes" name="intolerance" value="Yes"/><spring:message code="default.yes"/>
 								  </label>
 											
 							 </div>
@@ -291,7 +291,7 @@
 							 <div class="radio">			 	  
 						 	    
 								  <label > 
-								  	<input type="radio" id="intoleranceNo" name="intolerance" value="No"/>No
+								  	<input type="radio" id="intoleranceNo" name="intolerance" value="No"/><spring:message code="default.no"/>
 								  </label>						
 							 </div>
 					 							 

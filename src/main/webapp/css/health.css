@@ -13,13 +13,15 @@
 
 #remove{
 	color: red;
-} */
+} 
 
  .explainLabel{
 	
 	font-family: Dosis-Regular;
 	font-size:14px;
 }
+
+*/
 
 .divHealth{
 	margin-top: 1%;
@@ -49,7 +51,7 @@
 
 ************************************************************
 
-.form-group.form-group-sm.col.col-lg-6.col-md-6.col-sm-6.col-xs-6{
+/* .form-group.form-group-sm.col.col-lg-6.col-md-6.col-sm-6.col-xs-6{
 	margin: auto;
 } 
- 
+  */

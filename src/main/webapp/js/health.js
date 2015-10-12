@@ -74,56 +74,56 @@ $(function(){
 	        	congenitalDisease: {
 	                validators: {
 	                    notEmpty: {
-	                        message: 'not empty'
+	                        message: $requiredCongenitalDisease
 	                    }
 	                }
 	            },
 	            congenitalDiseaseExplain: {
 	                validators: {
 	                    notEmpty: {
-	                        message: 'not empty'
+	                        message: $requiredCongenitalDiseaseExplain
 	                    }
 	                }
 	            },
 	            geneticDisease: {
 	                validators: {
 	                    notEmpty: {
-	                        message: 'not empty'	
+	                        message: $requiredGeneticDisease 	
 	                    }	                   	                  
 	                }
 	            },
 	            geneticDiseaseExplain: {
 	                validators: {
 	                    notEmpty: {
-	                        message:  'not empty'	
+	                        message:  $requiredGeneticDiseaseExplain	
 	                    }	                  
 	                }
 	            },
 	            takeMedicine: {
 	                validators: {
 	                    notEmpty: {
-	                        message:  'not empty'	
+	                        message:  $requiredTakeMedicine	
 	                    }	                  
 	                }
 	            },
 	            takeMedicineExplain: {
 	                validators: {
 	                    notEmpty: {
-	                        message:  'not empty'	
+	                        message:  $requiredTakeMedicineExplain	
 	                    }	                  
 	                }
 	            },
 	            intolerance: {
 	                validators: {
 	                    notEmpty: {
-	                        message:  'not empty'	
+	                        message:  $requiredIntolerance	
 	                    }	                  
 	                }
 	            },
 	            intoleranceExplain: {
 	                validators: {
 	                    notEmpty: {
-	                        message:  'not empty'	
+	                        message: $requiredIntoleranceExplain
 	                    }	                  
 	                }
 	            },
@@ -979,11 +979,11 @@ $(function(){
 					
 					if(data.intolerance=='Yes'){
 	  	    	    	
-						$intoYes.prop('checked', 'checked');
+						$intoleranceYes.prop('checked', 'checked');
 		  	    	    	
 		  	    	}else if(data.intolerance=='No'){
 		  	    	    	
-		  	    		$intoNo.prop('checked', 'checked');
+		  	    		$intoleranceNo.prop('checked', 'checked');
 		  	    	    	
 		  	    	}
 		

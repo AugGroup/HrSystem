@@ -206,4 +206,15 @@
 	var $notifyUpdate='<spring:message code="PNotify.update" />';
 	var $notifyDelete='<spring:message code="PNotify.delete" />';
 	
+	
+	/* health-validate */
+	var $requiredCongenitalDisease =  '<spring:message code="health.required.congenitalDisease" />';
+	var $requiredCongenitalDiseaseExplain =  '<spring:message code="health.required.congenitalDiseaseExplain" />';
+	var $requiredGeneticDisease  =  '<spring:message code="health.required.geneticDisease" />';
+	var $requiredGeneticDiseaseExplain =  '<spring:message code="health.required.geneticDiseaseExplain" />';
+	var $requiredTakeMedicine  =  '<spring:message code="health.required.takeMedicine" />';
+	var $requiredTakeMedicineExplain =  '<spring:message code="health.required.takeMedicineExplain" />';
+	var $requiredIntolerance =  '<spring:message code="health.required.intolerance" />';
+	var $requiredIntoleranceExplain =  '<spring:message code="health.required.intoleranceExplain" />';
+	
 </script>
