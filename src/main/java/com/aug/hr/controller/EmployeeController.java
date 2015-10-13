@@ -287,6 +287,19 @@ public class EmployeeController {
 		employeeService.deleteById(empId);
 		return "{success:true}";
 	}
+	
+	
+	
+	@RequestMapping(value = "/employee/finduniqueidcard", method = RequestMethod.GET)
+	public @ResponseBody List<EmployeeListDto> findUniqueIdCard(Locale locale,
+			ModelMap model){
+			
+		List<EmployeeListDto> employeeList = employeeDtoService.searchEmployee();
+		return employeeList;
+		
+	}	
+	
+
 
 	@RequestMapping(value = "/employee/submit", method = RequestMethod.POST)
 	public String manageSubmit(@ModelAttribute EmployeeDto employeeDto, Model model,

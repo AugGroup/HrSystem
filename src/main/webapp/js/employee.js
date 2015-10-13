@@ -69,6 +69,63 @@ $("#validateAddress").validate({
 	}
 });		
 		
+
+
+
+
+		function doFindData() {  
+			
+			
+			var $idCard = $('#idCard');
+		
+		    var c=0; 
+		    $.ajax({  
+		     type : "GET",   
+		     url : $getContextPath+"/employee/finduniqueidcard",   
+		     dataType : 'json', 
+		     contentType :"application/json; charset=utf-8",
+		     async: false,  
+		    
+		     success : function(data) {  
+		   	  
+			   	  //debugger;
+			       for(var i=0;i<data.length;i++){
+			    	 if(data[i].id!=$('#id').val()){
+			    	    if(data[i].cardId==$idCard.val()){
+		            	  c = c+1;
+		            	  
+		              }
+			    	 }
+			       }
+			       
+				   	console.log('c#1: '+c);
+			     } 
+		    
+		     }); 	
+		    
+			console.log('c#2: '+c);
+		    return c;
+		    
+		}
+
+
+		jQuery.validator.addMethod("unique", function(value, element, params) {
+			
+		   //debugger;			
+	  	   var dataCount=0;
+	       dataCount = doFindData();	  	   
+	  	   console.log('datac: '+dataCount);
+		   return dataCount==0;
+		}, "Value is not unique.");
+		
+		
+		jQuery.validator.classRuleSettings.unique = {
+		    unique: true
+		};
+
+
+
+
 		
 	$("#addForm").validate({
 	rules: {
@@ -156,11 +213,11 @@ $("#validateAddress").validate({
 		},*/
 		
 		idCard: {
-			required: true,
-			rangelength : [17, 17]
-			 /* digits: true,
+			 required: true,
+			 /*rangelength : [17, 17]
+			 digits: true,
 			 minlength: 13,
-			 maxlength: 13 */
+			 maxlength: 13*/ 
 		},
 		
 		/*age: {
@@ -226,7 +283,11 @@ $("#validateAddress").validate({
 		placeOfBirth: $validateplaceOfBirth,
 		age: $validateage,
 		religion: $validatereligion,*/
-		idCard: $validateidCard,
+		idCard: {
+			required: $validateidCard,
+			//rangelength: 'length err',
+			unique: $validateUniqueIdCard 
+		},
 		/*issuedOffice: $validateissuedOffice,
 		
 		expiryDate: $validateexpiryDate,
@@ -571,7 +632,8 @@ if($('#previousEmployer').val()=="No"){
      
 		
     	$('[name="saveButton"]').click(function() {
-    							
+    	
+    		//$("#addForm").valid();
 			$('[name="employeeForm"]').attr('action',
 					$getContextPath+"/employee/submit");
 			$('[name="employeeForm"]').submit(); 

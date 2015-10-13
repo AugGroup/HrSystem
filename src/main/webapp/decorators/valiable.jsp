@@ -182,6 +182,7 @@
 	var $validatetechnology = '<spring:message code="employee.required.technology" />';
 	var $validatemasStaffType = '<spring:message code="employee.required.staffType" />';
 	var $validatestatusemp = '<spring:message code="employee.required.statusemp" />';
+	var $validateUniqueIdCard = '<spring:message code="employee.unique.idCard" />';
 	
 
 

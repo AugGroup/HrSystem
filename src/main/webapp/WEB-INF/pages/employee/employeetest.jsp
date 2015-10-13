@@ -361,7 +361,7 @@
 	         		
 							<div class="form-group">
 								<div class="col-md-3">
-									<label class="required" style="margin-right: 25px;"> <spring:message code="employee.idCard"></spring:message> :</label> <input type="text" class="form-control"
+									<label class="required" style="margin-right: 25px;"> <spring:message code="employee.idCard"></spring:message> :</label> <input type="text" class="form-control unique"
 									id="idCard" name="idCard" placeholder="${please} ${enter} <spring:message code="employee.idCard"></spring:message>" value="${employeeDto.idCard}">
 								</div>
 								<div class="col-md-3">
