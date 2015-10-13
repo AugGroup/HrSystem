@@ -15,7 +15,7 @@ var dt;
 				"iDisplayLength": 10,
 				"pagingType": "simple_numbers",
 				"ordering": false,
-				"info": false,
+				//"info": false,
 				"dom": '<"toolbar">frtip'
 			});
 			

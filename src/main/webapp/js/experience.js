@@ -10,7 +10,7 @@ var dt;
 			"iDisplayLength": 10,
 			"pagingType": "simple_numbers",
 			"ordering": false,
-			"info": false,
+			//"info": false,
 			"dom": '<"toolbar">frtip'
 		});
 		$("div.toolbar").html('<b><button id="clearModal" type="button" class="btn btn-warning btn-md " data-toggle="modal" data-target="#addModal">'+$msgNewRecord+'</button>  </b>');

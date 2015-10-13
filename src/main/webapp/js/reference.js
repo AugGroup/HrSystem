@@ -11,7 +11,7 @@
 			"iDisplayLength": 10,
 			"pagingType": "simple_numbers",
 			"ordering": false,
-			"info": false,
+			//"info": false,
 			"dom": '<"toolbar">frtip'
 			, initComplete :function(){
 				$('#tel').mask("999-999-9999",{placeholder:"xxx-xxx-xxxx"});
