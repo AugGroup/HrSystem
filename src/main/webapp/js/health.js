@@ -642,9 +642,15 @@ $(function(){
 	  
 	  $( "#renew" ).on( "click", function() {
 		  if($idHealth.val()===''||$idHealth.val()===''){
+			  
+			  $('#formAddUpdate').bootstrapValidator();
+			  $('#formAddUpdate').data('bootstrapValidator').resetForm();
 		 	  clear();
 		  }
 		  if($idHealth.val()!=null&&$idHealth.val()!==''){
+			  
+			  $('#formAddUpdate').bootstrapValidator();
+			  $('#formAddUpdate').data('bootstrapValidator').resetForm();
 			  doFindData();
 		  }
 	  });
