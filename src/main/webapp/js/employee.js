@@ -76,35 +76,30 @@ $("#validateAddress").validate({
 		function doFindData() {  
 			
 			
-			var $idCard = $('#idCard');
-		
-		    var c=0; 
-		    $.ajax({  
-		     type : "GET",   
+			var $idCard = $('#idCard');	
+			var $id = $('#id');
+		    var val=0; 
+		    
+		     $.ajax({  
+		     type : "POST",  
+		     data : JSON.stringify({"id":$id.val(),
+		    	 					"cardId":$idCard.val()}), 
 		     url : $getContextPath+"/employee/finduniqueidcard",   
 		     dataType : 'json', 
 		     contentType :"application/json; charset=utf-8",
 		     async: false,  
 		    
 		     success : function(data) {  
-		   	  
-			   	  //debugger;
-			       for(var i=0;i<data.length;i++){
-			    	 if(data[i].id!=$('#id').val()){
-			    	    if(data[i].cardId==$idCard.val()){
-		            	  c = c+1;
-		            	  
-		              }
-			    	 }
-			       }
-			       
-				   	console.log('c#1: '+c);
+		   	       
+		    	 		val=data;
+		    	 		console.log('a: '+val[0].id);
+			   	        //return val;
 			     } 
 		    
 		     }); 	
 		    
-			console.log('c#2: '+c);
-		    return c;
+			//console.log('c: '+val.id);
+		    return val;
 		    
 		}
 
@@ -114,7 +109,7 @@ $("#validateAddress").validate({
 		   //debugger;			
 	  	   var dataCount=0;
 	       dataCount = doFindData();	  	   
-	  	   console.log('datac: '+dataCount);
+	  	   console.log('datac: '+dataCount.length);
 		   return dataCount==0;
 		}, "Value is not unique.");
 		

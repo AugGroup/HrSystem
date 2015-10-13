@@ -290,11 +290,12 @@ public class EmployeeController {
 	
 	
 	
-	@RequestMapping(value = "/employee/finduniqueidcard", method = RequestMethod.GET)
-	public @ResponseBody List<EmployeeListDto> findUniqueIdCard(Locale locale,
+	@RequestMapping(value = "/employee/finduniqueidcard", method = RequestMethod.POST)
+	public @ResponseBody List<EmployeeListDto> findUniqueIdCard(@RequestBody EmployeeListDto employeeListDto,
+			Locale locale,
 			ModelMap model){
 			
-		List<EmployeeListDto> employeeList = employeeDtoService.searchEmployee();
+		List<EmployeeListDto> employeeList = employeeDtoService.searchEmpForUniqueIdCard(employeeListDto.getId(), employeeListDto.getCardId());
 		return employeeList;
 		
 	}	
