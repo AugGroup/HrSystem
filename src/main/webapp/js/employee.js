@@ -80,6 +80,7 @@ $("#validateAddress").validate({
 			var $id = $('#id');
 		    var val=0; 
 		    
+		    
 		     $.ajax({  
 		     type : "POST",  
 		     data : JSON.stringify({"id":$id.val(),
@@ -92,25 +93,23 @@ $("#validateAddress").validate({
 		     success : function(data) {  
 		   	       
 		    	 		val=data;
-		    	 		console.log('a: '+val[0].id);
-			   	        //return val;
+		    	 		//console.log('a: '+val[0].id);
 			     } 
 		    
 		     }); 	
 		    
-			//console.log('c: '+val.id);
 		    return val;
 		    
 		}
 
 
-		jQuery.validator.addMethod("unique", function(value, element, params) {
+		jQuery.validator.addMethod("unique", function(value) {
 			
 		   //debugger;			
 	  	   var dataCount=0;
 	       dataCount = doFindData();	  	   
 	  	   console.log('datac: '+dataCount.length);
-		   return dataCount==0;
+		   return dataCount.length==0;
 		}, "Value is not unique.");
 		
 		
