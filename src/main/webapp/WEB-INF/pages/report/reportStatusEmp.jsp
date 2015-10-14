@@ -61,7 +61,7 @@
 							<th><spring:message code="reportstatus.agey" /></th>
 							<th><spring:message code="reportstatus.agem" /></th>
 							<th><spring:message code="reportstatus.aged" /></th>
-							<th><spring:message code="reportstatus.resourcenameth" /></th>
+							<th><spring:message code="reportstatus.resourcelasten" /></th>
 							<th><spring:message code="reportstatus.resourcenameen" /></th>
 							<th><spring:message code="reportstatus.statusstaff" /></th>
 							<th><spring:message code="reportstatus.startdate" /></th>
@@ -152,7 +152,7 @@ ${reportStatusEmployeeDto.employeeCode}
 					              data[i].year, 
 					              data[i].month, 
 					              data[i].day, 
-					              data[i].nameThai, 
+					              data[i].lastEng, 
 					              data[i].nameEng, 
 					              data[i].statusStaff, 
 					              data[i].startDate, 
