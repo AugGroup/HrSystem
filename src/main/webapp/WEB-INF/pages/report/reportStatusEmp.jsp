@@ -109,6 +109,9 @@ ${reportStatusEmployeeDto.employeeCode}
 			 "scrollX": true
 		});	
 		
+		if($('.dataTables_empty').length > 0){
+			document.getElementById("btn_print").disabled = true;
+		}
 		
 		  $('#reportForm').bootstrapValidator({
 				message: 'This value is not valid',
@@ -157,6 +160,9 @@ ${reportStatusEmployeeDto.employeeCode}
 						]);
 			 
 					}
+				if($('.dataTables_empty').length == 0){
+					document.getElementById("btn_print").disabled = false;
+				}
 				},
 				error : function(data,testStatus,jqXHR) {
 					$("#outputajax").text(testStatus);
@@ -166,14 +172,13 @@ ${reportStatusEmployeeDto.employeeCode}
 		
 		
 	 
-		 $('#btn_print').off("click").on('click', function(){
-			 $('#reportForm').bootstrapValidator();
-				$('#reportForm').data('bootstrapValidator').validate();
-				if($('#reportForm').data('bootstrapValidator').isValid()){
-					$("#reportForm").get(0).submit();
+		$('#btn_print').on('click', function(){
+			$('#reportForm').bootstrapValidator();
+			$('#reportForm').data('bootstrapValidator').validate();
+			if($('#reportForm').data('bootstrapValidator').isValid()){
+				$("#reportForm").get(0).submit();
 				}
 		 	});
-		 	
 
 	});
 	
