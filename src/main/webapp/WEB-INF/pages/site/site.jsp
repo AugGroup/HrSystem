@@ -13,22 +13,13 @@
 <script src="<c:url value="/resources/js/site.js" />"></script>
 
 
-
-
-<div class="row">
-	<div class="col-md-6">
-		<%-- <h2><spring:message code="site.name" /></h2> --%>
-	</div>
-
-
-</div>
-
-<div class="row">
-	<div id="message"></div>
-	<div id="outputajax" class="form-group"></div>	
-</div>		
-
 <input id="empId" type="hidden" value="${id}"/>
+
+<f:form id="listForm" name="siteForm" method="post" commandName="siteDto" class="form-horizontal" role="form">	      	 
+
+<br>
+
+<div class="form-group">
 
  <table id="tableResult" class="dataTable stripe table-bordered"> 
  <caption title=""><spring:message code="site.name" /></caption>
@@ -45,8 +36,10 @@
  
    </table>
   
+   </div> 
+    </f:form>
    
-   
+   <f:form id ="formAddUpdate" method="post" commandName="site">
    
 <!-- Modal Add and Update data-->
 <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -58,39 +51,26 @@
       </div>
       <div class="modal-body">
           
-             
           
-            <f:form id="formAddUpdate" name="siteForm" method="post" commandName="siteDto" class="form-horizontal" role="form">	      	 
 	      
 	   <spring:message code="default.date" var="date"/>
-		   <div class="form-group form-group-sm">
+	   
+	    <div class="row">
+		   <div class="form-group col-md-6">
 			    
-			     <label class="col-lg-4 col-md-4 col-sm-3 col-xs-3 control-label required" >
-			            ${startDate}:
-			     </label>	 		
-			    
-                <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">		
-				     <div  class="input-group date" id='startDate'>		     		
-				     		<f:input name="startDate" path="startDate" cssClass="form-control" placeholder="${date}"/>
-				     		<span class="input-group-addon">
-	                        	<span class="glyphicon glyphicon-calendar"></span>
-	                    	</span>
+			     <label class="required">${startDate}:</label>	 		
+				 <div  class="input-group date" id='startDate'>		     		
+				 <f:input name="startDate" path="startDate" class="form-control" placeholder="${date}"/>
+				 <span class="input-group-addon">
+	                  <span class="glyphicon glyphicon-calendar"></span>
+	             </span>
 				     </div>
-				</div>
-		   </div>
-		   
-		   
-		   <div class="form-group form-group-sm">
-			    
-			     <label class="col-lg-4 col-md-4 col-sm-3 col-xs-3 control-label required" >
-			            ${endDate}:
-			     </label>	 		
-			    
-			     
-			   
-			    <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">		
+		   		</div>	
+		   		
+			<div class="form-group col-md-6">
+			     <label class="required">${endDate}:</label>	 		
 				     <div  class="input-group date" id='endDate'>		     		
-				     		<f:input name="endDate" path="endDate" cssClass="form-control" placeholder="${date}"/>
+				     		<f:input name="endDate" path="endDate" class="form-control" placeholder="${date}"/>
 				     		<span class="input-group-addon">
 	                        <span class="glyphicon glyphicon-calendar"></span>
 	                    </span>
@@ -98,67 +78,47 @@
 				</div>		   
 		   </div>
 		   
-		   
-		   
-		     <div class="form-group form-group-sm">
+		     <div class="form-group">
 			    
-			        
-			      <label class="col-lg-4 col-md-4 col-sm-3 col-xs-3 control-label required" >
+			      <label class="required" >
 			            ${projectname}:
 			      </label>	 		
-			     
-				     
-			     <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">		     		
 			     		<f:input  id="projectName" path="projectName" cssClass="form-control required" placeholder="${projectname}" />			     		
 			     </div>
-		   </div>
 		   
 		   
 		    <div class="form-group form-group-sm">
 			    
-			     <label class="col-lg-4 col-md-4 col-sm-3 col-xs-3 control-label required" >
+			     <label class="required" >
 			            ${projectOwner}:
 			     </label>	 		
-			    
-			     
-			     <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">		     		
 			     		<f:input id="projectOwner" path="projectOwner" cssClass="form-control required" placeholder="${projectOwner}"/>
 			     </div>
 		           
-		   </div>
 		   
-		   
-		   
-		  <div class="form-group form-group-sm">
+		  <div class="form-group">
 			    
-			     <label class="col-lg-4 col-md-4 col-sm-3 col-xs-3 control-label required" >
+			     <label class="required" >
 			            ${projectOwnerContact}:
 			     </label>	 		
-			    
-			     
-			     <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">		     		
 			     		<f:input id="projectOwnerContact" path="projectOwnerContact" cssClass="form-control required" placeholder="${projectOwnerContact}"/>
 			     </div>
-		           
-		   </div>
-		   
-		   
+			     
+		     </div>
 		  
-		      <div class="form-group" align="center">
+		      <div class="modal-footer">
 		        <button type="button" class="btn btn-default" data-dismiss="modal"><spring:message code="label.close" /></button>
 		        <button id="saveBtn" name="saveBtn" type="button" class="btn btn-primary"><spring:message code="label.save" /></button>
 		      </div>
  
-      </f:form>
 	  
 	    </div>
 	  </div>
 	</div>   
- </div>
  
+    </f:form>
    
-   
-   
+   <f:form id="deleteForm" commandName="site" method="post">
 	<!-- Modal Delete -->
 	<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
 	  <div class="modal-dialog">
@@ -176,4 +136,5 @@
 	    </div>
 	  </div>
 	</div>
-	   
+	  
+	</f:form> 

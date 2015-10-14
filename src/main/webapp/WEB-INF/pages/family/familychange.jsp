@@ -15,13 +15,10 @@
 <input id="empId" type="hidden" value="${id}">
 <input id="appId" type="hidden" value="${appId}">
 
-
-<div class="row">
-	<div id="message"></div>
-	<div id="outputajax" class="form-group"></div>	
-</div>
+ <f:form id="listForm" name="FamilyForm" method="post" commandName="family">	      	 
 
 
+<br>
 
 <div class="form-group">
  <table id="tableResult" class="dataTable stripe table-bordered">
@@ -46,9 +43,10 @@
 
  
 
+   </f:form>
    
    
- 
+ <f:form id ="formAdd" method="post" commandName="family">
  
 <!-- Modal Add and Update data-->
 <div class="modal fade" id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -60,45 +58,19 @@
       </div>
       <div class="modal-body">
           
-             
-          
-         <f:form id="formAdd" name="FamilyForm" method="post" commandName="family" role="form" class="form-horizontal">	      	 
-	     
-
-		   
-	
-		   
-	     <div class="form-group form-group-sm col col-lg-12 col-md-12 col-sm-6 col-xs-12">
-			    
-			<div class="row">
-			        
-			      <label class="col-lg-3 col-md-3 col-sm-4 col-xs-4 control-label required" >
-			           <spring:message code="label.fullname" />: 
-			      </label>	 		
-			     
-				     
-			     <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">		  
-			     		<f:input  id="familyName"  path="familyName" cssClass="form-control required" placeholder="Full Name" />   		
+	     <div class="form-group">
+			      <label class="required" ><spring:message code="label.fullname" /> : </label>	 		
+			      <f:input  id="familyName"  path="familyName" cssClass="form-control required" placeholder="Full Name" />   		
 			     </div>
 		  
 		  
-		  	   
-		  	</div>
-		   
-		   </div>
-	     
-
-
-	     
-	     <div class="form-group form-group-sm col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+	     <div class="form-group">
 			    
-			<div class="row">
-			     <label class="col-lg-3 col-md-3 col-sm-4 col-xs-4 control-label required" >
-			     	  <spring:message code="family.gender" />:
+			     <label class="required" >
+			     	  <spring:message code="family.gender" /> :
 			     </label>	 		
 
-
-			      <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">					    
+			      <div class="form-group">					    
 				     	
 				     <label class="radio-inline" for="gender_male" > 
 		 			     	<f:radiobutton id="genderMale" name="gender" path="gender" value="Male" checked="true"/><spring:message code="family.gender.male" />
@@ -109,112 +81,57 @@
 				  </div>
 		     </div>
 
-		   </div>
 		   
 		   
-		   
-		   
-		    <div class="form-group form-group-sm col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			    
-			<div class="row">
+		    <div class="form-group">
 			        
-			      <label class="col-lg-3 col-md-3 col-sm-4 col-xs-4 control-label required" for="age" >
-			       	 <spring:message code="family.age" />:
+			      <label class="required" for="age">
+			       	 <spring:message code="family.age" /> :
 			     </label>	 		
-			    
-			     
-			     <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">		    
-						<f:input  type="number" id="age" name="age" path="age" cssClass="form-control required" placeholder="Age" />		
+					<f:input  type="number" id="age" name="age" path="age" cssClass="form-control required" placeholder="Age" />		
 			     </div>		   
 
-		  	</div>
-		   
-		   </div>
 		   
 		   
 		   
-		   <div class="form-group form-group-sm col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-			    
-			<div class="row">
-			 
-			    <label class="col-lg-3 col-md-3 col-sm-4 col-xs-4 control-label required" for="mobile" >
-			    	 <spring:message code="label.mobile" />:
+		   <div class="form-group">
+						 
+			    <label class="required" for="mobile" >
+			    	 <spring:message code="label.mobile" /> :
 			    </label>	 		
-
-			    
-			     <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">		     		
-			     		<f:input  type="tel" id="mobile" name="mobile" path="mobile" cssClass="form-control required" placeholder="Mobile" />
+			     	<f:input  type="tel" id="mobile" name="mobile" path="mobile" cssClass="form-control required" placeholder="Mobile" />
 			     </div>		   
-		  
-		  	</div>
+		  		  		 
 		   
-		   </div>
+		   <div class="form-group">
 		   
-		   
-		   
-		   
-		   <div class="form-group col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-		   
-		      <div class="row">        
-			     <label class="col-lg-3 col-md-3 col-sm-4 col-xs-4 control-label required" for="address" >
-			           <spring:message code="label.address" />:
+			     <label class="required" for="address" >
+			           <spring:message code="label.address" /> :
 			     </label>	 		
-			    
-			     
-			     <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">		     		
-			     		<f:textarea rows="2" id="address" name="address"  path="address" cssClass="form-control required" placeholder="Address" />
+			     	<f:textarea rows="2" id="address" name="address"  path="address" cssClass="form-control required" placeholder="Address" />
 			   
 			     </div>	
-			  </div>   	   
-		  
-		   </div>
 	
 		   
+		   <div class="form-group">
 		   
-		   
-		   
-		   
-		   <div class="form-group form-group-sm col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-		   
-		     <div class="row">
-			     <label class="col-lg-3 col-md-3 col-sm-4 col-xs-4 control-label" for="occupation">
-			           <spring:message code="family.occupation" />:
+			     <label for="occupation">
+			           <spring:message code="family.occupation" /> :
 			     </label>	 		
-			    
-			     
-			     <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">	
-			     		<f:input id="occupation" name="occupation" path="occupation" cssClass="form-control" placeholder="Occupation" />	     		
+			     	 <f:input id="occupation" name="occupation" path="occupation" cssClass="form-control" placeholder="Occupation" />	     		
 			     		
 			     </div>		   
 		   
-			 </div>  
 		   
-		   </div>
+		   <div class="form-group">
 		   
-		   
-		   
-		   
-		   
-		   <div class="form-group form-group-sm col col-lg-12 col-md-12 col-sm-12 col-xs-12">
-		   
-		     <div class="row">
 	         
-			     <label class="col-lg-3 col-md-3 col-sm-4 col-xs-4 control-label" for="position">
+			     <label for="position">
 			     		<spring:message code="family.position" />:
 			     </label>	 		
-			    
-			     
-			     <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">	
 			     		<f:input id="position" name="position" path="position" cssClass="form-control" placeholder="Positon" />	     		
 			     	
 			     </div>		 
-			 </div>  
-		   
-		   </div>
-		   
-		   
-		   
-		   
 		   
 		   
 		   
@@ -222,18 +139,17 @@
 		   
 		   
 		   
-		    <div class="form-group form-group-sm col col-lg-12 col-md-12 col-sm-12 col-xs-12">
+		    <div class="form-group">
 		   
-		           
-		      <div class="row">
-		        <label class="col-lg-3 col-md-3 col-sm-4 col-xs-4 control-label required" for="masRelation" >
+		        <label class="required" for="masRelation" >
 		        	   <spring:message code="family.relation" />:
 			          
 			    </label>	 		
 			    
+			    </div>
 			     
 			     
-			     <div class="col col-lg-6 col-md-6 col-sm-6 col-xs-6">		     		
+			      <div class="form-group">	     		
 
 			     		 <f:select id="masRelationType" path="masRelationType" cssClass="form-control">
 						  <option  value="">${Relation }</option>							
@@ -244,28 +160,24 @@
 								
 			     </div>		 
 			     
-			</div>  
-		   
-		   </div> 
-	
 		  
-		      <div class="form-group" align="center">
+		      <div class="modal-footer">
 		       		
 		        <button type="button" class="btn btn-default" data-dismiss="modal"><spring:message code="label.close" /></button>
 		        <button id="saveBtn" name="saveBtn" type="button" class="btn btn-primary"><spring:message code="label.save" /></button>
 		 		     		     
 		      </div>
 		      
-		      
- 
-      </f:form>
+		        
 	  
 	    </div>
 	  </div>
-	</div>   
+ </div>
  </div>
  
+ </f:form>
  
+ <f:form id="deleteForm" commandName="family" method="post">
  
  <!-- Modal Delete -->
 <div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -284,5 +196,6 @@
     </div>
   </div>
 </div>
+</f:form>
  
 
