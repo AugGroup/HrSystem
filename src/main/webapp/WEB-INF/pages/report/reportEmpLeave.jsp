@@ -60,8 +60,9 @@
 											
 							<th><spring:message code="reportleave.resource" /></th>
 							<!-- <th>Date Start Work</th> -->
-							<th><spring:message code="report.nameTh" /></th>
+							<%-- <th><spring:message code="report.nameTh" /></th> --%>
 							<th><spring:message code="report.nameEn" /></th>
+							<th><spring:message code="report.lastEn" /></th>
 							<th><spring:message code="reportleave.annuallaeve" /></th>
 							<th><spring:message code="reportleave.sickleave" /></th>
 							<th><spring:message code="reportleave.personalleave" /></th>
@@ -131,8 +132,9 @@ $(document).ready(function () {
 			for (var i=0;i< data.length; i++) {
 				dt.fnAddData([data[i].employeeCode,
 				             // data[i].startWorkDate,
-				              data[i].nameThai, 
+				             // data[i].nameThai, 
 				              data[i].nameEng, 
+				              data[i].lastEng,
 			                  data[i].dayAnnual,  
 				              data[i].daySick,
 				              data[i].dayPersonal,
