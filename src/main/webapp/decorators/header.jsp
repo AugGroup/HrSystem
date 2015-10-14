@@ -257,9 +257,9 @@ table.dataTable.no-footer {
 
 <nav class="navbar navbar-defaults navbar-fixed-top" id="top-bar" role="navigation">
         <div class="container">
-            <div class="navbar-header" style="width:145px; height:75px; background-color: #FFF;box-shadow: 0px 2px 10px #1A1A1A;">
+            <div class="navbar-header" style="width:145px; height:75px; background-color: #FFF;box-shadow: 0px 2px 10px #1A1A1A; padding:5px;">
 
-                <img style="width:120px; height:55px; margin:10px;" src="<c:url value="/resource/images/Logo_Augmentis.png" />"/>
+                <img style="width:135px; height:65px;" src="<c:url value="/resource/images/Logo_Augmentis.png" />"/>
 
             </div>
             <div class="navbar-collapse collapse" aria-expanded="false" style="height: 1px;">
