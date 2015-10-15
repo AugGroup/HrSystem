@@ -15,7 +15,7 @@
 
 <input id="empId" type="hidden" value="${id}"/>
 
-<f:form id="listForm" name="siteForm" method="post" commandName="siteDto" class="form-horizontal" role="form">	      	 
+<f:form id="listForm" name="siteForm" method="post" commandName="siteDto" role="form">	      	 
 
 <br>
 
