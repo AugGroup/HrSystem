@@ -1053,16 +1053,7 @@ public class EmployeeController {
 		return employeeList;
 	}
 
-	@RequestMapping(value = "/employee/findRunningNo/{code}", method = RequestMethod.POST)
-	public @ResponseBody EmployeeCodeDto findRunningNo(@PathVariable("code") String code) {
-		EmployeeCodeDto empCodeDto = new EmployeeCodeDto();
-		try {
-			empCodeDto = employeeCodeDtoService.serchRunningNo(code);
-		} catch (IndexOutOfBoundsException e) {
-			empCodeDto.setRungingNumber(0);
-		}
-		return empCodeDto;
-	}
+	
 
 	// ----------------------------------------EMP
 	// STATUS----------------------------------------------------------------
