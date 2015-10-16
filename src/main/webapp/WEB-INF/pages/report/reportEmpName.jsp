@@ -7,7 +7,7 @@
 <%-- 	<h4 class="modal-title"><spring:message code="report.empName" /></h4> --%>
 <!-- </div> -->
 <script src="<c:url value="/resources/js/reportEmpName.js" />"></script>
-<f:form method="post" id="reportForm" name="reportForm" target="_blank" commandName="applicant" action="${pageContext.request.contextPath}/employee/searchReportEmpName" cssClass="form-horizontal">
+<f:form method="post" id="reportForm" name="reportForm" target="_blank" commandName="employee" action="${pageContext.request.contextPath}/employee/searchReportEmpName" cssClass="form-horizontal">
 
 	 <div class="modal-body">
 	 <div class="form-group form-group-sm">
@@ -21,7 +21,7 @@
         		${ searchfor }${ entity }
         	</div>
         	<div class="col-sm-6">
-        		<f:input id="searchText" path="firstNameEN" cssClass="form-control" placeholder="${ searchfor }${ entity }"/>
+        		<f:input id="searchText" path="name" cssClass="form-control" placeholder="${ searchfor }${ entity }"/>
         	</div>
         </div>
         

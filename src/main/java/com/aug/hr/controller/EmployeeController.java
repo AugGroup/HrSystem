@@ -998,18 +998,12 @@ public class EmployeeController {
 	}
 
 	@RequestMapping(value = "/employee/searchReportEmpName", method = { RequestMethod.POST, RequestMethod.GET })
-	public ModelAndView searchEmployeeNameReport(@ModelAttribute(value = "applicant") Applicant applicant, ModelMap map,
+	public ModelAndView searchEmployeeNameReport(@ModelAttribute(value = "employee") Employee employee, ModelMap map,
 			HttpSession session, Locale locale) {
-		// List<ReportEmployeeDto> employeeList =
-		// employeeDtoService.reportEmployee(searchText);
-		// List<ReportEmployeeDto> employeeList =
-		// employeeDtoService.findByName(employee);
-		List<ReportEmployeeDto> employeeList;
 		
-		
-		//map กับ name แทน nameeng
-		/**********************************************/
-		String searchText = applicant.getFirstNameEN();
+		List<ReportEmployeeDto> employeeList;		
+		//map กับ name แทน nameeng		
+		String searchText = employee.getName();
 		if (searchText.equals("forEmptySearch")) {
 			employeeList = employeeDtoService.reportEmployee(searchText);
 		} else {
@@ -1018,16 +1012,20 @@ public class EmployeeController {
 		Map<String, Object> parameterMap = new HashMap<String, Object>();
 		ResourceBundle bundle = ResourceBundle.getBundle("messages", locale);
 		parameterMap.put(JRParameter.REPORT_RESOURCE_BUNDLE, bundle);
-		ModelAndView mv = reportService.getReport(employeeList, "employeeReport", applicant.getReportType(),
+		ModelAndView mv = reportService.getReport(employeeList, "employeeReport", employee.getReportType(),
 				parameterMap);
 		return mv;
 	}
 
 	@RequestMapping(value = "/employee/searchReportEmpCode", method = { RequestMethod.POST, RequestMethod.GET })
-	public ModelAndView searchEmployeeCodeReport(@ModelAttribute(value = "applicant") Applicant applicant, ModelMap map,
+	public ModelAndView searchEmployeeCodeReport(@ModelAttribute(value = "employee") Employee employee, ModelMap map,
 			HttpSession session, Locale locale) {
 		List<ReportEmployeeDto> employeeList;
-		String searchText = applicant.getCode();
+		String searchText = employee.getName();
+		
+		//System.out.println("searchText: "+employee.getName());
+		
+		
 		if (searchText.equals("forEmptySearch")) {
 			employeeList = employeeDtoService.reportEmployeeCode(searchText);
 		} else {
@@ -1036,7 +1034,7 @@ public class EmployeeController {
 		Map<String, Object> parameterMap = new HashMap<String, Object>();
 		ResourceBundle bundle = ResourceBundle.getBundle("messages", locale);
 		parameterMap.put(JRParameter.REPORT_RESOURCE_BUNDLE, bundle);
-		ModelAndView mv = reportService.getReport(employeeList, "employeeCodeReport", applicant.getReportType(),
+		ModelAndView mv = reportService.getReport(employeeList, "employeeCodeReport", employee.getReportType(),
 				parameterMap);
 		return mv;
 	}

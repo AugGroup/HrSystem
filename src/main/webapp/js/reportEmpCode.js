@@ -34,7 +34,7 @@ $(document).ready(function () {
 	//Search By Position and Show function 
 	$('#btn_search').on('click', function(){
 		var searchText = $("#searchText").val();
-		if(searchText == ""){
+		if(searchText === ""||searchText==null){
 			searchText = "forEmptySearch";
 		}
 		$.ajax({

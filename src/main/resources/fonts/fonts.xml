@@ -16,7 +16,7 @@
  <fontFamily name="Cordia CRS">
 		<normal>fonts/CORDIA.TTF</normal>
 		<italic>fonts/CORDIA.TTF</italic>
-		<pdfEncoding>Identity-H</pdfEncoding>
+		<pdfEncoding>Identity-H</pdfEncoding> 
 		<pdfEmbedded>true</pdfEmbedded>
 		<exportFonts>
 			<export key="net.sf.jasperreports.html">Cordia CRS, 'Cordia new', CordiaUPC</export>
