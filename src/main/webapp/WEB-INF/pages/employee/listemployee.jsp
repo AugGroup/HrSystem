@@ -46,8 +46,8 @@
 					<th><spring:message code="employee.code" /></th>
 		 			<th><spring:message code="employee.firstname" /></th>
 					<th><spring:message code="employee.surname" /></th>
-					<th><spring:message code="label.edit" /></th>
-					<th><spring:message code="label.delete" /></th>
+					<th class="text-center"><spring:message code="label.edit" /></th>
+					<th class="text-center"><spring:message code="label.delete" /></th>
 				</tr>
 			</thead>
 			<tbody></tbody>

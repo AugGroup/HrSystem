@@ -367,9 +367,10 @@ $(document).ready(function() {
 						              data[i].nameEng,
 						              
 						              
-									  '<button type="button"  class="btn btn-warning" data-id="'+data[i].id+'" data-toggle="modal" data-target="#addModal" >'+$msgEdit+'</button>',
-									  '<button type="button" class="btn btn-danger btn-sm active" data-id="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
+									  '<button type="button"  class="btn btn-warning btn-center" data-id="'+data[i].id+'" data-toggle="modal" data-target="#addModal" >'+$msgEdit+'</button>',
+									  '<button type="button" class="btn btn-danger btn-sm active btn-center" data-id="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
 				 	}
+					$(".btn-center").closest("td").addClass("text-center");
 					}
 				}); 
 			}

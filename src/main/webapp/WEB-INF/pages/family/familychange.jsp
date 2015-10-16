@@ -29,8 +29,8 @@
                 <th><spring:message code="family.occupation" /></th> 
                 <th><spring:message code="label.telephone" /></th>
                 <th><spring:message code="family.relation" /></th> 
-                <th><spring:message code="label.edit" /></th>
-					<th><spring:message code="label.delete" /></th>
+                <th class="text-center"><spring:message code="label.edit" /></th>
+				<th class="text-center"><spring:message code="label.delete" /></th>
             </tr>
         </thead>
 

@@ -43,8 +43,8 @@
 							<th><spring:message code="card.enddate" /></th>
 							<th><spring:message code="card.status" /></th>
 							<th><spring:message code="card.remark" /></th>
-							<th><spring:message code="label.edit" /></th>
-							<th><spring:message code="label.delete" /></th>
+							<th class="text-center"><spring:message code="label.edit" /></th>
+							<th class="text-center"><spring:message code="label.delete" /></th>
 <!-- 							<th></th> -->
 						</tr>
 					</thead>

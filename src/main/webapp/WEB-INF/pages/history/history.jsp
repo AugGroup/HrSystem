@@ -38,8 +38,8 @@
 			<th><spring:message code="history.position" var="position"/>${position }</th>
 			<th><spring:message code="history.salary" var="salary"/>${salary }</th>
 			<th><spring:message code="history.reasonOfAdjustment" var="reasonOfAdjustment"/>${reasonOfAdjustment }</th>
-			<th><spring:message code="label.edit" /></th>
-			<th><spring:message code="label.delete" /></th>
+			<th class="text-center"><spring:message code="label.edit" /></th>
+			<th class="text-center"><spring:message code="label.delete" /></th>
 			<!-- <th></th> -->
 		</tr>
 	</thead>

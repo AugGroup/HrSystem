@@ -45,8 +45,8 @@
 					<th><spring:message code="experience.position" /></th>
 					<th><spring:message code="experience.salary" /></th>
 					<th><spring:message code="experience.reason" /></th>
-					<th><spring:message code="label.edit" /></th>
-					<th><spring:message code="label.delete" /></th>
+					<th class="text-center"><spring:message code="label.edit" /></th>
+					<th class="text-center"><spring:message code="label.delete" /></th>
 					<!-- <th></th> -->
 				</tr>
 			</thead>

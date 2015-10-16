@@ -30,8 +30,8 @@
                 <th><spring:message code="site.projectname" var="projectname"/>${projectname }</th>
                 <th><spring:message code="site.projectOwner" var="projectOwner"/>${projectOwner }</th> 
                 <th><spring:message code="site.projectOwnerContact" var="projectOwnerContact"/>${projectOwnerContact }</th>
-                <th><spring:message code="label.edit" /></th>
-				<th><spring:message code="label.delete" /></th>
+                <th class="text-center"><spring:message code="label.edit" /></th>
+				<th class="text-center"><spring:message code="label.delete" /></th>
             </tr>
         </thead>
  

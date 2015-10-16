@@ -38,8 +38,8 @@
 			<th><spring:message code="certification.year" /></th>
 			<th><spring:message code="certification.certification.name" /></th>
 			<th><spring:message code="certification.certification.form" /></th>
-			<th><spring:message code="label.edit" /></th>
-			<th><spring:message code="label.delete" /></th>
+			<th class="text-center"><spring:message code="label.edit" /></th>
+			<th class="text-center"><spring:message code="label.delete" /></th>
 			<!-- <th></th> -->
 		</tr>
 	</thead>

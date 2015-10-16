@@ -36,8 +36,8 @@
 		<tr>
 			<th><spring:message code="allowances.masallowances" /></th>
 			<th><spring:message code="allowances.amount" /></th>
-			<th><spring:message code="label.edit" /></th>
-			<th><spring:message code="label.delete" /></th>
+			<th class="text-center"><spring:message code="label.edit" /></th>
+			<th class="text-center"><spring:message code="label.delete" /></th>
 			<!-- <th></th> -->
 		</tr>
 	</thead>

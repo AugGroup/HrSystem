@@ -45,8 +45,8 @@
 			<!-- <th>#</th> -->
 			<th><spring:message code="ability.specialty" /></th>
 			<th><spring:message code="ability.rank" /></th>
-			<th><spring:message code="label.edit" /></th>
-			<th><spring:message code="label.delete" /></th>
+			<th class="text-center"><spring:message code="label.edit" /></th>
+			<th class="text-center"><spring:message code="label.delete" /></th>
 			<!-- <th>Delete</th> -->
 		</tr>
 	</thead>

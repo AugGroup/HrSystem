@@ -40,8 +40,8 @@
 			<th><spring:message code="education.university" /></th>
 			<th><spring:message code="education.major" /></th>
 			<th><spring:message code="education.gpa" /></th>
-			<th><spring:message code="label.edit" /></th>
-		   <th><spring:message code="label.delete" /></th>
+			<th class="text-center"><spring:message code="label.edit" /></th>
+		   <th class="text-center"><spring:message code="label.delete" /></th>
 			<!-- <th></th> -->
 		</tr>
 	</thead>

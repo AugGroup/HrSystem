@@ -323,7 +323,7 @@ var dt;
 							data.description,
 							data.superVisor,
 							data.address,
-							'<button type="button" class="btn btn-info btn-sm active" data-expId="' + data.id + '" data-target="#addModal" data-toggle="modal">Edit</button>',
+							'<button type="button" class="btn btn-info btn-sm active" data-expId="' + data.id + '" data-target="#addModal" data-toggle="modal"></button>',
 	    					'<button type="button" class="btn btn-danger btn-sm active" data-expId="' + data.id + '" data-target="#deleteModal" data-toggle="modal">Delete</button>'
 						]); */
 						listAll();
@@ -433,10 +433,11 @@ var dt;
 						              data[i].salary,
 						              data[i].reason,
 							 
-						 	'<button type="button"  class="btn btn-warning btn-sm active" data-expId="' + data[i].id + '" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>',
-	    				  '<button type="button" class="btn btn-danger btn-sm active" data-expId="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
+						 	'<button type="button"  class="btn btn-warning btn-sm active btn-center" data-expId="' + data[i].id + '" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>',
+	    				  '<button type="button" class="btn btn-danger btn-sm active btn-center" data-expId="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
 	    					
 						}
+					$(".btn-center").closest("td").addClass("text-center");
 					}/* ,
 					error : function(data,testStatus,jqXHR) {
 						$(function(){ new PNotify({

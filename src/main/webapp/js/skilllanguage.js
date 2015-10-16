@@ -172,12 +172,12 @@ var dt;
 					  			           data[i].reading,
 					  			           data[i].understanding,
 					  			        
-					  			          '<button type="button" class="btn btn-warning " data-idupdate="'+data[i].id+'" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>',
-					    				  '<button type="button" class="btn btn-danger btn-sm active" data-iddelete="' + data[i].id+ '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>'
+					  			          '<button type="button" class="btn btn-warning btn-center" data-idupdate="'+data[i].id+'" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>',
+					    				  '<button type="button" class="btn btn-danger btn-sm active btn-center" data-iddelete="' + data[i].id+ '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>'
 					    					
 					  			           ]); 			  		
 			  	    	 }
-		  	        		  	        
+		  	      $(".btn-center").closest("td").addClass("text-center");	  	        
 		  	     }
 		  	    }); 
 		  	   

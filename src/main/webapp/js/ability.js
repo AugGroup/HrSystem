@@ -532,11 +532,12 @@ function listAll(){
 			for (var i=0;i< data.length; i++) {
 				dt.fnAddData([data[i].masspecialty,
 				              data[i].rank,
-				    '<button type="button" class="btn btn-warning" data-id="'+data[i].id+'" data-toggle="modal" data-target="#addModal" >'+$msgEdit+'</button>',
-					'<button type="button" class="btn btn-danger btn-sm active" data-id="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
+				    '<button type="button" class="btn btn-warning btn-center btn-center" data-id="'+data[i].id+'" data-toggle="modal" data-target="#addModal" >'+$msgEdit+'</button>',
+					'<button type="button" class="btn btn-danger btn-sm active btn-center" data-id="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
 		 
 		 
 				}
+			$(".btn-center").closest("td").addClass("text-center");
 						
 			}/* ,
 			error : function() {

@@ -40,8 +40,8 @@
 									<th><spring:message code="reward.reward.name" /></th>
 									<th><spring:message code="reward.year" /></th>
 									<th><spring:message code="reward.description" /></th>
-									<th><spring:message code="label.edit" /></th>
-									<th><spring:message code="label.delete" /></th>
+									<th class="text-center"><spring:message code="label.edit" /></th>
+									<th class="text-center"><spring:message code="label.delete" /></th>
 <!-- 									<th></th> -->
 								</tr>
 							</thead>

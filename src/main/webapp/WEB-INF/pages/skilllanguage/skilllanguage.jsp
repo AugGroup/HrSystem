@@ -37,8 +37,8 @@
                 ${Reading}</th> 
                 <th><spring:message code="skilllanguage.Understanding" var="Understanding"/>
                 ${Understanding}</th>
-               <th><spring:message code="label.edit" /></th>
-				<th><spring:message code="label.delete" /></th>
+               <th class="text-center"><spring:message code="label.edit" /></th>
+				<th class="text-center"><spring:message code="label.delete" /></th>
 </th>
             </tr>
         </thead>

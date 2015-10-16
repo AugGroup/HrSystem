@@ -58,9 +58,11 @@ var empId;
 		
 		dt=$("#tdResult").dataTable({ 
 			"ordering": false,
+			
 // 			"dom": '<"toolbar">frtip'
 			fnInitComplete : function(){
 				listAll();
+				
 			}
 		});
   	
@@ -87,12 +89,11 @@ var empId;
 	    					
 	    					dt.fnAddData([data[i].id,data[i].employeeCode,data[i].nameEng, 
 	    					              data[i].surnameEng,
-	    						 '<button type="button"  class="btn btn-warning btn-sm active " data-empId="' + data[i].id + '" onclick="initEditEmployee('+data[i].id+')" >'+$msgEdit+'</button>',
-	    						'<button type="button" class="btn btn-danger btn-sm active" data-empId="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
+	    						 '<button type="button"  class="btn btn-warning btn-sm active btn-center" data-empId="' + data[i].id + '" onclick="initEditEmployee('+data[i].id+')" >'+$msgEdit+'</button>',
+	    						'<button type="button" class="btn btn-danger btn-sm active btn-center" data-empId="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
 	    			 
     					}	
-
-    		
+	    				$(".btn-center").closest("td").addClass("text-center");
     				},
     				error : function(xhr){console.log("err----------------"+xhr.responseText)}
     			});

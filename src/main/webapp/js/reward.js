@@ -184,7 +184,7 @@
 										dt.fnUpdate(data.name, tr, 0),
 										dt.fnUpdate(data.year, tr, 1),
 										dt.fnUpdate(data.reason, tr, 2),
-										'<button type="button"  style="margin-right :15px;" style="margin-right :15px;" class="btn btn-warning" data-id="'+data.id+'" data-toggle="modal" data-target="#addModal" >'+$msgEdit+'</button>',
+										'<button type="button"    class="btn btn-warning" data-id="'+data.id+'" data-toggle="modal" data-target="#addModal" >'+$msgEdit+'</button>',
 										'<button type="button" class="btn btn-danger" data-id="'+data.id+'" data-toggle="modal" data-target="#deleteModal">'+$msgDelete+' </button>'
 
 								$('#addModal').modal('toggle');
@@ -300,9 +300,10 @@
 									dt.fnAddData([data[i].typereward,
 												  data[i].year,
 												  data[i].reason,
-													'<button type="button"  class="btn btn-warning btn-sm active" data-id="' + data[i].id + '" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>',
-													'<button type="button" class="btn btn-danger btn-sm active" data-id="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>' ]);
+													'<button type="button"  class="btn btn-warning btn-sm active btn-center" data-id="' + data[i].id + '" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>',
+													'<button type="button" class="btn btn-danger btn-sm active btn-center" data-id="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>' ]);
 								}
+								$(".btn-center").closest("td").addClass("text-center");
 							}/* ,
 							error : function(jqXHR,	textStatus,	error) {	
 								$(function(){ new PNotify({

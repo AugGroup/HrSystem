@@ -467,10 +467,11 @@
 					              data[i].position,
 					              accounting.formatNumber(data[i].salary),
 					              data[i].reasonOfAdjustment,
-						 '<button type="button"  class="btn btn-warning btn-sm active" data-id="' + data[i].id + '" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>',
-						'<button type="button" class="btn btn-danger btn-sm active" data-id="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
+						 '<button type="button"  class="btn btn-warning btn-sm active btn-center" data-id="' + data[i].id + '" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>',
+						'<button type="button" class="btn btn-danger btn-sm active btn-center" data-id="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
 			 
 					}
+				$(".btn-center").closest("td").addClass("text-center");
 				}/* ,
 				error : function() {
 					alert("ERROR");
