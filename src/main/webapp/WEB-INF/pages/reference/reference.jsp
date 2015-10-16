@@ -31,8 +31,8 @@
 <!-- 				<br> -->
 <!-- 			</div> -->
 <!-- 		</div>	 -->
-		<div>
-				<table id="tbResult" class="dataTable stripe table-bordered" class="form-group">
+		<div class="form-group table-responsive">
+				<table id="tbResult" class="dataTable stripe table-bordered " class="form-group">
 				<caption title="">Reference</caption>
 					<thead>	
 						<tr>								
@@ -40,7 +40,8 @@
 							<!-- <th>ADDRESS</th> -->
 							<th><spring:message code="reference.telephoneheader" /></th>
 							<!-- <th>OCCUPATION</th> -->
-							<th><spring:message code="label.action" /></th>
+							<th><spring:message code="label.edit" /></th>
+							<th><spring:message code="label.delete" /></th>
 <!-- 							<th></th> -->
 						</tr>
 					</thead>

@@ -37,7 +37,7 @@
 
 
 			<!-- Table -->
-<div class="form-group">
+<div class="form-group table-responsive">
 <table id="tbResult" class="dataTable stripe table-bordered">
 <caption title=""><spring:message code="ability.name" /></caption>
 	<thead>
@@ -45,7 +45,8 @@
 			<!-- <th>#</th> -->
 			<th><spring:message code="ability.specialty" /></th>
 			<th><spring:message code="ability.rank" /></th>
-			<th><spring:message code="ability.action" /></th>
+			<th><spring:message code="label.edit" /></th>
+			<th><spring:message code="label.delete" /></th>
 			<!-- <th>Delete</th> -->
 		</tr>
 	</thead>

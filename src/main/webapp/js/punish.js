@@ -1,5 +1,7 @@
 
 
+
+
 	var dt;
 	$(document).ready(function() {
 		
@@ -176,6 +178,7 @@
 						title: $notifySuccess,
 						text: $notifyAdd,
 						type: 'success',
+						delay: 1000,
 						animation: {
 							effect_in: 'show',
 							effect_out: 'slide'
@@ -235,6 +238,7 @@
 						title: $notifySuccess,
 						text: $notifyUpdate,
 						type: 'success',
+						delay: 1000,
 						animation: {
 							effect_in: 'show',
 							effect_out: 'slide'
@@ -305,6 +309,7 @@
 						title: $notifySuccess,
 						text: $notifyDelete,
 						type: 'success',
+						delay: 1000,
 						animation: {
 							effect_in: 'show',
 							effect_out: 'slide'
@@ -345,7 +350,7 @@
 						dt.fnAddData([data[i].datepunish,
 						              data[i].description, 	
 						              data[i].penalty, 					             
-							'<button type="button" style="margin-right :15px;" class="btn btn-warning btn-sm active" data-id="' + data[i].id + '" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>'+
+							'<button type="button"  class="btn btn-warning btn-sm active" data-id="' + data[i].id + '" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>',
 							'<button type="button" class="btn btn-danger btn-sm active" data-id="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
 				
 						}

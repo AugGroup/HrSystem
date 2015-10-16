@@ -29,14 +29,15 @@
 <!-- </div> -->
 
 <!-- Table -->
-<div class="form-group">
+<div class="form-group table-responsive">
 <table id="tbResult" class="dataTable stripe table-bordered">
 <caption title=""><spring:message code="allowances.name" /></caption>
 	<thead>
 		<tr>
 			<th><spring:message code="allowances.masallowances" /></th>
 			<th><spring:message code="allowances.amount" /></th>
-			<th><spring:message code="label.action" /></th>
+			<th><spring:message code="label.edit" /></th>
+			<th><spring:message code="label.delete" /></th>
 			<!-- <th></th> -->
 		</tr>
 	</thead>

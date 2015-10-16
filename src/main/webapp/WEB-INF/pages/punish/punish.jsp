@@ -31,7 +31,7 @@
 <!-- 					<br> -->
 <!-- 					</div> -->
 <!-- 			</div>	 -->
-				<div>
+				<div class="form-group table-responsive">
 				<table id="tbResult" class="dataTable stripe table-bordered">
 				<caption title=""><spring:message code="punish.name" /></caption>
 					<thead>					
@@ -39,7 +39,8 @@
 							<th><spring:message code="punish.dateform" /></th>
 							<th><spring:message code="punish.description" /></th>	
 							<th><spring:message code="punish.penalty" /></th>				
-							<th><spring:message code="label.action" /></th>
+							<th><spring:message code="label.edit" /></th>
+							<th><spring:message code="label.delete" /></th>
 <!-- 							<th></th> -->
 						</tr>
 					</thead>

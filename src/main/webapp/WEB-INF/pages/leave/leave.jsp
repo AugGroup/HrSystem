@@ -25,7 +25,7 @@
 
 
 <!-- Table -->
-<div class="form-group">
+<div class="form-group table-responsive">
 <table id="tbResult" class="dataTable stripe  table-bordered">
  <caption title=""><spring:message code="leave.name" /></caption>
 	<thead>
@@ -37,7 +37,8 @@
 			<th><spring:message code="leave.leavetype" /></th>
 			<th><spring:message code="leave.reason" /></th>
 			 <th><spring:message code="leave.aim" /></th> 
-			<th><spring:message code="leave.action" /></th>
+			<th><spring:message code="label.edit" /></th>
+			<th><spring:message code="label.delete" /></th>
 			<!-- <th>Delete</th> -->
 		</tr>
 	</thead>

@@ -20,7 +20,7 @@
 
 <br>
 
-<div class="form-group">
+<div class="form-group  table-responsive">
  <table id="tableResult" class="dataTable stripe table-bordered">
  <caption title=""><spring:message code="family.name" /></caption>
 	    <thead>
@@ -29,7 +29,8 @@
                 <th><spring:message code="family.occupation" /></th> 
                 <th><spring:message code="label.telephone" /></th>
                 <th><spring:message code="family.relation" /></th> 
-                <th><spring:message code="family.action" /></th>
+                <th><spring:message code="label.edit" /></th>
+					<th><spring:message code="label.delete" /></th>
             </tr>
         </thead>
 

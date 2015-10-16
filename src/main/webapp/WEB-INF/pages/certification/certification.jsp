@@ -30,7 +30,7 @@
 <!-- </div> -->
 
 <!-- Table -->
-<div class="form-group">
+<div class="form-group table-responsive">
 <table id="tbResult" class="dataTable stripe table-bordered">
 <caption title=""><spring:message code="certification.name"/></caption>
 	<thead>
@@ -38,7 +38,8 @@
 			<th><spring:message code="certification.year" /></th>
 			<th><spring:message code="certification.certification.name" /></th>
 			<th><spring:message code="certification.certification.form" /></th>
-			<th><spring:message code="label.action"/></th>
+			<th><spring:message code="label.edit" /></th>
+			<th><spring:message code="label.delete" /></th>
 			<!-- <th></th> -->
 		</tr>
 	</thead>

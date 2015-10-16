@@ -20,7 +20,7 @@
 
 <input id="empId" type="hidden" value="${id}">
 <f:form method="post" commandName="probation" class="form-horizontal" role="form">
-		<div id="outputajax" >		
+		<div id="outputajax" class="table-responsive" >		
 		<table id="tdResult" class="dataTable stripe table-bordered">
 		 <caption title=""><spring:message code="probation.name" /></caption>
 			<thead>
@@ -29,7 +29,8 @@
 					<th><spring:message code="probation.dateTo" /></th>
 					<th><spring:message code="probation.status" /></th>
 					<th><spring:message code="probation.reason" /></th>
-					<th><spring:message code="label.action" /></th>
+					<th><spring:message code="label.edit" /></th>
+					<th><spring:message code="label.delete" /></th>
 				</tr>
 			</thead>
 			<tbody></tbody>

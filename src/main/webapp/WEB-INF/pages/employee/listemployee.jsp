@@ -36,7 +36,8 @@
 		
 
 		<div id="message"></div>
-		<div id="outputajax" class="form-group">		
+		<div id="outputajax" class="form-group table-responsive">	
+			
 		<table id="tdResult" class="dataTable stripe table-bordered">
 		<caption title=""><spring:message code="employee.name" /></caption>
 			<thead>
@@ -45,7 +46,8 @@
 					<th><spring:message code="employee.code" /></th>
 		 			<th><spring:message code="employee.firstname" /></th>
 					<th><spring:message code="employee.surname" /></th>
-					<th><spring:message code="label.action" /></th>
+					<th><spring:message code="label.edit" /></th>
+					<th><spring:message code="label.delete" /></th>
 				</tr>
 			</thead>
 			<tbody></tbody>

@@ -22,7 +22,7 @@
 </div> -->		
 
 
-
+<div class="form-group table-responsive">	
  <table id="tableResult" class="dataTable stripe table-bordered">
  <caption title=""><spring:message code="skilllanguage.name" /></caption>
 	    <thead>
@@ -37,12 +37,13 @@
                 ${Reading}</th> 
                 <th><spring:message code="skilllanguage.Understanding" var="Understanding"/>
                 ${Understanding}</th>
-                <th><spring:message code="label.action" />
+               <th><spring:message code="label.edit" /></th>
+				<th><spring:message code="label.delete" /></th>
 </th>
             </tr>
         </thead>
 </table>
-
+</div>
 
 <!-- Modal Add and Update data-->
 <f:form id="formAddUpdate" name="skillLanguageForm" method="post" commandName="skillLanguage" class="form-horizontal" role="form">	      	 

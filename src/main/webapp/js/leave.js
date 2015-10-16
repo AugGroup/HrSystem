@@ -249,6 +249,7 @@ $(document).ready(function() {
 						title: $notifySuccess,
 						text: $notifyAdd,
 						type: 'success',
+						delay: 1000,
 						animation: {
 							effect_in: 'show',
 							effect_out: 'slide'
@@ -302,6 +303,7 @@ $(document).ready(function() {
 							title: $notifySuccess,
 							text: $notifyUpdate,
 							type: 'success',
+							delay: 1000,
 							animation: {
 								effect_in: 'show',
 								effect_out: 'slide'
@@ -332,6 +334,7 @@ $(document).ready(function() {
 						title: $notifySuccess,
 						text: $notifyDelete,
 						type: 'success',
+						delay: 1000,
 						animation: {
 							effect_in: 'show',
 							effect_out: 'slide'
@@ -364,7 +367,7 @@ $(document).ready(function() {
 						              data[i].nameEng,
 						              
 						              
-									  '<button type="button" style="margin-right :15px;" class="btn btn-warning" data-id="'+data[i].id+'" data-toggle="modal" data-target="#addModal" >'+$msgEdit+'</button>'+
+									  '<button type="button"  class="btn btn-warning" data-id="'+data[i].id+'" data-toggle="modal" data-target="#addModal" >'+$msgEdit+'</button>',
 									  '<button type="button" class="btn btn-danger btn-sm active" data-id="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
 				 	}
 					}

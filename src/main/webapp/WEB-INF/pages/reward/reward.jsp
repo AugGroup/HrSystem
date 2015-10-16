@@ -32,7 +32,7 @@
 <!-- 					<br> -->
 <!-- 					</div> -->
 <!-- 			</div>	 -->
-				<div>
+				<div class="form-group table-responsive">
 					<table id="tbResult"  class="dataTable stripe table-bordered">
 					<caption title=""><spring:message code="reward.name" /></caption>
 							<thead>
@@ -40,7 +40,8 @@
 									<th><spring:message code="reward.reward.name" /></th>
 									<th><spring:message code="reward.year" /></th>
 									<th><spring:message code="reward.description" /></th>
-									<th><spring:message code="label.action" /></th>
+									<th><spring:message code="label.edit" /></th>
+									<th><spring:message code="label.delete" /></th>
 <!-- 									<th></th> -->
 								</tr>
 							</thead>

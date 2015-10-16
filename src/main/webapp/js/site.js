@@ -219,7 +219,7 @@
 				  			           data[i].projectName,
 				  			           data[i].projectOwner,
 				  			           data[i].projectOwnerContact,
-				  			          '<button type="button" style="margin-right :15px;" class="btn btn-warning btn-sm active" data-idupdate="' + data[i].id + '" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>'+
+				  			          '<button type="button" class="btn btn-warning btn-sm active" data-idupdate="' + data[i].id + '" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>',
 				    				  '<button type="button" class="btn btn-danger btn-sm active" data-iddelete="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>'
 				    					
 				  			           ]);
@@ -333,6 +333,7 @@
 						 title: $notifySuccess,
 						 text: $notifyAdd,
 						 type: 'success',
+						 delay: 1000,
 						 animation: {
 							effect_in: 'show',
 							effect_out: 'slide'
@@ -424,6 +425,7 @@
 							 title: $notifySuccess,
 							 text: $notifyUpdate,
 							 type: 'success',
+							 delay: 1000,
 							 animation: {
 								effect_in: 'show',
 								effect_out: 'slide'
@@ -462,6 +464,7 @@
 							 title: $notifySuccess,
 							 text: $notifyDelete,
 							 type: 'success',
+							 delay: 1000,
 							 animation: {
 								effect_in: 'show',
 								effect_out: 'slide'

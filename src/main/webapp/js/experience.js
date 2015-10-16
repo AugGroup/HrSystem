@@ -194,6 +194,7 @@ var dt;
     						title:$notifySuccess,
     						text: $notifyAdd,
     						type: 'success',
+    						delay: 1000,
     						animation: {
     							effect_in: 'show',
     							effect_out: 'slide'
@@ -303,6 +304,7 @@ var dt;
 							title: $notifySuccess,
 							text: $notifyUpdate,
 							type: 'success',
+							delay: 1000,
 							animation: {
 								effect_in: 'show',
 								effect_out: 'slide'
@@ -380,6 +382,7 @@ var dt;
 								title: $notifySuccess,
 								text: $notifyDelete,
 								type: 'success',
+								delay: 1000,
 								animation: {
 									effect_in: 'show',
 									effect_out: 'slide'
@@ -430,7 +433,7 @@ var dt;
 						              data[i].salary,
 						              data[i].reason,
 							 
-						 	'<button type="button" style="margin-right :15px;" class="btn btn-warning btn-sm active" data-expId="' + data[i].id + '" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>'+
+						 	'<button type="button"  class="btn btn-warning btn-sm active" data-expId="' + data[i].id + '" data-target="#addModal" data-toggle="modal">'+$msgEdit+'</button>',
 	    				  '<button type="button" class="btn btn-danger btn-sm active" data-expId="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">'+$msgDelete+'</button>']);
 	    					
 						}

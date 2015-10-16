@@ -34,8 +34,8 @@
 <!-- 		</div>				 -->
 						
 		
-		<div id="outputajax" class="form-group">		
-		<table id="tdResult" class="dataTable stripe table-bordered">
+		<div id="outputajax" class="form-group table-responsive">		
+		<table id="tdResult" class="dataTable stripe table-bordered ">
 		<caption title=""><spring:message code="experience.name" /></caption>
 			<thead>
 				<tr>
@@ -45,7 +45,8 @@
 					<th><spring:message code="experience.position" /></th>
 					<th><spring:message code="experience.salary" /></th>
 					<th><spring:message code="experience.reason" /></th>
-					<th><spring:message code="label.action" /></th>
+					<th><spring:message code="label.edit" /></th>
+					<th><spring:message code="label.delete" /></th>
 					<!-- <th></th> -->
 				</tr>
 			</thead>

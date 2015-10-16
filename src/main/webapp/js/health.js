@@ -905,6 +905,7 @@ $(function(){
 						 title:$notifySuccess,
 						 text: $notifyAdd,
 						 type: 'success',
+						 delay: 1000,
 						 animation: {
 							effect_in: 'show',
 							effect_out: 'slide'
@@ -1088,6 +1089,7 @@ $(function(){
 					 title: $notifySuccess,
 					 text: $notifyUpdate,
 					 type: 'success',
+					 delay: 1000,
 					 animation: {
 						effect_in: 'show',
 						effect_out: 'slide'
@@ -1128,6 +1130,7 @@ $(function(){
 											 title:$notifySuccess,
 											 text: $notifyDelete,
 											 type: 'success',
+											 delay: 1000,
 											 animation: {
 												effect_in: 'show',
 												effect_out: 'slide'

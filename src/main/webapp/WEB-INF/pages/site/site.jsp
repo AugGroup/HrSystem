@@ -19,7 +19,7 @@
 
 <br>
 
-<div class="form-group">
+<div class="form-group table-responsive">
 
  <table id="tableResult" class="dataTable stripe table-bordered"> 
  <caption title=""><spring:message code="site.name" /></caption>
@@ -30,7 +30,8 @@
                 <th><spring:message code="site.projectname" var="projectname"/>${projectname }</th>
                 <th><spring:message code="site.projectOwner" var="projectOwner"/>${projectOwner }</th> 
                 <th><spring:message code="site.projectOwnerContact" var="projectOwnerContact"/>${projectOwnerContact }</th>
-                <th><spring:message code="label.action" /></th>
+                <th><spring:message code="label.edit" /></th>
+				<th><spring:message code="label.delete" /></th>
             </tr>
         </thead>
  
