@@ -435,6 +435,61 @@ if($('#knowEmployed').val()=="Yes"){
 }
 
 
+/*$("#numberOfChildrenDiv").hide();//descriptionYes ชื่อกล่อง
+$("#spouseNameDiv").hide();
+$("#marriageCertificateNoDiv").hide();
+$("#issuedOffice2Div").hide();
+$("#addressDiv").hide();
+$("#occupationDiv").hide();*/
+
+$("input[name=maritalStatus]:radio").change(function(){//name= ชื่อ group radio
+	if(this.value == 'Single' && this.checked){
+		$("#numberOfChildrenDiv").hide();//descriptionYes ชื่อกล่อง
+		$("#spouseNameDiv").hide();
+		$("#marriageCertificateNoDiv").hide();
+		$("#issuedOffice2Div").hide();
+		$("#addressDiv").hide();
+		$("#occupationDiv").hide();
+	}else{
+		$("#numberOfChildrenDiv").show();//descriptionYes ชื่อกล่อง
+		$("#spouseNameDiv").show();
+		$("#marriageCertificateNoDiv").show();
+		$("#issuedOffice2Div").show();
+		$("#addressDiv").show();
+		$("#occupationDiv").show();
+  }
+});
+
+
+
+	if($('#Single').is(":checked")==true ){
+		$("#numberOfChildrenDiv").hide();//descriptionYes ชื่อกล่อง
+		$("#spouseNameDiv").hide();
+		$("#marriageCertificateNoDiv").hide();
+		$("#issuedOffice2Div").hide();
+		$("#addressDiv").hide();
+		$("#occupationDiv").hide();
+	}
+	else if($('#Married').is(":checked")==true){
+	$("#numberOfChildrenDiv").show();//descriptionYes ชื่อกล่อง
+	$("#spouseNameDiv").show();
+	$("#marriageCertificateNoDiv").show();
+	$("#issuedOffice2Div").show();
+	$("#addressDiv").show();
+	$("#occupationDiv").show();
+	
+	}
+	else if($('#Divorce').is(":checked")==true){
+		$("#numberOfChildrenDiv").show();//descriptionYes ชื่อกล่อง
+		$("#spouseNameDiv").show();
+		$("#marriageCertificateNoDiv").show();
+		$("#issuedOffice2Div").show();
+		$("#addressDiv").show();
+		$("#occupationDiv").show();
+		
+		}
+
+
 $("#fromYearDiv").hide();
 $("#toYearDiv").hide();
 $("#branchOfServiceDiv").hide();

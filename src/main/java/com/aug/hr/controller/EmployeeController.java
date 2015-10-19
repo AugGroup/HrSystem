@@ -165,7 +165,7 @@ public class EmployeeController {
 		model.addAttribute("aimList", aimEmployeeDtoService.listEmployeeAim());
 
 		
-		return "/employee/employeetest";
+		return "/employee/employee";
 
 	}
 
@@ -240,7 +240,7 @@ public class EmployeeController {
 		Employee employee = employeeService.findById(empId);
 		model.addAttribute("appId", employee.getApplicant().getId());
 
-		return "/employee/employeetest";
+		return "/employee/employee";
 	}
 
 	// InitEdit

@@ -1,171 +1,218 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
-<head>
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <!-- Spring -->	
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="f"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<!-- Bootstrap -->
-<script src="<c:url value="/resource/bootstrap/js/jquery-1.11.2.js" />"></script>
-<link href="<c:url value="/resource/bootstrap/css/bootstrap.css" />" rel="stylesheet" media="all">
-<link href="<c:url value="/resource/bootstrap/css/bootstrap-theme.css" />" rel="stylesheet" media="all">
-<script src="<c:url value="/resource/bootstrap/js/bootstrap.js" />"></script>
+<link href="<c:url value="/css/header.css" />" rel="stylesheet" type="text/css">
+<jsp:include page="../employeeMenu.jsp"></jsp:include>
+<script src="<c:url value="/resources/js/employee.js" />"></script>
 
-<!-- Date Picker -->
-<script src="<c:url value="/resource/datepicker/js/bootstrap-datepicker.js" />"></script>
-<link href="<c:url value="/resource/datepicker/css/datepicker.css" />" rel="stylesheet" media="all">
 
-<!-- Data Table -->
-<script src="<c:url value="/resource/datatable/js/jquery.dataTables.js" />"></script>
-<link href="<c:url value="/resource/datatable/css/jquery.dataTables.min.css" />" rel="stylesheet">
-<link href="<c:url value="/resource/datatable/css/jquery.dataTables_themeroller.css" />" rel="stylesheet">
 
-<title>Employee</title>
+<c:if test="${ not empty msgerror }">
+	<div class="alert alert-danger" >
+	<span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>&nbsp;${msgerror }</div>
+	<%-- <c:remove var="msgerror" scope="session"/>--%> 
+</c:if>
 
-<style>
-.datepicker{z-index:1151 !important;}
-</style>
-
-</head>
-<body>
-<div class="container">
 
 <input type="hidden" id="emp">
 <input type="hidden" id="empname">
 
- <div class="row">
- 	<div class="span12">
-            <ul class="nav nav-tabs" id="myTabs">
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              
+<%-- <f:form method="post" id="addForm" commandName="allEmployeeDto" class="form-horizontal" role="form" action="${pageContext.request.contextPath}/employee/submit" enctype="multipart/form-data"> --%>
 
-              <li class="active"><a href="#employee" data-toggle="tab">Employee</a></li>
-              <li><a href="#family" data-toggle="tab">Family</a></li>
-              <li><a href="#education" data-toggle="tab">Education</a></li>
-              <li><a href="#experience" data-toggle="tab">Experience</a></li>
-              <li><a href="#ability" data-toggle="tab">Ability</a></li>
-              <li><a href="#reference" data-toggle="tab">Reference</a></li>
-              <li><a href="#reward" data-toggle="tab">Reward</a></li>
-              <li><a href="#history" data-toggle="tab">History</a></li>
-              <li><a href="#probation" data-toggle="tab">Probation</a></li>
-              <li><a href="#punish" data-toggle="tab">Punish</a></li>
-              <li><a href="#leave" data-toggle="tab">Leave</a></li>  
-              <li><a href="#skilllanguage" data-toggle="tab">SkillLanguage</a></li>
-              <li><a href="#site" data-toggle="tab">Site</a></li>  
-              <li><a href="#certification" data-toggle="tab">Certification</a></li>
-              <li><a href="#card" data-toggle="tab">Card</a></li>
-              <li><a href="#allowances" data-toggle="tab">Allowances</a></li>
-              <li><a href="#health" data-toggle="tab">Health</a></li>
-             
-            </ul>
-
-	</div>
-</div>
-<div class="tab-content">
-	<div class="tab-pane active" id="employee">
-    	
-<f:form method="post" commandName="employee" class="form-horizontal" role="form" action="${pageContext.request.contextPath}/employee/submit">
-<div class="container" style="padding: 0px 0px 25px 0px;">
+<f:form method="post" id="addForm" commandName="employeeDto" class="form-horizontal" role="form" name="employeeForm" enctype="multipart/form-data">
 
 <!------------------------------------------------------ Start Information-------------------------------------------------------->
+
+		<input id="appId" type="hidden" value="${appId}"/>
+		
+		<input id="employeeCodeDto" name="employeeCodeDto.rungingNumber" type="hidden" class="form-control"  placeholder="Location ID" value="${ employeeCodeDto.rungingNumber}">
+		
+		
 		
 		<div id="message"></div>
 		<div id = "div-information" class="col-md-12" style="padding: 15px 0px 15px 0px;">
-				<h2 style="border-bottom: 1px solid #8f8f8f;">Information
+				<h2><spring:message code="employee.information"></spring:message>
 					<i style="position: absolute; right: 20px; cursor:pointer;" id = "icon1" class="fa fa-chevron-up"></i>
 				</h2>
 		 </div>
-			 <div class="col-md-12">
+		 
+		   <!--   Upload image -->
+							<div class="col-md-3">
+								<div class="form-group">
+									<div class="col-md-12">
+
+
+																				
+										<div class="col-md-9">
+										<div class="row" align="center">
+										   <c:if test="${empty employeeDto.image}">
+												<div  id="imagePreview" class="img-rounded img-responsive"
+													style="background-image:url('<c:url value="/resource/images/photo_2.jpg" />');">
+												</div>
+											</c:if>
+											
+											<c:if test="${not empty employeeDto.image}">
+										   		 <div id="imagePreview" class="img-rounded img-responsive" style="background-image:url('${pageContext.request.contextPath}/DisplayImageServlet?namespace=EMPLOYEE&fileName=${employeeDto.image}');"></div>
+										    </c:if>
+											</div>
+											<br>
+											<label> <spring:message code="employee.uploadFile"></spring:message> :</label> 
+										
+										
+												
+											<input type="file" id="uploadFile" name="fileupload" accept="image/*"
+												class="file" data-show-upload="false"
+												data-show-preview="false" data-initial-caption="${employeeDto.image}"
+												data-overwrite-initial="false">  
+												
+												<input type="hidden" name="image"
+												class="form-control element-to-paste-filename"
+												value="${employeeDto.image}" />
+
+											
+										</div>
+									 </div>
+
+
+   								       
+
+									</div>
+								</div>
+		 
+		 
+		 <div class="col-md-9">
+		 
+		 	<spring:message code="default.enter" var="enter"/>
+		 	<spring:message code="default.please" var="please"/>
+		 	<spring:message code="employee.pleasewrite" var="write"/>
+		 	<spring:message code="employee.pleaseEmployeeName" var="empname"/>
+		 	<spring:message code="employee.pleaseEmployeeRelation" var="emprelation"/>
+		 	<spring:message code="employee.pleaseEmployeePosition" var="empposition"/>
+		 	<spring:message code="employee.givethereason" var="reason"/>
+		 	<spring:message code="employee.pleasestatethereasons" var="pleasereason"/>
+		 	<spring:message code="employee.datedrafted" var="datedrafted"/>
+		 	<spring:message code="employee.selectempstatus" var="empstatuslabel"/>
+		 	
+		 	
+		 	
+		 	
+		 	             <div class="form-group">
+									<div class="col-md-6">
+								   
+								    <label class="required"> <spring:message code="employee.status" ></spring:message> :</label> 
+									
+									<f:select multiple="single" path="statusemp" class="form-control">
+		 							  <f:option value="" label="${empstatuslabel}"/>
+		 							  <f:option value="Employee" label="Employee" />	
+		 							  <f:option value="Resignation" label="Resignation" />		  							  	  
+									</f:select>
+								 </div>
+							 	             
+		 	             </div>
 
 							<div class="form-group">
-								<div class="col-md-3">
-									<label for="id"> ID :</label> <input id="id" name="id" disabled="true" type="text" class="form-control"
-									id="id" placeholder="Enter ID">
-								</div>
+								<input id="id" name="id" type="hidden" value="${id}"> 
+		
+								
+								<div class="col-md-6">
+		    					<label><spring:message code="employee.location"></spring:message> :</label>
+		    						<f:select id="masLocation" path="masLocation"  class="form-control" value="TH">
+									 	 <option  value=""><spring:message code="employee.selectlocation"></spring:message></option>
+		  								 <f:options items="${ locationList }"  itemValue="code" itemLabel="name" />
+									</f:select>
+								</div> 
 							
-								<div class="col-md-3">
-									<label for="employee_code"> Employee Code :</label> <input id="employeeCode" name="employeeCode" type="text" class="form-control"
-									id="employeeCode" name="employeeCode" placeholder="Enter Employee Code">
+								<div class="col-md-6">
+									<label for="employeeCode"> <spring:message code="employee.code"></spring:message> :</label> 
+									<input id="employeeCodeForShow" name="employeeCodeForShow" type="text" class="form-control" disabled  value="${employeeDto.employeeCode}">
 								</div>
+								
+									<input id="employeeCode" name="employeeCode" type="hidden" class="form-control"  value="${employeeDto.employeeCode}"> 
+								
 								
 							</div>
 							
-					
-	        </div>
 	        
-	        
-	         <div class="col-md-12">
 	         		
 							<div class="form-group">
-								<div class="col-md-3">
-									<label> Name (Thai.) :</label> <input type="text" class="form-control"
-									id="nameThai"name="nameThai" placeholder="Enter Name (Thai)">
+								<div class="col-md-4">
+									<label class="required"> <spring:message code="employee.nameThai" ></spring:message> :</label> 
+									<input type="text" class="form-control" 
+									id="nameThai"name="nameThai" placeholder="${please}${enter}<spring:message code="employee.nameThai"></spring:message>" value="${employeeDto.nameThai}">
 								</div>
-								<div class="col-md-3">
-									<label> SurName (Thai.) :</label> <input type="text" class="form-control"
-									id="surnameThai" name="surnameThai" placeholder="Enter Surname (Thai)">
+								
+								<div class="col-md-4">
+									<label> <spring:message code="employee.surnameThai"></spring:message> :</label> 
+									<input type="text" class="form-control" 
+									id="surnameThai" name="surnameThai" placeholder="${please}${enter}<spring:message code="employee.surnameThai"></spring:message>" value="${employeeDto.surnameThai}">
 								</div>
-								<div class="col-md-3">
-									<label> NickName (Thai.) :</label> <input type="text" class="form-control"
-									id="nicknameThai" name="nicknameThai" placeholder="Enter Nickname (Thai)">
+								
+								<div class="col-md-4">
+									<label> <spring:message code="employee.nicknameThai"></spring:message> :</label> 
+									<input type="text" class="form-control" 
+									id="nicknameThai" name="nicknameThai" placeholder="${please}${enter}<spring:message code="employee.nicknameThai"></spring:message>" value="${employeeDto.nicknameThai}">
+								</div>
+							</div>
+					
+	         
+	         		
+							<div class="form-group">
+								<div class="col-md-4">
+									<label> <spring:message code="employee.nameEng"></spring:message> :</label> 
+									<input type="text" class="form-control" id="nameEng" name="nameEng" placeholder="${please}${enter}<spring:message code="employee.nameEng"></spring:message>" value="${employeeDto.nameEng}">
+								</div>
+								<div class="col-md-4">
+									<label> <spring:message code="employee.surnameEng"></spring:message> :</label> <input type="text" class="form-control"
+									id="surnameEng" name="surnameEng" placeholder="${please}${enter}<spring:message code="employee.surnameEng"></spring:message>" value="${employeeDto.surnameEng}">
+								</div>
+								<div class="col-md-4">
+									<label> <spring:message code="employee.nicknameEng"></spring:message> :</label> <input type="text" class="form-control"
+									id="nicknameEng" name="nicknameEng" placeholder="${please}${enter}<spring:message code="employee.nicknameEng"></spring:message>" value="${employeeDto.nicknameEng}">
 								</div>
 							</div>
 					
 	         </div>
 	         
-	         <div class="col-md-12">
-	         		
-							<div class="form-group">
-								<div class="col-md-3">
-									<label> Name (Eng.) :</label> <input type="text" class="form-control"
-									id="nameEng" name="nameEng" placeholder="Enter Name (Eng)">
-								</div>
-								<div class="col-md-3">
-									<label> SurName (Eng.) :</label> <input type="text" class="form-control"
-									id="surnameEng" name="surnameEng" placeholder="Enter Surname (Eng)">
-								</div>
-								<div class="col-md-3">
-									<label> NickName (Eng.) :</label> <input type="text" class="form-control"
-									id="nicknameEng" name="nicknameEng" placeholder="Enter Nickname (Eng)">
-								</div>
-							</div>
-					
-	         </div>
+	         
+   
 	         
  <!-------------------------------------------------- Start Address-------------------------------------------------->
  
-	       <div id = "div-information" class="col-md-12" style="padding: 15px 0px 15px 0px;">
-				<h2 style="border-bottom: 1px solid #8f8f8f;">Address
-					<i style="position: absolute; right: 20px; cursor:pointer;" id = "icon1" class="fa fa-chevron-up"></i>
-				</h2>
-	       </div>
-	       
 	    <div class="col-md-12">
-	    <label>Address:</label>
 	    <div class="form-group" align="right">
-	      <button type="button"class="btn btn-primary btn-sm" data-toggle="modal" data-target="#myModal">
-          Add</button>	
+	      <button id="addaddress" type="button"class="btn btn-warning btn-sm" data-toggle="modal" data-target="#myModal">
+          <spring:message code="label.newRecord"></spring:message></button>	
         </div>
+        </div>
+	     
+	    
         <div id="outputAddress">
-	       <table id="tbResult" class ="dataTable stripe">
+	       <table id="tbResult" class ="dataTable stripe table-bordered">
+	       <caption title=""><spring:message code="label.address"></spring:message></caption>
 						<thead>
 							<tr>
-							    <th>Id</th>
-							    <th>IdAddressType</th>
-								<th>Type</th> 
-								<th>Address</th>
-								<th>Address (Cont.)</th>
-								<th>IdProvince</th>
-								<th>Province</th> 
-								<th>Zipcode</th>
-								<th>GetIndex</th>
-								<th>Edit</th>
-								<th>Delete</th>
-								<th>Status</th>
-								<th>HiddenIndex</th>
+							    <th><spring:message code="label.id"></spring:message></th>
+							    <th><spring:message code="address.idtype"></spring:message></th>
+								<th><spring:message code="address.type"></spring:message></th> 
+								<th><spring:message code="address.houseNo"></spring:message></th>
+								<th><spring:message code="address.road"></spring:message></th>
+								<th><spring:message code="address.district"></spring:message></th>
+								<th><spring:message code="address.subDistrict"></spring:message></th>
+								<th><spring:message code="address.idprovince"></spring:message></th>
+								<th><spring:message code="address.province"></spring:message></th> 
+								<th><spring:message code="address.zipcode"></spring:message></th>
+								<th><spring:message code="address.getindex"></spring:message></th>
+								<th><spring:message code="label.action"></spring:message></th>
+								<!-- <th>Delete</th> -->
+								<th><spring:message code="address.status"></spring:message></th>
+							    <!-- <th>HiddenIndex</th>  -->
 							</tr>
 						
 						</thead>
@@ -176,438 +223,712 @@
 					</table>
 					
 	     </div>
-	     </div>
 	     
+	   
+	
  <!----------------------------------------- Start General------------------------------------------------------>
 	     
 	     <div id = "div-information" class="col-md-12" style="padding: 15px 0px 15px 0px;">
-				<h2 style="border-bottom: 1px solid #8f8f8f;">General
+				<h2><spring:message code="employee.general"></spring:message>
 					<i style="position: absolute; right: 20px; cursor:pointer;" id = "icon1" class="fa fa-chevron-up"></i>
 				</h2>
 	       </div>
 	     
 	     
+	     <div class="row">
 	      <div class="col-md-12">
 	         		
 							<div class="form-group">
 								<div class="col-md-3">
-									<label> Email :</label> <input type="text" class="form-control"
-									id="email" name="email" placeholder="Enter Email">
+									<label class="required" style="margin-right: 25px;"> <spring:message code="employee.email"></spring:message> :</label> <input type="email" class="form-control" 
+									id="email" name="email" placeholder="${please} ${enter} <spring:message code="employee.email"></spring:message>" value="${employeeDto.email}">
 								</div>
 								<div class="col-md-3">
-									<label> Tel. (Home) :</label> <input type="text" class="form-control"
-									id="telHome" name="telHome" placeholder="xx-xxx-xxxx">
+									<label class="required" style="margin-right: 25px;"> <spring:message code="employee.telHome"></spring:message> :</label> <input type="text" class="form-control"
+									id="telHome" name="telHome" placeholder="<spring:message code="employee.formatTel"></spring:message>" value="${employeeDto.telHome}">
 								</div>
 								<div class="col-md-3">
-									<label> Tel. (Mobile) :</label> <input type="text" class="form-control"
-									id="telMobile" name="telMobile" placeholder="xxx-xxx-xxxx">
+									<label class="required" style="margin-right: 25px;"> <spring:message code="employee.telMobile"></spring:message> :</label> <input type="text" class="form-control"
+									id="telMobile" name="telMobile" placeholder="<spring:message code="employee.formatTelMo"></spring:message>" value="${employeeDto.telMobile}">
 								</div>
 								<div class="col-md-3">
-									<label> Tel. (Fax) :</label> <input type="text" class="form-control"
-									id="telFax" name="telFax" placeholder="xx-xxx-xxxx">
+									<label class="required" style="margin-right: 25px;"> <spring:message code="employee.telFax"></spring:message> :</label> <input type="text" class="form-control"
+									id="telFax" name="telFax" placeholder="<spring:message code="employee.formatTel"></spring:message>" value="${employeeDto.telFax}">
 								</div>
 							</div>
 					
 	        </div>
+	        </div>
 	        
+	        <div class="row">
 	        <div class="col-md-12">
 	         		
 							<div class="form-group">
 								<div class="col-md-6">
-									<label> Health (Congenital Disease) :</label> <input type="text" class="form-control"
-									id="congenitalDisease" name="congenitalDisease" placeholder="Enter Congenital Disease">
+									<label style="margin-right: 25px;"> <spring:message code="employee.congenitalDisease"></spring:message> :</label> <input type="text" class="form-control"
+									id="congenitalDisease" name="congenitalDisease" placeholder="${please} ${enter} <spring:message code="employee.congen"></spring:message>" value="${employeeDto.congenitalDisease}">
 								</div>
 								<div class="col-md-6">
-									<label> Hospital :</label> <input type="text" class="form-control"
-									id="hospital" name="hospital" placeholder="Enter Hospital">
-								</div>
-							</div>
-					
-	        </div>
-	        
-	         <div class="col-md-12">
-	         		
-							<div class="form-group">
-								<div class="col-md-6">
-									<label> Emergency Contact :</label> <input type="text" class="form-control"
-									id="emergencyContact" name="emergencyContact" placeholder="Enter Emergency Name">
-								</div>
-								<div class="col-md-6">
-									<label> Relationship with Emergency Contact :</label> <input type="text" class="form-control"
-									id="relationshipWithEmergencyContact" name="relationshipWithEmergencyContact" placeholder="Enter Emergency Relation">
+									<label style="margin-right: 25px;"> <spring:message code="employee.hospital"></spring:message> :</label> <input type="text" class="form-control"
+									id="hospital" name="hospital" placeholder="${please} ${enter} <spring:message code="employee.hospital"></spring:message>" value="${employeeDto.hospital}">
 								</div>
 							</div>
 					
 	        </div>
+	        </div>
 	        
-	        
+	        <div class="row">
 	         <div class="col-md-12">
 	         		
 							<div class="form-group">
 								<div class="col-md-6">
-									<label> Emergency Contact Address :</label> <input type="text" class="form-control"
-									id="emergencyContactAddress" name="emergencyContactAddress" placeholder="Enter Emergency Address">
+									<label class="required" style="margin-right: 25px;"> <spring:message code="employee.emergencyContact"></spring:message> :</label> <input type="text" class="form-control"
+									id="emergencyContact" name="emergencyContact" placeholder="${please} ${enter} <spring:message code="employee.emergencyname"></spring:message>" value="${employeeDto.emergencyContact}">
+								</div>
+								<div class="col-md-6">
+									<label style="margin-right: 25px;"> <spring:message code="employee.relationshipWithEmergencyContact"></spring:message> :</label> <input type="text" class="form-control"
+									id="relationshipWithEmergencyContact" name="relationshipWithEmergencyContact" placeholder="${please} ${enter} <spring:message code="employee.relationshipWithEmergencyContact"></spring:message>"
+									value="${employeeDto.relationshipWithEmergencyContact}">
+								</div>
+							</div>
+					
+	        </div>
+	        </div>
+	        
+	        <div class="row">
+	         <div class="col-md-12">
+							<div class="form-group">
+								<div class="col-md-6">
+									<label style="margin-right: 25px;"> <spring:message code="employee.emergencyContactAddress"></spring:message> :</label> <input type="text" class="form-control"
+									id="emergencyContactAddress" name="emergencyContactAddress" placeholder="${please} ${enter} <spring:message code="employee.emergencyAddress"></spring:message>" value="${employeeDto.emergencyContactAddress}">
 								</div>
 								<div class="col-md-3">
-									<label> Emergency Contact Phone Number  :</label> <input type="text" class="form-control"
-									id="emergencyContactPhoneNumber" name="emergencyContactPhoneNumber" placeholder="xxx-xxx-xxxx">
+									<label class="required" style="margin-right: 25px;"> <spring:message code="employee.emergencyContactPhoneNumber"></spring:message>  :</label> <input type="text" class="form-control"
+									id="emergencyContactPhoneNumber" name="emergencyContactPhoneNumber" placeholder="<spring:message code="employee.formatTelMo"></spring:message>" value="${employeeDto.emergencyContactPhoneNumber}">
 								</div>
 							</div>
 					
 	        </div>
+	        </div>
 	       
 	       
+	       <div class="row">
 	       <div class="col-md-12">
 	         		
 							<div class="form-group">
 								<div class="col-md-3">
-									<p><label> Date of Birth :</label> <input type="text" class="form-control"
-									id="dateOfBirth" name="dateOfBirth" placeholder="Enter DOB"></p>
+									<label class="required" style="margin-right: 25px;"> <spring:message code="employee.dateOfBirth"></spring:message> :</label> 
+									<div class='input-group date'  id='dateOfBirth'>
+									
+								
+									
+									<input type="text" class="form-control"
+									id="dateOfBirth" name="dateOfBirth" placeholder="${please} ${enter} <spring:message code="employee.dob"></spring:message>"            							 
+           							value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.dateOfBirth}" />' /> 
+           							           							
+									
+									<span class="input-group-addon">
+							            <span class="glyphicon glyphicon-calendar"></span>
+							        </span>
+							        </div>
+								</div>
+																	
+								
+								
+								<div class="col-md-3">
+									<label style="margin-right: 25px;"> <spring:message code="employee.placeOfBirth"></spring:message> :</label> <input type="text" class="form-control"
+									id="placeOfBirth" name="placeOfBirth" placeholder="${please} ${enter} <spring:message code="employee.pob"></spring:message>" value="${employeeDto.placeOfBirth}">
+								</div>
+								
+								
+								
+								<div class="col-md-3">
+									<label style="margin-right: 25px;"> <spring:message code="employee.age"></spring:message> :</label> <input type="text" class="form-control"
+									id="age" name="age" placeholder="${please} ${enter} <spring:message code="employee.age"></spring:message>" value="${employeeDto.age}">
 								</div>
 								<div class="col-md-3">
-									<label> Place of Birth :</label> <input type="text" class="form-control"
-									id="placeOfBirth" name="placeOfBirth" placeholder="Enter POB">
-								</div>
-								<div class="col-md-3">
-									<label> Age :</label> <input type="text" class="form-control"
-									id="age" name="age" placeholder="Enter Age">
-								</div>
-								<div class="col-md-3">
-									<label> Religion :</label> <input type="text" class="form-control"
-									id="religion" name="religion" placeholder="Enter Religion">
+									<label style="margin-right: 25px;"> <spring:message code="employee.religion"></spring:message> :</label> <input type="text" class="form-control"
+									id="religion" name="religion" placeholder="${please} ${enter} <spring:message code="employee.religion"></spring:message>" value="${employeeDto.religion}">
 								</div>
 								
 							</div>
 					
 	        </div>
+	        </div>
 	        
-	        
+	        <div class="row">
 	         <div class="col-md-12">
 	         		
 							<div class="form-group">
 								<div class="col-md-3">
-									<label> ID Card :</label> <input type="text" class="form-control"
-									id="idCard" name="idCard" placeholder="Enter Id Card">
+									<label class="required" style="margin-right: 25px;"> <spring:message code="employee.idCard"></spring:message> :</label> <input type="text" class="form-control unique"
+									id="idCard" name="idCard" placeholder="${please} ${enter} <spring:message code="employee.idCard"></spring:message>" value="${employeeDto.idCard}">
 								</div>
 								<div class="col-md-3">
-									<label> Issued Office :</label> <input type="text" class="form-control"
-									id="issuedOffice" name="issuedOffice" placeholder="Enter Issued Office">
+									<label style="margin-right: 25px;"> <spring:message code="employee.issuedOffice"></spring:message> :</label> <input type="text" class="form-control"
+									id="issuedOffice" name="issuedOffice" placeholder="${please} ${enter} <spring:message code="employee.issuedOffice"></spring:message>" value="${employeeDto.issuedOffice}">
+								</div>
+								
+								<div class="col-md-3">
+									<label style="margin-right: 25px;"> <spring:message code="employee.expiryDate"></spring:message> :</label>
+									<div class='input-group date' id='expiryDate'> <input type="text" class="form-control"
+									id="expiryDate" name="expiryDate" placeholder="${enter} <spring:message code="employee.expiryDate"></spring:message>" 
+									value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.expiryDate}" />' />
+								
+								<span class="input-group-addon">
+								<span class="glyphicon glyphicon-calendar"></span>
+								</span></div></div>
+							</div>
+					
+	        </div>
+	        </div>
+	        
+	        <div class="row">
+	         <div class="col-md-12">
+	 <!------------------------------------------------------------------ form ของ sex ------------------------------------------------------------->
+							<div class="form-group">
+						
+						
+							<div class="col-md-3">
+									<label style="margin-right: 25px;"> <spring:message code="employee.sex"></spring:message> :</label>
+									<div class="radio">
+									 <c:if test="${empty employeeDto.sex}">									
+									  		 <label><input type="radio" name="sex" id="Male" value="Male"><spring:message code="employee.male"></spring:message></label>
+									  		 <label><input type="radio" name="sex" id="Female" value="Female"><spring:message code="employee.female"></spring:message></label>
+									 		 <label id="sex-error" class="error" for="sex"></label>
+									  </c:if>
+									  
+									  
+									  <c:if test="${not empty employeeDto.sex}">
+
+										 <c:if test="${employeeDto.sex =='Male'}">
+										        <label><input type="radio" name="sex" id="Male" value="Male" checked="checked"><spring:message code="employee.male"></spring:message></label>
+										        <label><input type="radio" name="sex" id="Female" value="Female"><spring:message code="employee.female"></spring:message></label>
+										  </c:if>
+										    
+										   <c:if test="${employeeDto.sex =='Female'}">
+										       <label><input type="radio" name="sex" id="Male" value="Male"><spring:message code="employee.male"></spring:message></label>
+										       <label><input type="radio" name="sex" id="Female" value="Female" checked="checked"><spring:message code="employee.female"></spring:message></label>						  
+										   </c:if>
+									  </c:if>
+									 
+    								</div>
+								</div>
+								
+	<!----------------------------------------------------------------------------------------- form ของ marital staus  ------------------------------------------------------------------->				
+								
+								<div class="col-md-3">
+									<label style="margin-right: 25px;"> <spring:message code="employee.maritalStatus"></spring:message> :</label>
+									<div class="radio">
+									  <c:if test="${empty employeeDto.maritalStatus}">	
+     									 <label><input type="radio" name="maritalStatus" id="Single" value="Single"><spring:message code="employee.single"></spring:message></label> 
+      									 <label><input type="radio" name="maritalStatus" id="Married" value="Married"><spring:message code="employee.married"></spring:message></label>
+      									 <label><input type="radio" name="maritalStatus" id="Divorce" value="Divorce"><spring:message code="employee.divorce"></spring:message></label>
+    								  	<label id="maritalStatus-error" class="error" for="maritalStatus"></label>
+    								  </c:if>
+    								  <c:if test="${not empty employeeDto.maritalStatus}">
+    								        
+    								        <c:choose>
+										    <c:when test="${employeeDto.maritalStatus =='Single'}">
+										       <label><input type="radio" name="maritalStatus" id="Single" value="Single" checked="checked"><spring:message code="employee.single"></spring:message></label> 
+      									 	   <label><input type="radio" name="maritalStatus" id="Married" value="Married"><spring:message code="employee.married"></spring:message></label>
+      									       <label><input type="radio" name="maritalStatus" id="Divorce" value="Divorce"><spring:message code="employee.divorce"></spring:message></label>
+										    </c:when>
+										    
+										     <c:when test="${employeeDto.maritalStatus =='Married'}">
+										       <label><input type="radio" name="maritalStatus" id="Single" value="Single"><spring:message code="employee.single"></spring:message></label> 
+      									 	   <label><input type="radio" name="maritalStatus" id="Married" value="Married" checked="checked"><spring:message code="employee.married"></spring:message></label>
+      									       <label><input type="radio" name="maritalStatus" id="Divorce" value="Divorce"><spring:message code="employee.divorce"></spring:message></label>
+										    </c:when>
+										    
+										    <c:when test="${employeeDto.maritalStatus =='Divorce'}">
+										       <label><input type="radio" name="maritalStatus" id="Single" value="Single"><spring:message code="employee.single"></spring:message></label> 
+      									 	   <label><input type="radio" name="maritalStatus" id="Married" value="Married" "><spring:message code="employee.married"></spring:message></label>
+      									       <label><input type="radio" name="maritalStatus" id="Divorce" value="Divorce" checked="checked"><spring:message code="employee.divorce"></spring:message></label>
+										    </c:when>
+										    
+										    <c:otherwise>
+										       <label><input type="radio" name="maritalStatus" id="Single" value="Single"><spring:message code="employee.single"></spring:message></label> 
+      									 	   <label><input type="radio" name="maritalStatus" id="Married" value="Married"><spring:message code="employee.married"></spring:message></label>
+      									       <label><input type="radio" name="maritalStatus" id="Divorce" value="Divorce"><spring:message code="employee.divorce"></spring:message></label>
+										    </c:otherwise>
+										   </c:choose>
+    								  
+    								  </c:if>
+    								  
+    								</div>
+								</div>
+    						
+								
+							
+								<div class="col-md-3">
+									<label style="margin-right: 25px;"> <spring:message code="employee.height"></spring:message> :</label> <input type="text" class="form-control"
+									id="height" name="height" placeholder="${please} ${enter} <spring:message code="employee.height"></spring:message>" value="${employeeDto.height}">
 								</div>
 								<div class="col-md-3">
-									<label> Expiry Date :</label> <input type="text" class="form-control"
-									id="expiryDate" name="expiryDate" placeholder="Enter Expiry Date">
+									<label style="margin-right: 25px;"> <spring:message code="employee.weigth"></spring:message> :</label> <input type="text" class="form-control"
+									id="weigth" name="weigth" placeholder="${please} ${enter} <spring:message code="employee.weigth"></spring:message>" value="${employeeDto.weigth}">
 								</div>
 							</div>
 					
 	        </div>
-	        
-	        
-	         <div class="col-md-12">
-	         		
-							<div class="form-group">
-								<div class="col-md-3">
-									<label> Height (cms.) :</label> <input type="text" class="form-control"
-									id="height" name="height" placeholder="Enter Height">
-								</div>
-								<div class="col-md-3">
-									<label> Weigth (kgs.) :</label> <input type="text" class="form-control"
-									id="weigth" name="weigth" placeholder="Enter Weigth">
-								</div>
-							</div>
-					
 	        </div>
 	        
 	        
-	         <div class="col-md-12">
-	         		
-							<div class="form-group">
-								<div class="col-md-3">
-									<label> Sex :</label>
-									<div class="radio">
-     									 <label><input type="radio" name="sex" >Male</label>
-      									 <label><input type="radio" name="sex" >Female</label>
-    								</div>
-								</div>
-    						</div>	
-					
-	        </div>
+	     
 	        
-	        
-	         <div class="col-md-12">
-	         		
-							<div class="form-group">
-								<div class="col-md-3">
-									<label> Marital Status :</label>
-									<div class="radio">
-     									 <label><input type="radio" name="maritalStatus">Single</label> 
-      									 <label><input type="radio" name="maritalStatus">Married</label>
-      									 <label><input type="radio" name="maritalStatus">Divorce</label>
-    								</div>
-								</div>
-    						</div>	
-					
-	        </div>
-	        
-	        
+	        <div class="row">
 	           <div class="col-md-12">
 	         		
 							<div class="form-group">
-								<div class="col-md-3">
-									<label> Number of Children :</label> <input type="text" class="form-control"
-									id="numberOfChildren" name="numberOfChildren" placeholder="Enter Number Of Children">
+								<div class="col-md-3" id="numberOfChildrenDiv">
+									<label style="margin-right: 25px;"> <spring:message code="employee.numberOfChildren"></spring:message> :</label> <input type="text" class="form-control"
+									id="numberOfChildren" name="numberOfChildren" placeholder="${please} ${enter} <spring:message code="employee.numberOfChildren"></spring:message>" value="${employeeDto.numberOfChildren}">
 								</div>
-								<div class="col-md-3">
-									<label> Spouse: Name :</label> <input type="text" class="form-control"
-									id="spouseName" name="spouseName" placeholder="Enter Spouse Name">
+								<div class="col-md-3" id="spouseNameDiv">
+									<label style="margin-right: 25px;"> <spring:message code="employee.spouseName"></spring:message> :</label> <input type="text" class="form-control"
+									id="spouseName" name="spouseName" placeholder="${please} ${enter} <spring:message code="employee.spouseName"></spring:message>" value="${employeeDto.spouseName}">
 								</div>
-								<div class="col-md-3">
-									<label> Marriage certificate No. :</label> <input type="text" class="form-control"
-									id="marriageCertificateNo" name="marriageCertificateNo" placeholder="Enter Marriage Cert No.">
+								<div class="col-md-3" id="marriageCertificateNoDiv">
+									<label style="margin-right: 25px;"> <spring:message code="employee.marriageCertificateNo"></spring:message> :</label> <input type="text" class="form-control"
+									id="marriageCertificateNo" name="marriageCertificateNo" placeholder="${please} ${enter} <spring:message code="employee.marcertno"></spring:message>" value="${employeeDto.marriageCertificateNo}">
 								</div>
-								<div class="col-md-3">
-									<label> Issued Office :</label> <input type="text" class="form-control"
-									id="issuedOffice2" name="issuedOffice2" placeholder="Enter Issue Office">
+								<div class="col-md-3" id="issuedOffice2Div">
+									<label style="margin-right: 25px;"> <spring:message code="employee.issuedOffice"></spring:message> :</label> <input type="text" class="form-control"
+									id="issuedOffice2" name="issuedOffice2" placeholder="${please} ${enter} <spring:message code="employee.issuedOffice"></spring:message>" value="${employeeDto.issuedOffice2}">
 								</div>
 							</div>
 					
 	        </div>
+	        </div>
 	       
-	       
+	       <div class="row">
 	        <div class="col-md-12">
 	         		
 							<div class="form-group">
-								<div class="col-md-3">
-									<label> Address :</label> <input type="text" class="form-control"
-									id="address" name="address" placeholder="Enter Address">
+								<div class="col-md-6" id="addressDiv">
+									<label style="margin-right: 25px;"> <spring:message code="employee.address"></spring:message> :</label> <input type="text" class="form-control"
+									id="address" name="address" placeholder="${please} ${enter} <spring:message code="employee.address"></spring:message>" value="${employeeDto.address}">
 								</div>
-								<div class="col-md-3">
-									<label> Occupation :</label> <input type="text" class="form-control"
-									id="occupation" name="occupation" placeholder="Enter Occupation">
+								<div class="col-md-6" id="occupationDiv">
+									<label style="margin-right: 25px;"> <spring:message code="employee.occupation"></spring:message> :</label> <input type="text" class="form-control"
+									id="occupation" name="occupation" placeholder="${please} ${enter} <spring:message code="employee.occupation"></spring:message>" value="${employeeDto.occupation}">
 								</div>
 							</div>
 					
 	        </div>
+	        </div>
 	       
-	       
-	           <div class="col-md-12">
-	         		
-							<div class="form-group">
+	       <div class="row">
+	       <div class="col-md-12">
+	       <label style="margin-right: 25px;"> <spring:message code="employee.howdoyouknowaugmentis"></spring:message> :</label>
+	       </div>
+	       </div>
+	           <div class="row">
+	           
+	         				<div class="form-group">
+							<div class="col-md-12">
 								<div class="col-md-3">
-									<label> How do you know augmentis? :</label>
-									<div class="checkbox">
-     									 <label><input type="checkbox" name="knowAugNewspaper">Newspaper</label>
-     									 <input type="text" class="form-control" id="descriptionNewspaper" name="descriptionNewspaper" placeholder="Enter Newspaper">
-     									 
-      									 <label><input type="checkbox" name="knowAugMagazine">Magazine</label>
-      									 <input type="text" class="form-control" id="descriptionMagazine" name="descriptionMagazine" placeholder="Enter Magazine">
-      									 
-      									 <label><input type="checkbox" name="knowAugWebsite">Website</label>
-      									 <input type="text" class="form-control" id="descriptionWebsite" name="descriptionWebsite" placeholder="Enter Website">
-      									 
-      									 <label><input type="checkbox" name="knowAugFriend">Friend</label>
-      									 <input type="text" class="form-control" id="descriptionFriend" name="descriptionFriend" placeholder="Enter Friend">
-      									 
-      									 <label><input type="checkbox" name="knowAugOther">Other (Please specify.)</label>
-      									 <input type="text" class="form-control" id="descriptionOther" name="descriptionOther" placeholder="Enter Other">
-    								</div>
-								</div>
-    						</div>	
-					
+								
+   								     <c:if test="${empty employeeDto.knowAugNewspaper}">	
+     									  <label style="margin-right: 25px;"><input type="checkbox" id="Newspaper" name="knowAugNewspaper" value="Newspaper"><spring:message code="employee.newspaper"></spring:message></label>   										      									
+    								  </c:if>
+    								 
+									  <c:if test="${not empty employeeDto.knowAugNewspaper}">	
+     									   <label style="margin-right: 25px;"><input type="checkbox" id="Newspaper" name="knowAugNewspaper" value="Newspaper" checked="checked"><spring:message code="employee.newspaper"></spring:message></label>    								  		
+    								  </c:if>
+    								  
+    								  <input type="text" class="form-control" id="descriptionNewspaper" name="descriptionNewspaper" placeholder="${please} ${enter} <spring:message code="employee.newspaper"></spring:message>" value="${employeeDto.descriptionNewspaper}">
+    								  
+								 </div>
+									  
+									 <div class="col-md-3">
+									  
+									  <c:if test="${empty employeeDto.knowAugMagazine}">	
+     									 <label style="margin-right: 25px;"><input type="checkbox" id="Magazine" name="knowAugMagazine" value="Magazine"><spring:message code="employee.magazine"></spring:message></label>      									 
+    								  </c:if>
+    								 
+									  <c:if test="${not empty employeeDto.knowAugMagazine}">	
+     									   <label style="margin-right: 25px;"><input type="checkbox" id="Magazine" name="knowAugMagazine" value="Magazine" checked="checked"><spring:message code="employee.magazine"></spring:message></label>
+    								  </c:if>
+    								  
+    								  <input type="text" class="form-control" id="descriptionMagazine" name="descriptionMagazine" placeholder="${please} ${enter} <spring:message code="employee.magazine"></spring:message>" value="${employeeDto.descriptionMagazine}">
+    								  
+									</div>
+										
+								    <div class="col-md-3">
+									 <c:if test="${empty employeeDto.knowAugWebsite}">	
+     									 <label style="margin-right: 25px;"><input type="checkbox" id="Website" name="knowAugWebsite" value="Website"><spring:message code="employee.website"></spring:message></label>
+      									
+    								  </c:if>
+    								 
+									  <c:if test="${not empty employeeDto.knowAugWebsite}">	
+     									 <label style="margin-right: 25px;"><input type="checkbox" id="Website" name="knowAugWebsite" value="Website" checked="checked"><spring:message code="employee.website"></spring:message></label>      									
+    								  </c:if>
+    								  
+    								  <input type="text" class="form-control" id="descriptionWebsite" name="descriptionWebsite" placeholder="${please} ${enter} <spring:message code="employee.website"></spring:message>" value="${employeeDto.descriptionWebsite}">
+    								 </div>
+									  
+									  <div class="col-md-3">
+									  <c:if test="${empty employeeDto.knowAugFriend}">	
+     									 <label style="margin-right: 25px;"><input type="checkbox" id="Friend" name="knowAugFriend" value="Friend"><spring:message code="employee.friend"></spring:message></label>      									
+    								  </c:if>
+    								 
+									  <c:if test="${not empty employeeDto.knowAugFriend}">	
+     									 <label style="margin-right: 25px;"><input type="checkbox" id="Friend" name="knowAugFriend" value="Friend" checked="checked"><spring:message code="employee.friend"></spring:message></label>
+    								  </c:if>
+    								  
+    								  <input type="text" class="form-control" id="descriptionFriend" name="descriptionFriend" placeholder="${please} ${enter} <spring:message code="employee.friend"></spring:message>" value="${employeeDto.descriptionFriend}">
+    								  
+									    
+									  </div>
+									    
+							 </div>
+									
+									    
+								 <div class="col-md-12">
+								   <div class="col-md-12">
+									  <c:if test="${empty employeeDto.knowAugOther}">	
+									    <label><input type="checkbox" id="Other" name="knowAugOther" value="Other"><spring:message code="employee.other"></spring:message></label>
+    								  </c:if>
+									    
+									  <c:if test="${not empty employeeDto.knowAugOther}">	
+									    <label><input type="checkbox" id="Other" name="knowAugOther" value="Other" checked="checked"><spring:message code="employee.other"></spring:message></label>
+    								  </c:if>
+    								  
+    								  <input type="text" class="form-control" id="descriptionOther" name="descriptionOther" placeholder="${please} ${enter} <spring:message code="employee.other"></spring:message>" value="${employeeDto.descriptionOther}">
+    								  
+								    </div>		 
+      							  </div>
+      								
+      								
+						</div>
+    									
+			
 	        </div>
 	        
+	        <div class="row">
+	       <div class="col-md-12">
+	        <label> <spring:message code="employee.doyouknow"></spring:message> :</label>
+	       </div>
+	       </div>
 	        
-	         <div class="col-md-12">
-	         		
-							<div class="form-group">
-								<div class="col-md-6">
-									<label> Do you know anyone now being employed by this company? :</label>
-									<div class="checkbox">
-     									 <label><input type="checkbox" name="knowEmployedYes">Yes</label>
-     									 <input type="text" class="form-control" id="descriptionYes" name="descriptionYes" placeholder="Enter Please write name,position and relation">
+	        
+	        <div class="row">
+	    
+						<div class="form-group">
+							<div class="col-md-12">
+								<div class="col-md-1">
+    									
+	     									  <label style="margin-right: 25px;">
+	     									  <f:radiobutton id="Yes" path="knowEmployed"  value="Yes"/><spring:message code="employee.yes"></spring:message>
+	     									  </label>
+	     									  </div>
+	     									  
+	     									  <div class="form-group">
+	     									  <div class="col-md-12">
+	     									  <div class="col-md-4">
+	     									  
+	     									    <div id="descriptionYesNameDiv">
+	     									  	  <label> <spring:message code="employee.empName"></spring:message> :</label>
+	     										  <f:input  class="form-control" id="descriptionYesName" path="descriptionYesName" value="${employeeDto.descriptionYesName}" placeholder="${please} ${enter} ${empname}" />	     									  
+	     									    </div>
+	     									  
+	     									  </div>
+	     									  
+	     									  <div class="col-md-4">
+	     									     <div id="positionYesDiv">
+	     									  		<label> <spring:message code="employee.empPosition"></spring:message> :</label>
+	     									  		<f:input  class="form-control" id="positionYes" path="positionYes" value="${employeeDto.positionYes}" placeholder="${please} ${enter} ${empposition}" />
+	     									  	  </div>
+	     									  </div>
+	     									  
+	     									  <div class="col-md-4">
+	     									    
+	     									     <div id="relationYesDiv">
+	     									  		<label> <spring:message code="employee.empRelation"></spring:message> :</label>
+	     									  		<f:input  class="form-control" id="relationYes" path="relationYes" value="${employeeDto.relationYes}" placeholder="${please} ${enter} ${emprelation}" /> 
+	     									  	 </div>
+	     									  </div> 
+	     									  
+	     									  </div>
+	     									  </div>
+	     									  </div>
+	     									  
+	     					<div class="col-md-12">
+								<div class="col-md-12">
+	     									  <label style="margin-right: 25px;">
+	     									  		<f:radiobutton id="No" path="knowEmployed" value="No" /><spring:message code="employee.no"></spring:message>
+	     									  </label>
+    										  
+											  <input id="knowEmployed" type="hidden" value="${employeeDto.knowEmployed}"/>
+    								</div>
+    								</div>
+    				
+				
+			</div>
+	      </div>  
+	        
+	        
+	        <div class="row">
+	        	<div class="col-md-12">
+						<label><spring:message code="employee.haveyoueverserved"></spring:message> :</label>
+    				</div>
+	      		 </div>				
+
+			<div class="row">
+			<div class="form-group">
+							<div class="col-md-12">
+								<div class="col-md-12">
+										<label style="margin-right: 25px;">
+     									  <f:radiobutton  id="militaryServiceYes" path="militaryService" value="Yes" /><spring:message code="employee.yes"></spring:message>
+     									 </label>
+     									 
+     									</div>
     								</div>
     								
-    								<div class="checkbox">
-     									 <label><input type="checkbox" name="knowEmployerNo">No</label>
-    								</div>
-								</div>
-    						</div>	
-					
-	        </div>
-	        
-	        
-	        <div class="col-md-12">
-	         		
-							<div class="form-group">
-								
-									<label> Have you ever served in the military service? :</label>
-    								<div class="checkbox">
-     									 <label><input type="checkbox" name="militaryServiceYes">Yes</label>
-     								</div>
+    							<div class="col-md-12">
      								<div class="col-md-3">
-    									 <label> From Year :</label>
-    									 <input type="text" class="form-control" id="fromYear" name="fromYear" placeholder="Enter From year">
-    								</div>
+     								
+     								  <div id="fromYearDiv">
+     									 <label  style="margin-right: 25px;"> <spring:message code="employee.fromYear"></spring:message> :</label>
+	
+	   									 <div class='input-group date' id='fromYear'>
+	    									 <input type="text" class="form-control" id="fromYear" name="fromYear" placeholder="${please} ${enter} <spring:message code="employee.fromYear"></spring:message>"
+	    									  value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.fromYear}" />' />
+	    								     <span class="input-group-addon">
+											 <span class="glyphicon glyphicon-calendar"></span>
+											 </span>
+										 </div>
+									   </div>
+										 
+										 
+									</div>
+									
     								<div class="col-md-3">
-    									 <label> To Year :</label>
-    									 <input type="text" class="form-control" id="toYear" name="toYear" placeholder="Enter To Year">
-    								</div>
+    							      <div id="toYearDiv">
+    									 <label style="margin-right: 25px;"> <spring:message code="employee.toYear"></spring:message> :</label>
+    									 <div class='input-group date' id='toYear'>
+    									 <input type="text" class="form-control" id="toYear" name="toYear" placeholder="${please} ${enter} <spring:message code="employee.toYear"></spring:message>"
+    									  value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.toYear}" />'  />
+    									 <span class="input-group-addon">    									 
+    									 <span class="glyphicon glyphicon-calendar"></span>
+    									 </span>
+										</div>
+									  </div>
+									</div>
+
+
     								<div class="col-md-3">
-    									 <label> Branch of Service :</label>
-    									 <input type="text" class="form-control" id="branchOfService" name="branchOfService" placeholder="Enter Branch Of Service">
+    								  <div id="branchOfServiceDiv">
+    									 <label style="margin-right: 25px;"> <spring:message code="employee.branchOfService"></spring:message> :</label>
+    									 <input type="text" class="form-control" id="branchOfService" name="branchOfService" placeholder="${please} ${enter} <spring:message code="employee.branchOfService"></spring:message>" value="${employeeDto.branchOfService}">
+    								  </div>
     								</div>
+    								
     								<div class="col-md-3">
-     									 <label> Service No :</label>
-    									 <input type="text" class="form-control" id="serviceNo" name="serviceNo" placeholder="Enter Service No">
+    								   <div id="serviceNoDiv">
+     									 <label style="margin-right: 25px;"> <spring:message code="employee.serviceNo"></spring:message> :</label>
+    									 <input type="text" class="form-control" id="serviceNo" name="serviceNo" placeholder="${please} ${enter} <spring:message code="employee.serviceNo"></spring:message>" value="${employeeDto.serviceNo}">
+    							       </div>
     							    </div>
     						</div>	
 					
+	        	</div>
 	        </div>
 	        
 	        
-	         <div class="col-md-12">
-	         		
-							<div class="form-group">
-    								<div class="checkbox">
-     									 <label><input type="checkbox" name="litaryServiceNo">No</label>
-     								</div>
+	        	<div class="row">
+					<div class="form-group">
+						<div class="col-md-12">
+							<div class="col-md-12">
+     							<label style="margin-right: 25px;">
+     							<f:radiobutton id="militaryServiceNo" path="militaryService" value="No" /><spring:message code="employee.no" ></spring:message>
+     							</label>
+     						
+     						</div>	
+     						</div>
+     				
+     				<div class="col-md-12">
      								<div class="col-md-6">
-    									 <label> Please state the reasons :</label>
-    									 <input type="text" class="form-control" id="reasonsNo" name="reasonsNo" placeholder="Enter Reasons">
+    									 <label> <spring:message code="employee.pleasestatethereasons"></spring:message> :</label>
+    									 <f:input  class="form-control" id="reasonsNo" path="reasonsNo" value="${employeeDto.reasonsNo}" placeholder="${please} ${enter} ${pleasereason}" /> 
     								</div>
     								<div class="col-md-3">
-    									 <label> Date to be drafted :</label>
-    									 <input type="text" class="form-control" id="dateToBeDrafted" name="dateToBeDrafted" placeholder="Enter Date Drafted">
-    								</div>
-    						</div>	
-					
-	        </div>
-	        
-	        
-	         <div class="col-md-12">
-	         		
-							<div class="form-group">
-							<br></br>
-							<label> May inquiry be made of your previous employers reguarding you character,qualification record of employment? :</label>
-								<div class="col-md-6">
-									<div class="checkbox">
-									 <label><input type="checkbox" name="previousEmployerYes">Yes</label>
-    								</div>
-    								
-    								<div class="checkbox">
-     									 <label><input type="checkbox" name="previousEmployerNo">No</label>
-     									 <input type="text" class="form-control" id="previousEmpreasonsNo" name="previousEmpreasonsNo" placeholder="Enter Give the reason">
-    									
-    								</div>
-								</div>
-    						</div>	
-					
-	        </div>
+    									 <label style="margin-right: 25px;"> <spring:message code="employee.dateToBeDrafted"></spring:message> :</label>
 
-	  		         
-	 <!---------------------------------------------------------- Start Official--------------------------------------------->   
+    									 <div class='input-group date' id='dateToBeDrafted'>
+    									 <input type="text" class="form-control" id="dateToBeDrafted" name="dateToBeDrafted"  placeholder="${please} ${enter} ${datedrafted}" 
+    									 value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.dateToBeDrafted}" />'  />
+    							      	 <span class="input-group-addon">
+										 <span class="glyphicon glyphicon-calendar"></span>
+										 </span></div></div>
+
+										<input id="militaryService" type="hidden" value="${employeeDto.militaryService}"/>
+    									
+    									
+    						</div>	
+					
+	        </div>
+	        </div>
+	        
+
+	 <div class="row">
+			<div class="col-md-12">
+				<label> <spring:message code="employee.mayinquiry"></spring:message> :</label>
+				</div>	
+			</div>
+			
+	<div class="row">
+		
+		<div class="form-group">
+				<div class="col-md-12">
+					<div class="col-md-12">
+							<label style="margin-right: 25px;">
+							<f:radiobutton  id="previousEmployerYes" path="previousEmployer" value="Yes" /><spring:message code="employee.yes"></spring:message>
+							</label>
+					</div>
+				</div>
+
+
+			<div class="col-md-12">
+				<div class="col-md-1">
+							<label style="margin-right: 25px;">
+							<f:radiobutton id="previousEmployerNo" path="previousEmployer" value="No" /> <spring:message code="employee.no"></spring:message>
+							</label>
+					</div>
+				
+				<div class="col-md-11">
+					<f:input  class="form-control" id="previousEmpreasonsNo" path="previousEmpreasonsNo" value="${employeeDto.previousEmpreasonsNo}" placeholder="${please} ${enter} ${reason}" />
+				</div>
+				
+				<input id="previousEmployer" type="hidden" value="${employeeDto.previousEmployer}"/>
+			</div>
+			
+		</div>
+	   </div>
+		
+	
+
+
+	<!---------------------------------------------------------- Start Official--------------------------------------------->   
 	      
 	    <div id = "div-information" class="col-md-12" style="padding: 15px 0px 15px 0px;">
-			<h2 style="border-bottom: 1px solid #8f8f8f;">Official
+			<h2><spring:message code="official.name"></spring:message>
 					<i style="position: absolute; right: 20px; cursor:pointer;" id = "icon1" class="fa fa-chevron-up"></i>
 			</h2>
 	   </div>
-	    <div class="form-group">
-	    <div class="col-md-12">
-							<div class="col-md-3">
-									
-								</div>
-								<div class="col-md-3">
-									
-								</div>
-								<div class="col-md-3">
-									
-								</div>
-								
-			 			<div class="col-md-3">
-									<label> Date :</label> <input type="text" class="form-control"
-									id="date" name="date" placeholder="Enter Date">
-								</div>
-			</div>
-			</div>
-			
-			<div class="form-group">
+	    
+			<div class="row">
 			<div class="col-md-12">	
+			<div class="form-group">
 				<div class="col-md-6">
-									<label> Position Applied For :</label> <input type="text" class="form-control"
-									id="positionAppliedFor" name="positionAppliedFor" placeholder="Enter Position">
-								</div>
+									<label style="margin-right: 25px;"> <spring:message code="official.positionAppliedFor"></spring:message> :</label> 
+									<input type="text" class="form-control" id="positionAppliedFor" name="positionAppliedFor" placeholder="${please} ${enter} <spring:message code="official.position"></spring:message>" value="${employeeDto.positionAppliedFor}">
+				</div>
 								
+
 				<div class="col-md-6">
-									<label> Salary Expected :</label> <input type="text" class="form-control"
-									id="salaryExpected" name="salaryExpected" placeholder="Enter Salary">
-								</div>				
+				<label style="margin-right: 25px;"> <spring:message code="official.salaryExpected"></spring:message> :</label> <input type="text" class="form-control" id="salaryExpected" name="salaryExpected" placeholder="${please} ${enter} <spring:message code="official.salary"></spring:message>" value="${employeeDto.salaryExpected}">
+			
+
+				<%-- <div class="col-md-6">
+									<label> Salary Expected :</label> <input type="text" class="form-control" id="salaryExpected" name="salaryExpected" placeholder="Enter Salary" value="${allEmployeeDto.salaryExpected}">
+ 				--%>
+				</div>				
 							
-							</div>
+			</div>
 	   
-	    </div>
+	    	</div>
+	    	</div>
+	   
+
 	     
 	     
 <!--------------------------------------------------  Official link to table--------------------------------- --> 	    
 	    
-	    <div class="col-md-12">
+	    <%-- <div class="col-md-12">
 	       
 				<div class="form-group">
 					 <div class="col-md-3">
     					<label>Location :</label>
-    						<f:select  path="masLocation.id"  class="form-control">
+    						<f:select id="masLocation" path="masLocation"  class="form-control" value="TH">
 							 	 <f:option  value="-1" label="--Select Location--" />
-  								 <f:options items="${ locationList }"  itemValue="id" itemLabel="name" />
+  								 <f:options items="${ locationList }"  itemValue="code" itemLabel="name" />
 							</f:select>
 						</div> 
 						
   				</div>
 			
-	    </div>
+	    </div> --%>
 	    
+	    <div class="row">
 	      <div class="col-md-12">
 	         
 				<div class="form-group">
-						<div class="col-md-3">
+						<div class="col-md-6">
+    						<label style="margin-right: 25px;"> <spring:message code="official.startWorkDate"></spring:message> :</label> 
+    						<div class='input-group date' id='startWorkDate'><input type="text" class="form-control"
+							id="startWorkDate" name="startWorkDate" placeholder="${enter} <spring:message code="official.startWorkDate"></spring:message>" 
+							value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.startWorkDate}"/>'  />
+							<span class="input-group-addon">
+							<span class="glyphicon glyphicon-calendar"></span>
+							</span></div></div>
+						
+						
+						<div class="col-md-6">
+    						<label id="endDate" style="margin-right: 25px;"> <spring:message code="official.endWorkDate"></spring:message> :</label>
+    						<div class='input-group date' id='endWorkDate'>
+    						<input type="text" class="form-control"
+							id="endWorkDate" name="endWorkDate" placeholder="${please} ${enter} <spring:message code="official.endWorkDate"></spring:message>" 
+							value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.endWorkDate}"/>' />
+						    <span class="input-group-addon">
+							<span class="glyphicon glyphicon-calendar"></span>
+							</span>
+						</div>
+						
+						
+						<%-- ${allEmployeeDto.endWorkDate} --%> 
+
+
+					    <%-- 	<div class="col-md-3">
     						<label> Start Work Date :</label> <input type="text" class="form-control"
-									id="startWorkDate" placeholder="Enter Start Work Date">
+									id="startWorkDate" name="startWorkDate" placeholder="Enter Start Work Date" value="${allEmployeeDto.startWorkDate}">
 						</div>
 						
 						<div class="col-md-3">
     						<label> End Work Date :</label> <input type="text" class="form-control"
-									id="endWorkDate" placeholder="Enter End Work Date">
-						</div>
+									id="endWorkDate" name="endWorkDate" placeholder="Enter End Work Date" value="${allEmployeeDto.endWorkDate}">
+						</div> --%>
+
+
   				</div>
-			
+			</div>
+	    </div>
 	    </div>
 	    
+	    <div class="row">
 	     <div class="col-md-12">
 	       
 				<div class="form-group">
-					 <div class="col-md-3">
-    					<label>Employment :</label>
+					 <div class="col-md-6">
+    					<label style="margin-right: 25px;"><spring:message code="employee.masEmployment"></spring:message> :</label>
     					
-    						<f:select  path="masEmployment.id"  class="form-control">
+    						<f:select  id="masEmployment" path="masEmployment"  class="form-control">
     						
-    						<f:option  value="-1" label="--Select Employment--" />
+    						<option  value=""><spring:message code="employee.enter.employment"></spring:message></option>
   							<f:options items="${ employmentList }"  itemValue="id" itemLabel="name" />
     						
 								
 							</f:select>
 						</div> 
 						
-  				</div>
-			
-	    </div>
-	    
-	     <div class="col-md-12">
-	         
-				<div class="form-group">
-						<div class="col-md-3">
-    						<label>Division :</label>
+						<div class="col-md-6">
+    						<label style="margin-right: 25px;"><spring:message code="employee.masDivision"></spring:message> :</label>
     						
-    						<f:select  path="masDivision.id"  class="form-control">
+    						<f:select  id="masDivision" path="masDivision"  class="form-control">
     						
-	    						<f:option  value="-1" label="--Select Division--" />
+	    						<option  value=""><spring:message code="employee.enter.division"></spring:message></option>
 	  							<f:options items="${ divisionList }"  itemValue="id" itemLabel="name" />
 	    						
 								
@@ -616,45 +937,60 @@
     						
 						</div>
 						
+  				</div>
+			
+	    </div>
+	    </div>
+	    
+	    <div class="row">
+	     <div class="col-md-12">
+	         
+				<div class="form-group">
 						
-						<div class="col-md-3">
-    						<label>Staff Type :</label>
+						
+						
+						<div class="col-md-6">
+    						<label style="margin-right: 25px;"><spring:message code="employee.masStaffType"></spring:message> :</label>
     						
-    						<f:select  path="masStaffType.id"  class="form-control">
+    						<f:select  id="masStaffType" path="masStaffType"  class="form-control">
     						
-	    						<f:option  value="-1" label="--Select Staff Type--" />
+	    						<option  value=""><spring:message code="employee.enter.staffType"></spring:message></option>
 	  							<f:options items="${ staffTypeList }"  itemValue="id" itemLabel="name" />
 	    						
 								
 							</f:select>
     						
   				</div>
-			
-	    </div>
-	    </div>
-	    
-	    <div class="col-md-12">
-	         
-				<div class="form-group">
-						<div class="col-md-3">
-    						<label>Joblevel :</label>
+  				
+  				<div class="col-md-6">
+    						<label style="margin-right: 25px;"><spring:message code="employee.masJoblevel"></spring:message> :</label>
     						
-    						<f:select  path="masJoblevel.id"  class="form-control" >
+    						<f:select  id="masJoblevel" path="masJoblevel"  class="form-control" >
     						
-	    						<f:option  value="-1" label="--Select Joblevel--" />
+	    						<option  value=""><spring:message code="employee.enter.joblevel"></spring:message></option>
 	  							<f:options items="${ joblevelList }"  itemValue="id" itemLabel="name" />
 	    						
 								
 							</f:select>
     						
 						</div>
+			
+	    </div>
+	    </div>
+	    </div>
+	    
+	    <div class="row">
+	    <div class="col-md-12">
+	         
+				<div class="form-group">
 						
-						<div class="col-md-3">
-    						<label>Core Skill :</label>
+						
+						<div class="col-md-6">
+    						<label style="margin-right: 25px;"><spring:message code="employee.masCoreSkill"></spring:message> :</label>
     						
-    						 <f:select  path="masCoreSkill.id"  class="form-control">
+    						 <f:select  id="masCoreSkill" path="masCoreSkill"  class="form-control">
     						 
-    						 	<f:option  value="-1" label="--Select Core Skill--" />
+    						 	<option  value=""><spring:message code="employee.enter.coreSkill"></spring:message></option>
 	  							 <f:options items="${ coreskillList }"  itemValue="id" itemLabel="name" /> 
 	    						 
 								
@@ -662,19 +998,13 @@
     						
     						
 						</div>
-  				</div>
-			
-	    </div>
-	    
-	     <div class="col-md-12">
-	         
-				<div class="form-group">
-						<div class="col-md-3">
-    						<label>Technology :</label>
+						
+						<div class="col-md-6">
+    						<label style="margin-right: 25px;"><spring:message code="employee.technology"></spring:message> :</label>
     						
-    						<f:select  path="technology.id"  class="form-control">
+    						<f:select  id="technology" path="technology"  class="form-control">
     						 
-	    						 <f:option  value="-1" label="--Select Technology--" />
+	    						 <option  value=""><spring:message code="employee.enter.technology"></spring:message></option>
 	  							 <f:options items="${ technologyList }"  itemValue="id" itemLabel="name" />
 	    						  
 								
@@ -682,60 +1012,106 @@
     						
     						
 						</div>
-						
   				</div>
 			
 	    </div>
+	    </div>
 	    
+	    <div class="row">
 	      <div class="col-md-12">
 	         
 				<div class="form-group">
 				
-				<div class="col-md-3">
-				<label> AIM :</label>
+				<div class="col-md-6">
+				<label> <spring:message code="label.aim"></spring:message> :</label>
 								<div class="checkbox">
-     								<label><input type="checkbox" name="isAIM">isAIM</label>
+     								
+     							<c:if test="${empty employeeDto.isManager}">
+     								<label style="margin-right: 25px;"><input type="checkbox" value = "1" name="isManager"><spring:message code="label.ismanager"></spring:message></label>
+								</c:if>
+								<c:if test="${not empty employeeDto.isManager}">
+     								<label style="margin-right: 25px;"><input type="checkbox" value = "1" name="isManager" checked="checked"><spring:message code="label.ismanager"></spring:message></label>
+								</c:if>
+								
 								</div>
 			</div>
-				<%-- <div class="form-group">
-					
-    				<label>AIM :</label>
-    				
-    				  <f:select  path="aimempid"  class="form-control">
-    						 
-    						 <f:option  value="-1" label="--Select AIM--" />
-  							 <f:options items="${ aimList }"  itemValue="id" itemLabel="name" />
-    						  
-								
-							</f:select>  
-    				
-						</div> --%>
+			
+			
+			<div class="col-md-6">
+						
+
+						<label style="margin-right: 25px;"> <spring:message code="employee.probationdate"></spring:message> :</label> 
+						<div class='input-group date' id='probationDate'>
+						<input type="text" class="form-control"
+									id="probationDate" name="probationDate" placeholder="${please} ${enter} <spring:message code="employee.probationdate"></spring:message>" 
+									value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.probationDate}"/>' />
+
+
+						<%-- <label> Probation Date :</label> <input type="text" class="form-control"
+							 id="probationDate" name="probationDate" placeholder="Enter Probation Date" value="${allEmployeeDto.probationDate}">
+						 --%>
+
+
+					<span class="input-group-addon"> <span
+						class="glyphicon glyphicon-calendar"></span>
+					</span>
+				</div>
+				</div>
+
   				</div>
 			
 	    </div>
+	    </div>
 	    
+	    <div class="row">
+	    <div class="col-md-12">
+	    <div class="form-group">
+	    <div class="col-md-6">
+    				
+    			<%-- <label>AIM : ${aimList.size()}</label> --%>
+
+
+				<%-- <div class="form-group">					
+    			<label>AIM :${aimList.size()}</label> --%>
+						<label style="margin-right: 25px;"><spring:message code="label.aim"></spring:message> : </label>
+    				  <f:select  path="aimempid"  class="form-control">
+    						 
+    						 <f:option  value=""><spring:message code="employee.enter.aim"></spring:message></f:option>
+  							 <f:options items="${ aimList }"  itemValue="id" itemLabel="name_eng" />
+    						  
+								
+							</f:select>  
+    				</div>
+    				
+    				
+    			<div class="col-md-6">
+									<label style="margin-right: 25px;"> <spring:message code="official.registerDate"></spring:message> :</label> 
+
+									<div class='input-group date' id='officialDate'>
+									<input type="text" class="form-control" id="officialDate" name="officialDate" placeholder="${enter} <spring:message code="official.registerDate"></spring:message>" 
+									value='<fmt:formatDate pattern="dd-MM-yyyy" value="${employeeDto.officialDate}"/>' />
+								    <span class="input-group-addon">
+									<span class="glyphicon glyphicon-calendar"></span>
+									</span></div></div>	
+    				
+    				
+    				
+	    </div>
+	    </div>
+	    </div>
 	    
-	     <div class="col-md-12">
-				<div class="form-group">
-						<div class="col-md-3">
-						
-						<label> Probation Date :</label> <input type="text" class="form-control"
-									id="probationDate" placeholder="Enter Probation Date">
-						
-						</div>
-  				</div>
-			</div>
-			
-			
-			<div align="center">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+
+	<div class="form-group row">
+			<div class="col-md-12" align="right">
+				<button type="button" class="btn btn-default renew" data-dismiss="modal" style="margin-right: 15px;"><spring:message code="label.renew" /></button>
     			<!-- <button type="button" class="btn btn-primary saveButton">Save</button> -->
-    			<button type="submit" class="btn btn-primary">Save&Continue</button>
+    			<button type="button" id="saveButton" class="btn btn-warning" name="saveButton" ><spring:message code="label.saveAndCon" /></button>
+    			
 	    	</div>
-	    
 	</div>
+
 </f:form>   
-    
+
 <!----------------------------------------------------------- Modal Address --------------------------------------------------->
 		
 		<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
@@ -747,17 +1123,17 @@
 							aria-label="Close">
 							<span aria-hidden="true">&times;</span>
 						</button>
-						<h4 class="modal-title" id="myModalLabel">Add Address</h4>
+						<h4 class="modal-title" id="myModalLabel"><spring:message code="address.name"></spring:message></h4>
 					</div>
 					<div class="modal-body">
 						
-					
+					 <form id="validateAddress" name="validateAddress"> 
 						<div class="form-group">
-	    					<label>Address Type :</label>
+	    					<label><spring:message code="address.type"></spring:message> :</label>
 	    
 							<div class="form-group">
-		 					 <select class="form-control" id="addressType">
-								<option value="-1" label="---Select Address Type---" />
+		 					 <select class="form-control" id="addressType" name="addressType">
+								<option value="" label="<spring:message code="address.enter.selectaddresstype"></spring:message>" />
 								<c:forEach var="obj" items="${ masAddressTypeList }">
 									<option value="${obj.id }">${ obj.name}</option>
 								</c:forEach>
@@ -767,25 +1143,35 @@
 							
 
 							<div class="form-group">
-								<label>Address:</label>
-								<textarea class="form-control" rows="1" id="address1"></textarea>
+								<label><spring:message code="address.houseNo"></spring:message>:</label>
+								<textarea class="form-control" rows="1" id="houseNo" name="houseNo" placeholder="${please} ${enter} <spring:message code="address.houseNo"></spring:message>"></textarea>
 							</div>
 
 
 							<div class="form-group">
-								<label>Address(Cont.):</label>
-								<textarea class="form-control" rows="1" id="address2"></textarea>
+								<label><spring:message code="address.road"></spring:message>:</label>
+								<textarea class="form-control" rows="1" id="road" name="road" placeholder="${please} ${enter} <spring:message code="address.road"></spring:message>"></textarea>
+							</div>
+							
+							<div class="form-group">
+								<label><spring:message code="address.district"></spring:message>:</label>
+								<textarea class="form-control" rows="1" id="district" name="district" placeholder="${please} ${enter} <spring:message code="address.district"></spring:message>"></textarea>
+							</div>
+							
+							<div class="form-group">
+								<label><spring:message code="address.subDistrict"></spring:message>:</label>
+								<textarea class="form-control" rows="1" id="subDistrict" name="subDistrict" placeholder="${please} ${enter} <spring:message code="address.subDistrict"></spring:message>"></textarea>
 							</div>
 
 
 						
- 			 <div class="form-group">
-	    				<label>Province :</label>
+ 					 <div class="form-group">
+	    				<label><spring:message code="address.province"></spring:message> :</label>
 	    
 	    
 						
-		 					 <select  class="form-control" id="province">
-								<option value="-1" label="---Select Province---" />
+		 					 <select  class="form-control" id="province" name="province">
+								<option value="" label="<spring:message code="address.enter.province"></spring:message>" />
 								<c:forEach var="obj" items="${ provinceList }">
 									<option value="${obj.id }">${ obj.name}</option>
 								</c:forEach>
@@ -794,22 +1180,22 @@
 	  				</div> 
 
 							<div class="form-group">
-								<label>Zipcode:</label>
-								<textarea class="form-control" rows="1" id="zipcode"></textarea>
+								<label><spring:message code="address.zipcode"></spring:message>:</label>
+								<textarea class="form-control" rows="1" id="zipcode" name="zipcode" placeholder="${please} ${enter} <spring:message code="address.zipcode"></spring:message>"></textarea>
 							</div>
 
 						
 						</div>
 						
-						<div class="form-group" align="center">
-							<button type="button" class="btn btn-default"
-								data-dismiss="modal">Close</button>
-							<button type="button" id= "saveAddressButton"class="btn btn-primary saveAddressButton">Save
-								changes</button>
-						</div>
 						
-					
+						
+					 </form> 
 					</div>
+					<div class="modal-footer">
+							<button type="button" class="btn btn-default closeAddressButton" 
+								data-dismiss="modal"><spring:message code="label.close"></spring:message></button>
+							<button type="button" id= "saveAddressButton" name="saveAddressButton" class="btn btn-primary saveAddressButton"><spring:message code="label.saveAndCon"></spring:message></button>
+						</div>
 				</div>
 	    	</div>
 	</div>    
@@ -821,972 +1207,18 @@
   <div class="modal-dialog">
     <div class="modal-content">
     <div class="modal-header">
-        <h4 class="modal-title" id="deleteModalLabel">Delete Address</h4>
+        <h4 class="modal-title" id="deleteModalLabel"><spring:message code="label.delete" /><spring:message code="address.name" /></h4>
       </div>
       <div class="modal-body">
-      	Do you want to delete address ?
+      	<spring:message code="default.delete.confirm"></spring:message>
       </div>
       <div class="modal-footer">
-      <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
-      <button type="button"id="yesButton" class="btn btn-primary yesButton">Yes</button>
+      <button type="button" class="btn btn-default" data-dismiss="modal"><spring:message code="default.no" /></button>
+      <button type="button"id="yesButton" class="btn btn-primary yesButton"><spring:message code="default.yes" /></button>
       </div>
     </div>
   </div>
 </div>    
-</div>
 
 
-    <div class="tab-pane" id="family">
-      <iframe src="${pageContext.request.contextPath}/family" style="width: 100%; height: 600px; "
-            marginwidth="0" marginheight="0" frameborder="0"
-            vspace="0" hspace="0">
 
-      </iframe>
-    </div>
-              
-
-    <div class="tab-pane" id="education">
-      <iframe src="${pageContext.request.contextPath}/education" style="width: 100%; height: 600px; "
-            marginwidth="0" marginheight="0" frameborder="0"
-            vspace="0" hspace="0"></iframe>
-    </div>
-
-    <div class="tab-pane" id="experience">
-      <iframe src="${pageContext.request.contextPath}/experience" style="width: 100%; height: 600px; "
-            marginwidth="0" marginheight="0" frameborder="0"
-            vspace="0" hspace="0"></iframe>
-    </div>
-
-
-    <div class="tab-pane" id="ability">
-      <iframe src="${pageContext.request.contextPath}/ability" style="width: 100%; height: 600px; "
-            marginwidth="0" marginheight="0" frameborder="0"
-            vspace="0" hspace="0"></iframe>
-    </div>
-
-    <div class="tab-pane" id="reference">
-      <iframe src="${pageContext.request.contextPath}/reference" style="width: 100%; height: 600px; "
-            marginwidth="0" marginheight="0" frameborder="0"
-            vspace="0" hspace="0" scrolling="no"></iframe>
-    </div>
-
-    <div class="tab-pane" id="reward">
-      <iframe src="${pageContext.request.contextPath}/reward" style="width: 100%; height: 600px; "
-            marginwidth="0" marginheight="0" frameborder="0"
-            vspace="0" hspace="0" scrolling="no"></iframe>
-    </div>
-
-    <div class="tab-pane" id="history">
-        <iframe src="${pageContext.request.contextPath}/history" style="width: 100%; height: 600px; "
-            marginwidth="0" marginheight="0" frameborder="0"
-            vspace="0" hspace="0"></iframe>
-    </div>
-
-    <div class="tab-pane" id="probation">
-      <iframe src="${pageContext.request.contextPath}/probation" style="width: 100%; height: 600px; "
-            marginwidth="0" marginheight="0" frameborder="0"
-            vspace="0" hspace="0"></iframe>
-    </div>
-
-
-    <div class="tab-pane" id="punish">
-        <iframe src="${pageContext.request.contextPath}/punish" style="width: 100%; height: 600px; "
-            marginwidth="0" marginheight="0" frameborder="0"
-            vspace="0" hspace="0" scrolling="no"></iframe>
-    </div>
-    
-    <div class="tab-pane" id="leave">
-                  <iframe src="${pageContext.request.contextPath}/leave" style="width: 100%; height: 600px; " 
-		marginwidth="0" marginheight="0" frameborder="0"
-		vspace="0" hspace="0"></iframe>
-              </div>
-
-	<div class="tab-pane" id="skilllanguage">
-		<iframe src="${pageContext.request.contextPath}/skilllanguage"
-			style="width: 100%; height: 600px;" marginwidth="0"
-			marginheight="0" frameborder="0" vspace="0" hspace="0"></iframe>
-	</div>
-
-	<div class="tab-pane" id="site">
-		<iframe src="${pageContext.request.contextPath}/site"
-			style="width: 100%; height: 600px;" marginwidth="0"
-			marginheight="0" frameborder="0" vspace="0" hspace="0"></iframe>
-	</div>
-
-	<div class="tab-pane" id="certification">
-		<iframe src="${pageContext.request.contextPath}/certification"
-			style="width: 100%; height: 600px;" marginwidth="0"
-			marginheight="0" frameborder="0" vspace="0" hspace="0"></iframe>
-	</div>
-	
-	 <div class="tab-pane" id="card">
-		<iframe src="${pageContext.request.contextPath}/card"
-			style="width: 100%; height: 600px;" marginwidth="0"
-			marginheight="0" frameborder="0" vspace="0" hspace="0" scrolling="no"></iframe>
-	</div>
-	
-
-	<div class="tab-pane" id="allowances">
-		<iframe src="${pageContext.request.contextPath}/allowances"
-			style="width: 100%; height: 600px;" marginwidth="0"
-			marginheight="0" frameborder="0" vspace="0" hspace="0"></iframe>
-	</div>
-
-	 <div class="tab-pane" id="health">
-      <iframe src="${pageContext.request.contextPath}/health" style="width: 100%; height: 600px; "
-            marginwidth="0" marginheight="0" frameborder="0"
-            vspace="0" hspace="0">
-
-      </iframe>
-    </div>
-
-</div>  
-            
-            
-        
-
-</div>
-
-<!---------------------------------------------------------- Start JQuery ----------------------------------------------------->	  
-	    
-<script type="text/javascript">
-var dt;
-var rowUpdate;
-var dataUpdate;
-var getIndex = 0;
-
-	$(document).ready(function() {
-		var date1 = $( "#dateOfBirth" ).datepicker({
-			clearBtn : true,
-			autoclose : true,
-			forceParse : false,
-			language : "en",
-			format : "dd/mm/yyyy",
-			todayHighlight : true
-		});
-		
-    	var date2 = $( "#expiryDate" ).datepicker({
-			clearBtn : true,
-			autoclose : true,
-			forceParse : false,
-			language : "en",
-			format : "dd/mm/yyyy",
-			todayHighlight : true
-		});
-    	
-    	var date3 = $( "#fromYear" ).datepicker({
-			clearBtn : true,
-			autoclose : true,
-			forceParse : false,
-			language : "en",
-			format : "dd/mm/yyyy",
-			todayHighlight : true
-		});
-    	
-    	var date4 = $( "#toYear" ).datepicker({
-			clearBtn : true,
-			autoclose : true,
-			forceParse : false,
-			language : "en",
-			format : "dd/mm/yyyy",
-			todayHighlight : true
-		});
-    	
-    	var date5 = $( "#dateToBeDrafted" ).datepicker({
-			clearBtn : true,
-			autoclose : true,
-			forceParse : false,
-			language : "en",
-			format : "dd/mm/yyyy",
-			todayHighlight : true
-		});
-    	
-    	var date6 = $( "#date" ).datepicker({
-			clearBtn : true,
-			autoclose : true,
-			forceParse : false,
-			language : "en",
-			format : "dd/mm/yyyy",
-			todayHighlight : true
-		});
-    	
-    	var date6 = $( "#startWorkDate" ).datepicker({
-			clearBtn : true,
-			autoclose : true,
-			forceParse : false,
-			language : "en",
-			format : "dd/mm/yyyy",
-			todayHighlight : true
-		});
-    	
-    	var date6 = $( "#endWorkDate" ).datepicker({
-			clearBtn : true,
-			autoclose : true,
-			forceParse : false,
-			language : "en",
-			format : "dd/mm/yyyy",
-			todayHighlight : true
-		});
-    	
-    	var date6 = $( "#probationDate" ).datepicker({
-			clearBtn : true,
-			autoclose : true,
-			forceParse : false,
-			language : "en",
-			format : "dd/mm/yyyy",
-			todayHighlight : true
-		});
-    	
-		
-    	dt=$("#tbResult").dataTable(
-    			{ "columnDefs": [
-    	    	                 {
-    	    	                     "targets": [ 0 ],
-    	    	                     "visible": false
-    	    	                 },
-    	    	                 {
-    	    	                     "targets": [ 1 ],
-    	    	                     "visible": false
-    	    	                 },
-    	    	                 
-    	    	                 {
-    	    	                     "targets": [ 5 ],
-    	    	                     "visible": false
-    	    	                 }
-    	    	                 
-    	    	                /*  {
-    	    	                     "targets": [ 8 ],
-    	    	                     "visible": false
-    	    	                 },
-    	    	                 
-    	    	                 {
-    	    	                     "targets": [ 12 ],
-    	    	                     "visible": false
-    	    	                 } */
-    	    	             ]
-    			
-    			});
- 		//listAll();
- 		
- 		
- 		
- 		
- 		
- 		var button = $(event.relatedTarget);
-    	var addId = button.data("addid"); 
-    	var buttonemp = $(event.relatedTarget);
-    	var empId = button.data("empid"); 
-  		$(this).find(".saveButton").off("click").on("click", function()
-  		
-  				
-    		{
-    			if(empId != null){
-    				editEmployee();
-    			}
-    			else {
-    				addEmployee();
-    			}
-    			
-    		});
-  		
-  		
-  		
-  		$(this).find(".saveAddressButton").off("click").on("click", function()
-  				
-  				{
-			
-				addAddress();
-			
-			
-		});
-  		
-  		
- /* --------------------------------------------------- Clear Address Function --------------------------------------------------- */	  		
-  		function clearDataModal(){
-  			
-  			$('#addressType').val(-1);
-  			$('#address1').val('');
-  			$('#address2').val('');
-  			$("#province").val(-1);
-  			$('#zipcode').val('');
-  			
-  		}
-/* --------------------------------------------------- Add Employee Function --------------------------------------------------- */	
-    	
-			function addEmployee() {
-	alert("add");
-    			$.ajax({
-    				url : "${pageContext.request.contextPath}/employee/add",
-    				type : "POST",
-    				 data : JSON.stringify({
-    					 nameThai: $("#nameThai").val(),
-    					 surnameThai: $("#surnameThai").val(),
-    					 nicknameThai: $("#nicknameThai").val(),
-    					 nameEng: $("#nameEng").val(),
-    					 surnameEng: $("#surnameEng").val(),
-    					 nicknameEng: $("#nicknameEng").val(),
-    					 telHome: $("#telHome").val(),
-    					 telMobile: $("#telMobile").val(),
-    					 telFax: $("#telFax").val(),
-    					 emergencyContact: $("#emergencyContact").val(),
-    					 relationshipWithEmergencyContact: $("#relationshipWithEmergencyContact").val(),
-    					 emergencyContactAddress: $("#emergencyContactAddress").val(),
-    					 emergencyContactPhoneNumber: $("#emergencyContactPhoneNumber").val(),
-    					 dateOfBirth: $("#dateOfBirth").val(),
-    					 placeOfBirth: $("#placeOfBirth").val(),
-    					 age: $("#age").val(),
-    					 religion: $("#religion").val(),
-    					 idCard: $("#idCard").val(),
-    					 issuedOffice: $("#issuedOffice").val(),
-    					 expiryDate: $("#expiryDate").val(),
-    					 height: $("#height").val(),
-    					 weigth: $("#weigth").val(),
-    					 sex: $("#sex").val(),
-    					 maritalStatus: $("#maritalStatus").val(),
-    					 numberOfChildren: $("#numberOfChildren").val(),
-    					 spouseName: $("#spouseName").val(),
-    					 marriageCertificateNo: $("#marriageCertificateNo").val(),
-    					 issuedOffice2: $("#issuedOffice2").val(),
-    					 address: $("#address").val(),
-    					 occupation: $("#occupation").val(),
-    					 knowAugNewspaper: $("#knowAugNewspaper").val(),
-    					 descriptionNewspaper: $("#descriptionNewspaper").val(),
-    					 knowAugMagazine: $("#knowAugMagazine").val(),
-    					 descriptionMagazine: $("#descriptionMagazine").val(),
-    					 knowAugWebsite: $("#knowAugWebsite").val(),
-    					 descriptionWebsite: $("#descriptionWebsite").val(),
-    					 knowAugFriend: $("#knowAugFriend").val(),
-    					 descriptionFriend: $("#descriptionFriend").val(),
-    					 knowAugOther: $("#knowAugOther").val(),
-    					 descriptionOther: $("#descriptionOther").val(),
-    					 knowEmployedYes: $("#knowEmployedYes").val(),
-    					 descriptionYes: $("#descriptionYes").val(),
-    					 knowEmployerNo: $("#knowEmployerNo").val(),
-    					 militaryServiceYes: $("#militaryServiceYes").val(),
-    					 fromYear: $("#fromYear").val(),
-    					 toYear: $("#toYear").val(),
-    					 branchOfService: $("#branchOfService").val(),
-    					 serviceNo: $("#serviceNo").val(),
-    					 militaryServiceNo: $("#militaryServiceNo").val(),
-    					 reasonsNo: $("#reasonsNo").val(),
-    					 dateToBeDrafted: $("#dateToBeDrafted").val(),
-    					 previousEmployerYes: $("#previousEmployerYes").val(),
-    					 previousEmployerNo: $("#previousEmployerNo").val(),
-    					 previousEmpreasonsNo: $("#previousEmpreasonsNo").val(),
-    					 
-    			
-    					}),
-    				 datatype: "json",
-    				 contentType: "application/json",
-    				success : function(data) {
-    					$("#message").html('<div class="alert alert-success" role="alert">Success</div>');
-    					
-    					window.parent.document.getElementById('emp').value=data.id;
-    					window.parent.document.getElementById('empname').value=data.nameEng;
-    					
-    					/* dt.fnClearTable();
-    					dt.fnAddData([
-    					       data.id,
-    					       data.employeeCode,
-    					       data.nameThai,
-    					       data.surnameThai,
-    					       data.nicknameThai,
-    					       data.nameEng,
-    					       data.surnameEng,
-    					       data.nicknameEng,
-    					       data.telHome,
-    					       data.telMobile,
-    					       data.telFax,
-    					       data.emergencyContact,
-    					       data.relationshipWithEmergencyContact,
-    					       data.emergencyContactAddress,
-    					       data.emergencyContactPhoneNumber,
-    					       data.dateOfBirth,
-    					       data.placeOfBirth,
-    					       data.age,
-    					       data.religion,
-    					       data.idCard,
-    					       data.issuedOffice,
-    					       data.expiryDate,
-    					       data.height,
-    					       data.weigth,
-    					       data.sex,
-    					       data.maritalStatus,
-    					       data.numberOfChildren,
-    					       data.spouseName,
-    					       data.marriageCertificateNo,
-    					       data.issuedOffice2,
-    					       data.address,
-    					       data.occupation,
-    					       data.knowAugNewspaper,
-    					       data.descriptionNewspaper,
-    					       data.knowAugMagazine,
-    					       data.descriptionMagazine,
-    					       data.knowAugWebsite,
-    					       data.descriptionWebsite,
-    					       data.knowAugFriend,
-    					       data.descriptionFriend,
-    					       data.knowAugOther,
-    					       data.descriptionOther,
-    					       data.knowEmployedYes,
-    					       data.descriptionYes,
-    					       data.knowEmployerNo,
-    					       data.militaryServiceYes,
-    					       data.fromYear,
-    					       data.toYear,
-    					       data.branchOfService,
-    					       data.serviceNo,
-    					       data.militaryServiceNo,
-    					       data.reasonsNo,
-    					       data.dateToBeDrafted,
-    					       data.previousEmployerYes,
-    					       data.previousEmployerNo,
-    					       data.previousEmpreasonsNo,
-    					       
-    					    '<button type="button" class="btn btn-info btn-sm active" data-empId="' + data.id + '" data-target="#addModal" data-toggle="modal">Edit</button>',
-   	    					'<button type="button" class="btn btn-danger btn-sm active" data-empId="' + data.id + '" data-target="#deleteModal" data-toggle="modal">Delete</button>'
-    					              
-						]);               */
-    					              
-    				},
-    				error : function(data,testStatus,jqXHR) {
-    					$("#message").html('<div class="alert alert-danger" role="alert">Error</div>');
-    					}
-    				});
-    		}
-    		
-    		
-/* --------------------------------------------------- Edit Employee Function --------------------------------------------------- */		
-    		
-    		function editEmployee() {
-    			alert(empId+" edit");
-				$.ajax({
-					url : "${pageContext.request.contextPath}/employee/edit",
-					type : "POST",
-					data : JSON.stringify({
-						 id: empId,
-						 nameThai: $("#nameThai").val(),
-    					 surnameThai: $("#surnameThai").val(),
-    					 nicknameThai: $("#nicknameThai").val(),
-    					 nameEng: $("#nameEng").val(),
-    					 surnameEng: $("#surnameEng").val(),
-    					 nicknameEng: $("#nicknameEng").val(),
-    					 telHome: $("#telHome").val(),
-    					 telMobile: $("#telMobile").val(),
-    					 telFax: $("#telFax").val(),
-    					 emergencyContact: $("#emergencyContact").val(),
-    					 relationshipWithEmergencyContact: $("#relationshipWithEmergencyContact").val(),
-    					 emergencyContactAddress: $("#emergencyContactAddress").val(),
-    					 emergencyContactPhoneNumber: $("#emergencyContactPhoneNumber").val(),
-    					 dateOfBirth: $("#dateOfBirth").val(),
-    					 placeOfBirth: $("#placeOfBirth").val(),
-    					 age: $("#age").val(),
-    					 religion: $("#religion").val(),
-    					 idCard: $("#idCard").val(),
-    					 issuedOffice: $("#issuedOffice").val(),
-    					 expiryDate: $("#expiryDate").val(),
-    					 height: $("#height").val(),
-    					 weigth: $("#weigth").val(),
-    					 sex: $("#sex").val(),
-    					 maritalStatus: $("#maritalStatus").val(),
-    					 numberOfChildren: $("#numberOfChildren").val(),
-    					 spouseName: $("#spouseName").val(),
-    					 marriageCertificateNo: $("#marriageCertificateNo").val(),
-    					 issuedOffice2: $("#issuedOffice2").val(),
-    					 address: $("#address").val(),
-    					 occupation: $("#occupation").val(),
-    					 knowAugNewspaper: $("#knowAugNewspaper").val(),
-    					 descriptionNewspaper: $("#descriptionNewspaper").val(),
-    					 knowAugMagazine: $("#knowAugMagazine").val(),
-    					 descriptionMagazine: $("#descriptionMagazine").val(),
-    					 knowAugWebsite: $("#knowAugWebsite").val(),
-    					 descriptionWebsite: $("#descriptionWebsite").val(),
-    					 knowAugFriend: $("#knowAugFriend").val(),
-    					 descriptionFriend: $("#descriptionFriend").val(),
-    					 knowAugOther: $("#knowAugOther").val(),
-    					 descriptionOther: $("#descriptionOther").val(),
-    					 knowEmployedYes: $("#knowEmployedYes").val(),
-    					 descriptionYes: $("#descriptionYes").val(),
-    					 knowEmployerNo: $("#knowEmployerNo").val(),
-    					 militaryServiceYes: $("#militaryServiceYes").val(),
-    					 fromYear: $("#fromYear").val(),
-    					 toYear: $("#toYear").val(),
-    					 branchOfService: $("#branchOfService").val(),
-    					 serviceNo: $("#serviceNo").val(),
-    					 militaryServiceNo: $("#militaryServiceNo").val(),
-    					 reasonsNo: $("#reasonsNo").val(),
-    					 dateToBeDrafted: $("#dateToBeDrafted").val(),
-    					 previousEmployerYes: $("#previousEmployerYes").val(),
-    					 previousEmployerNo: $("#previousEmployerNo").val(),
-    					 previousEmpreasonsNo: $("#previousEmpreasonsNo").val(),
-    					  
-					 }),
-					datatype: "json",
-					contentType: "application/json",
-					success : function(data) {
-						$("#message").html('<div class="alert alert-success" role="alert">Success</div>');
-						dt.fnClearTable();
-    					/* dt.fnAddData([
-    					       data.id,
-    					       data.employeeCode,
-    					       data.nameThai,
-    					       data.surnameThai,
-    					       data.nicknameThai,
-    					       data.nameEng,
-    					       data.surnameEng,
-    					       data.nicknameEng,
-    					       data.telHome,
-    					       data.telMobile,
-    					       data.telFax,
-    					       data.emergencyContact,
-    					       data.relationshipWithEmergencyContact,
-    					       data.emergencyContactAddress,
-    					       data.emergencyContactPhoneNumber,
-    					       data.dateOfBirth,
-    					       data.placeOfBirth,
-    					       data.age,
-    					       data.religion,
-    					       data.idCard,
-    					       data.issuedOffice,
-    					       data.expiryDate,
-    					       data.height,
-    					       data.weigth,
-    					       data.sex,
-    					       data.maritalStatus,
-    					       data.numberOfChildren,
-    					       data.spouseName,
-    					       data.marriageCertificateNo,
-    					       data.issuedOffice2,
-    					       data.address,
-    					       data.occupation,
-    					       data.knowAugNewspaper,
-    					       data.descriptionNewspaper,
-    					       data.knowAugMagazine,
-    					       data.descriptionMagazine,
-    					       data.knowAugWebsite,
-    					       data.descriptionWebsite,
-    					       data.knowAugFriend,
-    					       data.descriptionFriend,
-    					       data.knowAugOther,
-    					       data.descriptionOther,
-    					       data.knowEmployedYes,
-    					       data.descriptionYes,
-    					       data.knowEmployerNo,
-    					       data.militaryServiceYes,
-    					       data.fromYear,
-    					       data.toYear,
-    					       data.branchOfService,
-    					       data.serviceNo,
-    					       data.militaryServiceNo,
-    					       data.reasonsNo,
-    					       data.dateToBeDrafted,
-    					       data.previousEmployerYes,
-    					       data.previousEmployerNo,
-    					       data.previousEmpreasonsNo, */
-    					       
-    					/*     '<button type="button" class="btn btn-info btn-sm active" data-empId="' + data.id + '" data-target="#addModal" data-toggle="modal">Edit</button>',
-   	    					'<button type="button" class="btn btn-danger btn-sm active" data-empId="' + data.id + '" data-target="#deleteModal" data-toggle="modal">Delete</button>'
-    					              
-						]);  */             
-					},
-					error : function(data,testStatus,jqXHR) {
-						
-						$("#message").html('<div class="alert alert-danger" role="alert">Error</div>');
-						}
-					});
-			}
-			
-			
-   	/* ----------------------------------------------------- Add Address Function --------------------------------------------------- */		
-			
-			function addAddress() {
-				alert("Do you want to Add Address ?");
-				
-				
-				
-    			/* $.ajax({
-    				url : "${pageContext.request.contextPath}/employee/addAddress",
-    				type : "POST",
-    				 data : JSON.stringify({
-    					 
-    					 addressType : {id:$("#addressType").val(), name: $("#addressType option:selected").text()},
-    					 address1: $("#address1").val(),
-    					 address2: $("#address2").val(),
-    					 province :{id:$("#province").val(), name: $("#province option:selected").text()},
-    					 zipcode: $("#zipcode").val(),
-    					 
-    				 }),
-    				 
-    			 datatype: "json",
-    			 contentType: "application/json",
-    			 success : function(data) {
-    					//$("#message").html('<div class="alert alert-success" role="alert">Success Address</div>');
-    					alert("kkk");
-    					dt.fnAddData([
-    					              data.addressType.name,
-    					              data.address1,
-    					              data.address2,
-    					              data.province.name,
-    					              data.zipcode,
-    					              
-    					              
-    					              
-    				 '<button type="button" class="btn btn-info btn-sm active" data-addId="' + data.id + '" data-target="#addModal" data-toggle="modal">Edit</button>',
-    			   	 '<button type="button" class="btn btn-danger btn-sm active" data-addId="' + data.id + '" data-target="#deleteModal" data-toggle="modal">Delete</button>'
-    				
-    			   	 ]);
-    					
-    					$('#myModal').modal('toggle');
-   	
-    			 },
- 				error : function(data,testStatus,jqXHR) {
- 					$("#message").html('<div class="alert alert-danger" role="alert">Error</div>');
- 					}
- 				}); */
- 		
- 				 var addressId = $("#addressType").val();
-				 var addressType = $("#addressType option:selected").text();
-				 
-				 var address1 = $("#address1").val();
-				 var address2 = $("#address2").val();
-				 
-				 var provinceId = $("#province").val();
-				 var province = $("#province option:selected").text();
-				 
-				 var zipcode= $("#zipcode").val();
-				 
-				 var id=0;
-				 var status="add";
-				 
-				//alert("addressType: "+addressType+" address1: "+address1+" address2: "+address2+" province: "+province+" zipcode: "+zipcode);
-				//alert("Do you want to Add Address ?");
-				 
-				  dt.fnAddData([  id, 
-				                  addressId,
-				                  addressType,
-					              address1,
-					              address2,
-					              provinceId,
-					              province,
-					              zipcode,
-					              getIndex,
-					              
-					              '<button id="edit" type="button" class="btn btn-info btn-sm active"  data-target="#addModal" data-toggle="modal">Edit</button>',
-				    			  '<button id="delete" type="button" class="btn btn-danger btn-sm active" data-target="#deleteModal" data-toggle="modal">Delete</button>',
-				    			  status,
-				    			  '<input id="dataaddressid'+getIndex+'" type ="text" name = "addresses['+getIndex+'].id" value="'+id+'">'+
-				    			  '<input id="dataaddresstype'+getIndex+'"type ="text" name = "addresses['+getIndex+'].addressTypeId" value="'+addressId+'">'+
-				    			  '<input id="dataaddress1'+getIndex+'"type ="text" name = "addresses['+getIndex+'].address1" value="'+address1+'">'+
-				    			  '<input id="dataaddress2'+getIndex+'"type ="text" name = "addresses['+getIndex+'].address2" value="'+address2+'">'+
-				    			  '<input id="dataprovinceid'+getIndex+'"type ="text" name = "addresses['+getIndex+'].provinceId" value="'+provinceId+'">'+
-				    			  '<input id="datazipcode'+getIndex+'"type ="text" name = "addresses['+getIndex+'].zipcode" value="'+zipcode+'">'+
-				    			  '<input id="datastatus'+getIndex+'"type ="text" name = "addresses['+getIndex+'].status" value="'+status+'">'
-				    			  
-				    				
-			   	 ]); 
-				  
-				  				getIndex = getIndex+1; 
-				
-				 
-				  $('#myModal').modal('toggle');
-				  clearDataModal();
-   	
-   	    }
-   	
-   	
-/* ----------------------------------------------------- Edit Address Function --------------------------------------------------- */		
-		 	
-			$('#tbResult tbody').on( 'click', '#edit', function (){		   
-		    	
-				//alert("Do you want to Add Address ?");
-				
-		    	  rowUpdate = $(this).parents('tr');
-		    	  dataUpdate = dt.fnGetData($(this).parents('tr'));
-		    	  //alert("data[1]: "+dataUpdate[1]); 
-		    	
-		    	  editAddress(rowUpdate,dataUpdate);
-		    	    	  
-		  }); 
-   	
-   	
-			 //transection.push({id:id,address:{id:datarow[0],firstName:arrName[0],lastName:arrName[1],age:datarow[2],gender:datarow[3],mobile:datarow[5],address:datarow[6],occupation:datarow[4],position:datarow[7],relation:datarow[8],status:datarow[10]}});
-
-   	
-   	function editAddress(rowUpdate,dataUpdate){
-   		
-   		$('#myModal').modal('show');
-   		
-   		$("#addressType").val(dataUpdate[1]);
-   		$("#address1").val(dataUpdate[3]);
-   		$("#address2").val(dataUpdate[4]);
-   		$("#province").val(dataUpdate[5]);
-   		$("#zipcode").val(dataUpdate[7]);
-   		
-   		
-   		$('#saveAddressButton').off("click").on("click",function(){
-   			
-   		var id = dataUpdate[0];	
-   		var addressId = $("#addressType").val();
-		var addressType = $("#addressType option:selected").text();
-		
-   		var address1 = $("#address1").val();
-   		var address2 = $("#address2").val();
-   		
-   	   var provinceId = $("#province").val();
-	   var province = $("#province option:selected").text();
-	   var zipcode= $("#zipcode").val();
-	   
-   		
-   		
-   		
-   		if(dataUpdate[0]!=0){
-   			
-   			dt.fnUpdate(addressId, rowUpdate, 1);
-   			dt.fnUpdate(addressType, rowUpdate, 2);
-		    dt.fnUpdate(address1, rowUpdate, 3);
-		    dt.fnUpdate(address2, rowUpdate, 4);
-		    dt.fnUpdate(provinceId, rowUpdate, 5);
-		    dt.fnUpdate(province, rowUpdate, 6);
-		    dt.fnUpdate(zipcode, rowUpdate, 7);
-		    dt.fnUpdate('edit', rowUpdate, 11);
-		    
-		    $("#dataaddressid"+dataUpdate[8]).attr('name', "addresses["+dataUpdate[8]+"].id");
-		    $("#dataaddressid"+dataUpdate[8]).val(addressId);
-		    
-		    $("#dataaddresstype"+dataUpdate[8]).attr('name', "addresses["+dataUpdate[8]+"].addressTypeId");
-		    $("#dataaddresstype"+dataUpdate[8]).val(addressType);
-		    
-		    $("#dataaddress1"+dataUpdate[8]).attr('name', "addresses["+dataUpdate[8]+"].address1");
-		    $("#dataaddress1"+dataUpdate[8]).val(address1);
-		    
-		    $("#dataaddress2"+dataUpdate[8]).attr('name', "addresses["+dataUpdate[8]+"].address2");
-		    $("#dataaddress2"+dataUpdate[8]).val(address2);
-		    
-		    $("#dataprovinceid"+dataUpdate[8]).attr('name', "addresses["+dataUpdate[8]+"].provinceId");
-		    $("#dataprovinceid"+dataUpdate[8]).val(provinceId);
-		    
-		
-		    $("#datazipcode"+dataUpdate[8]).attr('name', "addresses["+dataUpdate[8]+"].zipcode");
-		    $("#datazipcode"+dataUpdate[8]).val(zipcode);
-		    
-		    $("#datastatus"+dataUpdate[8]).attr('name', "addresses["+dataUpdate[8]+"].status");
-		    $("#datastatus"+dataUpdate[8]).val('edit');
-	    	
-		    
-   	 }else{
-   		 
-   		dt.fnUpdate(addressId, rowUpdate, 1);
-	    dt.fnUpdate(addressType, rowUpdate, 2);
-	    dt.fnUpdate(address1, rowUpdate, 3);
-	    dt.fnUpdate(address2, rowUpdate, 4);
-	    dt.fnUpdate(provinceId, rowUpdate, 5);
-	    dt.fnUpdate(province, rowUpdate, 6);
-	    dt.fnUpdate(zipcode, rowUpdate, 7);
-	    
-	    $("#dataaddressid"+dataUpdate[8]).attr('name', "addresses["+dataUpdate[8]+"].id");
-	    $("#dataaddressid"+dataUpdate[8]).val(addressId);
-	    
-	    $("#dataaddresstype"+dataUpdate[8]).attr('name', "addresses["+dataUpdate[8]+"].addressTypeId");
-	    $("#dataaddresstype"+dataUpdate[8]).val(addressType);
-	    
-	    $("#dataaddress1"+dataUpdate[8]).attr('name', "addresses["+dataUpdate[8]+"].address1");
-	    $("#dataaddress1"+dataUpdate[8]).val(address1);
-	    
-	    $("#dataaddress2"+dataUpdate[8]).attr('name', "addresses["+dataUpdate[8]+"].address2");
-	    $("#dataaddress2"+dataUpdate[8]).val(address2);
-	    
-	    $("#dataprovinceid"+dataUpdate[8]).attr('name', "addresses["+dataUpdate[8]+"].provinceId");
-	    $("#dataprovinceid"+dataUpdate[8]).val(provinceId);
-	    
-	
-	    $("#datazipcode"+dataUpdate[8]).attr('name', "addresses["+dataUpdate[8]+"].zipcode");
-	    $("#datazipcode"+dataUpdate[8]).val(zipcode);
-   	 }
-   		
-   		$('#myModal').modal('toggle');
-   		
-   	
-   		});
-   	
-   	
-   	}
-   	
-   	
-   	
-   	$('#tbResult tbody').on( 'click', '#delete', function (){	
-   		
-   	  var row = $(this).parents('tr');
-      var dataDelete = dt.fnGetData($(this).parents('tr'));
-      if(dataDelete[0]==0){
-   	  
-	   	 $('#yesButton').off("click").on("click",function(){ 
-	   	  
-		  dt.fnDeleteRow(row);
-		  $('#deleteModal').modal('toggle');
-	   	});
-	 		
-      }else{
-    	  
-    	  $('#yesButton').off("click").on("click",function(){ 
-	    	  dt.fnUpdate('delete', row, 11);
-	    	  $("#datastatus"+dataDelete[8]).attr('name', "addresses["+dataUpdate[8]+"].status");
-			  $("#datastatus"+dataDelete [8]).val('delete');
-    	 	});
-      }
-   	 
-   	 
-   	clearDataModal();
- });
-   	
-   	
-   	
-   	
-   	
-   	
-   		function listAddress(){
-   			$.ajax({
-				url : "${pageContext.request.contextPath}/employee/listAll",
-				type : "POST",
-				success : function(data) {
-					dt.fnClearTable();
-				for (var i=0;i< data.length; i++) {
-					dt.fnAddData([data[i].id,
-					              data[i].addressType.name,
-					              data[i].address1,
-					              data[i].address2, 
-					              data[i].zipcode,
-						'<button id="edit" type="button" class="btn btn-info btn-sm active" data-addId="' + data[i].id + '" data-target="#addModal" data-toggle="modal">Edit</button>',
-						'<button id="delete" type="button" class="btn btn-danger btn-sm active" data-addId="' + data[i].id + '" data-target="#deleteModal" data-toggle="modal">Delete</button>',
-						           "unmodified",
-						'<input id="dataaddress'+getIndex+'"type ="text" name = "addresses['+getIndex+'].id" value="'+id+'">'+
-					    '<input id="dataaddress'+getIndex+'"type ="text" name = "addresses['+getIndex+'].addressTypeId" value="'+addressType+'">'+
-					    '<input id="dataaddress'+getIndex+'"type ="text" name = "addresses['+getIndex+'].address1" value="'+address1+'">'+
-					    '<input id="dataaddress'+getIndex+'"type ="text" name = "addresses['+getIndex+'].address2" value="'+address2+'">'+
-					    '<input id="dataaddress'+getIndex+'"type ="text" name = "addresses['+getIndex+'].provinceId" value="'+provinceId+'">'+
-					    '<input id="dataaddress'+getIndex+'"type ="text" name = "addresses['+getIndex+'].zipcode" value="'+zipcode+'">'+
-					    '<input id="dataaddress'+getIndex+'"type ="text" name = "addresses['+getIndex+'].status" value="'+status+'">']);
-					
-						getIndex = getIndex+1; 
-			
-					}
-				},
-				
-				
-				error : function(data,testStatus,jqXHR) {
-					$("#outputajax").text(testStatus);
-					}
-				}); 
-		}
-	
-	});
-			
-			
-  /* ---------------------------------------------------- Init Edit Function --------------------------------------------------- */				
-			
-			function initEditEmployee(empId) {
-				alert(empId+" Init edit");
-				$.ajax({
-					url : "${pageContext.request.contextPath}/employee/initEdit/"+empId,
-					type : "POST",
-					success : function(data) {
-						$("#nameThai").val(data.nameThai);
-						$("#surnameThai").val(data.surnameThai);
-						$("#nicknameThai").val(data.nicknameThai);
-						$("#nameEng").val(data.nameEng);
-						$("#surnameEng").val(data.surnameEng);
-						$("#nicknameEng").val(data.nicknameEng);
-						$("#telHome").val(data.telHome);
-						$("#telMobile").val(data.telMobile);
-						$("#telFax").val(data.telFax);
-						$("#emergencyContact").val(data.emergencyContact);
-						$("#relationshipWithEmergencyContact").val(data.relationshipWithEmergencyContact);
-						$("#emergencyContactAddress").val(data.emergencyContactAddress);
-						$("#emergencyContactPhoneNumber").val(data.emergencyContactPhoneNumber);
-						$("#dateOfBirth").val(data.dateOfBirth);
-						$("#placeOfBirth").val(data.placeOfBirth);
-						$("#age").val(data.age);
-						$("#religion").val(data.religion);
-						$("#idCard").val(data.idCard);
-						$("#issuedOffice").val(data.issuedOffice);
-						$("#expiryDate").val(data.expiryDate);
-						$("#height").val(data.height);
-						$("#weigth").val(data.weigth);
-						$("#sex").val(data.sex);
-						$("#maritalStatus").val(data.maritalStatus);
-						$("#numberOfChildren").val(data.numberOfChildren);
-						$("#spouseName").val(data.spouseName);
-						$("#marriageCertificateNo").val(data.marriageCertificateNo);
-						$("#issuedOffice2").val(data.issuedOffice2);
-						$("#address").val(data.address);
-						$("#occupation").val(data.occupation);
-						$("#knowAugNewspaper").val(data.knowAugNewspaper);
-						$("#descriptionNewspaper").val(data.descriptionNewspaper);
-						$("#knowAugMagazine").val(data.knowAugMagazine);
-						$("#descriptionMagazine").val(data.descriptionMagazine);
-						$("#knowAugWebsite").val(data.knowAugWebsite);
-						$("#descriptionWebsite").val(data.descriptionWebsite);
-						$("#knowAugFriend").val(data.knowAugFriend);
-						$("#descriptionFriend").val(data.descriptionFriend);
-						$("#knowAugOther").val(data.knowAugOther);
-						$("#descriptionOther").val(data.descriptionOther);
-						$("#knowEmployedYes").val(data.knowEmployedYes);
-						$("#descriptionYes").val(data.descriptionYes);
-						$("#knowEmployerNo").val(data.knowEmployerNo);
-						$("#militaryServiceYes").val(data.militaryServiceYes);
-						$("#fromYear").val(data.fromYear);
-						$("#toYear").val(data.toYear);
-						$("#branchOfService").val(data.branchOfService);
-						$("#serviceNo").val(data.serviceNo);
-						$("#militaryServiceNo").val(data.militaryServiceNo);
-						$("#reasonsNo").val(data.reasonsNo);
-						$("#dateToBeDrafted").val(data.dateToBeDrafted);
-						$("#previousEmployerYes").val(data.previousEmployerYes);
-						$("#previousEmployerNo").val(data.previousEmployerNo);
-						$("#previousEmpreasonsNo").val(data.previousEmpreasonsNo);
-						
-						 
-		
-					},
-					error : function(data,testStatus,jqXHR) {
-						$("#message").html('<div class="alert alert-danger" role="alert">Error</div>');
-						}
-					});
-			}
-			
-			
-	
-/* --------------------------------------------------- Delete Function --------------------------------------------------- */		
-			/* 
-			$("#deleteModal").on("show.bs.modal", function(event){
-				var button = $(event.relatedTarget);
-				var empId = button.data("empid");
-				alert("delete "+empId);
-				$(this).find(".yesButton").off("click").on("click", function()
-						{
-							deleteEmployee(button,empId);
-							alert("go fn");
-						});
-				
-				function deleteEmployee(button,empId){
-					alert("in fn");
-					$.ajax({
-						url : "${pageContext.request.contextPath}/employee/delete/"+empId,
-						type : "POST",
-						success : function(data) {
-							$('#deleteModal').modal('toggle');
-							$("#message").html('<div class="alert alert-success" role="alert">Success</div>');		
-						},
-						error : function(data,testStatus,jqXHR) {
-							$('#deleteModal').modal('toggle');
-							$("#message").html('<div class="alert alert-danger" role="alert">Error</div>');
-							}
-						});
-				}
-    		   	
-			
-  	}); */
-  	
-  
-  </script>
-</body>
-</html>
