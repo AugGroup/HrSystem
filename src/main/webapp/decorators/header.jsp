@@ -5,7 +5,7 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"  %>
 
-<link href="<c:url value="/resources/css/header.css" />" rel="stylesheet" type="text/css">
+<%-- <link href="<c:url value="/resources/css/header.css" />" rel="stylesheet" type="text/css">
 
   <style>
                 #Logout {
@@ -69,7 +69,7 @@
     text-align: right;
 }
 
-.navbar-defaults .navbar-nav > li > a {
+.navbar-blacks .navbar-nav > li > a {
     height: 65px;
     padding-top: 25px;
     padding-left: 20px;
@@ -82,18 +82,18 @@
     
 }
 
-    .navbar-defaults .navbar-nav > li > a:hover {
+    .navbar-blacks .navbar-nav > li > a:hover {
         background-color: #ff9900;
         color: white;
     }
 
-    .navbar-defaults .navbar-nav > li > a:focus {
+    .navbar-blacks .navbar-nav > li > a:focus {
        	background-color: #ff9900;
         color: white;
     }
 
 
-.navbar-defaults {
+.navbar-blacks {
 
     border-color: transparent;
 }
@@ -148,13 +148,13 @@ font-size:16px;
 color:#fff;
 }
 
-.navbar-defaults > a:hover > b {
+.navbar-blacks > a:hover > b {
        	background-color: #fff;
         color: #292929;
         
 }
 
-.navbar-defaults > a:focus > b {
+.navbar-blacks > a:focus > b {
        	background-color: #fff;
         color: #292929;
         
@@ -255,7 +255,7 @@ table.dataTable.no-footer {
 
 </style>
 
-<nav class="navbar navbar-defaults navbar-fixed-top" id="top-bar" role="navigation">
+<nav class="navbar navbar-blacks navbar-fixed-top" id="top-bar" role="navigation">
         <div class="container">
             <div class="navbar-header" style="width:145px; height:75px; background-color: #FFF;box-shadow: 0px 2px 10px #1A1A1A; padding:5px;">
 
@@ -286,7 +286,7 @@ table.dataTable.no-footer {
                     	</div>
                     	
                 	</div>
-                <div class="form-group navbar navbar-defaults">
+                <div class="form-group navbar navbar-blacks">
                 <c:if test="${ pageContext.response.locale.language eq 'th' }">
 				<a class="navbar-link" href="<%=request.getRequestURL()%>?locale=th"><img style="background-color:#fff;" src="<c:url value="/resource/images/flag_thailand.png" />"> </a>
 				<a class="navbar-link" href="<%=request.getRequestURL()%>?locale=en"><img src="<c:url value="/resource/images/flag_usa.png" />"> </a>
@@ -320,9 +320,9 @@ table.dataTable.no-footer {
 
         </div>
     
-  <%--       <f:form method="post" commandName="locale" role="form">
+        <f:form method="post" commandName="locale" role="form">
         <f:input type="hidden" id="locale" path="locale" />
-        </f:form> --%>
+        </f:form>
 </nav>
 
 <script type="text/javascript">
@@ -353,5 +353,267 @@ table.dataTable.no-footer {
 	} 
 
 }); */
-</script>
+</script> --%>
+
+<style>
+
+#top-container{
+	margin-left: 40px;
+	margin-right: 95px;
+}
+
+#logo {
+
+	width:135px;
+	height:75px;
+}
+
+.navbar-black {
+  background: #707070;
+}
+
+#navbar-top {
+  background-color: #707070;
+  height: 65px;
+}
+
+.navbar-black .navbar-nav > li > a {
+  color: #fff;
+}
+
+.navbar-black .navbar-nav > li > a:hover {
+	  color: rgb(222,145,4);
+	  background-color:rgba(0,0,0,0);
+}
+
+.navbar-black .navbar-nav > .open > a:hover,
+	.navbar-black .navbar-nav > .open > a:focus {
+	  background-color:rgba(0,0,0,0);
+	}
+	 
+ .nav > li > a:hover, .nav > li > a:focus {
+	 background-color:rgba(0,0,0,0);
+}
+
+@media ( max-width: 768px ) {
+	#top-container {
+		margin-left: 10px;
+		margin-right: 0px;
+	}
+		
+	.navbar-black .navbar-nav > li > a {
+	  color: #fff;
+	  padding-top: 10px;
+	  height: 40px;
+	}
+	
+	.navbar-black .navbar-nav > li > a:hover {
+	  color: rgb(222,145,4);
+	  background-color: #444;  
+	 }
+	 
+	 
+	#taplogout-down {
+		margin-top: 50px;
+   	    margin-bottom: 10px;
+	}
+	
+	#bgLogout {
+		background-color: #707070 !important;
+		width: 100% !important;
+		height: 25px !important;
+		text-align: left !important;
+		color: #fff !important;
+		margin-top: -10px !important;
+	}
+	
+	.navbar-link-report b{
+		width:100%;
+		height:25px;
+		margin-top:5px;
+		padding-left:3px;
+		margin-left:5px;
+		border:none; 
+		font-family: Dosis-Regular;
+		font-size:16px;
+		color:#fff;	
+	}
+	
+	.dropdown-menu > li > a {
+		color: #fff;
+	}
+	
+	.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+	 	 background-color: #444;
+	 }
+	 .nav > li > a:hover, .nav > li > a:focus {
+	 	background-color:rgba(0,0,0,0);
+	 
+	 }
+	
+	#linkLogout {
+		color: #fff !important;
+	}
+
+	#linkLogout:hover {
+		color: rgb(222,145,4) !important;
+	}
+	
+	.navbar-black .navbar-nav > .open > a:hover,
+	.navbar-black .navbar-nav > .open > a:focus {
+	  background-color: #444;
+	  color: rgb(222,145,4);
+	}
+	
+	.nav li>a#btn_report {
+	  width: 100% !important;
+	  height: 40px !important;
+	  border:none !important;
+	  padding: 10px 5px !important;
+	  margin-top: 0px !important;
+	 }
+}
+
+#navbar-collapse {
+	margin-top: -12px;
+    margin-right: -15px;
+    margin-left: -25px;
+    background-color: #707070;
+}
+
+#bgLogout {
+	background-color: #fff;
+	width: 190px;
+	height: 25px;
+	text-align: center;
+}
+
+#linkLogout {
+	color: #808080;
+	
+}
+
+#linkLogout:hover {
+	color: rgb(222,145,4);
+}
+
+.clearFloat {
+	clear: both;
+
+}
+
+#language-button {
+	margin-top: -40px;
+	margin-right: -16px;
+}
+
+#language-link{
+	background-color:rgba(0,0,0,0);
+	display:inline !important;
+}
+
+
+.navbar-collapse.in {
+    overflow-y: visible;
+}
+
+.container-fluid > .navbar-collapse {
+    margin-right: 0px; 
+    margin-left: -15px;
+}
+
+.navbar-black .navbar-toggle {
+ margin-top: 20px;
+ border-color: #fff;
+}
+
+.navbar-black .navbar-toggle .icon-bar {
+ background-color: #fff;
+}
+
+.navbar-black .navbar-toggle:hover, .navbar-black .navbar-toggle:focus {
+ background-color: #555;
+}
+
+.navbar-nav > li>a#btn_report {
+ width: 86px;
+ height: 27px;
+ border: 2px solid #ffffff;
+ padding: 2px 2px 2px 15px;
+ margin-top: 4px;
+ text-decoration: none;
+}
+
+
+</style>
+
+<nav class="navbar navbar-black">
+  <div id="top-container" class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header" style="height: 65px">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+       <img id = "logo" src="<c:url value="/resource/images/Logo_Augmentis.png" />"/>
+    </div>
+
+    <!-- Collect the nav links, forms, and other content for toggling -->
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+        <li style="margin-top: 10px"><a class="navbar-link" href="<%=request.getContextPath()%>/listemployee"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>     
+      </ul>
+     
+      <ul class="nav navbar-nav navbar-right">
+      	<li id="bgLogout">
+             <a id="linkLogout" class="navbar-link" href="<%=request.getContextPath()%>/logout"><spring:message code="label.logout" /> | ${userLogin.username} </a>        
+        </li>
+      </ul>
+      <div class="clearFloat"></div>
+       <ul class="nav navbar-nav navbar-right" id="language-button">
+      		<c:if test="${ pageContext.response.locale.language eq 'th' }">
+				<li>
+					<a id="language-link" class="navbar-link" href="<%=request.getRequestURL()%>?locale=th"><img style="background-color:#fff;" src="<c:url value="/resource/images/flag_thailand.png" />"> </a>
+					<a id="language-link" class="navbar-link" href="<%=request.getRequestURL()%>?locale=en" style="padding: 0px"><img src="<c:url value="/resource/images/flag_usa.png" />"> </a>
+				</li>
+            </c:if>
+            <c:if test="${ pageContext.response.locale.language eq 'en' }">
+				<li id = "taplogout-down">
+					<a id="language-link" class="navbar-link" href="<%=request.getRequestURL()%>?locale=th"><img src="<c:url value="/resource/images/flag_thailand.png" />"> </a>
+					<a id="language-link" class="navbar-link" href="<%=request.getRequestURL()%>?locale=en" style="padding: 0px"><img style="background-color:#fff;" src="<c:url value="/resource/images/flag_usa.png" />"> </a>
+				</li>
+            </c:if>		
+            
+            <li>
+            	<a class="navbar-link-report" id = "btn_report"href="#" class="dropdown-toggle" data-toggle="dropdown"><spring:message code="label.report" var="report" />${report}  <span style= "padding-left:5px;font-size:10px;"class="glyphicon glyphicon-triangle-bottom"></span></a>
+	        	
+		    		<ul class="dropdown-menu">
+		    			<li>
+		    				<a href="<%=request.getContextPath()%>/employee/reportEmpName"><spring:message code="report.empName" /></a>
+		    			</li>
+		    			<li>
+		    				<a href="<%=request.getContextPath()%>/employee/reportEmpCode"><spring:message code="report.empCode" /></a>
+		    			</li>
+		    			
+		    			<li>
+		    				<a  href="<%=request.getContextPath()%>/employee/ReportStatusEmp"><spring:message code="report.empStatus" /></a>
+		    			</li>
+		    			
+		    			<li>
+		    				<a href="<%=request.getContextPath()%>/employee/ReportLeave"><spring:message code="report.empLeave" /></a>
+		    			</li>
+		    		
+		    		</ul>
+		    		
+		    </li>    		
+      </ul>
+      
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav>
+
+
+
 

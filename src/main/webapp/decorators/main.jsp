@@ -105,7 +105,7 @@ body {
 	background-position: top center !important;
 	background-repeat: no-repeat !important;
 	background-attachment: fixed;
-    padding-top: 70px;  
+    /* padding-top: 70px;  */ 
 
 } 
 
