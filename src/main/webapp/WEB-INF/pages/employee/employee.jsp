@@ -193,7 +193,7 @@
         </div>
 	     
 	    
-        <div id="outputAddress">
+        <div id="outputAddress"  class="form-group table-responsive">
 	       <table id="tbResult" class ="dataTable stripe table-bordered">
 	       <caption title=""><spring:message code="label.address"></spring:message></caption>
 						<thead>
