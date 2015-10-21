@@ -7,6 +7,15 @@
 <%-- 	<h4 class="modal-title"><spring:message code="report.empName" /></h4> --%>
 <!-- </div> -->
 <script src="<c:url value="/resources/js/reportEmpName.js" />"></script>
+
+<script>
+	$(document).ready(function (){
+		$("#btn_report").addClass( "active-report" );
+		$("#reportEmpName-tap").addClass( "active-report" );
+	});
+
+</script>
+
 <f:form method="post" id="reportForm" name="reportForm" target="_blank" commandName="employee" action="${pageContext.request.contextPath}/employee/searchReportEmpName" cssClass="form-horizontal">
 
 	 <div class="modal-body">

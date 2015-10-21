@@ -400,18 +400,18 @@ table.dataTable.no-footer {
 	        	
 		    		<ul class="dropdown-menu" id="dropdown-menu-report">
 		    			<li>
-		    				<a href="<%=request.getContextPath()%>/employee/reportEmpName"><spring:message code="report.empName" /></a>
+		    				<a id = "reportEmpName-tap" href="<%=request.getContextPath()%>/employee/reportEmpName"><spring:message code="report.empName" /></a>
 		    			</li>
 		    			<li>
-		    				<a href="<%=request.getContextPath()%>/employee/reportEmpCode"><spring:message code="report.empCode" /></a>
-		    			</li>
-		    			
-		    			<li>
-		    				<a  href="<%=request.getContextPath()%>/employee/ReportStatusEmp"><spring:message code="report.empStatus" /></a>
+		    				<a id = "reportEmpCode-tap" href="<%=request.getContextPath()%>/employee/reportEmpCode"><spring:message code="report.empCode" /></a>
 		    			</li>
 		    			
 		    			<li>
-		    				<a href="<%=request.getContextPath()%>/employee/ReportLeave"><spring:message code="report.empLeave" /></a>
+		    				<a  id = "reportStatusEmp-tap" href="<%=request.getContextPath()%>/employee/ReportStatusEmp"><spring:message code="report.empStatus" /></a>
+		    			</li>
+		    			
+		    			<li>
+		    				<a id = "reportLeave-tap" href="<%=request.getContextPath()%>/employee/ReportLeave"><spring:message code="report.empLeave" /></a>
 		    			</li>
 		    		
 		    		</ul>

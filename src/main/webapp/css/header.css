@@ -340,6 +340,12 @@ table.dataTable.no-footer {
 	text-decoration: none;
 }
 
+/* -----------------------------------------------Active Report Botton ---------------------------------------  */
+.active-report {
+	background-color: rgb(222, 145, 4) !important;	
+	color: #fff !important;
+}
+
 @media ( max-width : 768px ) {
 	
 		.container {

@@ -8,6 +8,14 @@
 <%-- 	<h4 class="modal-title"><spring:message code="reportleave.empName" /></h4> --%>
 <!-- </div> -->
 
+<script>
+	$(document).ready(function (){
+		$("#btn_report").addClass( "active-report" );
+		$("#reportLeave-tap").addClass( "active-report" );
+	});
+
+</script>
+
 <f:form method="post" id="reportForm" name="reportForm" target="_blank" commandName="applicant" action="${pageContext.request.contextPath}/employee/searchReportEmpLeave" cssClass="form-horizontal">
 
 	 <div class="modal-body">

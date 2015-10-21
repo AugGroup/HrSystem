@@ -5,6 +5,14 @@
 
 <script src="<c:url value="/resources/js/reportEmpCode.js" />"></script>
 
+<script>
+	$(document).ready(function (){
+		$("#btn_report").addClass( "active-report" );
+		$("#reportEmpCode-tap").addClass( "active-report" );
+	});
+
+</script>
+
 <f:form method="post" id="reportForm" name="reportForm" target="_blank" commandName="employee" action="${pageContext.request.contextPath}/employee/searchReportEmpCode" cssClass="form-horizontal">
 
 	 <div class="modal-body">

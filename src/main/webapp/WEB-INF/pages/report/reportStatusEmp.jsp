@@ -7,6 +7,15 @@
 <!-- 	<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button> -->
 <%-- 	<h4 class="modal-title"><spring:message code="reportstatus.empName" /></h4> --%>
 <!-- </div> -->
+
+<script>
+	$(document).ready(function (){
+		$("#btn_report").addClass( "active-report" );
+		$("#reportStatusEmp-tap").addClass( "active-report" );
+	});
+
+</script>
+
 <f:form method="post" id="reportForm" name="reportForm" target="_blank" commandName="employee" action="${pageContext.request.contextPath}/employee/searchEmpStatusReport" cssClass="form-horizontal">
 
 	 <div class="modal-body">

@@ -18,7 +18,7 @@
 
 <!-- Bootstrap -->
 <link href="<c:url value="/resource/bootstrap/css/bootstrap.css" />" rel="stylesheet" media="all">
-<link href="<c:url value="/resource/bootstrap/css/bootstrap-theme.css" />" rel="stylesheet">
+<%-- <link href="<c:url value="/resource/bootstrap/css/bootstrap-theme.css" />" rel="stylesheet"> --%>
 <script src="<c:url value="/resource/bootstrap/js/bootstrap.js" />"></script>
 
 <!-- Validator -->
@@ -85,7 +85,8 @@
 <!-- Fontawesome -->
 <link href="<c:url value="/resource/fontawesome/css/font-awesome.css" />" rel="stylesheet" media="all">
 
-
+<!-- Favicon Logo Tittle-->
+<link rel="shortcut icon" type="image/x-icon" href="${ pageContext.request.contextPath }/resource/images/favicon.ico">
 
 <!-- Alertify Plugin -->
 <%-- <script src="<c:url value="/resource/alertify/js/alertify.min.js" />"></script>
