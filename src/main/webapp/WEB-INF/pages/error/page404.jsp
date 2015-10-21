@@ -570,6 +570,9 @@ margin-top:5px;
 margin-right:7px;
 }
 
+a#th{
+	margin-left: -13px;
+}
 
 a#en{
 	margin: -35px;
@@ -577,6 +580,14 @@ a#en{
 
 li.enth{
 margin-top:-13px;
+}
+
+ul#langReport{
+	width: 185px;
+}
+
+a#btn_report{
+	margin-left: 20px;
 }
 
 </style>
@@ -637,7 +648,7 @@ margin-top:-13px;
 	        		
 	        		<li >
 	        		
-	        		<a class="navbar-link-report" id="btn_report" href="#" class="dropdown-toggle" data-toggle="dropdown" ><spring:message code="label.report" var="report" /><b class="caret">${report}  <span style= "padding-left:5px;font-size:10px;"class="glyphicon glyphicon-triangle-bottom"></span></b></a> 
+	        		<a class="navbar-link-report" id="btn_report" href="#" class="dropdown-toggle" data-toggle="dropdown" ><spring:message code="label.report" var="report" />${report}  <span style= "padding-left:5px;font-size:10px;"class="glyphicon glyphicon-triangle-bottom"></span></a> 
 		    		
 		    		
 		    		<ul class="dropdown-menu">
@@ -709,5 +720,10 @@ margin-top:-13px;
 
 </body>
 </html>
+
+
+
+
+
 
 
