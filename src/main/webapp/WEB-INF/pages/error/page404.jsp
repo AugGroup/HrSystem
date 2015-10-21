@@ -452,14 +452,13 @@ code {
 		margin-bottom: 10px;
 	}
 	
-	#linkLogout {
-	     color: #636666;
-	     text-decoration: none;
-	     font-family: Dosis-Regular;
-	     background-color: white;
-	     margin-top:5px;
-	     padding: 5px;
-	     width: 185px;     
+	#linkLogout{
+	    background-color: #707070 !important;
+		width: 100% !important;
+		height: 25px !important;
+		text-align: left !important;
+		color: #fff !important;
+		margin-top: -10px !important;     
 	}
 	
 	.fonthome{
@@ -470,7 +469,7 @@ code {
 		color: white;
 	}	
 	
-	ul.nav.navbar-nav>li>a>.fonthome:hover{
+	/* ul.nav.navbar-nav>li>a>.fonthome:hover{
 		background-color: #ff9900;
 	}  
 	
@@ -478,102 +477,112 @@ code {
 	ul.nav.navbar-nav>li>a:hover{
 		background-color: none;
 		height: auto;
-	}  
+	}   */
 	
+	
+	#linkLogout {
+	     color: #fff ;
+	     text-decoration: none;
+	     font-family: Dosis-Regular;
+	     font-size: large;
+	     margin-top:0;
+	     margin-right:17px;
+	     padding-left: 3px;
+	     padding-right: 3px;
+	     padding-top:3px;
+	     padding-bottom:10px;
+	     width: 182px;
+	     text-align: left;
+	     
+	}	 
+	
+	
+	span.glyphicon.glyphicon-home.fonthome{
+		margin-left: -10px;
+		padding-left: 0;
+		/* padding-top: 5px; */
+	}
+	
+	.navbar-nav > li > a{
+		padding-top: 20px;
+		padding-bottom: 1px;
+	}
+	
+	.nav li>a#btn_report {
+	  width: 100% !important;
+	  height: 40px !important;
+	  border:none !important;
+	  padding: 10px 5px !important;
+	  margin-top: 0px !important;
+	 }
 	 
+	 .navbar-link-report b{
+		width:100%;
+		height:25px;
+		margin-top:5px;
+		padding-left:3px;
+		margin-left:5px;
+		border:none; 
+		font-family: Dosis-Regular;
+		font-size:16px;
+		color:#fff;	
+	}
+	
+	
+	.navbar-black .navbar-nav > .open > a:hover,
+	.navbar-black .navbar-nav > .open > a:focus {
+	  background-color: #444;
+	  color: rgb(222,145,4);
+	}
+	
+	
+		
+	.navbar-nav > li>a#btn_report {
+		 width: 86px;
+		 height: 27px;
+		 border: 2px solid #ffffff;
+		 padding: 2px 2px 2px 15px;
+		 margin-top: 4px;
+		 text-decoration: none;
+	}
+	
+	
 }
 
 
-ul.nav.navbar-nav>li>a:hover{
+/* ul.nav.navbar-nav>li>a:hover{
 	background-color: #ff9900;
 	height: 65px;
-}  
+} */  
 
 /* .nav > li > a:hover{
 	background-color: #000;
 }
  */
 
+.navbar-link img {
+width:40px;
+height:25px;
+border:1px solid white; 
+padding-left:7px;
+padding-right:7px;
+margin-top:5px;
+margin-right:7px;
+}
 
+
+a#en{
+	margin: -35px;
+}
+
+li.enth{
+margin-top:-13px;
+}
 
 </style>
 
 </head>
 <body>
-
-<%-- <nav  class="navbar navbar-inverse navbar-fixed-top navbar-custom " role="navigation">
-        <div class="container">
-
-        <div class="navbar-header">        
-           <img style="width:145px; height:80px; background-color: #707070; box-shadow: 0px 2px 10px #1A1A1A;" src="<c:url value="/resource/images/Logo_Augmentis.png" />"/>                       	
-        </div>   
-        
-        <div class="navbar-collapse collapse" aria-expanded="false">  
-         <div class="navbar-nav pull-left"> 
-          <ul id="home" class="nav navbar-nav">
-            <li>
-         		<a class="navbar-link linkhome" href="<%=request.getContextPath()%>/listemployee"><span class="glyphicon glyphicon-home fonthome" aria-hidden="true"></span></a>
-       		</li>
-       	  </ul>
-       	</div>
-       	  
-       	  
-      
-         <div class=" navbar-nav pull-right">
-                <div class="row-md-12">
-                
-                    	<div id="bgLogout">
-                        <span>
-                        	<a id="linkLogout" class="navbar-link" href="<%=request.getContextPath()%>/logout" style="color:#636666;"><spring:message code="label.logout" /> | ${userLogin.username}</a>
-                       	</span>
-                   		</div>
-                   		
-                    	<div id="profileUser" hidden="hidden">
-                        	<ul class="nav navbar-nav" id="profile"></ul>
-                    	</div> 
-                    	
-                	</div> 
-            
-              <div class="form-group navbar navbar-defaults">
-               
-	                <c:if test="${ pageContext.response.locale.language eq 'th' }">
-					<a id="th" class="navbar-link" href="<%=request.getRequestURL()%>?locale=th"><img id="imgth" style="background-color:#fff;" src="<c:url value="/resource/images/flag_thailand.png" />"> </a>
-					<a id="en" class="navbar-link" href="<%=request.getRequestURL()%>?locale=en"><img id="imgeng" src="<c:url value="/resource/images/flag_usa.png" />"> </a>
-	                </c:if>
-	                
-	                <c:if test="${ pageContext.response.locale.language eq 'en' }">
-					<a id="th" class="navbar-link" href="<%=request.getRequestURL()%>?locale=th"><img id="imgth" src="<c:url value="/resource/images/flag_thailand.png" />"> </a>
-					<a id="en" class="navbar-link" href="<%=request.getRequestURL()%>?locale=en"><img id="imgeng" style="background-color:#fff;" src="<c:url value="/resource/images/flag_usa.png" />"> </a>
-	                </c:if>
-                
-                
-                <a class="navbar-link-report" href="#" class="dropdown-toggle" data-toggle="dropdown"><spring:message code="label.report" var="report" /><b class="caret">${report}  <span style= "padding-left:5px;font-size:10px;"class="glyphicon glyphicon-triangle-bottom"></span></b></a>
-	        	
-		    		<ul class="dropdown-menu">
-		    			<li>
-		    				<a href="<%=request.getContextPath()%>/employee/reportEmpName"><spring:message code="report.empName" /></a>
-		    			</li>
-		    			<li>
-		    				<a href="<%=request.getContextPath()%>/employee/reportEmpCode"><spring:message code="report.empCode" /></a>
-		    			</li>
-		    			
-		    			<li>
-		    				<a  href="<%=request.getContextPath()%>/employee/ReportStatusEmp"><spring:message code="report.empStatus" /></a>
-		    			</li>
-		    			
-		    			<li>
-		    				<a href="<%=request.getContextPath()%>/employee/ReportLeave"><spring:message code="report.empLeave" /></a>
-		    			</li>
-		    			
-		    		</ul>
-                </div>
-               </div>
-            </div>
-
-        </div>
-</nav> --%>
-
-
 
 
  <nav class="navbar navbar-default navbar-fixed-top">
@@ -610,18 +619,27 @@ ul.nav.navbar-nav>li>a:hover{
           <ul class="nav navbar-nav navbar-right" id="langReport">
   
                     <c:if test="${ pageContext.response.locale.language eq 'th' }">
-					<a id="th" class="navbar-link" href="<%=request.getRequestURL()%>?locale=th"><img id="imgth" style="background-color:#fff;" src="<c:url value="/resource/images/flag_thailand.png" />"> </a>
-					<a id="en" class="navbar-link" href="<%=request.getRequestURL()%>?locale=en"><img id="imgeng" src="<c:url value="/resource/images/flag_usa.png" />"> </a>
+					<li class="enth"> 
+					<a id="th" class="navbar-link" style="display:inline ;"  href="<%=request.getRequestURL()%>?locale=th"><img id="imgth" style="background-color:#fff;" src="<c:url value="/resource/images/flag_thailand.png" />"> </a>					
+					<a id="en" class="navbar-link" style="display:inline ;"  href="<%=request.getRequestURL()%>?locale=en"><img id="imgeng" src="<c:url value="/resource/images/flag_usa.png" />"> </a>
+	               </li> 
 	                </c:if>
 	                
 	                <c:if test="${ pageContext.response.locale.language eq 'en' }">
-					<a id="th" class="navbar-link" href="<%=request.getRequestURL()%>?locale=th"><img id="imgth" src="<c:url value="/resource/images/flag_thailand.png" />"> </a>
-					<a id="en" class="navbar-link" href="<%=request.getRequestURL()%>?locale=en"><img id="imgeng" style="background-color:#fff;" src="<c:url value="/resource/images/flag_usa.png" />"> </a>
+					<li class="enth"> 
+					<a id="th" class="navbar-link" style="display:inline-block ;" href="<%=request.getRequestURL()%>?locale=th"><img id="imgth" src="<c:url value="/resource/images/flag_thailand.png" />"> </a>
+					<a id="en" class="navbar-link" style="display:inline-block  ;"  href="<%=request.getRequestURL()%>?locale=en"><img id="imgeng" style="background-color:#fff;" src="<c:url value="/resource/images/flag_usa.png" />"> </a>
+	                </li>
 	                </c:if>
                 
                 
-                <a class="navbar-link-report" href="#" class="dropdown-toggle" data-toggle="dropdown" ><spring:message code="label.report" var="report" /><b class="caret">${report}  <span style= "padding-left:5px;font-size:10px;"class="glyphicon glyphicon-triangle-bottom"></span></b></a>
-	        	
+                <%-- <a class="navbar-link-report" id="btn_report" href="#" class="dropdown-toggle" data-toggle="dropdown" ><spring:message code="label.report" var="report" /><b class="caret">${report}  <span style= "padding-left:5px;font-size:10px;"class="glyphicon glyphicon-triangle-bottom"></span></b></a> --%>
+	        		
+	        		<li >
+	        		
+	        		<a class="navbar-link-report" id="btn_report" href="#" class="dropdown-toggle" data-toggle="dropdown" ><spring:message code="label.report" var="report" /><b class="caret">${report}  <span style= "padding-left:5px;font-size:10px;"class="glyphicon glyphicon-triangle-bottom"></span></b></a> 
+		    		
+		    		
 		    		<ul class="dropdown-menu">
 		    			<li>
 		    				<a href="<%=request.getContextPath()%>/employee/reportEmpName"><spring:message code="report.empName" /></a>
@@ -639,6 +657,8 @@ ul.nav.navbar-nav>li>a:hover{
 		    			</li>
 		    			
 		    		</ul>
+		    		
+		    	</li>
            </ul>
         </div>
       </div>
