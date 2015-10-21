@@ -117,6 +117,17 @@ body {
   right:5px;
   
  }
+ 
+ @media ( max-width: 768px ) {
+ 	.scrollToTop{
+	  width:30px;
+	  height:30px;  
+	  position:fixed;
+	  bottom:90px;
+	  right:15px;	  
+	}
+ 
+ }
 
 </style>
 
@@ -211,7 +222,7 @@ $.ajaxSetup({
 	<div class="container"> 
 		<decorator:body/>
 	</div>
-	<a href="#" class="scrollToTop" id="goToTop" ><img src = "${pageContext.request.contextPath}/resource/images/arrow-top.png" width="54px" height="54px" /></a>
+	<a href="#" class="scrollToTop" id="goToTop" ><img src = "${pageContext.request.contextPath}/resource/images/arrow-top.png" width="48px" height="48px" /></a>
 	<jsp:include page="footer.jsp"></jsp:include>
 	
 </body>
