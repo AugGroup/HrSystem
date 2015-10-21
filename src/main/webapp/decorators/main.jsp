@@ -109,6 +109,15 @@ body {
 
 } 
 
+.scrollToTop{
+  width:60px;
+  height:60px;  
+  position:fixed;
+  bottom:55px;
+  right:5px;
+  
+ }
+
 </style>
 
 <script type="text/javascript">
@@ -159,7 +168,7 @@ $.ajaxSetup({
 });
 
 
-
+/*  ------------------------------------------------------ Go To Top -------------------------------------------------*/
 
 	var myRedirect = function(redirectUrl,err,testStatus) {
 	  	var form = $('<form id="form" action="' + redirectUrl + '" method="post">' +
@@ -168,9 +177,33 @@ $.ajaxSetup({
 	  	$('body').append(form);
 	  	$('#form').submit();
 	  };
+	  
+	  
+	  
 
 </script>
 
+<script type="text/javascript">
+	  $(document).ready(function(){
+	   $('#goToTop').hide();
+	   //Check to see if the window is top if not then display button
+	   $(window).scroll(function(){
+	    if ($(this).scrollTop() > 300) {
+	     
+	     $('.scrollToTop').fadeIn();
+	    } else {
+	     $('.scrollToTop').fadeOut();
+	    }
+	   });
+	   
+	   //Click event to scroll to top
+	   $('.scrollToTop').click(function(){
+	    $('html, body').animate({scrollTop : 0},1000);
+	    return false;
+	   });
+	   
+	  });
+</script>
 </head>
 <body>
 	<jsp:include page="valiable.jsp"></jsp:include>
@@ -178,6 +211,7 @@ $.ajaxSetup({
 	<div class="container"> 
 		<decorator:body/>
 	</div>
+	<a href="#" class="scrollToTop" id="goToTop" ><img src = "${pageContext.request.contextPath}/resource/images/arrow-top.png" width="54px" height="54px" /></a>
 	<jsp:include page="footer.jsp"></jsp:include>
 	
 </body>
