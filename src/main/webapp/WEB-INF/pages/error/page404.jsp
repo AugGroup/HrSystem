@@ -53,15 +53,15 @@ h1{
 }
  
 
-.navbar-header {
+/* .navbar-header {
     margin-left:5%;
-}
+} */
 
 .contain{ 
 	margin-top: 5%;
 }
 
-.navbar-inverse {
+/* .navbar-inverse {
 	position:absolute;
 	background-color: #707070;
 	background-image: linear-gradient(to bottom, #707070 0%, #707070 100%); 
@@ -71,7 +71,7 @@ h1{
 
 .navbar-inverse .navbar-nav > li > a{
 	color:#fff;
-}
+} */
 
 
 #bgLogout{
@@ -84,16 +84,16 @@ h1{
 }
 
 
-.navbar-default{
+/* .navbar-default{
 	background-image: linear-gradient(to bottom, #ffc000 0%, #ffc000 100%); 
-}
+} */
 
 a{
 	color: #fff;
 }
 
 
-.navbar-link-report b{
+/* .navbar-link-report b{
 	width:5px;
 	height:5px;
 	margin-top:5px;
@@ -103,7 +103,7 @@ a{
 	font-family: Dosis-Regular;
 	font-size:13px;
 	color:#fff;
-} 
+}  */
 
 
 #Logout {
@@ -137,6 +137,12 @@ a{
      color: #636666;
      text-decoration: none;
      font-family: Dosis-Regular;
+     background-color: white;
+     margin-top:5px;
+     margin-right:17px;
+     padding: 3px;
+     width: 182px;
+     text-align: center;
 }
 
 
@@ -267,21 +273,10 @@ a{
 
 }
 
-/* .pull-right{
-	padding-right:55px;
-} */
-
-/* #randerleft{
-    display:table-cell;
-    vertical-align: middle;
-    height: 450px;
-    width: 490px;
-} */
 
 
 p{
 	margin-top: 4%;
-	/* margin-right:10%; */
 	font-family: Dosis-SemiBold;
 	font-size: 1.6em;
 }
@@ -295,9 +290,6 @@ p{
 	border-radius:0;
 }
 
-/* .btn-lg{
-	border-radius:0;
-} */
 
 .btn-danger{
 	 background-color: #ff0000;
@@ -315,11 +307,6 @@ p{
 	font-size: 1.5em;
 }
 
-/* .pull-right{
-	padding-right: 2%;
-	margin-top: 1%;
-	color: #ED7E21;
-} */
 
 .footercontain{
 	padding-right: 2%;
@@ -336,7 +323,9 @@ p{
 .fonthome{
 	font-size:  18px;
 	text-align: center;
-	margin-top: 50%;
+	margin: 5px;
+	padding:6px;
+	color: white;
 }
 
 .linkhome {
@@ -401,12 +390,118 @@ code {
 }
 
 
+.navbar{
+	position:absolute;
+	background-color: #707070;
+	background-image: linear-gradient(to bottom, #707070 0%, #707070 100%); 
+	border-color: #C7A5A5;
+	height: 65px;
+	
+}
+
+#logo{
+	width:145px; 
+	height:75px; 
+	background-color: #707070; 
+	box-shadow: 0px 2px 10px #1A1A1A;
+}
+
+.clearFloat{
+ clear:both;
+}
+
+
+.container1{
+	margin-left: 40px;
+	margin-right: 95px;
+} 
+
+#langReport{
+	margin-top: -45px;
+}
+
+@media ( max-width: 768px ) {
+	.container1{
+		margin-left: 10px;
+		margin-right: 0px;
+	} 
+	
+	#navbar-collapse{
+		background-color: #707070;
+		margin-left: -10px;
+		margin-bottom: 10px;
+	}
+	
+	div.navbar-header{
+		margin-bottom: -10px;
+	}
+	
+	.navbar-collapse.in{
+		overflow-y: hidden;
+	}
+	
+	.navbar-nav {
+    	margin: 0px;
+	}
+	
+	a#linkLogout.navbar-link{
+		margin-bottom: 50px;
+	}
+	
+	ul#langReport{
+		margin-bottom: 10px;
+	}
+	
+	#linkLogout {
+	     color: #636666;
+	     text-decoration: none;
+	     font-family: Dosis-Regular;
+	     background-color: white;
+	     margin-top:5px;
+	     padding: 5px;
+	     width: 185px;     
+	}
+	
+	.fonthome{
+		font-size:  18px;
+		text-align: center;
+		margin: 10px;
+		padding:15px;
+		color: white;
+	}	
+	
+	ul.nav.navbar-nav>li>a>.fonthome:hover{
+		background-color: #ff9900;
+	}  
+	
+	
+	ul.nav.navbar-nav>li>a:hover{
+		background-color: none;
+		height: auto;
+	}  
+	
+	 
+}
+
+
+ul.nav.navbar-nav>li>a:hover{
+	background-color: #ff9900;
+	height: 65px;
+}  
+
+/* .nav > li > a:hover{
+	background-color: #000;
+}
+ */
+
+
+
 </style>
 
 </head>
 <body>
 
-<nav  class="navbar navbar-inverse navbar-fixed-top navbar-custom " role="navigation">
+<%-- <nav  class="navbar navbar-inverse navbar-fixed-top navbar-custom " role="navigation">
         <div class="container">
 
         <div class="navbar-header">        
@@ -476,7 +571,79 @@ code {
             </div>
 
         </div>
-</nav>
+</nav> --%>
+
+
+
+
+ <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container1">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          
+             
+         	<img id="logo" src="<c:url value="/resource/images/Logo_Augmentis.png" />"/>                     	
+               
+        </div>
+        
+        
+        <div id="navbar-collapse" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+  			<li>
+  		   		<a  href="<%=request.getContextPath()%>/listemployee"><span class="glyphicon glyphicon-home fonthome" aria-hidden="true"></span></a>
+          	</li>
+          </ul>
+          
+          <ul class="nav navbar-nav navbar-right ">  
+            <li><a id="linkLogout" class="navbar-link" href="<%=request.getContextPath()%>/logout" style="color:#636666;">
+            <spring:message code="label.logout" /> | ${userLogin.username}</a></li>
+          </ul>
+          
+          <div class="clearFloat"></div>
+          
+          
+          <ul class="nav navbar-nav navbar-right" id="langReport">
+  
+                    <c:if test="${ pageContext.response.locale.language eq 'th' }">
+					<a id="th" class="navbar-link" href="<%=request.getRequestURL()%>?locale=th"><img id="imgth" style="background-color:#fff;" src="<c:url value="/resource/images/flag_thailand.png" />"> </a>
+					<a id="en" class="navbar-link" href="<%=request.getRequestURL()%>?locale=en"><img id="imgeng" src="<c:url value="/resource/images/flag_usa.png" />"> </a>
+	                </c:if>
+	                
+	                <c:if test="${ pageContext.response.locale.language eq 'en' }">
+					<a id="th" class="navbar-link" href="<%=request.getRequestURL()%>?locale=th"><img id="imgth" src="<c:url value="/resource/images/flag_thailand.png" />"> </a>
+					<a id="en" class="navbar-link" href="<%=request.getRequestURL()%>?locale=en"><img id="imgeng" style="background-color:#fff;" src="<c:url value="/resource/images/flag_usa.png" />"> </a>
+	                </c:if>
+                
+                
+                <a class="navbar-link-report" href="#" class="dropdown-toggle" data-toggle="dropdown" ><spring:message code="label.report" var="report" /><b class="caret">${report}  <span style= "padding-left:5px;font-size:10px;"class="glyphicon glyphicon-triangle-bottom"></span></b></a>
+	        	
+		    		<ul class="dropdown-menu">
+		    			<li>
+		    				<a href="<%=request.getContextPath()%>/employee/reportEmpName"><spring:message code="report.empName" /></a>
+		    			</li>
+		    			<li>
+		    				<a href="<%=request.getContextPath()%>/employee/reportEmpCode"><spring:message code="report.empCode" /></a>
+		    			</li>
+		    			
+		    			<li>
+		    				<a  href="<%=request.getContextPath()%>/employee/ReportStatusEmp"><spring:message code="report.empStatus" /></a>
+		    			</li>
+		    			
+		    			<li>
+		    				<a href="<%=request.getContextPath()%>/employee/ReportLeave"><spring:message code="report.empLeave" /></a>
+		    			</li>
+		    			
+		    		</ul>
+           </ul>
+        </div>
+      </div>
+    </nav>
+
 
 
 <br/>

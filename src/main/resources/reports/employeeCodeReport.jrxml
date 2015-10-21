@@ -4,15 +4,26 @@
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="126"/>
 	<queryString>
-		<![CDATA[Select emp.id,emp.employee_code as employeeCode,
-DATE_FORMAT(official.START_WORK_DATE,'%Y-%m-%d') as startWorkDate,
-exp.salary as salary,YEAR(CURDATE()) - YEAR(official.start_work_date) - IF(STR_TO_DATE(CONCAT(YEAR(CURDATE()), '-', MONTH(official.start_work_date), '-', DAY(official.start_work_date)) ,'%Y-%c-%e') > CURDATE(), 1, 0) as yearStart, MONTH(curdate()) - MONTH(official.start_work_date) - IF(STR_TO_DATE(CONCAT(YEAR(CURDATE()), '-', MONTH(official.start_work_date), '-', DAY(official.start_work_date)) ,'%Y-%c-%e') > CURDATE(), 1, 0) as monthStart, DAY(curdate()) - DAY(official.start_work_date) - IF(STR_TO_DATE(CONCAT(YEAR(CURDATE()), '-', MONTH(official.start_work_date), '-', DAY(official.start_work_date)) ,'%Y-%c-%e') > CURDATE(), 1, 0) as dayStart, CAST(app.BIRTHDATE as DATE) as dateOfBirth,
-YEAR(CURDATE()) - YEAR(app.BIRTHDATE) - IF(STR_TO_DATE(CONCAT(YEAR(CURDATE()), '-', MONTH(app.BIRTHDATE), '-', DAY(app.BIRTHDATE)) ,'%Y-%c-%e') > CURDATE(), 1, 0) as year, MONTH(curdate()) - MONTH(app.BIRTHDATE) - IF(STR_TO_DATE(CONCAT(YEAR(CURDATE()), '-', MONTH(app.BIRTHDATE), '-', DAY(app.BIRTHDATE)) ,'%Y-%c-%e') > CURDATE(), 1, 0) as month,
-DAY(curdate()) - DAY(app.BIRTHDATE) - IF(STR_TO_DATE(CONCAT(YEAR(CURDATE()), '-', MONTH(app.BIRTHDATE), '-', DAY(app.BIRTHDATE)) ,'%Y-%c-%e') > CURDATE(), 1, 0) as day, app.FIRSTNAME_TH as nameThai,
-app.FIRSTNAME_EN as nameEng,app.NICKNAME_EN as nicknameEng,
-app.tel as telMobile,app.email as email, mas_employment.name as employmentName, mas_division.name as divisionName,mas_technology.name as technologyName,
+		<![CDATA[Select emp.id,emp.employee_code as employeeCode, DATE_FORMAT(official.START_WORK_DATE,'%d-%m-%Y') as startWorkDate,exp.salary as salary,
+TIMESTAMPDIFF(YEAR, official.start_work_date, now() ) as yearStart,
+TIMESTAMPDIFF(MONTH, official.start_work_date, now() ) % 12 as monthStart,
+FLOOR(TIMESTAMPDIFF( DAY,official.start_work_date, now() ) % 30.4375 ) as dayStart,
+DATE_FORMAT(app.BIRTHDATE,'%d-%m-%Y')
+as dateOfBirth,
+TIMESTAMPDIFF(YEAR, app.BIRTHDATE, now() )
+as year,
+TIMESTAMPDIFF(MONTH, app.BIRTHDATE, now() ) % 12 as month,
+FLOOR(TIMESTAMPDIFF( DAY, app.BIRTHDATE, now() ) % 30.4375 ) as day,
+app.FIRSTNAME_TH as nameThai,
+app.FIRSTNAME_EN as nameEng,app.NICKNAME_EN
+as nicknameEng,app.tel as telMobile,app.email as email,mas_employment.name as employmentName,
+mas_division.name as divisionName, mas_technology.name as technologyName,
 app.LASTNAME_EN as lastNameEN
-from applicant as app left join employee as emp on emp.applicant_id = app.id join official as official on app.official_id = official.id join mas_employment on emp.employment_id = mas_employment.id join mas_division on emp.division_id = mas_division.id join mas_technology on app.mastechnology_id = mas_technology.id join experience as exp on exp.applicant_id =app.id;]]>
+from applicant as app left join employee as emp on emp.applicant_id = app.id
+join official as official on app.official_id = official.id join mas_employment on emp.employment_id = mas_employment.id
+join mas_division on emp.division_id = mas_division.id
+join mas_technology on app.mastechnology_id = mas_technology.id
+join experience as exp on exp.applicant_id = app.id;]]>
 	</queryString>
 	<field name="id" class="java.lang.Integer">
 		<fieldDescription><![CDATA[]]></fieldDescription>
@@ -25,7 +36,7 @@ from applicant as app left join employee as emp on emp.applicant_id = app.id joi
 	<field name="yearStart" class="java.lang.Long"/>
 	<field name="monthStart" class="java.lang.Long"/>
 	<field name="dayStart" class="java.lang.Long"/>
-	<field name="dateOfBirth" class="java.sql.Date"/>
+	<field name="dateOfBirth" class="java.lang.String"/>
 	<field name="year" class="java.lang.Long">
 		<fieldDescription><![CDATA[]]></fieldDescription>
 	</field>
@@ -160,7 +171,7 @@ from applicant as app left join employee as emp on emp.applicant_id = app.id joi
 				<textElement textAlignment="Center" verticalAlignment="Middle">
 					<font fontName="Angsana New"/>
 				</textElement>
-				<textFieldExpression><![CDATA[$F{nameEng}+"ss"]]></textFieldExpression>
+				<textFieldExpression><![CDATA[$F{nameEng}]]></textFieldExpression>
 			</textField>
 			<textField>
 				<reportElement x="304" y="0" width="122" height="25" uuid="0c1cfb88-fbcd-4c68-995c-acd3f81af859"/>
