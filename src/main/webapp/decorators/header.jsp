@@ -439,8 +439,12 @@ table.dataTable.no-footer {
 		color:#fff;	
 	}
 	
-	.dropdown-menu > li > a {
+	#dropdown-menu-report > li > a {
 		color: #fff;
+	}
+	
+	.dropdown-menu > li > a {
+		color: #000;
 	}
 	
 	.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
@@ -589,7 +593,7 @@ table.dataTable.no-footer {
             <li>
             	<a class="navbar-link-report" id = "btn_report"href="#" class="dropdown-toggle" data-toggle="dropdown"><spring:message code="label.report" var="report" />${report}  <span style= "padding-left:5px;font-size:10px;"class="glyphicon glyphicon-triangle-bottom"></span></a>
 	        	
-		    		<ul class="dropdown-menu">
+		    		<ul class="dropdown-menu" id="dropdown-menu-report">
 		    			<li>
 		    				<a href="<%=request.getContextPath()%>/employee/reportEmpName"><spring:message code="report.empName" /></a>
 		    			</li>
