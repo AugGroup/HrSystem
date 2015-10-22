@@ -473,7 +473,12 @@ nav.navbar.navbar-default.navbar-fixed-top{
 	color: white;
 }
 
-
+	 
+.nav li>a#btn_report:hover {
+	  background-color:#444 !important;
+	  color: rgb(222, 145, 4) !important;
+} 
+	 
 
 
 @media ( max-width: 768px ) {
@@ -486,6 +491,7 @@ nav.navbar.navbar-default.navbar-fixed-top{
 	    background-color: #707070; 
 		margin-left: -10px;
 		margin-bottom: 10px;
+		border: none;
 	}
 	
 	div.navbar-header{
@@ -566,9 +572,15 @@ nav.navbar.navbar-default.navbar-fixed-top{
 	  margin-top: 10px !important;
 	  margin-left:-1px;
 	  padding-top: 20px;
-	  color: white !important; 
+	  color: white ; 
 	  font-family: Dosis-Regular;
 	  font-size:16px;
+	 } 
+	 
+	 
+	 .nav li>a#btn_report:hover {
+	  	background-color:#444 !important;
+	  	color: rgb(222, 145, 4) !important;
 	 } 
 	 
 	 .navbar-link-report b{
@@ -596,7 +608,8 @@ nav.navbar.navbar-default.navbar-fixed-top{
     .navbar-default .navbar-nav > .open > a:focus{
 	
 	
-		background-color:#444; 
+		background-color:#444; !important;
+		color: rgb(222,145,4); !important; 
 	
 	}
 	
@@ -605,6 +618,7 @@ nav.navbar.navbar-default.navbar-fixed-top{
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus{
 	
 		background-color: white;
+		 color: rgb(222, 145, 4);
 	
 	}
 
@@ -672,9 +686,9 @@ nav.navbar.navbar-default.navbar-fixed-top{
         
         
         <div id="navbar-collapse" class="navbar-collapse collapse">
-          <ul class="nav navbar-nav">
-  			<li>
-  		   		<a  href="<%=request.getContextPath()%>/listemployee"><span class="glyphicon glyphicon-home fonthome" aria-hidden="true"></span></a>
+          <ul class="nav navbar-nav" >
+  			<li id="navFontHome"> 			 
+  		   		<a  href="<%=request.getContextPath()%>/listemployee"><span class="glyphicon glyphicon-home fonthome" aria-hidden="true"></span></a>          	 
           	</li>
           </ul>
           
