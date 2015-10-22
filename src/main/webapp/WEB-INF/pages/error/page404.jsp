@@ -399,6 +399,11 @@ code {
 	
 }
 
+
+
+
+
+
 #logo{
 	width:145px; 
 	height:75px; 
@@ -601,6 +606,15 @@ nav.navbar.navbar-default.navbar-fixed-top{
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a{
 		color: white;
 	}
+	
+	
+	
+	.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus{
+		color: #333;
+	    background-color: #444;
+	
+	}
+	
 	
 	
 	.navbar-default .navbar-nav > .open > a,
