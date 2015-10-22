@@ -665,6 +665,17 @@ nav.navbar.navbar-default.navbar-fixed-top{
 		padding-top: 5px;
 	} 
 	
+	
+	.fonthome:hover,.fonthome:focus{
+ 		color: rgb(222, 145, 4);
+ 		background-color: #444;
+ 		width: 100%;
+ 		text-align: left;
+ 		
+	}
+	
+	
+	
 }
 
 #linkLogout:hover,#linkLogout:focus {
