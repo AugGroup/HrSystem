@@ -16,7 +16,6 @@
 <!-- Bootstrap -->
 <link href="<c:url value="/resource/bootstrap/css/bootstrap.css" />" rel="stylesheet" media="all">
 <script src="<c:url value="/resource/bootstrap/js/bootstrap.js" />"></script>
-<link href="<c:url value="/resources/css/header.css" />" rel="stylesheet" media="all">
 
 <title>Error 404 page</title>
 <style >
@@ -137,6 +136,7 @@ a{
      color: #636666;
      text-decoration: none;
      font-family: Dosis-Regular;
+     font-size:15px;
      background-color: white;
      margin-top:5px;
      margin-right:17px;
@@ -147,13 +147,13 @@ a{
 
 
 /* Tab Setting */
-.tab-content {
+/* .tab-content {
     background-color: #eeeeee;
     border: 5px solid #eeeeee;
     border-radius: 3px;
-}
+} */
 
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
+/* .nav-tabs > li.active > a, .nav-tabs > li.active > a:hover, .nav-tabs > li.active > a:focus {
     color: #fa9900;
     cursor: pointer;
     background-color: #eeeeee;
@@ -205,7 +205,7 @@ a{
     color: white;
 }
 
-
+ */
 .navbar-defaults {
 
     border-color: transparent;
@@ -254,7 +254,7 @@ a{
 	color:#fff;
 }
 
-.navbar-defaults > a:hover > b {
+/* .navbar-defaults > a:hover > b {
     background-color: #fff;
     color: #292929;        
 }
@@ -262,7 +262,7 @@ a{
 .navbar-defaults > a:focus > b {
        	background-color: #fff;
         color: #292929;       
-}
+} */
 
 
 
@@ -418,147 +418,9 @@ code {
 
 #langReport{
 	margin-top: -45px;
+	padding-right:4px;
 }
 
-@media ( max-width: 768px ) {
-	.container1{
-		margin-left: 10px;
-		margin-right: 0px;
-	} 
-	
-	#navbar-collapse{
-		background-color: #707070;
-		margin-left: -10px;
-		margin-bottom: 10px;
-	}
-	
-	div.navbar-header{
-		margin-bottom: -10px;
-	}
-	
-	.navbar-collapse.in{
-		overflow-y: hidden;
-	}
-	
-	.navbar-nav {
-    	margin: 0px;
-	}
-	
-	a#linkLogout.navbar-link{
-		margin-bottom: 50px;
-	}
-	
-	ul#langReport{
-		margin-bottom: 10px;
-	}
-	
-	#linkLogout{
-	    background-color: #707070 !important;
-		width: 100% !important;
-		height: 25px !important;
-		text-align: left !important;
-		color: #fff !important;
-		margin-top: -10px !important;     
-	}
-	
-	.fonthome{
-		font-size:  18px;
-		text-align: center;
-		margin: 10px;
-		padding:15px;
-		color: white;
-	}	
-	
-	/* ul.nav.navbar-nav>li>a>.fonthome:hover{
-		background-color: #ff9900;
-	}  
-	
-	
-	ul.nav.navbar-nav>li>a:hover{
-		background-color: none;
-		height: auto;
-	}   */
-	
-	
-	#linkLogout {
-	     color: #fff ;
-	     text-decoration: none;
-	     font-family: Dosis-Regular;
-	     font-size: large;
-	     margin-top:0;
-	     margin-right:17px;
-	     padding-left: 3px;
-	     padding-right: 3px;
-	     padding-top:3px;
-	     padding-bottom:10px;
-	     width: 182px;
-	     text-align: left;
-	     
-	}	 
-	
-	
-	span.glyphicon.glyphicon-home.fonthome{
-		margin-left: -10px;
-		padding-left: 0;
-		/* padding-top: 5px; */
-	}
-	
-	.navbar-nav > li > a{
-		padding-top: 20px;
-		padding-bottom: 1px;
-	}
-	
-	.nav li>a#btn_report {
-	  width: 100% !important;
-	  height: 40px !important;
-	  border:none !important;
-	  padding: 10px 5px !important;
-	  margin-top: 0px !important;
-	 }
-	 
-	 .navbar-link-report b{
-		width:100%;
-		height:25px;
-		margin-top:5px;
-		padding-left:3px;
-		margin-left:5px;
-		border:none; 
-		font-family: Dosis-Regular;
-		font-size:16px;
-		color:#fff;	
-	}
-	
-	
-	.navbar-black .navbar-nav > .open > a:hover,
-	.navbar-black .navbar-nav > .open > a:focus {
-	  background-color: #444;
-	  color: rgb(222,145,4);
-	}
-	
-	
-		
-	.navbar-nav > li>a#btn_report {
-		 width: 86px;
-		 height: 27px;
-		 border: 2px solid #ffffff;
-		 padding: 2px 2px 2px 15px;
-		 margin-top: 4px;
-		 text-decoration: none;
-	}
-	
-	
-}
-
-
-/* ul.nav.navbar-nav>li>a:hover{
-	background-color: #ff9900;
-	height: 65px;
-} */  
-
-/* .nav > li > a:hover{
-	background-color: #000;
-}
- */
 
 .navbar-link img {
 width:40px;
@@ -580,15 +442,212 @@ a#en{
 
 li.enth{
 margin-top:-13px;
+margin-bottom:-5px;
+padding-top: 5px;
 }
 
-ul#langReport{
-	width: 185px;
-}
+
 
 a#btn_report{
 	margin-left: 20px;
+	font-family: Dosis-Regular;
+    font-size:15px;
 }
+
+
+.navbar-nav > li>a#btn_report {
+		 width: 86px;
+		 height: 26px;
+		 border: 2px solid #ffffff;
+		 padding: 2px 2px 2px 15px;
+		 margin-top: 11px;
+		 text-decoration: none;
+}
+	
+	
+nav.navbar.navbar-default.navbar-fixed-top{	
+	height: 71px;
+}
+	
+#btn_report{
+	color: white;
+}
+
+
+
+
+@media ( max-width: 768px ) {
+	.container1{
+		margin-left: 10px;
+		margin-right: 0px;
+	} 
+	
+	#navbar-collapse{
+	    background-color: #707070; 
+		margin-left: -10px;
+		margin-bottom: 10px;
+	}
+	
+	div.navbar-header{
+		margin-bottom: -10px;
+	}
+	
+	.navbar-collapse.in{
+		overflow-y: hidden;
+	}
+	
+	.navbar-nav {
+    	margin: 0px;
+	}
+	
+	ul.nav.navbar-nav.navbar-right{
+		padding-right: 7px;
+	}
+	
+	
+	
+	a#linkLogout.navbar-link{
+		margin-bottom: 50px;
+	}
+	
+	ul#langReport{
+		margin-bottom: 10px;
+		
+	}
+
+	
+	.fonthome{
+		font-size:  18px;
+		text-align: center;
+		margin: 10px;
+		padding:15px;
+		color: white;
+	}	
+	
+
+	
+	#linkLogout {
+	     text-decoration: none;
+	     font-family: Dosis-Regular;
+	     font-size: 15px;
+	     margin-top:0;
+	     margin-right:17px;
+	     padding-left: 3px;
+	     padding-right: 3px;
+	     padding-top:3px;
+	     padding-bottom:10px;
+	     text-align: left;
+	     background-color: #707070;
+		 width: 100%;
+		 height: 45%;
+		 text-align: left;
+		 color: #fff ;
+		 margin-top: -10px !important;  
+	     
+	}	  
+	
+	
+	span.glyphicon.glyphicon-home.fonthome{
+		margin-left: -10px;
+		padding-left: 0;
+		/* padding-top: 5px; */
+	}
+	
+	.navbar-nav > li > a{
+		padding-top: 20px;
+		padding-bottom: 1px;
+	}
+	
+	 .nav li>a#btn_report {
+	  width: 100% !important;
+	  height: 40px !important;
+	  border:none !important;
+	  padding: 10px 5px !important;
+	  margin-top: 10px !important;
+	  margin-left:-1px;
+	  padding-top: 20px;
+	  color: white !important; 
+	  font-family: Dosis-Regular;
+	  font-size:16px;
+	 } 
+	 
+	 .navbar-link-report b{
+		width:100%;
+		height:25px;
+		margin-top:5px;
+		padding-left:3px;
+		margin-left:5px;
+		border:none; 
+		font-family: Dosis-Regular;
+		font-size:16px;
+		color: rgb(222,145,4);
+	}
+	
+	
+	
+	
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a{
+		color: white;
+	}
+	
+	
+	.navbar-default .navbar-nav > .open > a,
+	.navbar-default .navbar-nav > .open > a:hover,
+    .navbar-default .navbar-nav > .open > a:focus{
+	
+	
+		background-color:#444; 
+	
+	}
+	
+	
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, 
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus{
+	
+		background-color: white;
+	
+	}
+
+		
+	.navbar-nav > li>a#btn_report {
+		 width: 86px;
+		 height: 27px;
+		 border: 2px solid #ffffff;
+		 padding: 2px 2px 2px 15px;
+		 margin-top: 4px;
+		 text-decoration: none;
+	}
+	
+	
+	
+	.nav .navbar-nav .navbar-right>li>a:hover{
+		background-color:#444; 
+		color: rgb(222,145,4);
+	}
+
+	a#linkLogout:hover{
+		background-color:#444; 
+		color: rgb(222,145,4);
+	}
+	
+	
+	 li.enth{
+		margin-top:-25px;
+		margin-bottom:-5px;
+		padding-top: 5px;
+	} 
+	
+}
+
+#linkLogout:hover,#linkLogout:focus {
+	 color: rgb(222, 145, 4);
+}
+ 
+.fonthome:hover,.fonthome:focus{
+ 	color: rgb(222, 145, 4);
+}
+
+
 
 </style>
 
@@ -606,9 +665,9 @@ a#btn_report{
             <span class="icon-bar"></span>
           </button>
           
-             
-         	<img id="logo" src="<c:url value="/resource/images/Logo_Augmentis.png" />"/>                     	
-               
+           
+         	<img id="logo" src="<c:url value="/resource/images/Logo_Augmentis.png" />"/> 
+         	                   	     
         </div>
         
         
@@ -620,8 +679,9 @@ a#btn_report{
           </ul>
           
           <ul class="nav navbar-nav navbar-right ">  
-            <li><a id="linkLogout" class="navbar-link" href="<%=request.getContextPath()%>/logout" style="color:#636666;">
-            <spring:message code="label.logout" /> | ${userLogin.username}</a></li>
+            <li><a id="linkLogout" class="navbar-link" href="<%=request.getContextPath()%>/logout" >
+            	<spring:message code="label.logout" /> | ${userLogin.username}</a>
+            </li>
           </ul>
           
           <div class="clearFloat"></div>
@@ -646,7 +706,7 @@ a#btn_report{
                 
                 <%-- <a class="navbar-link-report" id="btn_report" href="#" class="dropdown-toggle" data-toggle="dropdown" ><spring:message code="label.report" var="report" /><b class="caret">${report}  <span style= "padding-left:5px;font-size:10px;"class="glyphicon glyphicon-triangle-bottom"></span></b></a> --%>
 	        		
-	        		<li >
+	        		<li>
 	        		
 	        		<a class="navbar-link-report" id="btn_report" href="#" class="dropdown-toggle" data-toggle="dropdown" ><spring:message code="label.report" var="report" />${report}  <span style= "padding-left:5px;font-size:10px;"class="glyphicon glyphicon-triangle-bottom"></span></a> 
 		    		
