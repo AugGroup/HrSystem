@@ -28,6 +28,22 @@ body {
 	background-repeat: no-repeat !important;
 	background-attachment: fixed; 
 } 
+
+p{
+	margin-top: 4%;
+	font-family: Dosis-SemiBold;
+	font-size: 1.6em;
+}
+
+
+
+#linkgotohome{
+	font-family: Dosis-SemiBold;
+	font-size: 1.3em;
+}
+
+
+
 </style>
 
 </head>
@@ -39,7 +55,7 @@ body {
 
 <br/>
 <div class="container">
-	<div class="row-fluid"  style=" margin-top: 150px;margin-bottom: 150px;">
+	<div class="row-fluid"  style=" margin-top: 3%;margin-bottom: 9%">
 	<div class="row" style=" margin-right:10px;">
 		<div class="col col-lg-5 col-md-5">
 	          <div id="randerleft" align="center">
