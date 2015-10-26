@@ -121,7 +121,10 @@ $("#validateAddress").validate({
 
 
 		
-	$("#addForm").validate({
+    var validator = $("#addForm").validate({
+    errorPlacement:function(error,element){
+    	error.insertAfter(element);
+    },
 	rules: {
 		nameThai: "required",
 		/*surnameThai: "required",
@@ -682,10 +685,9 @@ if($('#previousEmployer').val()=="No"){
 		
     	$('[name="saveButton"]').click(function() {
     	
-    		//$("#addForm").valid();
-			$('[name="employeeForm"]').attr('action',
-					$getContextPath+"/employee/submit");
-			$('[name="employeeForm"]').submit(); 
+				$('[name="employeeForm"]').attr('action',
+						$getContextPath+"/employee/submit");
+				$('[name="employeeForm"]').submit(); 
 		});
     	
     	 dt=$("#tbResult").dataTable( 
