@@ -3,6 +3,11 @@
     
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 
+
+<!-- Reservation css -->
+<link href="<c:url value="/resources/css/reservations.css" />" rel="stylesheet" media="all">
+
+<!-- Reservation Controller -->
 <script src="<c:url value="/resources/js/reservations.js" />"></script>
 
 <div class="container-fluid">

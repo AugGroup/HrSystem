@@ -1,0 +1,21 @@
+@CHARSET "ISO-8859-1";
+
+/* --------------------------------- Head Calendar ------------------------- */
+.fc-head{
+	background-color: red;
+}
+
+/* ---------------------------------  Div Back Month Name ------------------------- */
+div.fc-center.text-center{
+	margin-top: 1%;
+	margin-bottom: -1%;
+    background-color: #ffc000;
+    color: #ffffff;
+    padding: 5px;
+    width: 100%;
+}
+
+/* --------------------------------- Month Name ------------------------- */
+div.fc-center.text-center h2{
+	float: initial;
+}

@@ -3,7 +3,7 @@
  */
 
 /* ------------------------------ Form Calendar ------------------------*/
-var $calendar ;
+var $calendar = $("#calendar");
 function renderCalendar(){
 	$calendar = $("#calendar").fullCalendar({
 		header:{
@@ -19,6 +19,7 @@ function renderCalendar(){
 		eventClick: function(event,element){
 			
 		},
+		lang : 'th',
 		events:[
 			{
 				title: 'All Day Event',
@@ -29,11 +30,12 @@ function renderCalendar(){
 				start: '2015-10-26',
 				end: '2015-10-27'
 			}
-	 ]
+		]
 			
 		
 		
 	})
+	$("div.fc-center").addClass("text-center");
 }
 $(function (){
 	renderCalendar();
