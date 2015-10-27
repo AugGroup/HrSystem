@@ -199,7 +199,7 @@
         </div>
 	     
 	    
-        <div id="outputAddress" class="form-group" style="overflow-x:scroll;width: 100%;">
+        <div id="outputAddress" class="form-group" style="overflow-x:scroll;width: 100%;margin-left: 5px;">
 	       <table id="tbResult" class ="dataTable stripe table-bordered">
 	       <caption title=""><spring:message code="label.address"></spring:message></caption>
 						<thead>
