@@ -236,6 +236,7 @@ table.dataTable.no-footer {
 
 
 /* --------------------------------------------------- nav-bar header --------------------------------------------------  */
+
 #top-container {
 	margin-left: 40px;
 	margin-right: 95px;
@@ -279,6 +280,9 @@ table.dataTable.no-footer {
 	background: #707070;
 }
 	
+.navbar-black #nav-main>li>a {
+	padding: 25px 15px;
+}
 .navbar-black .navbar-nav>li>a {
 	color: #fff;
 }
@@ -365,6 +369,12 @@ table.dataTable.no-footer {
 		.navbar-black .navbar-nav>li>a:hover {
 			color: rgb(222, 145, 4);
 			background-color: #444;
+		}
+		.navbar-black #nav-main>li>a {
+			padding: 10px 5px;
+		}
+		#nav-main {
+			margin-top: 20px;
 		}
 		#taplogout-down {
 			margin-top: 50px;

@@ -1,0 +1,4 @@
+@CHARSET "ISO-8859-1";
+.fc-row.fc-widget-header thead>tr{
+	background-color: red;
+}

@@ -119,6 +119,7 @@
 	/* employee-message validate*/
 	
 	var $validatenameThai = '<spring:message code="employee.required.nameThai" />';
+	var $validatethaiLanguage = '<spring:message code="employee.required.thaiLanguage" />';
 	var $validatesurnameThai = '<spring:message code="employee.required.surnameThai" />';
 	var $validatenicknameThai = '<spring:message code="employee.required.nicknameThai" />';
 	var $validatenameEng = '<spring:message code="employee.required.nameEng" />';

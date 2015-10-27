@@ -13,6 +13,11 @@ var getIndex = 0;
 		$("#telFax").mask("(99) 999-9999");
 		$("#idCard").mask("9-9999-99999-99-9");
 		$("#emergencyContactPhoneNumber").mask("(999) 999-9999"); 
+
+		/*$('#nameThai').mask('AAAAAAAAAAAAAAAAAAAAAAAAAA', {'translation': {
+            A: {pattern: /[ก-๋]/} 
+          }
+    });*/
 		
 		$('#salaryExpected').mask('0,000,000.00', {reverse: true});
 		
@@ -118,7 +123,13 @@ $("#validateAddress").validate({
 		};
 
 
-
+		
+// ---------------------------------------------- Validate Thai Language ------------------------------------------------ // 
+		
+		jQuery.validator.addMethod("languageThai", function(value, element) {
+						   		  // allow any non-whitespace characters as the host part
+						   		  return this.optional( element ) || /^[ก-๋]+$/.test( value );
+						   		}, $validatethaiLanguage);
 
 		
     var validator = $("#addForm").validate({
@@ -126,9 +137,15 @@ $("#validateAddress").validate({
     	error.insertAfter(element);
     },
 	rules: {
-		nameThai: "required",
-		/*surnameThai: "required",
-		nicknameThai: "required",*/
+		nameThai: {
+			required : true,
+			languageThai : true},
+		/*surnameThai: { 
+		  required : true,
+		  languageThai : true},
+		nicknameThai:  {
+		  required : true,
+		  languageThai : true},*/
 		nameEng: "required",
 		/*surnameEng: "required",
 		nicknameEng: "required",
@@ -255,7 +272,7 @@ $("#validateAddress").validate({
 	},
 	
 	messages: {
-		nameThai: $validatenameThai,
+		nameThai: $validatethaiLanguage,
 		/*surnameThai: $validatesurnameThai,
 		nicknameThai: $validatenicknameThai,*/
 		nameEng: $validatenameEng,
