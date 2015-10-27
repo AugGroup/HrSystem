@@ -5,10 +5,10 @@
 
 
 <!-- Reservation css -->
-<link href="<c:url value="/resources/css/reservations.css" />" rel="stylesheet" media="all">
+<link href="<c:url value="/resources/css/reservation.css" />" rel="stylesheet" media="all">
 
 <!-- Reservation Controller -->
-<script src="<c:url value="/resources/js/reservations.js" />"></script>
+<script src="<c:url value="/resources/js/reservation.js" />"></script>
 
 <div class="container-fluid">
 	<div class="row">

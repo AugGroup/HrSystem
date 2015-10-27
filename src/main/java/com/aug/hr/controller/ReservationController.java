@@ -34,7 +34,7 @@ public class ReservationController {
 			@RequestParam(value="timezone",required = false) String timezone, @RequestParam Integer mailStatus) throws ParseException {
 			
 		
-			List<Reservation> reservations ;
+			//List<Reservation> reservation ;
 		return null;
 	}
 }

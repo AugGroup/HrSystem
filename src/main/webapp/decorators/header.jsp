@@ -373,7 +373,7 @@ table.dataTable.no-footer {
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav" id = "nav-main">
         <li><a class="navbar-link" href="<%=request.getContextPath()%>/listemployee"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>     
-        <li><a class="navbar-link" href="<%=request.getContextPath()%>/reservations"> Reservations </a></li>
+        <li><a class="navbar-link" href="<%=request.getContextPath()%>/reservation"> Reservation </a></li>
       </ul>
      
       <ul class="nav navbar-nav navbar-right">
