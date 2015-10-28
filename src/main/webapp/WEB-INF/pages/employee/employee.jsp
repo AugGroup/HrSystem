@@ -8,8 +8,10 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <link href="<c:url value="/css/header.css" />" rel="stylesheet" type="text/css">
-<jsp:include page="../employeeMenu.jsp"></jsp:include>
+<div style="margin-left:15px;"><jsp:include page="../employeeMenu.jsp"></jsp:include></div>
 <script src="<c:url value="/resources/js/employee.js" />"></script>
+<script src="<c:url value="/resource/jquery.collapse.js" />"></script>
+
 
 
 
@@ -42,12 +44,18 @@
 		
 		
 		<div id="message"></div>
+		
+		<div id="collapse-show-hide-info" >
+		<h3 class="col-sm-12 open " id="div-information"><spring:message code="employee.information"/><span class="pull-right glyphicon glyphicon-menu-up" id="infomation-arrow"></span></h3>
+		
+		 <div style="padding: 0 20px">
 		<div class = "row">
-		<div id = "div-information" class="col-sm-12" style="padding: 15px 0px 15px 0px;">
+				
+		<%-- <div id = "div-information" class="col-sm-12">
 				<h2><spring:message code="employee.information"></spring:message>
-					<i style="position: absolute; right: 20px; cursor:pointer;" id = "icon1" class="fa fa-chevron-up"></i>
+					<!-- <i style="position: absolute; right: 20px; cursor:pointer;" id = "icon1" class="fa fa-chevron-up"></i> -->
 				</h2>
-		 </div>
+		 </div> --%>
 		 </div>
 		   <!--   Upload image -->
 							<div class="col-md-3">
@@ -183,9 +191,9 @@
 									id="nicknameEng" name="nicknameEng" placeholder="${please}${enter}<spring:message code="employee.nicknameEng"></spring:message>" value="${employeeDto.nicknameEng}">
 								</div>
 							</div>
-					
+			</div>		
 	         </div>
-	         
+	      </div>   
 	         
    
 	         
@@ -233,12 +241,16 @@
 	   
 	
  <!----------------------------------------- Start General------------------------------------------------------>
+	     <div id="collapse-show-hide-general" >
+		<h3 class="col-sm-12 open " id="div-information"><spring:message code="employee.general"/><span class="pull-right glyphicon glyphicon-menu-up" id="general-arrow"></span></h3>
+		<div style="padding: 0 20px">
+		<div class = "row">
 	     
-	     <div id = "div-information" class="col-md-12" style="padding: 15px 0px 15px 0px;">
+	     <%-- <div id = "div-information" class="col-md-12" style="padding: 15px 0px 15px 0px;">
 				<h2><spring:message code="employee.general"></spring:message>
 					<i style="position: absolute; right: 20px; cursor:pointer;" id = "icon1" class="fa fa-chevron-up"></i>
 				</h2>
-	       </div>
+	       </div> --%>
 	     
 	     
 	     <div class="row">
@@ -814,16 +826,23 @@
 		</div>
 	   </div>
 		
-	
+	</div>
+	</div>
+	</div>
 
 
 	<!---------------------------------------------------------- Start Official--------------------------------------------->   
-	      
-	    <div id = "div-information" class="col-md-12" style="padding: 15px 0px 15px 0px;">
+	      <div id="collapse-show-hide-official" >
+		<h3 class="col-sm-12 open " id="div-information"><spring:message code="official.name"/><span class="pull-right glyphicon glyphicon-menu-up" id="official-arrow"></span></h3>
+		 <div style="padding: 0 20px">
+		<div class = "row"> 
+	    <%-- <div id = "div-information" class="col-md-12" style="padding: 15px 0px 15px 0px;">
 			<h2><spring:message code="official.name"></spring:message>
 					<i style="position: absolute; right: 20px; cursor:pointer;" id = "icon1" class="fa fa-chevron-up"></i>
 			</h2>
-	   </div>
+	   </div> --%>
+	   
+	   
 	    
 			<div class="row">
 			<div class="col-md-12">	
@@ -1105,7 +1124,9 @@
 	    </div>
 	    </div>
 	    </div>
-	    
+	    </div>
+	    </div>
+	    </div>
 
 	<div class="form-group row">
 			<div class="col-md-12" align="right">
