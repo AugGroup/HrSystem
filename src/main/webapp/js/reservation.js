@@ -5,7 +5,6 @@
 /* ------------------------------ Form Calendar ------------------------*/
 var $calendar ;//= $("#calendar");
 var eventSelector;
-var $deleteReservModal = $("#deleteReservModal");
 
 function deleteReservation(id){
 	$calendar.fullCalendar( 'removeEvents' ,id );
@@ -25,13 +24,10 @@ function renderCalendar(){
 			
 		},
 	    eventClick: function(event) {
-	    	console.log(event);
+//	    	console.log(event);  
 			eventSelector = event;
-			$deleteReservModal.modal('show');
+			$("#deleteReservModal").modal('show');
 			
-			/*---------- event Delete ----------*/
-			
-			/*---------- event Delete ----------*/
 		},
 		eventLimit: true,
 		//lang : 'th',
@@ -60,11 +56,11 @@ $(function (){
 	
 	$('#confirmDeleteReserv').on('click',function(){
 		deleteReservation(eventSelector.id);
-		$deleteReservModal.modal('hide');
+		$("#deleteReservModal").modal('hide');
 	});
 	
 	$('#cancelDeleteReserv').on('click',function(){
-		$deleteReservModal.modal('hide');
+		$("#deleteReservModal").modal('hide');
 	});
 	
 	

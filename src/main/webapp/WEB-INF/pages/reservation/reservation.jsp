@@ -23,15 +23,22 @@
 	</div>
 </div>
 
-<div id="deleteReservModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+
+
+<!-- Modal Delete -->
+		<div class="modal fade" id="deleteReservModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
-    	<div class="modal-header">Confirm delete</div>
-    	<div class="modal-body">Are you sure to delete?</div>
-    	<div class="modal-footer">
-	    	<button id="confirmDeleteReserv" class="form-control btn btn-primary">Yes</button>
-	    	<button id="cancelDeleteReserv" class="form-control btn btn-default">No</button>
-    	</div>
+    <div class="modal-header">
+        <h4 class="modal-title" id="deleteModalLabel">Confirm delete</h4>
+      </div>
+      <div class="modal-body">
+      	Are you sure to delete?
+      </div>
+      <div class="modal-footer">
+      <button type="button" id="cancelDeleteReserv" class="btn btn-default" >No</button>
+      <button type="button" id="confirmDeleteReserv" class="btn btn-primary yesButton">Yes</button>
+      </div>
     </div>
   </div>
-</div>
+</div>    

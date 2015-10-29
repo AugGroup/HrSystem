@@ -12,6 +12,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -35,25 +36,24 @@ public class ReservationController {
 	}
 	
 	@RequestMapping(value="/reservation/ajax/getAllReservation",method=RequestMethod.GET)
-	public @ResponseBody List<ReservationDto> findReservation(@RequestParam(value="start") String start,
+	public @ResponseBody List<ReservationDto> findAllReservation(@RequestParam(value="start") String start,
 			@RequestParam(value="end") String end, @RequestParam(value="_",required = false) String underscore, 
 			@RequestParam(value="timezone",required = false) String timezone) throws ParseException {
-			
 		    System.out.println("start : "+start+"   end : "+end);
-		
-		    
 			List<ReservationDto> reservations = new ArrayList<ReservationDto>();
 			reservations = reservationService.findByDateRange(start, end);
-	
-/*		    Reservation reservation = new Reservation();
-		    reservation.setId(1);
-		    reservation.setName("test");
-			List<Reservation> reservations = Lists.newArrayList(reservation);*/
-		    
-		if (reservations.size()==0) {
+		if (null == reservations) {
+			return null;
+		}else if (reservations.size()==0) {
 			return null;
 		}else {
 			return reservations;
 		}
+	}
+	
+	@RequestMapping(value="/reservation/ajax/getReservation/{id}", method=RequestMethod.GET)
+	public @ResponseBody ReservationDto findReservation(@PathVariable Integer id){
+		ReservationDto reservation = reservationService.findReservationById(id);
+		return reservation;
 	}
 }
