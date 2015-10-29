@@ -14,8 +14,24 @@
 	<div class="row">
 		<div class="col-md-10">
 			<div id="calendar"></div>
-			
+		</div>
+		<div class="col-md-2">
+<!-- 			<div class='draggable' data-event='{"title":"my event"}' /> -->
+		<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
+		
 		</div>
 	</div>
+</div>
 
+<div id="deleteReservModal" class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+  <div class="modal-dialog modal-sm">
+    <div class="modal-content">
+    	<div class="modal-header">Confirm delete</div>
+    	<div class="modal-body">Are you sure to delete?</div>
+    	<div class="modal-footer">
+	    	<button id="confirmDeleteReserv" class="form-control btn btn-primary">Yes</button>
+	    	<button id="cancelDeleteReserv" class="form-control btn btn-default">No</button>
+    	</div>
+    </div>
+  </div>
 </div>
