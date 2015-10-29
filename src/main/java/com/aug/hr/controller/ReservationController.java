@@ -35,7 +35,7 @@ public class ReservationController {
 		return "reservation/reservation";
 	}
 	
-	@RequestMapping(value="/reservation/ajax/getAllReservation",method=RequestMethod.GET)
+	@RequestMapping(value="/reservation/ajax/getAllReservation",method=RequestMethod.POST)
 	public @ResponseBody List<ReservationDto> findAllReservation(@RequestParam(value="start") String start,
 			@RequestParam(value="end") String end, @RequestParam(value="_",required = false) String underscore, 
 			@RequestParam(value="timezone",required = false) String timezone) throws ParseException {
@@ -51,7 +51,7 @@ public class ReservationController {
 		}
 	}
 	
-	@RequestMapping(value="/reservation/ajax/getReservation/{id}", method=RequestMethod.GET)
+	@RequestMapping(value="/reservation/ajax/getReservation/{id}", method=RequestMethod.POST)
 	public @ResponseBody ReservationDto findReservation(@PathVariable Integer id){
 		ReservationDto reservation = reservationService.findReservationById(id);
 		return reservation;

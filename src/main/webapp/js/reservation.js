@@ -26,8 +26,26 @@ function renderCalendar(){
 	    eventClick: function(event) {
 //	    	console.log(event);  
 			eventSelector = event;
-			$("#deleteReservModal").modal('show');
-			
+//			$("#deleteReservModal").modal('show');
+			$.ajax({
+				url : 'reservation/ajax/getReservation/'+event.id,
+				type : 'POST',
+				success: function(data) {
+					console.log(data);
+					$("#reservDetailModal").modal("show");
+					$("#detailRoomName").text(data.roomName);
+					$("#detailDescType").text(data.reservationType);
+					$("#detailDesc").text(data.description);
+					$("#detailDate").text(data.dateReservation);
+					$("#detailStart").text(moment(data.start,"YYYY-MM-DD HH:mm:ss").hours()+":"+moment(data.start,"YYYY-MM-DD HH:mm:ss").minutes());
+					$("#detailEnd").text(moment(data.end,"YYYY-MM-DD HH:mm:ss").hours()+":"+moment(data.end,"YYYY-MM-DD HH:mm:ss").minutes());
+					//$("#detailReservBy").text(data.detailReservBy);
+					$("#detailDivision").text(data.divisionName);
+				},
+				error: function(error) {
+					alert("ERROR");
+				}
+			})
 		},
 		eventLimit: true,
 		//lang : 'th',
@@ -36,7 +54,7 @@ function renderCalendar(){
 		eventSources:[
 			{
 				url : 'reservation/ajax/getAllReservation',
-				type: 'GET',
+				type: 'POST',
 				success: function(data) {
 				},
 				error: function(error) {
