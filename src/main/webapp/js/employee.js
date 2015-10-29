@@ -1426,7 +1426,29 @@ if($('#previousEmployer').val()=="No"){
 				 });
 			
           
-			           
+			   	 //---------------------check Division---------------------
+			   	
+					
+			   	 $("#masDivision").on("change", function(){
+					 
+					 var divSelect = $("#masDivision option:selected").text();
+					 console.log(divSelect);
+					 var find = false;
+					 $(".tags").each(function(){
+						console.log( $(this).val());
+						 if( $(this).val() == divSelect){
+							 find = true;
+							 $("#job-level").show();
+						 }else{
+							 $("#masJoblevel option:selected").val("6");
+							 $("#job-level").hide();
+						 }
+						 
+						 if (find == true) {
+							 return false;
+						 }
+					 })
+				 })     
 			       
 			});
 		

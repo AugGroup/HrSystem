@@ -30,6 +30,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.CustomDateEditor;
 import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.WebDataBinder;
@@ -55,9 +56,11 @@ import com.aug.hrdb.services.EmployeeCodeDtoService;
 import com.aug.hrdb.services.EmployeeIdDtoService;
 import com.aug.hrdb.services.LeaveDtoService;
 import com.aug.hrdb.dto.AddressDto;
+import com.aug.hrdb.dto.DivisionDto;
 import com.aug.hrdb.dto.EmployeeCodeDto;
 import com.aug.hrdb.dto.EmployeeDto;
 import com.aug.hrdb.dto.EmployeeListDto;
+import com.aug.hrdb.dto.JoblevelDto;
 import com.aug.hrdb.dto.ReportEmployeeDto;
 import com.aug.hrdb.dto.ReportLeaveDto;
 import com.aug.hrdb.dto.ReportStatusEmployeeDto;
@@ -1174,6 +1177,12 @@ public class EmployeeController {
 	@ModelAttribute("applicant")
 	Applicant setupApplicant() {
 		return new Applicant();
+	}
+	
+	@ModelAttribute("checktagsDivision")
+	@Transactional
+	public List<DivisionDto> tagList(){	
+		return employeeService.checkTag("B");
 	}
 
 }
