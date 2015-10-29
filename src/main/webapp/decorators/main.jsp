@@ -98,8 +98,8 @@
 <link href="<c:url value="/resource/fullCalendar/fullcalendar.css" />" rel="stylesheet" media="all">
 <link href="<c:url value="/resource/fullCalendar/fullcalendar.print.css" />" rel="stylesheet" media="print">
 <link href="<c:url value="/resource/fullCalendar/lib/cupertino/jquery-ui.min.css" />" rel="stylesheet" media="all">
-<script src="<c:url value="/resource/fullCalendar/fullcalendar.min.js" />"></script>
 <script src="<c:url value="/resource/moment/js/moment-timezone.js" />"></script>
+<script src="<c:url value="/resource/fullCalendar/fullcalendar.min.js" />"></script>
 <script src="<c:url value="/resource/fullCalendar/lang/lang-all.js" />"></script>
 
 
