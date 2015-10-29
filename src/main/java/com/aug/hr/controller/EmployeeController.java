@@ -1169,6 +1169,11 @@ public class EmployeeController {
 		return employeeLeaveList;
 	}
 
+	@RequestMapping(value = "/employee/division/{id}", method = RequestMethod.GET)
+	public @ResponseBody String findByIdDivision(@PathVariable Integer id) {	
+		return employeeService.findByIdDivision(id);
+	}
+	
 	@ModelAttribute("employee")
 	Employee setupForm() {
 		return new Employee();
@@ -1185,4 +1190,5 @@ public class EmployeeController {
 		return employeeService.checkTag("B");
 	}
 
+	
 }

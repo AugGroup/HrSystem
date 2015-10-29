@@ -5,6 +5,7 @@ var dataUpdate;
 var getIndex = 0;
 
 	$(document).ready(function() {
+		 		
 		new jQueryCollapse($("#collapse-show-hide-info"), {
 		      open: function() {
 		        this.slideDown(300);
@@ -1430,9 +1431,10 @@ if($('#previousEmployer').val()=="No"){
 			   	
 					
 			   	 $("#masDivision").on("change", function(){
-					 
+					 var $id = $("#masDivision").val();
 					 var divSelect = $("#masDivision option:selected").text();
 					 console.log(divSelect);
+					 getTagDivision($id)
 					 var find = false;
 					 $(".tags").each(function(){
 						console.log( $(this).val());
@@ -1448,8 +1450,19 @@ if($('#previousEmployer').val()=="No"){
 							 return false;
 						 }
 					 })
-				 })     
-			       
+				 })   
+				 
+				
+				 function getTagDivision(id){
+						
+						$.ajax({
+							url : $getContextPath+"/employee/division/"+id,
+							type : "GET",
+							success : function(data) {
+								console.log(data);
+							} 
+						}); 
+				 }  
 			});
 		
 
