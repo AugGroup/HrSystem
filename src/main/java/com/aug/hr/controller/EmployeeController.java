@@ -1173,6 +1173,11 @@ public class EmployeeController {
 	public @ResponseBody String findByIdDivision(@PathVariable Integer id) {	
 		return employeeService.findByIdDivision(id);
 	}
+
+	@RequestMapping(value = "/employee/joblevel/{tagJob}", method = RequestMethod.GET)
+	public @ResponseBody List<JoblevelDto> findTagJoblevel(@PathVariable String tagJob) {	
+		return employeeService.checkTagDivision(tagJob);
+	}
 	
 	@ModelAttribute("employee")
 	Employee setupForm() {

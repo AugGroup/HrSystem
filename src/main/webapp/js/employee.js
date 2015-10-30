@@ -963,7 +963,7 @@ if($('#previousEmployer').val()=="No"){
 							 
 							 var appId = $('#appId').val();
 							 
-							// alert("app: "+appId);
+							 /*console.log("app: "+appId);*/
 							 
 							 var id=0;
 							 var status="add";
@@ -1428,28 +1428,21 @@ if($('#previousEmployer').val()=="No"){
 			
           
 			   	 //---------------------check Division---------------------
-			   	
+			   if($("#masDivision").val()!=""){
+				  // $('select option[value='+$("#masDivision").val()+']').attr("selected",true);
 					
+				   console.log("Division"+$("#masDivision").val());
+				   initTagDivision($("#masDivision").val());
+			   }
+			   	
+			   	
 			   	 $("#masDivision").on("change", function(){
 					 var $id = $("#masDivision").val();
 					 var divSelect = $("#masDivision option:selected").text();
 					 console.log(divSelect);
-					 getTagDivision($id)
+					 getTagDivision($id);
 					 var find = false;
-					 $(".tags").each(function(){
-						console.log( $(this).val());
-						 if( $(this).val() == divSelect){
-							 find = true;
-							 $("#job-level").show();
-						 }else{
-							 $("#masJoblevel option:selected").val("6");
-							 $("#job-level").hide();
-						 }
-						 
-						 if (find == true) {
-							 return false;
-						 }
-					 })
+					 
 				 })   
 				 
 				
@@ -1459,10 +1452,62 @@ if($('#previousEmployer').val()=="No"){
 							url : $getContextPath+"/employee/division/"+id,
 							type : "GET",
 							success : function(data) {
-								console.log(data);
+								getTagJoblevel(data);
 							} 
 						}); 
 				 }  
+			   	 
+			   	function getTagJoblevel(tagJob){
+				   		console.log(">>>>>>>>>>"+tagJob);
+						$.ajax({
+							url : $getContextPath+"/employee/joblevel/"+tagJob,
+							type : "GET",
+							success : function(data) {
+					
+								 $('#masJoblevel').html('');
+								for(var i in data){
+								     $('#masJoblevel')
+								         .append($("<option></option>")
+								         .attr("value",data[i].jobId)
+								         .text(data[i].jobName)); 
+								}
+								
+								
+							} 
+						}); 
+					} 
+			   	
+				    function initTagDivision(id){
+						
+							$.ajax({
+								url : $getContextPath+"/employee/division/"+id,
+								type : "GET",
+								success : function(data) {
+									initTagJoblevel(data);
+								} 
+							}); 
+					 } 
+				    
+					function initTagJoblevel(tagJob){
+						$.ajax({
+							url : $getContextPath+"/employee/joblevel/"+tagJob,
+							type : "GET",
+							success : function(data) {
+								var job = $("#masJoblevel").val();
+								console.log("job :"+job);
+								$('#masJoblevel').html('');
+								for(var i in data){
+								     $('#masJoblevel')
+								         .append($("<option></option>")
+								         .attr("value",data[i].jobId)
+								         .text(data[i].jobName)); 
+								}
+								
+								$('select option[value='+job+']').attr("selected",true);
+								
+							} 
+						}); 
+					} 
 			});
 		
 
