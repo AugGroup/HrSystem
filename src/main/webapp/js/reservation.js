@@ -168,7 +168,7 @@ function renderCalendar(){
 					$("#detailDate").text(moment(data.dateReservation).format("DD-MM-YYYY"));
 					$("#detailStart").text(moment(data.start,"YYYY-MM-DD HH:mm:ss").format("HH:mm"));
 					$("#detailEnd").text(moment(data.end,"YYYY-MM-DD HH:mm:ss").format("HH:mm"));
-					//$("#detailReservBy").text(data.detailReservBy);
+					$("#detailReservBy").text(data.reservedBy);
 					$("#detailDivision").text(data.divisionName);
 					$("#reservDetailModal").modal("show");
 				},
@@ -213,7 +213,7 @@ function renderCalendar(){
 }
 $(function (){
 	renderCalendar();
-	
+	$(".editReservData").hide();
 	
 	$('#confirmDeleteReserv').on('click', function(){
 		deleteReservation(eventSelector.id);
@@ -225,6 +225,33 @@ $(function (){
 		$("#deleteReservModal").modal('hide');
 	});
 	
+	$("#editReservBtn").on('click', function(){
+		$(".showReservData").hide();
+		$(".editReservData").show();
+		$(this).hide();
+		$("#saveEditReservBtn").show();
+		
+		$("#description").text($("#detailDesc").text());
+		$("#editdetailReservBy").val($("#detailReservBy").text());
+		$("#editdetailRoomName").val($("#detailRoomName").text());
+		
+	});
+	
+	$('#reservDetailModal').on('hide.bs.modal', function (e) {
+	  // do something...
+		$(".showReservData").show();
+		$(".editReservData").hide();
+		
+	})
+	$("#cancelEditReservBtn").on('click', function(){
+		$(".showReservData").show();
+		$(".editReservData").hide();
+	})
+	
+	$("#saveEditReservBtn").on('click', function(){
+//		$(this).hide();
+//		$("#editReservBtn").show();
+	});
 	
 	$("#insBtn").on('click',function(){
 		if( $('#formInsert').valid() ) {
