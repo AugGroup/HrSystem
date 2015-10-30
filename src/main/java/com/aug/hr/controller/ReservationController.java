@@ -98,6 +98,7 @@ public class ReservationController {
 		reservation.setEmployee(employeeService.findById(1));
 		reservation.setMasreservationtype(masReservationTypeService.findById(1));
 		reservation.setRoom(roomService.findById(1));
+		
 		reservationService.create(reservation);
 		//reservationService.find
 //		/*                                  Get Who's Appoint                                  */		
