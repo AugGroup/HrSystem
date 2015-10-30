@@ -15,7 +15,7 @@
 		</div>
 		<div class="col-md-2">
 <!-- 			<div class='draggable' data-event='{"title":"my event"}' /> -->
-		<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button>
+<!-- 		<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button> -->
 		
 		</div>
 	</div>
@@ -61,8 +61,8 @@
       	</div>
       </div>
       <div class="modal-footer">
+        <button id="delModalBtn" type="button" class="btn btn-danger">Delete</button>
         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
       </div>
     </div>
   </div>

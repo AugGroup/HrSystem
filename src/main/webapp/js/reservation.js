@@ -6,7 +6,72 @@
 var $calendar ;//= $("#calendar");
 var eventSelector;
 
+function updateAppointmentDate(eventToUpdate, revertParam){
+	alertify.set({ 	buttonReverse: true,
+		labels: {
+		    ok     : 'yes',
+		    cancel : 'no'
+		}
+	});	
+	
+	alertify.confirm('Do you want to update?', function (e) {
+	    if (e) { // user click confirm
+	    	var updatedata = {
+				id : eventToUpdate.id, 
+				start : eventToUpdate.start.tz("Asia/Bangkok").format("YYYY-MM-DD HH:mm:ss"), 
+				end : eventToUpdate.end.tz("Asia/Bangkok").format("YYYY-MM-DD HH:mm:ss")
+		    };
+
+	    	console.log(updatedata);
+	    	$.ajax({
+	    		url:"reservation/ajax/updateDateTime",
+	    		type: "POST",
+	    		contentType : "application/json",
+	    		data : JSON.stringify(updatedata),
+	    		dataType : "json",
+	    		success: function(result){
+//	    			new PNotify({
+//	    				title: pnotifySuccess,
+//	    			    text: result.title +"<br>" + pnotifyEdit,
+//	    			    type: 'success',
+//	    			    delay: 1000,
+//	    			});
+	    			var view = $calendar.fullCalendar('getView');//get view object
+	    			$calendar.fullCalendar( 'destroy' );
+	    			renderCalendar();
+	    			$calendar.fullCalendar('changeView', view.name);
+	    			$calendar.fullCalendar( 'gotoDate', result.start );
+//    				findNoEmailUpdate();
+//    				findEmailSent();
+//    				setEmailAlert();
+	    		},
+	    		
+	    		error:function (jqXHR, textStatus, error){
+	    	       // alert('Update error'); 
+	    			console.log(error);
+	    	    }  
+	    	});
+	    	
+	    } else {
+	        // user clicked "cancel"
+	    	revertParam();
+	    }
+	});	
+}
+
 function deleteReservation(id){
+	$.ajax({
+		url : 'reservation/ajax/deleteReservation/'+id,
+		type : 'POST',
+		contentType : "application/json",
+		success: function(result){
+			//alert(result);
+		},
+		error:function(error){
+			alert(error);
+		}
+	})
+	
 	$calendar.fullCalendar( 'removeEvents' ,id );
 }
 
@@ -42,21 +107,20 @@ function renderCalendar(){
 	    eventClick: function(event) {
 //	    	console.log(event);  
 			eventSelector = event;
-//			$("#deleteReservModal").modal('show');
 			$.ajax({
 				url : 'reservation/ajax/getReservation/'+event.id,
 				type : 'POST',
 				success: function(data) {
 					console.log(data);
-					$("#reservDetailModal").modal("show");
 					$("#detailRoomName").text(data.roomName);
 					$("#detailDescType").text(data.reservationType);
 					$("#detailDesc").text(data.description);
 					$("#detailDate").text(data.dateReservation);
 					$("#detailStart").text(moment(data.start,"YYYY-MM-DD HH:mm:ss").hours()+":"+moment(data.start,"YYYY-MM-DD HH:mm:ss").minutes());
 					$("#detailEnd").text(moment(data.end,"YYYY-MM-DD HH:mm:ss").hours()+":"+moment(data.end,"YYYY-MM-DD HH:mm:ss").minutes());
-					//$("#detailReservBy").text(data.detailReservBy);
+					$("#detailReservBy").text(data.reservedBy);
 					$("#detailDivision").text(data.divisionName);
+					$("#reservDetailModal").modal("show");
 				},
 				error: function(error) {
 					alert("ERROR");
@@ -77,7 +141,20 @@ function renderCalendar(){
 					alert("ERROR");
 				}
 		    }
-		]
+		],
+		editable : true,
+		eventDrop: function(event, delta, revertFunc) {
+			if(event.start.format("YYYY-MM-DD-HH-mm") < moment().format("YYYY-MM-DD-HH-mm")){
+				alertify.alert('cant edit');
+				revertFunc();
+			}else{
+				updateAppointmentDate(event, revertFunc);
+				//alert("move");
+			}
+	    },
+	    eventResize: function(event, delta, revertFunc) {
+	    	updateAppointmentDate(event, revertFunc);
+	    },
 			
 		
 		
@@ -88,15 +165,17 @@ $(function (){
 	renderCalendar();
 	
 	
-	$('#confirmDeleteReserv').on('click',function(){
+	$('#confirmDeleteReserv').on('click', function(){
 		deleteReservation(eventSelector.id);
 		$("#deleteReservModal").modal('hide');
+		$("#reservDetailModal").modal("hide");
 	});
 	
-	$('#cancelDeleteReserv').on('click',function(){
+	$('#cancelDeleteReserv').on('click', function(){
 		$("#deleteReservModal").modal('hide');
 	});
 	
+<<<<<<< HEAD
 	
 	$("#insBtn").on('click',function(){
 
@@ -152,4 +231,9 @@ $(function (){
 				}
 			});//end ajax
 	})//endonclick 'insBtn'
+=======
+	$('#delModalBtn').on('click', function(){
+		$("#deleteReservModal").modal('show');
+	})
+>>>>>>> add reservarion delete, reservation date-time update
 })

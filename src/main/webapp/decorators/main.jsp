@@ -25,6 +25,11 @@
 <link href="<c:url value="/resource/bootstrapvalidator/dist/css/bootstrapValidator.css" />" rel="stylesheet" media="all">
 <script src="<c:url value="/resource/bootstrapvalidator/dist/js/bootstrapValidator.js" />"></script>
 
+<!-- alertify.js -->
+<link href="<c:url value="/resource/alertify/css/alertify.core.css" />" rel="stylesheet">
+<link href="<c:url value="/resource/alertify/css/alertify.bootstrap.css" />" rel="stylesheet">
+<script src="<c:url value="/resource/alertify/js/alertify.js" />"></script>
+
 <!-- JQuery Validator -->
 <%-- <script src="<c:url value="/resource/jqueryvalidate/jquery.js" />"></script>--%>
 <script src="<c:url value="/resource/jqueryvalidate/jquery.validate.min.js" />"></script> 
@@ -88,12 +93,6 @@
 <!-- Favicon Logo Tittle-->
 <link rel="shortcut icon" type="image/x-icon" href="${ pageContext.request.contextPath }/resource/images/favicon.ico">
 
-<!-- Alertify Plugin -->
-<%-- <script src="<c:url value="/resource/alertify/js/alertify.min.js" />"></script>
-<link href="<c:url value="/resource/alertify/css/alertify.core.css" />" rel="stylesheet" media="all">
-<link href="<c:url value="/resource/alertify/css/alertify.default.css" />" rel="stylesheet" media="all"> 
-<link href="<c:url value="/resource/alertify/css/alertify.bootstrap.css" />" rel="stylesheet" media="all"> --%>
-
 <!-- Full Calendar -->
 <link href="<c:url value="/resource/fullCalendar/fullcalendar.css" />" rel="stylesheet" media="all">
 <link href="<c:url value="/resource/fullCalendar/fullcalendar.print.css" />" rel="stylesheet" media="print">
@@ -101,7 +100,6 @@
 <script src="<c:url value="/resource/moment/js/moment-timezone.js" />"></script>
 <script src="<c:url value="/resource/fullCalendar/fullcalendar.min.js" />"></script>
 <script src="<c:url value="/resource/fullCalendar/lang/lang-all.js" />"></script>
-
 
 
 <style >

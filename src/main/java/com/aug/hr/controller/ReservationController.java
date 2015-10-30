@@ -6,15 +6,9 @@
 
 package com.aug.hr.controller;
 
-import java.text.DateFormat;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.List;
-import java.util.Locale;
-import java.util.TimeZone;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -25,6 +19,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.aug.hrdb.dto.AppointmentDto;
 import com.aug.hrdb.dto.ReservationDto;
 import com.aug.hrdb.entities.Reservation;
 import com.aug.hrdb.services.ReservationService;
@@ -139,4 +134,31 @@ public class ReservationController {
 		
 		return reservationService.findReservationById(reservation.getId());
 	}
+
+	@RequestMapping(value="/reservation/ajax/updateDateTime", method=RequestMethod.POST)
+	public @ResponseBody ReservationDto updateGetDateTime(@RequestBody Reservation reservation){
+		Reservation reservationToUpdate = reservationService.findById(reservation.getId());
+		reservationToUpdate.setId(reservation.getId());
+		reservationToUpdate.setDateReservation(reservation.getStart());
+		reservationToUpdate.setStart(reservation.getStart());
+		reservationToUpdate.setEnd(reservation.getEnd());
+		reservationService.update(reservationToUpdate);
+		return reservationService.findReservationById(reservation.getId());
+	}
+	
+	@RequestMapping(value = "/reservation/ajax/deleteReservation/{id}", method = RequestMethod.POST)
+	public @ResponseBody String deleteReservation(@PathVariable Integer id) {
+		AppointmentDto appointment ;
+		ReservationDto reservationDto;
+		String returnTitle ;
+		try{
+			reservationDto = reservationService.findReservationById(id);
+			returnTitle = reservationDto.getTitle();
+		}catch(Exception e){
+			return e.getMessage();
+		}
+		reservationService.deleteById(id);
+	return returnTitle;
+	}
+	
 }
