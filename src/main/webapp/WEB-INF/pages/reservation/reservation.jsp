@@ -32,15 +32,15 @@
       	<div class="container-fluid">
       		<div class="row">
       			<div class="col-offset-md-1 col-md-2"><h4>Room</h4></div>
-      			<div class="col-md-7 col-offset-md-1"><h4 id="detailRoomName"></h4></div>
+      			<div class="col-md-7 col-offset-md-1"><h4 id="detailRoomName" class="showReservData"></h4></div>
       		</div>
       		<div class="row">
       			<div class="col-offset-md-1 col-md-2"><h4>For</h4></div>
-      			<div class="col-md-7 col-offset-md-1"><h4 id="detailDescType"></h4></div>
+      			<div class="col-md-7 col-offset-md-1"><h4 id="detailDescType" class="showReservData"></h4></div>
       		</div>
       		<div class="row">
       			<div class="col-offset-md-1 col-md-2"><h4>Description</h4></div>
-      			<div class="col-md-7 col-offset-md-1"><h4 id="detailDesc"></h4></div>
+      			<div class="col-md-7 col-offset-md-1"><h4 id="detailDesc" class="showReservData"></h4></div>
       		</div>
       		<div class="row">
       			<div class="col-offset-md-1 col-md-2"><h4>Date</h4></div>
@@ -54,9 +54,9 @@
       		</div>
       		<div class="row">
       			<div class="col-offset-md-1 col-md-2"><h4>By</h4></div>
-      			<div class="col-md-3"><h4 id="detailReservBy"></h4></div>
+      			<div class="col-md-3"><h4 id="detailReservBy" class="showReservData"></h4></div>
       			<div class="col-md-2"><h4>Division</h4></div>
-      			<div class="col-md-3 col-offset-md-1"><h4 id="detailDivision"></h4></div>
+      			<div class="col-md-3 col-offset-md-1"><h4 id="detailDivision" class="showReservData"></h4></div>
       		</div>
       	</div>
       </div>
