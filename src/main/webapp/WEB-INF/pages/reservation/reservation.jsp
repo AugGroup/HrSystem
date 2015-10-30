@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@taglib uri="http://www.springframework.org/tags/form" prefix="f"%>
 
 <!-- Reservation css -->
 <link href="<c:url value="/resources/css/reservation.css" />" rel="stylesheet" media="all">
@@ -32,15 +33,29 @@
       	<div class="container-fluid">
       		<div class="row">
       			<div class="col-offset-md-1 col-md-2"><h4>Room</h4></div>
-      			<div class="col-md-7 col-offset-md-1"><h4 id="detailRoomName" class="showReservData"></h4></div>
+      			<div class="col-md-7 col-offset-md-1">
+      			<h4 id="detailRoomName" class="showReservData"></h4>
+      			<select name="room" id="room" class="form-control editReservData">
+					<option value="">Please select</option>
+					<c:forEach items="${rooms}" var="room">
+						<option value="${room.id}">${room.name} </option>
+					</c:forEach>
+				</select>
+      			</div>
       		</div>
       		<div class="row">
       			<div class="col-offset-md-1 col-md-2"><h4>For</h4></div>
-      			<div class="col-md-7 col-offset-md-1"><h4 id="detailDescType" class="showReservData"></h4></div>
+      			<div class="col-md-7 col-offset-md-1">
+      			<h4 id="detailDescType" class="showReservData"></h4>
+      			<input id="editdetailDescType" class="form-control editReservData"/>
+      			</div>
       		</div>
       		<div class="row">
       			<div class="col-offset-md-1 col-md-2"><h4>Description</h4></div>
-      			<div class="col-md-7 col-offset-md-1"><h4 id="detailDesc" class="showReservData"></h4></div>
+      			<div class="col-md-7 col-offset-md-1">
+      			<h4 id="detailDesc" class="showReservData"></h4>
+      			<input id="editdetailDesc" class="form-control editReservData"/>
+      			</div>
       		</div>
       		<div class="row">
       			<div class="col-offset-md-1 col-md-2"><h4>Date</h4></div>
@@ -54,9 +69,15 @@
       		</div>
       		<div class="row">
       			<div class="col-offset-md-1 col-md-2"><h4>By</h4></div>
-      			<div class="col-md-3"><h4 id="detailReservBy" class="showReservData"></h4></div>
+      			<div class="col-md-3">
+      			<h4 id="editdetailReservBy" class="showReservData"></h4>
+      			<input id="editdetailReservBy" class="form-control editReservData"/>
+      			</div>
       			<div class="col-md-2"><h4>Division</h4></div>
-      			<div class="col-md-3 col-offset-md-1"><h4 id="detailDivision" class="showReservData"></h4></div>
+      			<div class="col-md-3 col-offset-md-1">
+      			<h4 id="detailDivision" class="showReservData"></h4>
+      			<>
+      			</div>
       		</div>
       	</div>
       </div>
@@ -144,15 +165,6 @@
 	        				<input id="reservationBy" class="form-control" placeholder="Reservation By" name="reservationBy"  ></input>
 	        			</div>
 	        		
-	        		<div class="col-md-6">
-							<label for="masDivision">Division</label> 
-							<select name="masDivision" id="masDivision" class="form-control">
-								<option value="">Please select</option>
-								<c:forEach items="${divisions}" var="masDivision">
-										<option value="${masDivision.id}">${masDivision.name} </option>
-								</c:forEach>
-							</select>
-					</div>
 					</div>
 					<br>
 					<div class="row">	
