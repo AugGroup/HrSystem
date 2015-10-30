@@ -6,9 +6,15 @@
 
 package com.aug.hr.controller;
 
+import java.text.DateFormat;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
+import java.util.Locale;
+import java.util.TimeZone;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,10 +29,12 @@ import com.aug.hrdb.dto.AppointmentDto;
 import com.aug.hrdb.dto.ReservationDto;
 import com.aug.hrdb.entities.Reservation;
 import com.aug.hrdb.services.ReservationService;
+import com.aug.hrdb.entities.MasDivision;
 import com.aug.hrdb.entities.MasReservationType;
 import com.aug.hrdb.entities.Room;
 import com.aug.hrdb.services.EmployeeService;
 import com.aug.hrdb.services.LoginService;
+import com.aug.hrdb.services.MasDivisionService;
 import com.aug.hrdb.services.MasReservationTypeService;
 import com.aug.hrdb.services.RoomService;
 
@@ -47,12 +55,20 @@ public class ReservationController {
 	private RoomService roomService;
 	
 	@Autowired
+	private MasDivisionService masDivisionService;
+	
+	@Autowired
 	private MasReservationTypeService masReservationTypeService;
 
 	
 	@ModelAttribute("rooms")
 	public List<Room> roomList(){
 		return roomService.findAll();
+	}
+	
+	@ModelAttribute("divisions")
+	public List<MasDivision> masDivisionsList(){
+		return masDivisionService.findAll();
 	}
 	
 	@ModelAttribute("reservationTypes")
@@ -90,47 +106,37 @@ public class ReservationController {
 	@RequestMapping(value="/reservation/insertReservation",method=RequestMethod.POST)
 	public @ResponseBody ReservationDto insertReservation(@RequestBody Reservation reservation) {
 		
-		reservation.setEmployee(employeeService.findById(1));
 		reservation.setMasreservationtype(masReservationTypeService.findById(1));
-		reservation.setRoom(roomService.findById(1));
+	
+		/*                Change time for insert                      */
+		Date dateStart = reservation.getStart();//get date from calendar
+		Date dateEnd = reservation.getEnd();
+		DateFormat formatterDate = new SimpleDateFormat("yyyy-MM-dd",Locale.ENGLISH);
 		
-		reservationService.create(reservation);
-		//reservationService.find
-//		/*                                  Get Who's Appoint                                  */		
-//		UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
-//		//System.out.println("userName : " + userDetails.getUsername());
-//		Login login = loginService.findByUserName(userDetails.getUsername());
-//		reservation.setLogin(login);//set login Id
-//		
-//		/*                Change time for insert                      */
-//		Date dateStart = reservation.getStart();//get date from calendar
-//		Date dateEnd = reservation.getEnd();
-//		
-//		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss",Locale.ENGLISH);
-//		formatter.setTimeZone(TimeZone.getTimeZone("GMT"));//set Timezone to be GMT
-//		
-//		String startString = formatter.format(dateStart);//convert date's timezone but it return String
-//		String endString = formatter.format(dateEnd);
-//		
-//		DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);//new format to convert String to Date
-//		try {
-//			//System.out.println(format.parse(startString));
-//			reservation.setStart(format.parse(startString));//set date with new timezone 
-//		} catch (ParseException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-//		try {
-//			//System.out.println(format.parse(endString));
-//			reservation.setEnd(format.parse(endString));
-//		} catch (ParseException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-////		reservation.setEmployee(employeeService.findById(id));
-//		reservationService.create(reservation);
-//		//System.out.println(appointment.getApplicant().getId());
+		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss",Locale.ENGLISH);
+		formatter.setTimeZone(TimeZone.getTimeZone("GMT"));//set Timezone to be GMT
+		
+		String startString = formatter.format(dateStart);//convert date's timezone but it return String
+		String endString = formatter.format(dateEnd);
+		
+		DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);//new format to convert String to Date
+		try {
+			//System.out.println(format.parse(startString));
+			reservation.setStart(format.parse(startString));//set date with new timezone 
+			reservation.setDateReservation(reservation.getStart());
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		try {
+			//System.out.println(format.parse(endString));
+			reservation.setEnd(format.parse(endString));
+		} catch (ParseException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		reservationService.create(reservation);	
 		
 		return reservationService.findReservationById(reservation.getId());
 	}

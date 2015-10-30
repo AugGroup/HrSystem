@@ -111,14 +111,16 @@ function renderCalendar(){
 				url : 'reservation/ajax/getReservation/'+event.id,
 				type : 'POST',
 				success: function(data) {
+
 					console.log(data);
+					$("#reservDetailModal").modal("show");
 					$("#detailRoomName").text(data.roomName);
 					$("#detailDescType").text(data.reservationType);
 					$("#detailDesc").text(data.description);
-					$("#detailDate").text(data.dateReservation);
-					$("#detailStart").text(moment(data.start,"YYYY-MM-DD HH:mm:ss").hours()+":"+moment(data.start,"YYYY-MM-DD HH:mm:ss").minutes());
-					$("#detailEnd").text(moment(data.end,"YYYY-MM-DD HH:mm:ss").hours()+":"+moment(data.end,"YYYY-MM-DD HH:mm:ss").minutes());
-					$("#detailReservBy").text(data.reservedBy);
+					$("#detailDate").text(moment(data.dateReservation).format("DD-MM-YYYY"));
+					$("#detailStart").text(moment(data.start,"YYYY-MM-DD HH:mm:ss").format("HH:mm"));
+					$("#detailEnd").text(moment(data.end,"YYYY-MM-DD HH:mm:ss").format("HH:mm"));
+					//$("#detailReservBy").text(data.detailReservBy);
 					$("#detailDivision").text(data.divisionName);
 					$("#reservDetailModal").modal("show");
 				},
@@ -181,11 +183,12 @@ $(function (){
 //		insTitle = $("#applicantName option:selected").text();
 
 		var reservation = { 
-//				reservationBy : $("#reservationBy").val(),
+				reservationBy : $("#reservationBy").val(),
+				masDivision : {id:$("#masDivision option:selected").val()},
 				description : $("#description").val(),
 				start: insStartTime.tz("Asia/Bangkok").format("YYYY-MM-DD HH:mm:ss"),
 				end : insEndTime.tz("Asia/Bangkok").format("YYYY-MM-DD HH:mm:ss"),
-				employee :{id:2},
+			//	employee :{id:2},
 				room : {id:$("#room option:selected").val()},
 				masreservationtype	: { id : $("#reservationType option:selected").val()}
 		};
@@ -200,14 +203,16 @@ $(function (){
 				dataType : "json",
 				data : JSON.stringify(reservation),
 				success : function(data){
-					alert('success');
+					console.log(data.dateReservation);
 					insData = {
 						id : data.id,
-						employee : {"id":data.id},
-//						reservationBy : data.reservationBy,
+						title : data.title,
+			//			employee : {"id":data.id},
+						reservationBy : data.reservationBy,
+						masDivision : data.masDivision,
 						description : data.description,
-						start : new Date(data.start),
-						end : new Date(data.end),
+						start : moment(data.start),
+						end : moment(data.end),
 						room :{"id":data.id},
 						reservationType :{"id":data.id},
 						color: '#FF4512'

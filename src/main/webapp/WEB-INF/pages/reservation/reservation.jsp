@@ -144,6 +144,15 @@
 	        				<input id="reservationBy" class="form-control" placeholder="Reservation By" name="reservationBy"  ></input>
 	        			</div>
 	        		
+	        		<div class="col-md-6">
+							<label for="masDivision">Division</label> 
+							<select name="masDivision" id="masDivision" class="form-control">
+								<option value="">Please select</option>
+								<c:forEach items="${divisions}" var="masDivision">
+										<option value="${masDivision.id}">${masDivision.name} </option>
+								</c:forEach>
+							</select>
+					</div>
 					</div>
 					<br>
 					<div class="row">	
