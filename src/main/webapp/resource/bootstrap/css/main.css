@@ -5,7 +5,7 @@
       padding: 0;
 }
     
-.error {
+label.error {
 	color: #ff0000;
 	padding-left: 5px;
 	font-family: Dosis-Regular;

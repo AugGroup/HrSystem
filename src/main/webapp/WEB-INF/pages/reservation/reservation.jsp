@@ -5,8 +5,6 @@
 <!-- Reservation css -->
 <link href="<c:url value="/resources/css/reservation.css" />" rel="stylesheet" media="all">
 
-<!-- Reservation Controller -->
-<script src="<c:url value="/resources/js/reservation.js" />"></script>
 
 <div class="container-fluid">
 	<div class="row">
@@ -119,7 +117,7 @@
 						<div class="col-md-6">
 							<label for="room">Room</label> 
 							<select name="room" id="room" class="form-control">
-								<option value="">Please select</option>
+								<option value="">--- Please Select Room ---</option>
 								<c:forEach items="${rooms}" var="room">
 										<option value="${room.id}">${room.name} </option>
 									</c:forEach>
@@ -129,7 +127,7 @@
 						<div class="col-md-6">
 								<label for="reservationType">Reservation Type</label> 
 								<select id="reservationType" class="form-control" name = "reservationType">
-									<option value="">Please select</option>
+									<option value="">--- Please Select Reservation Type ---</option>
 									<c:forEach items="${reservationTypes}" var="masreservationtype">
 										<option value="${masreservationtype.id}">${masreservationtype.name} </option>
 									</c:forEach>
@@ -147,7 +145,7 @@
 	        		<div class="col-md-6">
 							<label for="masDivision">Division</label> 
 							<select name="masDivision" id="masDivision" class="form-control">
-								<option value="">Please select</option>
+								<option value="">--- Please Select Division ---</option>
 								<c:forEach items="${divisions}" var="masDivision">
 										<option value="${masDivision.id}">${masDivision.name} </option>
 								</c:forEach>
@@ -172,4 +170,11 @@
 	    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
-</div>
+
+
+
+<!-- jQueryValidate -->
+<script type="text/javascript" src="${pageContext.request.contextPath}/resource/jqueryvalidate/jquery.validate.min.js"></script>
+
+<!-- Reservation JS -->
+<script src="<c:url value="/resources/js/reservation.js" />"></script>
