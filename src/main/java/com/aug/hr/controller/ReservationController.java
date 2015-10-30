@@ -148,7 +148,6 @@ public class ReservationController {
 	
 	@RequestMapping(value = "/reservation/ajax/deleteReservation/{id}", method = RequestMethod.POST)
 	public @ResponseBody String deleteReservation(@PathVariable Integer id) {
-		AppointmentDto appointment ;
 		ReservationDto reservationDto;
 		String returnTitle ;
 		try{

@@ -175,7 +175,6 @@ $(function (){
 		$("#deleteReservModal").modal('hide');
 	});
 	
-<<<<<<< HEAD
 	
 	$("#insBtn").on('click',function(){
 
@@ -231,9 +230,8 @@ $(function (){
 				}
 			});//end ajax
 	})//endonclick 'insBtn'
-=======
+	
 	$('#delModalBtn').on('click', function(){
 		$("#deleteReservModal").modal('show');
 	})
->>>>>>> add reservarion delete, reservation date-time update
 })
