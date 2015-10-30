@@ -25,7 +25,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.aug.hrdb.dto.AppointmentDto;
 import com.aug.hrdb.dto.ReservationDto;
 import com.aug.hrdb.entities.Reservation;
 import com.aug.hrdb.services.ReservationService;
@@ -106,7 +105,6 @@ public class ReservationController {
 	@RequestMapping(value="/reservation/insertReservation",method=RequestMethod.POST)
 	public @ResponseBody ReservationDto insertReservation(@RequestBody Reservation reservation) {
 		
-		reservation.setMasreservationtype(masReservationTypeService.findById(1));
 	
 		/*                Change time for insert                      */
 		Date dateStart = reservation.getStart();//get date from calendar

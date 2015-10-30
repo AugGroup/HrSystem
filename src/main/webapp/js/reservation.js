@@ -6,6 +6,54 @@
 var $calendar ;//= $("#calendar");
 var eventSelector;
 
+//     ------------------- JQuery Validate-----------------------
+
+jQuery.validator.addMethod("lettersonly", function(value, element) {
+	return this.optional(element) || /^[a-z," ",ก-๋]+$/i.test(value);
+	}, "Letters only please.");
+
+var $validform = $("#formInsert").validate({			
+	rules:{
+		room:{
+			required:true
+		},
+		reservationType:{
+			required:true
+		},
+		reservationBy: {
+			required:true,
+			lettersonly: true
+		},
+		masDivision: {
+			required:true
+		},
+		description: {
+			required:true
+		}
+	},
+	
+	messages: {
+		room:{
+			required: "Please select room."
+		},
+		reservationType:{
+			required: "Please select reservation type."
+		},
+		reservationBy:{
+			required: "Reservation by is required.",
+		},
+		masDivision:{
+			required: "Please select division."
+		},
+		description:{
+			required: "Description is required."
+		}
+		
+	},
+	
+	
+});
+
 function updateAppointmentDate(eventToUpdate, revertParam){
 	alertify.set({ 	buttonReverse: true,
 		labels: {
@@ -93,7 +141,7 @@ function renderCalendar(){
 					$calendar.fullCalendar('changeView', 'agendaDay');
 					$calendar.fullCalendar( 'gotoDate', start );
 			}else{
-//					$validform.resetForm();
+					$validform.resetForm();
 					$('#formInsert').trigger('reset');
 					$("#insStartTime").text(moment(start).format("HH:mm MMMM D, YYYY"));
 					$("#insEndTime").text(moment(end).format("HH:mm MMMM D, YYYY"));
@@ -179,8 +227,7 @@ $(function (){
 	
 	
 	$("#insBtn").on('click',function(){
-
-//		insTitle = $("#applicantName option:selected").text();
+		if( $('#formInsert').valid() ) {
 
 		var reservation = { 
 				reservationBy : $("#reservationBy").val(),
@@ -192,7 +239,6 @@ $(function (){
 				room : {id:$("#room option:selected").val()},
 				masreservationtype	: { id : $("#reservationType option:selected").val()}
 		};
-		
 		var insData;
 			console.log(JSON.stringify(reservation));
 			
@@ -203,7 +249,7 @@ $(function (){
 				dataType : "json",
 				data : JSON.stringify(reservation),
 				success : function(data){
-					console.log(data.dateReservation);
+					console.log(data);
 					insData = {
 						id : data.id,
 						title : data.title,
@@ -223,8 +269,8 @@ $(function (){
 					$('#formInsert').trigger('reset');
 					
 					new PNotify({
-						title: "ReservationSuccess",
-					    text: /*data.title +"<br>"+ pnotifyInsert*/ 'ok' ,
+						title: "Success",
+					    text:  "Insert reservation" ,
 					    type: 'success',
 					    delay: 1000
 					});
@@ -234,6 +280,7 @@ $(function (){
 					console.log(error);
 				}
 			});//end ajax
+		}
 	})//endonclick 'insBtn'
 	
 	$('#delModalBtn').on('click', function(){

@@ -950,7 +950,9 @@
 						
 						<div class="col-md-6">
     						<label style="margin-right: 25px;"><spring:message code="employee.masDivision"></spring:message> :</label>
-    						
+    						<c:forEach var="tags" items="${checktagsDivision}">
+							<input type="hidden" class="form-control tags" value="${ tags.divisionName }">
+							</c:forEach>	
     						<f:select  id="masDivision" path="masDivision"  class="form-control">
     						
 	    						<option  value=""><spring:message code="employee.enter.division"></spring:message></option>
@@ -987,7 +989,7 @@
     						
   				</div>
   				
-  				<div class="col-md-6">
+  				<div class="col-md-6" id="job-level">
     						<label style="margin-right: 25px;"><spring:message code="employee.masJoblevel"></spring:message> :</label>
     						
     						<f:select  id="masJoblevel" path="masJoblevel"  class="form-control" >
