@@ -1,7 +1,8 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+f<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://www.springframework.org/tags/form" prefix="f"%>
+<%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 
 <!-- Reservation css -->
 <link href="<c:url value="/resources/css/reservation.css" />" rel="stylesheet" media="all">
@@ -25,16 +26,16 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="reservDetailLabel">Reservation Detail</h4>
+        <h4 class="modal-title" id="reservDetailLabel"><spring:message code="reservation.name.detail.modal" /></h4>
       </div>
       <div class="modal-body">
       	<div class="container-fluid">
       		<div class="row">
-      			<div class="col-offset-md-1 col-md-2"><h4>Room</h4></div>
+      			<div class="col-offset-md-1 col-md-2"><h4><spring:message code="reservation.show.room" /></h4></div>
       			<div class="col-md-7 col-offset-md-1">
       			<h4 id="detailRoomName" class="showReservData"></h4>
       			<select name="room" id="editdetailRoomName" class="form-control editReservData">
-					<option value="">Please select</option>
+					<option value=""><spring:message code="reservation.please.select.room" /></option>
 					<c:forEach items="${rooms}" var="room">
 						<option value="${room.id}">${room.name}</option>
 					</c:forEach>
@@ -43,11 +44,11 @@
       		</div>
       		
       		<div class="row">
-      			<div class="col-offset-md-1 col-md-2"><h4>For</h4></div>
+      			<div class="col-offset-md-1 col-md-2"><h4><spring:message code="reservation.show.reservationType" /></h4></div>
       			<div class="col-md-7 col-offset-md-1">
 	      			<h4 id="detailDescType" class="showReservData"></h4>
 	      			<select name = "reservationType" id="editdetailDescType" class="form-control editReservData">
-						<option value="">Please select</option>
+						<option value=""><spring:message code="reservation.please.select.type" /></option>
 						<c:forEach items="${reservationTypes}" var="masreservationtype">
 							<option value="${masreservationtype.id}">${masreservationtype.name}</option>
 						</c:forEach>
@@ -56,36 +57,36 @@
       		</div>
       		
       		<div class="row">
-      			<div class="col-offset-md-1 col-md-2"><h4>Description</h4></div>
+      			<div class="col-offset-md-1 col-md-2"><h4><spring:message code="reservation.show.description" /></h4></div>
       			<div class="col-md-7 col-offset-md-1">
       				<h4 id="detailDesc" class="showReservData"></h4>
-      				<textarea id="editdetailDesc" name ="detailDesc" class="form-control editReservData" rows="4" placeholder="Description"></textarea>
+      				<textarea id="editdetailDesc" name ="detailDesc" class="form-control editReservData" rows="4" placeholder="<spring:message code="reservation.show.description" />"></textarea>
       			</div>
       		</div>
       		
       		<div class="row">
-      			<div class="col-offset-md-1 col-md-2"><h4>Date</h4></div>
+      			<div class="col-offset-md-1 col-md-2"><h4><spring:message code="reservation.show.date" /></h4></div>
       			<div class="col-md-7 col-offset-md-1"><h4 id="detailDate"></h4></div>
       		</div>
       		
       		<div class="row">
-      			<div class="col-offset-md-1 col-md-2"><h4>From</h4></div>
+      			<div class="col-offset-md-1 col-md-2"><h4><spring:message code="reservation.show.from" /></h4></div>
       			<div class="col-md-3"><h4 id="detailStart"></h4></div>
-      			<div class="col-md-2"><h4>To</h4></div>
+      			<div class="col-md-2"><h4><spring:message code="reservation.show.to" /></h4></div>
       			<div class="col-md-3 col-offset-md-1"><h4 id="detailEnd"></h4></div>
       		</div>
       		
       		<div class="row">
-      			<div class="col-offset-md-1 col-md-2"><h4>By</h4></div>
+      			<div class="col-offset-md-1 col-md-2"><h4><spring:message code="reservation.resserv.by" /></h4></div>
       			<div class="col-md-3">
       			<h4 id="detailReservBy" class="showReservData"></h4>
       			<input id="editdetailReservBy" class="form-control editReservData"/>
       			</div>
-      			<div class="col-md-2"><h4>Division</h4></div>
+      			<div class="col-md-2"><h4><spring:message code="reservation.show.division" /></h4></div>
       			<div class="col-md-3 col-offset-md-1">
       			<h4 id="detailDivision" class="showReservData"></h4>
       				<select name="editdetailDivision" id="editdetailDivision" class="form-control editReservData">
-						<option value="">Please select</option>
+						<option value=""><spring:message code="reservation.please.select.division" /></option>
 						<c:forEach items="${divisions}" var="editDivision">
 								<option value="${editDivision.id}">${editDivision.name}</option>
 						</c:forEach>
@@ -96,11 +97,11 @@
       	</div>
       </div>
       <div class="modal-footer">
-      	<button id="editReservBtn" type="button" class="btn btn-warning showReservData">Edit</button>
-      	<button id="saveEditReservBtn" type="button" class="btn btn-warning editReservData">Save</button>
-      	<button id="cancelEditReservBtn" type="button" class="btn btn-default editReservData">Cancel</button>
-        <button id="delModalBtn" type="button" class="btn btn-danger showReservData">Delete</button>
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      	<button id="editReservBtn" type="button" class="btn btn-warning showReservData"><spring:message code="label.edit" /></button>
+      	<button id="saveEditReservBtn" type="button" class="btn btn-warning editReservData"><spring:message code="label.save" /></button>
+      	<button id="cancelEditReservBtn" type="button" class="btn btn-default editReservData"><spring:message code="label.cancel" /></button>
+        <button id="delModalBtn" type="button" class="btn btn-danger showReservData"><spring:message code="label.delete" /></button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><spring:message code="label.close" /></button>
       </div>
     </div>
   </div>
@@ -112,14 +113,14 @@
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
     <div class="modal-header">
-        <h4 class="modal-title" id="deleteModalLabel">Confirm delete</h4>
+        <h4 class="modal-title" id="deleteModalLabel"><spring:message code="reservation.confirm.delete" /></h4>
       </div>
       <div class="modal-body">
-      	Are you sure to delete?
+      	<spring:message code="default.delete.confirm" />
       </div>
       <div class="modal-footer">
-      <button type="button" id="cancelDeleteReserv" class="btn btn-default" >No</button>
-      <button type="button" id="confirmDeleteReserv" class="btn btn-primary yesButton">Yes</button>
+      <button type="button" id="cancelDeleteReserv" class="btn btn-default" ><spring:message code="default.no" /></button>
+      <button type="button" id="confirmDeleteReserv" class="btn btn-primary yesButton"><spring:message code="default.yes" /></button>
       </div>
     </div>
   </div>
@@ -133,7 +134,7 @@
 	    
 	      <div class="modal-header">
 	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-	        <h4 class="modal-title">Insert Reservation</h4>
+	        <h4 class="modal-title"><spring:message code="reservation.name.insert.modal" /></h4>
 	      </div>
 	      
 	      <div class="modal-body">
@@ -142,22 +143,22 @@
 	        			<div class="col-md-12">
 	        			<input type="hidden" id="employee"  name="employee"  ></input>
 	        			<input type="hidden" id="masreservationtype"  name="masreservationtype"  ></input>
-	        			<label for="insStartTime">Start Time</label>
+	        			<label for="insStartTime"><spring:message code="reservation.show.from" /></label>
 	        			<h4 id="insStartTime"></h4>
 	        			</div>
 	        		</div>
 	        		<div class="row">
 	        			<div class="col-md-12">
-	        			<label for="insEndTime">End Time</label>
+	        			<label for="insEndTime"><spring:message code="reservation.show.to" /></label>
 	        			<h4 id="insEndTime"></h4>
 	        			</div>
 	        		</div>
 	        		<hr>
 	        		<div class="row">
 						<div class="col-md-6">
-							<label for="room">Room</label> 
+							<label for="room"><spring:message code="reservation.show.room" /></label> 
 							<select name="room" id="room" class="form-control">
-								<option value="">--- Please Select Room ---</option>
+								<option value=""><spring:message code="reservation.please.select.room" /></option>
 								<c:forEach items="${rooms}" var="room">
 										<option value="${room.id}">${room.name} </option>
 									</c:forEach>
@@ -165,9 +166,9 @@
 						</div>
 						
 						<div class="col-md-6">
-								<label for="reservationType">Reservation Type</label> 
+								<label for="reservationType"><spring:message code="reservation.show.type" /></label> 
 								<select id="reservationType" class="form-control" name = "reservationType">
-									<option value="">--- Please Select Reservation Type ---</option>
+									<option value=""><spring:message code="reservation.please.select.type" /></option>
 									<c:forEach items="${reservationTypes}" var="masreservationtype">
 										<option value="${masreservationtype.id}">${masreservationtype.name} </option>
 									</c:forEach>
@@ -178,14 +179,14 @@
         			<hr>
         			<div class="row">
 	        			<div class="col-md-6">
-	        				<label for="reservationBy">Reservation By</label>
-	        				<input id="reservationBy" class="form-control" placeholder="Reservation By" name="reservationBy"  ></input>
+	        				<label for="reservationBy"><spring:message code="reservation.resserv.by" /></label>
+	        				<input id="reservationBy" class="form-control" placeholder="<spring:message code="reservation.resserv.by" />" name="reservationBy"  ></input>
 	        			</div>
 	        		
 	        		<div class="col-md-6">
-							<label for="masDivision">Division</label> 
+							<label for="masDivision"><spring:message code="reservation.show.division" /></label> 
 							<select name="masDivisionInsert" id="masDivisionInsert" class="form-control">
-								<option value="">--- Please Select Division ---</option>
+								<option value=""><spring:message code="reservation.please.select.division" /></option>
 
 								<c:forEach items="${divisions}" var="masDivision">
 										<option value="${masDivision.id}">${masDivision.name} </option>
@@ -196,16 +197,16 @@
 					<br>
 					<div class="row">	
 	        			<div class="col-md-12">
-	        				<label for="description">Description</label>
-	        				<textarea id="descriptionInsert" name ="descriptionInsert" class="form-control" rows="4" placeholder="Description"></textarea>
+	        				<label for="description"><spring:message code="reservation.show.description" /></label>
+	        				<textarea id="descriptionInsert" name ="descriptionInsert" class="form-control" rows="4" placeholder="<spring:message code="reservation.show.description" />"></textarea>
 	        			</div>
         			</div></form>
 	        		</div>
 	      </div><!-- /.modal-body -->
 	      
 	      <div class="modal-footer">
-	        <button id="insBtn" type="button" class="btn btn-warning"><span class="glyphicon glyphicon-plus"></span>Add</button>
-	        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+	        <button id="insBtn" type="button" class="btn btn-warning"><span class="glyphicon glyphicon-plus"></span><spring:message code="label.add" /></button>
+	        <button type="button" class="btn btn-default" data-dismiss="modal"><spring:message code="label.cancel" /></button>
 	      </div>
 	      
 	    </div><!-- /.modal-content -->

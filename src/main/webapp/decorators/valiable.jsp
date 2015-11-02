@@ -219,4 +219,11 @@
 	var $requiredIntolerance =  '<spring:message code="health.required.intolerance" />';
 	var $requiredIntoleranceExplain =  '<spring:message code="health.required.intoleranceExplain" />';
 	
+	/* reservation-validate*/
+	var $requiredRoom = '<spring:message code="require.reservation.room" />';
+	var $requiredType = '<spring:message code="require.reservation.type" />';
+	var $requiredBy = '<spring:message code="require.reservation.by" />';
+	var $requiredDivision = '<spring:message code="require.reservation.division" />';
+	var $requiredDescription = '<spring:message code="require.reservation.description" />';
+	
 </script>

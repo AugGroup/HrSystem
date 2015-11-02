@@ -34,19 +34,19 @@ var $validform = $("#formInsert").validate({
 	
 	messages: {
 		room:{
-			required: "Please select room."
+			required: $requiredRoom
 		},
 		reservationType:{
-			required: "Please select reservation type."
+			required: $requiredType
 		},
 		reservationBy:{
-			required: "Reservation by is required.",
+			required: $requiredBy
 		},
-		masDivision:{
-			required: "Please select division."
+		masDivisionInsert:{
+			required: $requiredDivision
 		},
-		description:{
-			required: "Description is required."
+		descriptionInsert:{
+			required: $requiredDescription
 		}
 		
 	},
@@ -103,6 +103,12 @@ function deleteReservation(id){
 		type : 'POST',
 		contentType : "application/json",
 		success: function(result){
+			new PNotify({
+				title: "Success",
+			    text:  "Delete reservation" ,
+			    type: 'success',
+			    delay: 1000
+			});
 		},
 		error:function(error){
 			alert(error);
@@ -275,6 +281,12 @@ $(function (){
     			$("#detailDivision").text(result.divisionName);
     			$("#detailReservBy").text(result.reservedBy);
     			
+    			new PNotify({
+					title: "Success",
+				    text:  "Update reservation" ,
+				    type: 'success',
+				    delay: 1000
+				});
     			//swap view
     			$(".showReservData").show();
     			$(".editReservData").hide();
