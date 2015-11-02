@@ -104,8 +104,8 @@ function deleteReservation(id){
 		contentType : "application/json",
 		success: function(result){
 			new PNotify({
-				title: "Success",
-			    text:  "Delete reservation" ,
+				title: $notifySuccess,
+			    text:  $notifyDelete ,
 			    type: 'success',
 			    delay: 1000
 			});
@@ -282,8 +282,8 @@ $(function (){
     			$("#detailReservBy").text(result.reservedBy);
     			
     			new PNotify({
-					title: "Success",
-				    text:  "Update reservation" ,
+					title: $notifySuccess,
+				    text:  $notifyUpdate ,
 				    type: 'success',
 				    delay: 1000
 				});
@@ -338,8 +338,8 @@ $(function (){
 					$('#formInsert').trigger('reset');
 					
 					new PNotify({
-						title: "Success",
-					    text:  "Insert reservation" ,
+						title: $notifySuccess,
+					    text:  $notifyAdd ,
 					    type: 'success',
 					    delay: 1000
 					});
