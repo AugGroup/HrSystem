@@ -184,7 +184,7 @@
 	        		
 	        		<div class="col-md-6">
 							<label for="masDivision">Division</label> 
-							<select name="masDivision" id="masDivision" class="form-control">
+							<select name="masDivisionInsert" id="masDivisionInsert" class="form-control">
 								<option value="">--- Please Select Division ---</option>
 
 								<c:forEach items="${divisions}" var="masDivision">
@@ -197,7 +197,7 @@
 					<div class="row">	
 	        			<div class="col-md-12">
 	        				<label for="description">Description</label>
-	        				<textarea id="description" name ="description" class="form-control" rows="4" placeholder="Description"></textarea>
+	        				<textarea id="descriptionInsert" name ="descriptionInsert" class="form-control" rows="4" placeholder="Description"></textarea>
 	        			</div>
         			</div></form>
 	        		</div>

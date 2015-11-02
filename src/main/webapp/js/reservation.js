@@ -24,10 +24,10 @@ var $validform = $("#formInsert").validate({
 			required:true,
 			lettersonly: true
 		},
-		masDivision: {
+		masDivisionInsert: {
 			required:true
 		},
-		description: {
+		descriptionInsert: {
 			required:true
 		}
 	},
@@ -258,8 +258,8 @@ $(function (){
 
 		var reservation = { 
 				reservationBy : $("#reservationBy").val(),
-				masDivision : {id:$("#masDivision option:selected").val()},
-				description : $("#description").val(),
+				masDivision : {id: $("#masDivisionInsert option:selected").val()},
+				description : $("#descriptionInsert").val(),
 				start: insStartTime.tz("Asia/Bangkok").format("YYYY-MM-DD HH:mm:ss"),
 				end : insEndTime.tz("Asia/Bangkok").format("YYYY-MM-DD HH:mm:ss"),
 			//	employee :{id:2},
@@ -282,7 +282,7 @@ $(function (){
 						title : data.title,
 			//			employee : {"id":data.id},
 						reservationBy : data.reservationBy,
-						masDivision : data.masDivision,
+						masDivision :{"id": data.id},
 						description : data.description,
 						start : moment(data.start),
 						end : moment(data.end),
