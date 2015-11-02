@@ -243,8 +243,10 @@ table.dataTable.no-footer {
 }
 
 #logo {
+	position:absolute;
 	width: 135px;
 	height: 75px;
+	
 }
 
 #navbar-collapse {
@@ -277,9 +279,14 @@ table.dataTable.no-footer {
 }
 	
 .navbar-black {
+	height:65px;
 	background: #707070;
+	border-radius: 0px;
 }
 	
+#nav-main{
+	margin-left: 150px;
+}
 .navbar-black #nav-main>li>a {
 	padding: 25px 15px;
 }
@@ -351,8 +358,12 @@ table.dataTable.no-footer {
 }
 
 @media ( max-width : 768px ) {
-	
-		.container {
+		
+	.navbar-black {
+		height: auto;
+		background: #707070;
+	}
+	.container {
 			margin-left: 0px;
 			margin-right: 0px;
 		}
@@ -375,6 +386,7 @@ table.dataTable.no-footer {
 		}
 		#nav-main {
 			margin-top: 20px;
+			margin-left: -15px;
 		}
 		#taplogout-down {
 			margin-top: 50px;
