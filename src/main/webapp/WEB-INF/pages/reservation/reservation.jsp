@@ -14,23 +14,23 @@
 			<div id="calendar"></div>
 		</div>
 		<div class="col-md-2">
-			<label for="reservationTypeCriteria">Reservation Type</label>
+			<label for="reservationTypeCriteria"><spring:message code="reservation.show.reserv.type" /></label>
 			<select id="reservationTypeCriteria" class="form-control" >
-				<option value="">Please select</option>
+				<option value=""><spring:message code="reservation.please.select.type" /></option>
 				<c:forEach items="${reservationTypes}" var="masreservationtype">
 					<option value="${masreservationtype.id}">${masreservationtype.name}</option>
 				</c:forEach>
 			</select>
-			<label for="divisionCriteria">Division</label>
+			<label for="divisionCriteria"><spring:message code="reservation.show.division" /></label>
 			<select id="divisionCriteria" class="form-control" >
-				<option value="">Please select</option>
+				<option value=""><spring:message code="reservation.please.select.division" /></option>
 				<c:forEach items="${divisions}" var="editDivision">
 						<option value="${editDivision.id}">${editDivision.name}</option>
 				</c:forEach>
 			</select>
-			<label for="reservationByCriteria">Reserved By</label>
+			<label for="reservationByCriteria"><spring:message code="reservation.resserv.by" /></label>
 			<input id="reservationByCriteria" class="form-control" ></input>		
-			<button id="searchReserveBtn" class="btn btn-info" >Search</button>
+			<button id="searchReserveBtn" class="btn btn-info" ><spring:message code="reservation.search" /></button>
 		</div>
 	</div>
 </div>
@@ -45,8 +45,8 @@
       <div class="modal-body">
       	<div class="container-fluid">
       		<div class="row">
-      			<div class="col-offset-md-1 col-md-2"><h4><spring:message code="reservation.show.room" /></h4></div>
-      			<div class="col-md-7 col-offset-md-1">
+      			<div class="col-offset-md-1 col-md-3"><h4><spring:message code="reservation.show.room" /></h4></div>
+      			<div class="col-md-6 col-offset-md-1">
       			<h4 id="detailRoomName" class="showReservData"></h4>
       			<select name="room" id="editdetailRoomName" class="form-control editReservData">
 					<option value=""><spring:message code="reservation.please.select.room" /></option>
@@ -58,8 +58,8 @@
       		</div>
       		
       		<div class="row">
-      			<div class="col-offset-md-1 col-md-2"><h4><spring:message code="reservation.show.reservationType" /></h4></div>
-      			<div class="col-md-7 col-offset-md-1">
+      			<div class="col-offset-md-1 col-md-3"><h4><spring:message code="reservation.show.reservationType" /></h4></div>
+      			<div class="col-md-6 col-offset-md-1">
 	      			<h4 id="detailDescType" class="showReservData"></h4>
 	      			<select name = "reservationType" id="editdetailDescType" class="form-control editReservData">
 						<option value=""><spring:message code="reservation.please.select.type" /></option>
@@ -71,33 +71,36 @@
       		</div>
       		
       		<div class="row">
-      			<div class="col-offset-md-1 col-md-2"><h4><spring:message code="reservation.show.description" /></h4></div>
-      			<div class="col-md-7 col-offset-md-1">
+      			<div class="col-offset-md-1 col-md-3"><h4><spring:message code="reservation.show.description" /></h4></div>
+      			<div class="col-md-6 col-offset-md-1">
       				<h4 id="detailDesc" class="showReservData"></h4>
       				<textarea id="editdetailDesc" name ="detailDesc" class="form-control editReservData" rows="4" placeholder="<spring:message code="reservation.show.description" />"></textarea>
       			</div>
       		</div>
       		
       		<div class="row">
-      			<div class="col-offset-md-1 col-md-2"><h4><spring:message code="reservation.show.date" /></h4></div>
+      			<div class="col-offset-md-1 col-md-3"><h4><spring:message code="reservation.show.date" /></h4></div>
       			<div class="col-md-7 col-offset-md-1"><h4 id="detailDate"></h4></div>
       		</div>
       		
       		<div class="row">
-      			<div class="col-offset-md-1 col-md-2"><h4><spring:message code="reservation.show.from" /></h4></div>
+      			<div class="col-offset-md-1 col-md-3"><h4><spring:message code="reservation.show.from" /></h4></div>
       			<div class="col-md-3"><h4 id="detailStart"></h4></div>
       			<div class="col-md-2"><h4><spring:message code="reservation.show.to" /></h4></div>
       			<div class="col-md-3 col-offset-md-1"><h4 id="detailEnd"></h4></div>
       		</div>
       		
       		<div class="row">
-      			<div class="col-offset-md-1 col-md-2"><h4><spring:message code="reservation.resserv.by" /></h4></div>
+      			<div class="col-offset-md-1 col-md-3"><h4><spring:message code="reservation.resserv.by" /></h4></div>
       			<div class="col-md-3">
       			<h4 id="detailReservBy" class="showReservData"></h4>
       			<input id="editdetailReservBy" class="form-control editReservData"/>
       			</div>
-      			<div class="col-md-2"><h4><spring:message code="reservation.show.division" /></h4></div>
-      			<div class="col-md-3 col-offset-md-1">
+      		</div>	
+      			
+      		<div class="row">
+      		<div class="col-md-3 col-offset-md-1"><h4><spring:message code="reservation.show.division" /></h4></div>
+      			<div class="col-md-6">
       			<h4 id="detailDivision" class="showReservData"></h4>
       				<select name="editdetailDivision" id="editdetailDivision" class="form-control editReservData">
 						<option value=""><spring:message code="reservation.please.select.division" /></option>
@@ -105,8 +108,8 @@
 								<option value="${editDivision.id}">${editDivision.name}</option>
 						</c:forEach>
 					</select>
-      			</div>
       		</div>
+      		
       		
       	</div>
       </div>
@@ -239,13 +242,13 @@
 	      		<table id="reservationListTable" >
 	      			<thead>
 	      				<tr>
-	      					<th>Room</th>
-	      					<th>Date</th>
-	      					<th>Start</th>
-	      					<th>End</th>
-	      					<th>Reservation Type</th>
-	      					<th>Division</th>
-	      					<th>Reservation By</th>
+	      					<th><spring:message code="reservation.show.room"/></th>
+	      					<th><spring:message code="reservation.show.date"/></th>
+	      					<th><spring:message code="reservation.start.time"/></th>
+	      					<th><spring:message code="reservation.end.time"/></th>
+	      					<th><spring:message code="reservation.show.reserv.type"/></th>
+	      					<th><spring:message code="reservation.show.division"/></th>
+	      					<th><spring:message code="reservation.resserv.by"/><th>
 	      				</tr>
 	      			</thead>
 	      		</table>
@@ -254,8 +257,11 @@
 	    </div>
 	  </div>
 	</div>
+</div>
 
-
+<script type="text/javascript">
+	var $languageNow = "${pageContext.response.locale}";
+</script>
 
 <!-- jQueryValidate -->
 <script type="text/javascript" src="${pageContext.request.contextPath}/resource/jqueryvalidate/jquery.validate.min.js"></script>

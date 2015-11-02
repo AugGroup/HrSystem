@@ -170,7 +170,7 @@ function renderCalendar(){
 			})
 		},
 		eventLimit: true,
-		//lang : 'th',
+		lang: $languageNow,
 		timezone: "Asia/Bangkok",
 		ignoreTimezone:false,
 		eventSources:[
