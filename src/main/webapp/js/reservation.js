@@ -355,4 +355,60 @@ $(function (){
 	$('#delModalBtn').on('click', function(){
 		$("#deleteReservModal").modal('show');
 	})
+	
+	var $reservationList;
+
+	$('#searchReserveBtn').on('click', function(){
+		var reservation = {
+				reservationBy : $("#reservationByCriteria").val(),
+				masDivision : {id: $("#divisionCriteria").val()},
+				masreservationtype	: { id : $("#reservationTypeCriteria").val()}
+		}
+		$('#reservationListModal').modal('show');
+		
+		$.ajax({
+			url:'reservation/ajax/searchReservation',
+			contentType : "application/json",
+			dataType : "json",
+			data : JSON.stringify(reservation),
+			dataSrc : "",
+			type : 'POST',
+			success : function(result){
+				console.log(result);
+			},
+			error : function(error){
+				alert('error');
+			}
+		})
+		if($reservationList){
+			$reservationList.destroy();
+		}
+		$reservationList = $('#reservationListTable').DataTable({
+			paging: true,
+			hover:false,
+			sort:false,
+			ajax : {
+				url : 'reservation/ajax/searchReservation',
+//				contentType : "application/json",
+				data : JSON.stringify(reservation),
+				dataSrc : "",
+				type : 'POST'
+			},
+			 columns:[
+			          {data : "roomName"},
+			          {data : "dateReservation"},
+			          {data : "start"},
+			          {data : "end"},
+			          {data : "reservationType"},
+			          {data : "divisionName"},
+			          {data : "reservedBy"}
+			 ],
+//			 initComplete :function(){
+//			    $("#reservationListTable_previous").children().text("<"); 
+//			    $("#reservationListTable_next").children().text(">");
+//			 },
+			 "dom": 'tp'
+			 
+		});
+	})
 })

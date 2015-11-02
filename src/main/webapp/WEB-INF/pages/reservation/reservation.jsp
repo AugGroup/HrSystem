@@ -14,9 +14,23 @@ f<%@ page language="java" contentType="text/html; charset=UTF-8"
 			<div id="calendar"></div>
 		</div>
 		<div class="col-md-2">
-<!-- 			<div class='draggable' data-event='{"title":"my event"}' /> -->
-<!-- 		<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Small modal</button> -->
-		
+			<label for="reservationTypeCriteria">Reservation Type</label>
+			<select id="reservationTypeCriteria" class="form-control" >
+				<option value="">Please select</option>
+				<c:forEach items="${reservationTypes}" var="masreservationtype">
+					<option value="${masreservationtype.id}">${masreservationtype.name}</option>
+				</c:forEach>
+			</select>
+			<label for="divisionCriteria">Division</label>
+			<select id="divisionCriteria" class="form-control" >
+				<option value="">Please select</option>
+				<c:forEach items="${divisions}" var="editDivision">
+						<option value="${editDivision.id}">${editDivision.name}</option>
+				</c:forEach>
+			</select>
+			<label for="reservationByCriteria">Reserved By</label>
+			<input id="reservationByCriteria" class="form-control" ></input>		
+			<button id="searchReserveBtn" class="btn btn-info" >Search</button>
 		</div>
 	</div>
 </div>
@@ -212,6 +226,42 @@ f<%@ page language="java" contentType="text/html; charset=UTF-8"
 	    </div><!-- /.modal-content -->
 	  </div><!-- /.modal-dialog -->
 	</div><!-- /.modal -->
+	
+	<div class="modal fade" id="reservationListModal" tabindex="-1" role="dialog" aria-labelledby="modal_appointmentList">
+	  <div class="modal-dialog modal-lg" role="document">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+	        <h4 class="modal-title" id="modalHeader_reservationList"></h4>
+	      </div>
+	      <div id="modalBody_reservationList" class="modal-body">
+	      	<div class="table-responsive" style=" width:100%;">
+	      		<table id="reservationListTable" >
+	      			<thead>
+	      				<tr>
+	      					<th>Room</th>
+	      					<th>Date</th>
+	      					<th>Start</th>
+	      					<th>End</th>
+	      					<th>Reservation Type</th>
+	      					<th>Division</th>
+	      					<th>Reservation By</th>
+	      					
+	      					
+	      					<!-- <th><spring:message code="appointment.id"/></th>
+	      					<th><spring:message code="appointment.topic"/></th>
+	      					<th><spring:message code="appointment.detail"/></th>
+	      					<th><spring:message code="appointment.start"/></th>
+	      					<th><spring:message code="appointment.end"/></th> -->
+<!-- 	      					<th>MAIL STATUS</th> -->
+	      				</tr>
+	      			</thead>
+	      		</table>
+	      	</div>
+	      </div>
+	    </div>
+	  </div>
+	</div>
 
 
 

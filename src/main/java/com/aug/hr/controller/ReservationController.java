@@ -6,6 +6,8 @@
 
 package com.aug.hr.controller;
 
+import static org.hamcrest.CoreMatchers.nullValue;
+
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -179,4 +181,8 @@ public class ReservationController {
 	return returnTitle;
 	}
 	
+	@RequestMapping(value = "/reservation/ajax/searchReservation", method = RequestMethod.POST)
+	public @ResponseBody List<ReservationDto> searchReservation(@RequestBody Reservation reservation) {
+		return reservationService.searchReservation(reservation);
+	}
 }
