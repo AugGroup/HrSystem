@@ -366,7 +366,7 @@ table.dataTable.no-footer {
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-       <img id = "logo" src="<c:url value="/resource/images/Logo_Augmentis.png" />"/>
+       <img id = "logo" src="<c:url value="/resource/images/Logo.png" />"/>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->
