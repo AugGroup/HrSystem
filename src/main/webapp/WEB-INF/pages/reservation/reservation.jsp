@@ -36,7 +36,7 @@
       			<select name="room" id="editdetailRoomName" class="form-control editReservData">
 					<option value="">Please select</option>
 					<c:forEach items="${rooms}" var="room">
-						<option value="${room.id}">${room.name} </option>
+						<option value="${room.id}">${room.name}</option>
 					</c:forEach>
 				</select>
       			</div>
@@ -49,7 +49,7 @@
 	      			<select name = "reservationType" id="editdetailDescType" class="form-control editReservData">
 						<option value="">Please select</option>
 						<c:forEach items="${reservationTypes}" var="masreservationtype">
-							<option value="${masreservationtype.id}">${masreservationtype.name} </option>
+							<option value="${masreservationtype.id}">${masreservationtype.name}</option>
 						</c:forEach>
 					</select>
       			</div>
@@ -59,7 +59,7 @@
       			<div class="col-offset-md-1 col-md-2"><h4>Description</h4></div>
       			<div class="col-md-7 col-offset-md-1">
       				<h4 id="detailDesc" class="showReservData"></h4>
-      				<textarea id="description" name ="description" class="form-control editReservData" rows="4" placeholder="Description"></textarea>
+      				<textarea id="editdetailDesc" name ="detailDesc" class="form-control editReservData" rows="4" placeholder="Description"></textarea>
       			</div>
       		</div>
       		
@@ -84,10 +84,10 @@
       			<div class="col-md-2"><h4>Division</h4></div>
       			<div class="col-md-3 col-offset-md-1">
       			<h4 id="detailDivision" class="showReservData"></h4>
-      				<select name="masDivision" id="masDivision" class="form-control editReservData">
+      				<select name="editdetailDivision" id="editdetailDivision" class="form-control editReservData">
 						<option value="">Please select</option>
-						<c:forEach items="${divisions}" var="masDivision">
-								<option value="${masDivision.id}">${masDivision.name} </option>
+						<c:forEach items="${divisions}" var="editDivision">
+								<option value="${editDivision.id}">${editDivision.name}</option>
 						</c:forEach>
 					</select>
       			</div>
@@ -100,7 +100,7 @@
       	<button id="saveEditReservBtn" type="button" class="btn btn-warning editReservData">Save</button>
       	<button id="cancelEditReservBtn" type="button" class="btn btn-default editReservData">Cancel</button>
         <button id="delModalBtn" type="button" class="btn btn-danger showReservData">Delete</button>
-        <button type="button" class="btn btn-default showReservData" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
       </div>
     </div>
   </div>

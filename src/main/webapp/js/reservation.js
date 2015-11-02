@@ -78,24 +78,14 @@ function updateAppointmentDate(eventToUpdate, revertParam){
 	    		data : JSON.stringify(updatedata),
 	    		dataType : "json",
 	    		success: function(result){
-//	    			new PNotify({
-//	    				title: pnotifySuccess,
-//	    			    text: result.title +"<br>" + pnotifyEdit,
-//	    			    type: 'success',
-//	    			    delay: 1000,
-//	    			});
 	    			var view = $calendar.fullCalendar('getView');//get view object
 	    			$calendar.fullCalendar( 'destroy' );
 	    			renderCalendar();
 	    			$calendar.fullCalendar('changeView', view.name);
 	    			$calendar.fullCalendar( 'gotoDate', result.start );
-//    				findNoEmailUpdate();
-//    				findEmailSent();
-//    				setEmailAlert();
 	    		},
 	    		
 	    		error:function (jqXHR, textStatus, error){
-	    	       // alert('Update error'); 
 	    			console.log(error);
 	    	    }  
 	    	});
@@ -113,7 +103,6 @@ function deleteReservation(id){
 		type : 'POST',
 		contentType : "application/json",
 		success: function(result){
-			//alert(result);
 		},
 		error:function(error){
 			alert(error);
@@ -150,17 +139,14 @@ function renderCalendar(){
 					insEndTime = end;
 					$calendar.fullCalendar('unselect');
 				}
-//			alert(start);
 		},
 	    eventClick: function(event) {
-//	    	console.log(event);  
 			eventSelector = event;
 			$.ajax({
 				url : 'reservation/ajax/getReservation/'+event.id,
 				type : 'POST',
 				success: function(data) {
 
-					console.log(data);
 					$("#reservDetailModal").modal("show");
 					$("#detailRoomName").text(data.roomName);
 					$("#detailDescType").text(data.reservationType);
@@ -199,7 +185,6 @@ function renderCalendar(){
 				revertFunc();
 			}else{
 				updateAppointmentDate(event, revertFunc);
-				//alert("move");
 			}
 	    },
 	    eventResize: function(event, delta, revertFunc) {
@@ -233,7 +218,24 @@ $(function (){
 		
 		$("#description").text($("#detailDesc").text());
 		$("#editdetailReservBy").val($("#detailReservBy").text());
-		$("#editdetailRoomName").val($("#detailRoomName").text());
+		$("#editdetailDesc").val($("#detailDesc").text());
+		
+		
+		//find room name
+		$("#editdetailRoomName option").filter(function() {
+		    //may want to use $.trim in here
+		    return $(this).text() == $("#detailRoomName").text();
+		}).prop('selected', true);
+		
+		$("#editdetailDescType option").filter(function() {
+		    //may want to use $.trim in here
+		    return $(this).text() == $("#detailDescType").text();
+		}).prop('selected', true);
+		
+		$("#editdetailDivision option").filter(function() {
+		    //may want to use $.trim in here
+		    return $(this).text() == $("#detailDivision").text();
+		}).prop('selected', true);
 		
 	});
 	
@@ -249,8 +251,39 @@ $(function (){
 	})
 	
 	$("#saveEditReservBtn").on('click', function(){
-//		$(this).hide();
-//		$("#editReservBtn").show();
+		var reservationToUpdate = {
+				id : eventSelector.id,
+				room : { id : $("#editdetailRoomName").val() },
+				masreservationtype : { id : $("#editdetailDescType").val()},
+				description : $("#editdetailDesc").val(),
+				masDivision : {id : $("#editdetailDivision").val()},
+				reservationBy : $("#editdetailReservBy").val()
+		}
+		
+		$.ajax({
+    		url:"reservation/ajax/updateData",
+    		type: "POST",
+    		contentType : "application/json",
+    		data : JSON.stringify(reservationToUpdate),
+    		dataType : "json",
+    		success: function(result){
+    			
+    			//edit view data
+    			$("#detailRoomName").text(result.roomName);
+    			$("#detailDescType").text(result.reservationType);
+    			$("#detailDesc").text(result.description);
+    			$("#detailDivision").text(result.divisionName);
+    			$("#detailReservBy").text(result.reservedBy);
+    			
+    			//swap view
+    			$(".showReservData").show();
+    			$(".editReservData").hide();
+    		},
+    		
+    		error:function (error){
+    			alert("error");
+    		}  
+    	});
 	});
 	
 	$("#insBtn").on('click',function(){
@@ -262,7 +295,6 @@ $(function (){
 				description : $("#descriptionInsert").val(),
 				start: insStartTime.tz("Asia/Bangkok").format("YYYY-MM-DD HH:mm:ss"),
 				end : insEndTime.tz("Asia/Bangkok").format("YYYY-MM-DD HH:mm:ss"),
-			//	employee :{id:2},
 				room : {id:$("#room option:selected").val()},
 				masreservationtype	: { id : $("#reservationType option:selected").val()}
 		};
@@ -276,11 +308,9 @@ $(function (){
 				dataType : "json",
 				data : JSON.stringify(reservation),
 				success : function(data){
-					console.log(data);
 					insData = {
 						id : data.id,
 						title : data.title,
-			//			employee : {"id":data.id},
 						reservationBy : data.reservationBy,
 						masDivision :{"id": data.id},
 						description : data.description,

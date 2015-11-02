@@ -150,6 +150,21 @@ public class ReservationController {
 		return reservationService.findReservationById(reservation.getId());
 	}
 	
+	@RequestMapping(value="/reservation/ajax/updateData", method=RequestMethod.POST)
+	public @ResponseBody ReservationDto updateData(@RequestBody Reservation reservation){
+		Reservation reservationToUpdate = reservationService.findById(reservation.getId());
+		reservationToUpdate.setId(reservation.getId());
+		
+		reservationToUpdate.setRoom(reservation.getRoom());
+		reservationToUpdate.setDescription(reservation.getDescription());
+		reservationToUpdate.setMasreservationtype(reservation.getMasreservationtype());
+		reservationToUpdate.setMasDivision(reservation.getMasDivision());
+		reservationToUpdate.setReservationBy(reservation.getReservationBy());
+		reservationService.update(reservationToUpdate);
+		return reservationService.findReservationById(reservation.getId());
+	}
+	
+	
 	@RequestMapping(value = "/reservation/ajax/deleteReservation/{id}", method = RequestMethod.POST)
 	public @ResponseBody String deleteReservation(@PathVariable Integer id) {
 		ReservationDto reservationDto;
