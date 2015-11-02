@@ -246,14 +246,6 @@
 	      					<th>Reservation Type</th>
 	      					<th>Division</th>
 	      					<th>Reservation By</th>
-	      					
-	      					
-	      					<!-- <th><spring:message code="appointment.id"/></th>
-	      					<th><spring:message code="appointment.topic"/></th>
-	      					<th><spring:message code="appointment.detail"/></th>
-	      					<th><spring:message code="appointment.start"/></th>
-	      					<th><spring:message code="appointment.end"/></th> -->
-<!-- 	      					<th>MAIL STATUS</th> -->
 	      				</tr>
 	      			</thead>
 	      		</table>

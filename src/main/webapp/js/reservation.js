@@ -380,9 +380,11 @@ $(function (){
 				alert('error');
 			}
 		})
+		
 		if($reservationList){
 			$reservationList.destroy();
 		}
+		
 		$reservationList = $('#reservationListTable').DataTable({
 			paging: true,
 			hover:false,
