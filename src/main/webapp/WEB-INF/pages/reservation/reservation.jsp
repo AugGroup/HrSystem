@@ -14,25 +14,80 @@
 			<div id="calendar"></div>
 		</div>
 		<div class="col-md-2">
-			<label for="reservationTypeCriteria"><spring:message code="reservation.show.reserv.type" /></label>
-			<select id="reservationTypeCriteria" class="form-control" >
-				<option value=""><spring:message code="reservation.please.select.type" /></option>
-				<c:forEach items="${reservationTypes}" var="masreservationtype">
-					<option value="${masreservationtype.id}">${masreservationtype.name}</option>
-				</c:forEach>
-			</select>
-			<label for="divisionCriteria"><spring:message code="reservation.show.division" /></label>
-			<select id="divisionCriteria" class="form-control" >
-				<option value=""><spring:message code="reservation.please.select.division" /></option>
-				<c:forEach items="${divisions}" var="editDivision">
-						<option value="${editDivision.id}">${editDivision.name}</option>
-				</c:forEach>
-			</select>
-			<label for="reservationByCriteria"><spring:message code="reservation.resserv.by" /></label>
-			<input id="reservationByCriteria" class="form-control" ></input>		
-			<button id="searchReserveBtn" class="btn btn-info" ><spring:message code="reservation.search" /></button>
+			
+			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+			  <div class="panel panel-default">
+			    <div class="panel-heading" role="tab" id="resevationFilter-header">
+			      <h4 class="panel-title">
+			        <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+			          Filter search
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+			      <div class="panel-body">
+			      	<label for="reservationTypeFilter"><spring:message code="reservation.show.reserv.type" /></label>
+					<select id="reservationTypeFilter" class="form-control" >
+						<option value=""><spring:message code="reservation.please.select.type" /></option>
+						<c:forEach items="${reservationTypes}" var="masreservationtype">
+							<option value="${masreservationtype.id}">${masreservationtype.name}</option>
+						</c:forEach>
+					</select>
+					<label for="divisionFilter"><spring:message code="reservation.show.division" /></label>
+					<select id="divisionFilter" class="form-control" >
+						<option value=""><spring:message code="reservation.please.select.division" /></option>
+						<c:forEach items="${divisions}" var="editDivision">
+								<option value="${editDivision.id}">${editDivision.name}</option>
+						</c:forEach>
+					</select>
+					<label for="roomFilter"><spring:message code="reservation.show.room" /></label>
+				    <select id="roomFilter" class="form-control">
+						<option value=""><spring:message code="reservation.please.select.room" /></option>
+						<c:forEach items="${rooms}" var="room">
+							<option value="${room.id}">${room.name}</option>
+						</c:forEach>
+					</select>
+					<label for="reservationByFilter"><spring:message code="reservation.resserv.by" /></label>
+					<input id="reservationByFilter" class="form-control" ></input>
+					<button id="filterReserveBtn" class="btn btn-info" ><spring:message code="reservation.search" /></button>
+			      </div>
+			    </div>
+			  </div>
+			  <div class="panel panel-default">
+			    <div class="panel-heading" role="tab" id="resevationSearch-header">
+			      <h4 class="panel-title">
+			        <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+			          Search
+			        </a>
+			      </h4>
+			    </div>
+			    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+			      <div class="panel-body">
+			      	<label for="reservationTypeCriteria"><spring:message code="reservation.show.reserv.type" /></label>
+					<select id="reservationTypeCriteria" class="form-control" >
+						<option value=""><spring:message code="reservation.please.select.type" /></option>
+						<c:forEach items="${reservationTypes}" var="masreservationtype">
+							<option value="${masreservationtype.id}">${masreservationtype.name}</option>
+						</c:forEach>
+					</select>
+					<label for="divisionCriteria"><spring:message code="reservation.show.division" /></label>
+					<select id="divisionCriteria" class="form-control" >
+						<option value=""><spring:message code="reservation.please.select.division" /></option>
+						<c:forEach items="${divisions}" var="editDivision">
+								<option value="${editDivision.id}">${editDivision.name}</option>
+						</c:forEach>
+					</select>
+					<label for="reservationByCriteria"><spring:message code="reservation.resserv.by" /></label>
+					<input id="reservationByCriteria" class="form-control" ></input>		
+					<button id="searchReserveBtn" class="btn btn-info" ><spring:message code="reservation.search" /></button>
+			      </div>
+			    </div>
+			  </div>
+			</div>
 		</div>
 	</div>
+	
+	
 </div>
 
 <div class="modal fade" id="reservDetailModal" tabindex="-1" role="dialog" aria-labelledby="reservDetailLabel">
@@ -257,8 +312,7 @@
 	    </div>
 	  </div>
 	</div>
-
-
+	
 <script type="text/javascript">
 	var $languageNow = "${pageContext.response.locale}";
 </script>

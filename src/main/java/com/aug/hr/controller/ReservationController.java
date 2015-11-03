@@ -221,6 +221,15 @@ public class ReservationController {
 			}
 		};
 	}
+	
+	@RequestMapping(value = "reservation/filterReservation", method = RequestMethod.POST)
+	public @ResponseBody List<ReservationDto> filterReservation(@RequestParam(value="start") String start,
+			@RequestParam(value="end") String end, @RequestParam(value="_",required = false) String underscore, 
+			@RequestParam(value="timezone",required = false) String timezone, @RequestParam String reserveBy,
+			@RequestParam Integer roomId,@RequestParam Integer reservationTypeId, @RequestParam Integer divisionId){
+		
+		return reservationService.filterReservation(start, end, roomId, reservationTypeId, divisionId, reserveBy);
+	}
 }
 =======
 /**

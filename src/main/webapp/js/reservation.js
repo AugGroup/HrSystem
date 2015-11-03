@@ -5,6 +5,7 @@
 /* ------------------------------ Form Calendar ------------------------*/
 var $calendar ;//= $("#calendar");
 var eventSelector;
+var eventSource;
 
 //     ------------------- JQuery Validate-----------------------
 
@@ -174,7 +175,7 @@ function renderCalendar(){
 		timezone: "Asia/Bangkok",
 		ignoreTimezone:false,
 		eventSources:[
-			{
+		   eventSource	={
 				url : 'reservation/ajax/getAllReservation',
 				type: 'POST',
 				success: function(data) {
@@ -374,8 +375,7 @@ $(function (){
 		var $reservationBy = $("#reservationByCriteria").val();
 		var $masDivision = $("#divisionCriteria").val();
 		var $masreservationtype = $("#reservationTypeCriteria").val();
-//		console.log($reservationBy);
-//		$('#reservationListModal').modal('show');
+		$('#reservationListModal').modal('show');
 		
 		$.ajax({
 			url:'reservation/ajax/searchReservation',
@@ -430,5 +430,106 @@ $(function (){
 			 "dom": 'tp'
 			 
 		});
+	})
+	
+
+	
+	$('#filterReserveBtn').on('click', function(){
+		var $reservationBy = $("#reservationByFilter").val();
+		var $masDivision = $("#divisionFilter").val();
+		var $masreservationtype = $("#reservationTypeFilter").val();
+		var $masRoom = $("#roomFilter").val();
+		
+		$calendar.fullCalendar( 'destroy' );
+		
+		$calendar = $("#calendar").fullCalendar({
+			header:{
+				left: "prev,next today",
+				center: "title",
+				right: "month,agendaWeek,agendaDay"
+			},
+			selectable : true,
+			editable: true,
+			allDaySlot : false,
+			buttonIcons: true,
+			defaultDate: moment(),
+			select: function(start,end){
+				var view = $calendar.fullCalendar('getView');//get view object
+				if(view.name == "month"){ //if event that selected is month then show agendaDay view 
+						$calendar.fullCalendar('changeView', 'agendaDay');
+						$calendar.fullCalendar( 'gotoDate', start );
+				}else{
+						$validform.resetForm();
+						$('#formInsert').trigger('reset');
+						$("#insStartTime").text(moment(start).format("HH:mm MMMM D, YYYY"));
+						$("#insEndTime").text(moment(end).format("HH:mm MMMM D, YYYY"));
+						$('#insModal').modal('show');
+						insStartTime = start;
+						insEndTime = end;
+						$calendar.fullCalendar('unselect');
+					}
+			},
+		    eventClick: function(event) {
+				eventSelector = event;
+				$.ajax({
+					url : 'reservation/ajax/getReservation/'+event.id,
+					type : 'POST',
+					success: function(data) {
+
+						$("#reservDetailModal").modal("show");
+						$("#detailRoomName").text(data.roomName);
+						$("#detailDescType").text(data.reservationType);
+						$("#detailDesc").text(data.description);
+						$("#detailDate").text(moment(data.dateReservation).format("DD-MM-YYYY"));
+						$("#detailStart").text(moment(data.start,"YYYY-MM-DD HH:mm:ss").format("HH:mm"));
+						$("#detailEnd").text(moment(data.end,"YYYY-MM-DD HH:mm:ss").format("HH:mm"));
+						$("#detailReservBy").text(data.reservedBy);
+						$("#detailDivision").text(data.divisionName);
+						$("#reservDetailModal").modal("show");
+					},
+					error: function(error) {
+						alert("ERROR");
+					}
+				})
+			},
+			eventLimit: true,
+			lang: $languageNow,
+			timezone: "Asia/Bangkok",
+			ignoreTimezone:false,
+			eventSources:[
+			   eventSource	={
+					url : 'reservation/filterReservation',
+					type: 'POST',
+					data: {
+						reserveBy : $reservationBy,
+						divisionId : $masDivision,
+						reservationTypeId :$masreservationtype,
+						roomId : $masRoom
+					},
+					success: function(data) {
+						alert('Success');
+					},
+					error: function(error) {
+						alert("ERROR");
+					}
+			    }
+			],
+			editable : true,
+			eventDrop: function(event, delta, revertFunc) {
+				if(event.start.format("YYYY-MM-DD-HH-mm") < moment().format("YYYY-MM-DD-HH-mm")){
+					alertify.alert('cant edit');
+					revertFunc();
+				}else{
+					updateAppointmentDate(event, revertFunc);
+				}
+		    },
+		    eventResize: function(event, delta, revertFunc) {
+		    	updateAppointmentDate(event, revertFunc);
+		    },
+				
+			
+			
+		})
+		
 	})
 })
