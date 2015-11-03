@@ -6,8 +6,6 @@
 
 package com.aug.hr.controller;
 
-import static org.hamcrest.CoreMatchers.nullValue;
-
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -28,8 +26,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.aug.hrdb.dto.ReportReservationDto;
-
-import com.aug.hrdb.dto.ApplicantDto;
 
 import com.aug.hrdb.dto.ReservationDto;
 import com.aug.hrdb.entities.Reservation;
