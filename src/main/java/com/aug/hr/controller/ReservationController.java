@@ -81,7 +81,7 @@ public class ReservationController {
 	
 	@RequestMapping(value="/reservation/test",method=RequestMethod.GET)
 	public @ResponseBody List<ReservationDto> reservationTest(){
-		return reservationService.findByTimestamp("2015-11-18 09:31:00");
+		return reservationService.findByTimestamp("2015-11-14 09:00:00");
 	}
 	
 	@RequestMapping(value="/reservation",method=RequestMethod.GET)
@@ -126,6 +126,10 @@ public class ReservationController {
 		
 		String startString = formatter.format(dateStart);//convert date's timezone but it return String
 		String endString = formatter.format(dateEnd);
+		
+		if ( reservationService.findByTimestamp(startString).size() == 0 && reservationService.findByTimestamp(endString).size() == 0) {
+			System.out.println("can");
+		}
 		
 		DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);//new format to convert String to Date
 		try {
