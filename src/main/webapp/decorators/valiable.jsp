@@ -207,7 +207,7 @@
 	var $notifyAdd='<spring:message code="PNotify.add" />';
 	var $notifyUpdate='<spring:message code="PNotify.update" />';
 	var $notifyDelete='<spring:message code="PNotify.delete" />';
-	
+	var $notifyreserved='<spring:message code="PNotify.reserved" />';
 	
 	/* health-validate */
 	var $requiredCongenitalDisease =  '<spring:message code="health.required.congenitalDisease" />';

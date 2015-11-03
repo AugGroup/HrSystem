@@ -9,34 +9,16 @@ $(document).ready(function () {
 			dtReport.ajax.reload();
 		}else{
 			dtReport = $('#reportTable').DataTable({
-				columnDefs : [
-				               { "width": "14%", "targets": 2 },
-				               { "width": "13%", "targets": 3 },
-				               { "width": "13%", "targets": 4 },
-				               { "width": "13%", "targets": 5 },
-				               { "width": "13%", "targets": 6 },
-				             ],
-				searching : false,
-				paging: true,
-				sort : false,
 				ajax :{
 					type:'POST',
-					url: 'reservation/report/findReservationReport',
-					data: function (d) {
-						d.dateReservation = $('#dateReservation').val();
-						d.reservationBy = $('#reservationBy').val();
-						d.room = {id: $('#room').val()};
-//						d.employee = {id:$('#employee').val()};
-						d.masreservationtype = {id: $('#reservationType').val()};
-						d.masDivision = {id: $('#masDivisionInsert').val() }
-						console.log(d);
-						//console.log(d[0].divisionName);
-					},
-					complete: function(data){
-						if($('.dataTables_empty').length > 0){
-							document.getElementById("btn_preview").disabled = true;
-						}else document.getElementById("btn_preview").disabled = false;
+					url: $getContextPath+'/reservation/report/findReservationReport',
+					data: function (d) {						
+						d.roomId = $("#room").val();
+						d.reservationTypeId = $("#reservationType").val();
+						d.divisionId = $("#masDivisionInsert").val();;
+						d.reservationBy = $("#reservationBy").val();
 					}
+					
 				},
 				columns : [
 			           {data: "reservationBy"},

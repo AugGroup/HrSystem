@@ -320,37 +320,49 @@ $(function (){
 				dataType : "json",
 				data : JSON.stringify(reservation),
 				success : function(data){
-					insData = {
-						id : data.id,
-						title : data.title,
-						reservationBy : data.reservationBy,
-						masDivision :{"id": data.id},
-						description : data.description,
-						start : moment(data.start),
-						end : moment(data.end),
-						room :{"id":data.id},
-						reservationType :{"id":data.id},
-						color: '#FF4512'
-					};
-					console.log(insData);
-					$calendar.fullCalendar('renderEvent', insData); // stick? = true
-					$('#insModal').modal('hide');	
-					$('#formInsert').trigger('reset');
-					
-					new PNotify({
-						title: $notifySuccess,
-					    text:  $notifyAdd ,
-					    type: 'success',
-					    delay: 1000
-					});
+					console.log("return...");
+					console.log(data);
+					if(!data.id) {
+						$('#insModal').modal('hide');	
+						$('#formInsert').trigger('reset');
+						new PNotify({
+							title:  $notifyreserved,
+						    type: 'warning',
+						    delay: 1000
+						});
+						
+					} else {
+						insData = {
+							id : data.id,
+							title : data.title,
+							reservationBy : data.reservationBy,
+							masDivision :{"id": data.id},
+							description : data.description,
+							start : moment(data.start),
+							end : moment(data.end),
+							room :{"id":data.id},
+							reservationType :{"id":data.id},
+							color: '#FF4512'
+						};
+						console.log(insData);
+						$calendar.fullCalendar('renderEvent', insData); // stick? = true
+						$('#insModal').modal('hide');	
+						$('#formInsert').trigger('reset');
+						
+						new PNotify({
+							title: $notifySuccess,
+						    text:  $notifyAdd ,
+						    type: 'success',
+						    delay: 1000
+						});
+					}
 				},
 				error: function(error){
-					alert('error');
 					console.log(error);
 				}
 			});//end ajax
 		}
-	})//endonclick 'insBtn'
+	});//endonclick 'insBtn'
 	
 	$('#delModalBtn').on('click', function(){
 		$("#deleteReservModal").modal('show');
