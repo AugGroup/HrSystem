@@ -214,12 +214,12 @@ public class ReservationController {
 	}
 
 	@RequestMapping(value = "reservation/report/findReservationReport", method = RequestMethod.POST)
-	public @ResponseBody Object reservationReport(@RequestParam Integer roomId,Integer reservationTypeId, Integer divisionId,String reservationBy)
-			throws Exception {
+	public @ResponseBody Object reservationReport(@RequestParam Integer roomId,@RequestParam Integer reservationTypeId,@RequestParam Integer divisionId,String reservationBy){
 		System.out.println("roomId : " + roomId);
 		System.out.println("reservationTypeId : " + reservationTypeId);
 		System.out.println("divisionId : " + divisionId);
 		System.out.println("reservationBy : " + reservationBy);
+		
 		final List<ReportReservationDto> data;
 		data = reservationService.findReservation(roomId, reservationTypeId, divisionId, reservationBy);
 

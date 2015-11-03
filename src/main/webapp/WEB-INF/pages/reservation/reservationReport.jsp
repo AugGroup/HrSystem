@@ -32,7 +32,7 @@ $(document).ready(function(){
 								<div class="col-sm-12 col-md-2">
 									<label for="room">Room</label> 
 										<select name="room" id="room" class="form-control">
-											<option value="">--- Please Select Room ---</option>
+											<option value="-1">--- Please Select Room ---</option>
 												<c:forEach items="${rooms}" var="room">
 											<option value="${room.id}">${room.name} </option>
 												</c:forEach>
@@ -43,7 +43,7 @@ $(document).ready(function(){
 								<div class="col-sm-12 col-md-2">
 									<label for="reservationType">Reservation Type</label> 
 									<select id="reservationType" class="form-control" name = "reservationType">
-										<option value="">--- Please Select Reservation Type ---</option>
+										<option value="-1">--- Please Select Reservation Type ---</option>
 										<c:forEach items="${reservationTypes}" var="masreservationtype">
 											<option value="${masreservationtype.id}">${masreservationtype.name} </option>
 										</c:forEach>
@@ -96,6 +96,9 @@ $(document).ready(function(){
 					<th>DATE</th>
 				</tr>
 			</thead>
+			<tbody id="tableBody">
+
+			</tbody>
 		</table>
 	</div>
 </div>
