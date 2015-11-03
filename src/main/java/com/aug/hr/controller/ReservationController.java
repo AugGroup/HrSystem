@@ -79,11 +79,6 @@ public class ReservationController {
 		return masReservationTypeService.findAll();
 	}
 	
-	@RequestMapping(value="/reservation/test",method=RequestMethod.GET)
-	public @ResponseBody List<ReservationDto> reservationTest(){
-		return reservationService.findByTimestamp("2015-11-18 09:31:00");
-	}
-	
 	@RequestMapping(value="/reservation",method=RequestMethod.GET)
 	public String reservationPage(){
 		return "reservation/reservation";
