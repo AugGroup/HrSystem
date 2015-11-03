@@ -359,20 +359,22 @@ $(function (){
 	var $reservationList;
 
 	$('#searchReserveBtn').on('click', function(){
-		var reservation = {
-				reservationBy : $("#reservationByCriteria").val(),
-				masDivision : {id: $("#divisionCriteria").val()},
-				masreservationtype	: { id : $("#reservationTypeCriteria").val()}
-		}
-		$('#reservationListModal').modal('show');
+		var $reservationBy = $("#reservationByCriteria").val();
+		var $masDivision = $("#divisionCriteria").val();
+		var $masreservationtype = $("#reservationTypeCriteria").val();
+//		console.log($reservationBy);
+//		$('#reservationListModal').modal('show');
 		
 		$.ajax({
 			url:'reservation/ajax/searchReservation',
-			contentType : "application/json",
-			dataType : "json",
-			data : JSON.stringify(reservation),
-			dataSrc : "",
-			type : 'POST',
+//			contentType : "application/json",
+//			dataType : "json",
+			data : {
+				reservationBy : $reservationBy,
+				masDivision : $masDivision,
+				masreservationtype :$masreservationtype
+					},
+			type : 'GET',
 			success : function(result){
 				console.log(result);
 			},
@@ -392,9 +394,13 @@ $(function (){
 			ajax : {
 				url : 'reservation/ajax/searchReservation',
 //				contentType : "application/json",
-				data : JSON.stringify(reservation),
+				data : {
+					reservationBy : $reservationBy,
+					masDivision : $masDivision,
+					masreservationtype :$masreservationtype
+						},
 				dataSrc : "",
-				type : 'POST'
+				type : 'GET'
 			},
 			 columns:[
 			          {data : "roomName"},

@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.aug.hrdb.dto.ReportReservationDto;
 import com.aug.hrdb.dto.ReservationDto;
 import com.aug.hrdb.entities.Reservation;
 import com.aug.hrdb.services.ReservationService;
@@ -61,6 +62,7 @@ public class ReservationController {
 	@Autowired
 	private MasReservationTypeService masReservationTypeService;
 
+	
 	
 	@ModelAttribute("rooms")
 	public List<Room> roomList(){
@@ -187,8 +189,35 @@ public class ReservationController {
 	return returnTitle;
 	}
 	
-	@RequestMapping(value = "/reservation/ajax/searchReservation", method = {RequestMethod.GET,RequestMethod.POST})
-	public @ResponseBody List<ReservationDto> searchReservation(@RequestBody Reservation reservation) {
+	@RequestMapping(value = "/reservation/ajax/searchReservation", method = RequestMethod.GET)
+	public @ResponseBody List<ReservationDto> searchReservation(@RequestParam String reservationBy, @RequestParam Integer masDivision, @RequestParam Integer masreservationtype) {
+		System.out.println("do in controller");
+		Reservation reservation = new Reservation();
+		reservation.setMasDivision(masDivisionService.findById(masDivision));
+		reservation.setMasreservationtype(masReservationTypeService.findById(masreservationtype));
+		reservation.setReservationBy(reservationBy);
 		return reservationService.searchReservation(reservation);
+	}
+	
+	@RequestMapping(value = "reservation/report", method = RequestMethod.GET)
+	public String reservationReport() {
+		return "reservation/reservationReport";
+	}
+
+	@RequestMapping(value = "reservation/report/findReservationReport", method = RequestMethod.POST)
+	public @ResponseBody Object reservationReport(@RequestParam Integer roomId,Integer reservationTypeId, Integer divisionId,String reservationBy)
+			throws Exception {
+		System.out.println("roomId : " + roomId);
+		System.out.println("reservationTypeId : " + reservationTypeId);
+		System.out.println("divisionId : " + divisionId);
+		System.out.println("reservationBy : " + reservationBy);
+		final List<ReportReservationDto> data;
+		data = reservationService.findReservation(roomId, reservationTypeId, divisionId, reservationBy);
+
+		return new Object() {
+			public List<ReportReservationDto> getData() {
+				return data;
+			}
+		};
 	}
 }

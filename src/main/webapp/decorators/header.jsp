@@ -414,6 +414,10 @@ table.dataTable.no-footer {
 		    			<li>
 		    				<a id = "reportLeave-tap" href="<%=request.getContextPath()%>/employee/ReportLeave"><spring:message code="report.empLeave" /></a>
 		    			</li>
+		    			
+		    			<li>
+		    				<a id = "" href="<%=request.getContextPath()%>/reservation/report">Reservation Report</a>
+		    			</li>
 		    		
 		    		</ul>
 		    		
