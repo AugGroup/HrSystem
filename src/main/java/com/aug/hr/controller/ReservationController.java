@@ -28,6 +28,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.aug.hrdb.dto.ReportReservationDto;
+
+import com.aug.hrdb.dto.ApplicantDto;
+
 import com.aug.hrdb.dto.ReservationDto;
 import com.aug.hrdb.entities.Reservation;
 import com.aug.hrdb.services.ReservationService;
@@ -80,8 +83,9 @@ public class ReservationController {
 	}
 	
 	@RequestMapping(value="/reservation/test",method=RequestMethod.GET)
-	public @ResponseBody List<ReservationDto> reservationTest(){
-		return reservationService.findByTimestamp("2015-11-14 09:00:00");
+	public @ResponseBody ReservationDto reservationTest(){
+		ReservationDto xxx = reservationService.findReservationById(1);
+		return xxx;
 	}
 	
 	@RequestMapping(value="/reservation",method=RequestMethod.GET)
@@ -113,8 +117,6 @@ public class ReservationController {
 	
 	@RequestMapping(value="/reservation/insertReservation",method=RequestMethod.POST)
 	public @ResponseBody ReservationDto insertReservation(@RequestBody Reservation reservation) {
-		
-		
 	
 		/*                Change time for insert                      */
 		Date dateStart = reservation.getStart();//get date from calendar
@@ -127,30 +129,33 @@ public class ReservationController {
 		String startString = formatter.format(dateStart);//convert date's timezone but it return String
 		String endString = formatter.format(dateEnd);
 		
-		if ( reservationService.findByTimestamp(startString).size() == 0 && reservationService.findByTimestamp(endString).size() == 0) {
-			System.out.println("can");
+		if ( reservationService.findByTimestamp(startString, reservation.getRoom().getId()).size() == 0 && reservationService.findByTimestamp(endString, reservation.getRoom().getId()).size() == 0 && reservationService.findByBetween(startString, endString, reservation.getRoom().getId()).size()==0) {
+			
+			System.out.println("Can");
+			DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);//new format to convert String to Date
+			try {
+				//System.out.println(format.parse(startString));
+				reservation.setStart(format.parse(startString));//set date with new timezone 
+				reservation.setDateReservation(reservation.getStart());
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			try {
+				//System.out.println(format.parse(endString));
+				reservation.setEnd(format.parse(endString));
+			} catch (ParseException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			
+			reservationService.create(reservation);
+			return reservationService.findReservationById(reservation.getId());
+		} else {
+			System.out.println("Can't");
+			return new ReservationDto();
 		}
-		
-		DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);//new format to convert String to Date
-		try {
-			//System.out.println(format.parse(startString));
-			reservation.setStart(format.parse(startString));//set date with new timezone 
-			reservation.setDateReservation(reservation.getStart());
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		try {
-			//System.out.println(format.parse(endString));
-			reservation.setEnd(format.parse(endString));
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		reservationService.create(reservation);	
-		
-		return reservationService.findReservationById(reservation.getId());
 	}
 
 	@RequestMapping(value="/reservation/ajax/updateDateTime", method=RequestMethod.POST)
