@@ -178,12 +178,40 @@ function renderCalendar(){
 		   eventSource	={
 				url : 'reservation/ajax/getAllReservation',
 				type: 'POST',
+				data: { roomId : 1},
 				success: function(data) {
 				},
 				error: function(error) {
 					alert("ERROR");
-				}
+				},
+				color : "#FF4512",
+				textColor :'white'
+		    },
+		    {
+				url : 'reservation/ajax/getAllReservation',
+				type: 'POST',
+				data: { roomId : 2},
+				success: function(data) {
+				},
+				error: function(error) {
+					alert("ERROR");
+				},
+				color : "#91E650",
+				textColor :'white'
+		    },
+		    {
+				url : 'reservation/ajax/getAllReservation',
+				type: 'POST',
+				data: { roomId : 3},
+				success: function(data) {
+				},
+				error: function(error) {
+					alert("ERROR");
+				},
+				color : "#EBCD26",
+				textColor :'white'
 		    }
+		    
 		],
 		editable : true,
 		eventDrop: function(event, delta, revertFunc) {

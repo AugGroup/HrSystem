@@ -1,3 +1,9 @@
+ #emp-dropdown-list { 
+ 	width: auto !important; 
+     padding: 5px 5px 5px 5px !important; 
+    height: auto !important; 
+ } 
+
 @font-face {
     font-family: 'Dosis-Bold';
     src: url('../resource/fonts/Dosis-Bold.ttf') format('truetype');

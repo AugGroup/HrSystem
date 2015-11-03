@@ -87,10 +87,10 @@ public class ReservationController {
 	@RequestMapping(value="/reservation/ajax/getAllReservation",method=RequestMethod.POST)
 	public @ResponseBody List<ReservationDto> findAllReservation(@RequestParam(value="start") String start,
 			@RequestParam(value="end") String end, @RequestParam(value="_",required = false) String underscore, 
-			@RequestParam(value="timezone",required = false) String timezone) throws ParseException {
+			@RequestParam(value="timezone",required = false) String timezone, @RequestParam Integer roomId ) throws ParseException {
 		    System.out.println("start : "+start+"   end : "+end);
 			List<ReservationDto> reservations = new ArrayList<ReservationDto>();
-			reservations = reservationService.findByDateRange(start, end);
+			reservations = reservationService.findByDateRange(start, end,roomId);
 		if (null == reservations) {
 			return null;
 		}else if (reservations.size()==0) {
@@ -224,4 +224,5 @@ public class ReservationController {
 		
 		return reservationService.filterReservation(start, end, roomId, reservationTypeId, divisionId, reserveBy);
 	}
+
 }

@@ -4,9 +4,8 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <%@ taglib uri="http://www.springframework.org/tags/form" prefix="form"%>
 
-
 <div class="form-group navbar navbar-defaults">
-  <a class="dropdown-link-menu" href="#" class="dropdown-toggle" data-toggle="dropdown"><spring:message code="label.menu" var="menu" /><b class="caret">${menu}  <span class="glyphicon glyphicon-triangle-bottom" ></span></b></a>
+  <a class="dropdown-link-menu" href="#" class="dropdown-toggle" data-toggle="dropdown"><spring:message code="label.menu" var="menu" /><b class="caret" id="emp-dropdown-list">${menu}  <span class="glyphicon glyphicon-triangle-bottom" ></span></b></a>
 	        	
    		<ul class="dropdown-menu">
    			<c:if test="${ id == 0 || id == null}">
@@ -31,7 +30,7 @@
 			</c:if>
 			
 			<c:if test="${id > 0}">
-			<li ><a href="${pageContext.request.contextPath}/employee/init/${id}"  >Employee</a></li>
+			<li ><a href="${pageContext.request.contextPath}/employee/init/${id}"  ><spring:message code="employee.name" /></a></li>
 			<li><a href="${pageContext.request.contextPath}/family/${id}" ><spring:message code="family.name" /></a></li>
 			<li><a href="${pageContext.request.contextPath}/education/${id}" ><spring:message code="education.name" /></a></li>
 			<li><a href="${pageContext.request.contextPath}/experience/${id}" ><spring:message code="experience.name" /></a></li>
