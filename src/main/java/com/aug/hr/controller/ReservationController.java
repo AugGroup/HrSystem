@@ -27,6 +27,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import com.aug.hrdb.dto.ReportReservationDto;
 import com.aug.hrdb.dto.ReservationDto;
 import com.aug.hrdb.entities.Reservation;
 import com.aug.hrdb.services.ReservationService;
@@ -188,8 +189,6 @@ public class ReservationController {
 	return returnTitle;
 	}
 	
-	
-	
 	@RequestMapping(value = "/reservation/ajax/searchReservation", method = RequestMethod.GET)
 	public @ResponseBody List<ReservationDto> searchReservation(/*@RequestParam String reserveBy, @RequestParam Integer masReservationId,*/ @RequestParam String masDivisionId) {
 		Reservation reservation = new Reservation();
@@ -198,5 +197,27 @@ public class ReservationController {
 //		reservation.setMasreservationtype(masReservationTypeService.findById(masReservationId));
 //		reservation.setReservationBy(reserveBy);
 		return reservationService.searchReservation(reservation);
+	}
+	
+	@RequestMapping(value = "reservation/report", method = RequestMethod.GET)
+	public String reservationReport() {
+		return "reservation/reservationReport";
+	}
+
+	@RequestMapping(value = "reservation/report/findReservationReport", method = RequestMethod.POST)
+	public @ResponseBody Object reservationReport(@RequestParam Integer roomId,Integer reservationTypeId, Integer divisionId,String reservationBy)
+			throws Exception {
+		System.out.println("roomId : " + roomId);
+		System.out.println("reservationTypeId : " + reservationTypeId);
+		System.out.println("divisionId : " + divisionId);
+		System.out.println("reservationBy : " + reservationBy);
+		final List<ReportReservationDto> data;
+		data = reservationService.findReservation(roomId, reservationTypeId, divisionId, reservationBy);
+
+		return new Object() {
+			public List<ReportReservationDto> getData() {
+				return data;
+			}
+		};
 	}
 }
