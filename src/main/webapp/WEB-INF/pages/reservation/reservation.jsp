@@ -123,7 +123,7 @@
     </div>
   </div>
 </div>
-
+</div>
 
 <!-- Modal Delete -->
 <div class="modal fade" id="deleteReservModal" tabindex="-1" role="dialog" aria-labelledby="deleteModalLabel" aria-hidden="true">
@@ -257,7 +257,7 @@
 	    </div>
 	  </div>
 	</div>
-</div>
+
 
 <script type="text/javascript">
 	var $languageNow = "${pageContext.response.locale}";
