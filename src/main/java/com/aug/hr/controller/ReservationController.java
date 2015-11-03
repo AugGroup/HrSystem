@@ -190,12 +190,12 @@ public class ReservationController {
 	}
 	
 	@RequestMapping(value = "/reservation/ajax/searchReservation", method = RequestMethod.GET)
-	public @ResponseBody List<ReservationDto> searchReservation(/*@RequestParam String reserveBy, @RequestParam Integer masReservationId,*/ @RequestParam String masDivisionId) {
+	public @ResponseBody List<ReservationDto> searchReservation(@RequestParam String reservationBy, @RequestParam Integer masDivision, @RequestParam Integer masreservationtype) {
+		System.out.println("do in controller");
 		Reservation reservation = new Reservation();
-		
-		reservation.setMasDivision(masDivisionService.findById(Integer.parseInt(masDivisionId)));
-//		reservation.setMasreservationtype(masReservationTypeService.findById(masReservationId));
-//		reservation.setReservationBy(reserveBy);
+		reservation.setMasDivision(masDivisionService.findById(masDivision));
+		reservation.setMasreservationtype(masReservationTypeService.findById(masreservationtype));
+		reservation.setReservationBy(reservationBy);
 		return reservationService.searchReservation(reservation);
 	}
 	

@@ -362,19 +362,18 @@ $(function (){
 		var $reservationBy = $("#reservationByCriteria").val();
 		var $masDivision = $("#divisionCriteria").val();
 		var $masreservationtype = $("#reservationTypeCriteria").val();
-		
-		$('#reservationListModal').modal('show');
+//		console.log($reservationBy);
+//		$('#reservationListModal').modal('show');
 		
 		$.ajax({
 			url:'reservation/ajax/searchReservation',
-			contentType : "application/json",
-			dataType : "json",
+//			contentType : "application/json",
+//			dataType : "json",
 			data : {
 				reservationBy : $reservationBy,
 				masDivision : $masDivision,
 				masreservationtype :$masreservationtype
 					},
-			dataSrc : "",
 			type : 'GET',
 			success : function(result){
 				console.log(result);
