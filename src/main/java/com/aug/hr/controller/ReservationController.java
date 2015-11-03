@@ -187,7 +187,7 @@ public class ReservationController {
 	return returnTitle;
 	}
 	
-	@RequestMapping(value = "/reservation/ajax/searchReservation", method = RequestMethod.POST)
+	@RequestMapping(value = "/reservation/ajax/searchReservation", method = {RequestMethod.GET,RequestMethod.POST})
 	public @ResponseBody List<ReservationDto> searchReservation(@RequestBody Reservation reservation) {
 		return reservationService.searchReservation(reservation);
 	}

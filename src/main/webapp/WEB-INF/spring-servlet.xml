@@ -62,7 +62,7 @@
         <property name="maxUploadSize" value="5000000" />    <!-- 5000000 -->
 	</bean>
 	
-	<bean
+<!-- 	<bean
 	  class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 	  <property name="exceptionMappings">
 		<props>
@@ -93,7 +93,7 @@
 			
 		</props>
 	  </property>
-	</bean>  
+	</bean>   -->
 	
 	<!-- <bean id="RestOperations" class="org.springframework.web.client.RestTemplate">
     <constructor-arg>
