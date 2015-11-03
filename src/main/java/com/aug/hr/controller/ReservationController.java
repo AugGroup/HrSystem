@@ -62,6 +62,7 @@ public class ReservationController {
 	private MasReservationTypeService masReservationTypeService;
 
 	
+	
 	@ModelAttribute("rooms")
 	public List<Room> roomList(){
 		return roomService.findAll();
@@ -187,8 +188,15 @@ public class ReservationController {
 	return returnTitle;
 	}
 	
-	@RequestMapping(value = "/reservation/ajax/searchReservation", method = RequestMethod.POST)
-	public @ResponseBody List<ReservationDto> searchReservation(@RequestBody Reservation reservation) {
+	
+	
+	@RequestMapping(value = "/reservation/ajax/searchReservation", method = RequestMethod.GET)
+	public @ResponseBody List<ReservationDto> searchReservation(/*@RequestParam String reserveBy, @RequestParam Integer masReservationId,*/ @RequestParam String masDivisionId) {
+		Reservation reservation = new Reservation();
+		
+		reservation.setMasDivision(masDivisionService.findById(Integer.parseInt(masDivisionId)));
+//		reservation.setMasreservationtype(masReservationTypeService.findById(masReservationId));
+//		reservation.setReservationBy(reserveBy);
 		return reservationService.searchReservation(reservation);
 	}
 }
