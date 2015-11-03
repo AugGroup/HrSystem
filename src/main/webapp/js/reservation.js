@@ -326,8 +326,7 @@ $(function (){
 						$('#insModal').modal('hide');	
 						$('#formInsert').trigger('reset');
 						new PNotify({
-							title: 'Fail',
-						    text:  'intersect' ,
+							title:  $notifyreserved,
 						    type: 'warning',
 						    delay: 1000
 						});
