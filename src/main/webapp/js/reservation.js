@@ -73,7 +73,7 @@ function updateAppointmentDate(eventToUpdate, revertParam){
 
 	    	console.log(updatedata);
 	    	$.ajax({
-	    		url:"reservation/ajax/updateDateTime",
+	    		url:$getContextPath+"/reservation/ajax/updateDateTime",
 	    		type: "POST",
 	    		contentType : "application/json",
 	    		data : JSON.stringify(updatedata),
@@ -100,7 +100,7 @@ function updateAppointmentDate(eventToUpdate, revertParam){
 
 function deleteReservation(id){
 	$.ajax({
-		url : 'reservation/ajax/deleteReservation/'+id,
+		url : $getContextPath+'/reservation/ajax/deleteReservation/'+id,
 		type : 'POST',
 		contentType : "application/json",
 		success: function(result){
@@ -150,7 +150,7 @@ function renderCalendar(){
 	    eventClick: function(event) {
 			eventSelector = event;
 			$.ajax({
-				url : 'reservation/ajax/getReservation/'+event.id,
+				url : $getContextPath+'/reservation/ajax/getReservation/'+event.id,
 				type : 'POST',
 				success: function(data) {
 
@@ -176,7 +176,7 @@ function renderCalendar(){
 		ignoreTimezone:false,
 		eventSources : eventSource = [
 		   {
-				url : 'reservation/ajax/getAllReservation',
+				url : $getContextPath+'/reservation/ajax/getAllReservation',
 				type: 'POST',
 				data: { roomId : 1},
 				success: function(data) {
@@ -188,7 +188,7 @@ function renderCalendar(){
 				textColor :'white'
 		    },
 		    {
-				url : 'reservation/ajax/getAllReservation',
+				url : $getContextPath+'/reservation/ajax/getAllReservation',
 				type: 'POST',
 				data: { roomId : 2},
 				success: function(data) {
@@ -200,7 +200,7 @@ function renderCalendar(){
 				textColor :'white'
 		    },
 		    {
-				url : 'reservation/ajax/getAllReservation',
+				url : $getContextPath+'/reservation/ajax/getAllReservation',
 				type: 'POST',
 				data: { roomId : 3},
 				success: function(data) {
@@ -296,7 +296,7 @@ $(function (){
 		}
 		
 		$.ajax({
-    		url:"reservation/ajax/updateData",
+    		url:$getContextPath+"/reservation/ajax/updateData",
     		type: "POST",
     		contentType : "application/json",
     		data : JSON.stringify(reservationToUpdate),
@@ -343,7 +343,7 @@ $(function (){
 			console.log(JSON.stringify(reservation));
 			
 			$.ajax({
-				url : "reservation/insertReservation",
+				url : $getContextPath+"/reservation/insertReservation",
 				type : 'POST',
 				contentType : "application/json",
 				dataType : "json",
@@ -406,7 +406,7 @@ $(function (){
 		$('#reservationListModal').modal('show');
 		
 		$.ajax({
-			url:'reservation/ajax/searchReservation',
+			url:$getContextPath+'/reservation/ajax/searchReservation',
 //			contentType : "application/json",
 //			dataType : "json",
 			data : {
@@ -432,7 +432,7 @@ $(function (){
 			hover:false,
 			sort:false,
 			ajax : {
-				url : 'reservation/ajax/searchReservation',
+				url : $getContextPath+'/reservation/ajax/searchReservation',
 //				contentType : "application/json",
 				data : {
 					reservationBy : $reservationBy,
@@ -500,7 +500,7 @@ $(function (){
 		    eventClick: function(event) {
 				eventSelector = event;
 				$.ajax({
-					url : 'reservation/ajax/getReservation/'+event.id,
+					url : $getContextPath+'/reservation/ajax/getReservation/'+event.id,
 					type : 'POST',
 					success: function(data) {
 
@@ -526,7 +526,7 @@ $(function (){
 			ignoreTimezone:false,
 			eventSources:[
 			   eventSource	={
-					url : 'reservation/filterReservation',
+					url : $getContextPath+'/reservation/filterReservation',
 					type: 'POST',
 					data: {
 						reserveBy : $reservationBy,
