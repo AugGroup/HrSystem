@@ -225,6 +225,7 @@ public class ReservationController {
 		System.out.println("reservationTypeId : " + reservationTypeId);
 		System.out.println("divisionId : " + divisionId);
 		System.out.println("reservationBy : " + reservationBy);
+//		reservationBy.trim();
 		final List<ReportReservationDto> data;
 		data = reservationService.findReservation(roomId, reservationTypeId, divisionId, reservationBy);
 
@@ -240,51 +241,84 @@ public class ReservationController {
 		return reservationService.filterReservation(start, end, roomId, reservationTypeId, divisionId, reserveBy);
 	}
 	
-	@RequestMapping(value = "reservation/report/review/{reportType}/{room}/{reservationType}/{masDivisionInsert}/{reservationBy}", method = RequestMethod.GET)
-	public ModelAndView reportReservationPreview (@PathVariable String reportType,@RequestParam(required=false,defaultValue= "-1" )Integer roomId,
-			@RequestParam(required=false,defaultValue= "-1" ) Integer reservationTypeId,
-			@RequestParam(required=false,defaultValue= "-1" ) Integer divisionId,
-			@RequestParam(required=false,defaultValue= "empty" ) String reservationBy){
+//	@RequestMapping(value = "reservation/report/review/{reportType}/{room}/{reservationType}/{masDivisionInsert}/{reservationBy}", method = RequestMethod.GET)
+//	public ModelAndView reportReservationPreview (@PathVariable String reportType,@RequestParam(required=false,defaultValue= "-1" )Integer roomId,
+//			@RequestParam(required=false,defaultValue= "-1" ) Integer reservationTypeId,
+//			@RequestParam(required=false,defaultValue= "-1" ) Integer divisionId,
+//			@RequestParam(required=false,defaultValue= "empty" ) String reservationBy){
+//		
+//		System.out.println("roomId : " + roomId);
+//		System.out.println("reservationTypeId : " + reservationTypeId);
+//		System.out.println("divisionId : " + divisionId);
+//		System.out.println("reservationBy : " + reservationBy);
+//		List<ReportReservationDto> reportReservationDto = reservationService.findReservation(roomId, reservationTypeId, divisionId, reservationBy);
+//			
+//		Map<String, Object> parameterMap = new HashMap<String, Object>();
+//		String roomId1 = "";
+//		String reservationTypeId1 = "";
+//		String divisionId1 = "";
+//		String reservationBy1 ="";
+//		
+//		if( !StringUtils.isEmpty(reservationBy1)&& reservationBy1.length()>0){
+//			reservationBy1 = " AND reservation.RESERVATIONBY = '"+reservationBy1+"'";
+//		}
+//		
+//		if(roomId > 0){
+//			roomId1 = " AND room.ID = "+roomId;
+//		}
+//		
+//		if(reservationTypeId > 0 ){
+//			reservationTypeId1 = " AND masreservationtype.ID = "+reservationTypeId;
+//		}
+//		
+//		if(divisionId > 0 ){
+//			divisionId1 = " AND masdivision.ID = "+divisionId;
+//		}
+//	
+//		parameterMap.put(JRParameter.REPORT_LOCALE, Locale.ENGLISH);
+//
+//		parameterMap.put("format", reportType);
+//
+//		  
+//
+//		  JasperReportsMultiFormatView view = new JasperReportsMultiFormatView();
+//
+//		  view.setJdbcDataSource(dataSource);
+//
+//		  view.setUrl("classpath:reports/reservationReport.jasper");
+//
+//		  view.setApplicationContext(appContext);
+//		  return new ModelAndView(view, parameterMap);
+//
+//	}
+	
+	@RequestMapping(value = "reservation/report/review/{reportType}/{roomId}/{reservationTypeId}/{divisionId}/{reservationBy}", method = RequestMethod.GET)
+	public ModelAndView reportPreview (@PathVariable String reportType,@PathVariable Integer roomId,
+			@PathVariable Integer reservationTypeId,
+			@PathVariable Integer divisionId,
+			@PathVariable String reservationBy){
 		
-		System.out.println("roomId : " + roomId);
-		System.out.println("reservationTypeId : " + reservationTypeId);
-		System.out.println("divisionId : " + divisionId);
-		System.out.println("reservationBy : " + reservationBy);
-		List<ReportReservationDto> reportReservationDto = reservationService.findReservation(roomId, reservationTypeId, divisionId, reservationBy);
+		System.out.println("roomId aa: " + roomId);
+		System.out.println("reservationTypeId aa: " + reservationTypeId);
+		System.out.println("divisionId aa: " + divisionId);
+		System.out.println("reservationBy aa: " + reservationBy);
+		
+		if(reservationBy.equals("null")){
+			reservationBy = "";
+		}
+		List<ReportReservationDto> reportReservationDto = reservationService.findReservation(roomId, reservationTypeId, divisionId,reservationBy);
 			
 		Map<String, Object> parameterMap = new HashMap<String, Object>();
-		String roomId1 = "";
-		String reservationTypeId1 = "";
-		String divisionId1 = "";
-		String reservationBy1 ="";
-		
-		if( !StringUtils.isEmpty(reservationBy1)&& reservationBy1.length()>0){
-			reservationBy1 = " AND reservation.RESERVATIONBY = '"+reservationBy1+"'";
-		}
-		
-		if(roomId > 0){
-			roomId1 = " AND room.ID = "+roomId;
-		}
-		
-		if(reservationTypeId > 0 ){
-			reservationTypeId1 = " AND masreservationtype.ID = "+reservationTypeId;
-		}
-		
-		if(divisionId > 0 ){
-			divisionId1 = " AND masdivision.ID = "+divisionId;
-		}
-	
-		parameterMap.put(JRParameter.REPORT_LOCALE, Locale.ENGLISH);
 
-		parameterMap.put("format", reportType);
+		  JRDataSource jrDataSource = new JRBeanCollectionDataSource(reportReservationDto);
 
-		  
+		  parameterMap.put("dataSource", jrDataSource);
+
+		  parameterMap.put("format", reportType);
 
 		  JasperReportsMultiFormatView view = new JasperReportsMultiFormatView();
 
-		  view.setJdbcDataSource(dataSource);
-
-		  view.setUrl("classpath:reports/reservationReport.jasper");
+		  view.setUrl("classpath:reports/report_Reservation.jrxml");
 
 		  view.setApplicationContext(appContext);
 

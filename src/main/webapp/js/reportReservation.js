@@ -10,9 +10,10 @@ $(document).ready(function () {
 					type:'POST',
 					url: $getContextPath+'/reservation/report/findReservationReport',
 					data: function (d) {	
+
 						d.roomId = $("#room").val();
 						d.reservationTypeId = $("#reservationType").val();
-						d.divisionId = $("#masDivisionInsert").val();;
+						d.divisionId = $("#masDivisionInsert").val();
 						d.reservationBy = $("#reservationBy").val();
 					},
 					dataSrc: function (data) {
@@ -45,7 +46,10 @@ $(document).ready(function () {
 		console.log(typePreview);
 		
 		if($("#reservationBy").val()== ""){
-			var reservationBy = "empty";
+			var reservationBy = "null";
+		}else{
+			var reservationBy = $("#reservationBy").val();
+			
 		}
 		window.open(
 				$getContextPath+'/reservation/report/review/'+typePreview+'/'
