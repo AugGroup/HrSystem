@@ -177,7 +177,6 @@ public class ReservationController {
 	public @ResponseBody ReservationDto updateData(@RequestBody Reservation reservation){
 		Reservation reservationToUpdate = reservationService.findById(reservation.getId());
 		reservationToUpdate.setId(reservation.getId());
-		
 		reservationToUpdate.setRoom(reservation.getRoom());
 		reservationToUpdate.setDescription(reservation.getDescription());
 		reservationToUpdate.setMasreservationtype(reservation.getMasreservationtype());
@@ -206,9 +205,18 @@ public class ReservationController {
 	public @ResponseBody List<ReservationDto> searchReservation(@RequestParam String reservationBy, @RequestParam Integer masDivision, @RequestParam Integer masreservationtype) {
 		System.out.println("do in controller");
 		Reservation reservation = new Reservation();
-		reservation.setMasDivision(masDivisionService.findById(masDivision));
-		reservation.setMasreservationtype(masReservationTypeService.findById(masreservationtype));
+		if(null!=masDivision){
+			reservation.setMasDivision(masDivisionService.findById(masDivision));
+			System.out.println("notttttttttttttttt");
+		}
+		
+		if(null!=masreservationtype){
+			reservation.setMasreservationtype(masReservationTypeService.findById(masreservationtype));
+		}
+		
 		reservation.setReservationBy(reservationBy);
+		
+		System.out.println("complete setting");
 		return reservationService.searchReservation(reservation);
 	}
 	

@@ -220,6 +220,10 @@
 	var $requiredIntoleranceExplain =  '<spring:message code="health.required.intoleranceExplain" />';
 	
 	/* reservation-validate*/
+	var $confirmYes = '<spring:message code="default.yes" />';
+	var $confirmNo = '<spring:message code="default.no" />';
+	var $confirmUpdate = '<spring:message code="reservation.confirm.update" />';
+	var $cannotMove = '<spring:message code="reservation.cannot.move" />';
 	var $requiredRoom = '<spring:message code="require.reservation.room" />';
 	var $requiredType = '<spring:message code="require.reservation.type" />';
 	var $requiredBy = '<spring:message code="require.reservation.by" />';

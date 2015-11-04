@@ -55,20 +55,20 @@ var $validform = $("#formInsert").validate({
 	
 });
 
-function updateAppointmentDate(eventToUpdate, revertParam){
+function updateReservationDate(eventToUpdate, revertParam){
 	alertify.set({ 	buttonReverse: true,
 		labels: {
-		    ok     : 'yes',
-		    cancel : 'no'
+		    ok     : $confirmYes,
+		    cancel : $confirmNo
 		}
 	});	
 	
-	alertify.confirm('Do you want to update?', function (e) {
+	alertify.confirm($confirmUpdate, function (e) {
 	    if (e) { // user click confirm
 	    	var updatedata = {
 				id : eventToUpdate.id, 
-				start : eventToUpdate.start.tz("Asia/Bangkok").format("YYYY-MM-DD HH:mm:ss"), 
-				end : eventToUpdate.end.tz("Asia/Bangkok").format("YYYY-MM-DD HH:mm:ss")
+				start : eventToUpdate.start.format("YYYY-MM-DD HH:mm:ss"), 
+    			end : eventToUpdate.end.format("YYYY-MM-DD HH:mm:ss") 
 		    };
 
 	    	console.log(updatedata);
@@ -182,9 +182,9 @@ function renderCalendar(){
 				success: function(data) {
 				},
 				error: function(error) {
-					alert("ERROR1");
+					alert("ERROR");
 				},
-				color : "#FF4512",
+				color : "#79CDCD",
 				textColor :'white'
 		    },
 		    {
@@ -194,9 +194,9 @@ function renderCalendar(){
 				success: function(data) {
 				},
 				error: function(error) {
-					alert("ERROR2");
+					alert("ERROR");
 				},
-				color : "#91E650",
+				color : "#FF9999",
 				textColor :'white'
 		    },
 		    {
@@ -206,9 +206,9 @@ function renderCalendar(){
 				success: function(data) {
 				},
 				error: function(error) {
-					alert("ERROR3");
+					alert("ERROR");
 				},
-				color : "#EBCD26",
+				color : "#33CC66",
 				textColor :'white'
 		    }
 		    
@@ -216,14 +216,14 @@ function renderCalendar(){
 		editable : true,
 		eventDrop: function(event, delta, revertFunc) {
 			if(event.start.format("YYYY-MM-DD-HH-mm") < moment().format("YYYY-MM-DD-HH-mm")){
-				alertify.alert('cant edit');
+				alertify.alert($cannotMove);
 				revertFunc();
 			}else{
-				updateAppointmentDate(event, revertFunc);
+				updateReservationDate(event, revertFunc);
 			}
 	    },
 	    eventResize: function(event, delta, revertFunc) {
-	    	updateAppointmentDate(event, revertFunc);
+	    	updateReservationDate(event, revertFunc);
 	    },
 			
 		
@@ -310,6 +310,29 @@ $(function (){
     			$("#detailDivision").text(result.divisionName);
     			$("#detailReservBy").text(result.reservedBy);
     			
+    			
+    			var roomId = $("#editdetailRoomName").val();
+    			var roomColor;
+    			if (roomId == 1){
+    				roomColor = "#79CDCD";
+    			} else if (roomId == 2){
+    				roomColor = "#FF9999";
+    			}  else if (roomId == 3){
+    				roomColor = "#33CC66";
+    			}
+    			$calendar.fullCalendar( 'removeEvents' ,eventSelector.id ); //remove old event
+    			updateData = {
+						id : eventSelector.id,
+						title : result.title,
+						start : moment(result.start),
+						end : moment(result.end),
+						color: roomColor
+					};
+					console.log(updateData);
+					$calendar.fullCalendar('renderEvent', updateData); // create new event
+    			
+    			
+    			
     			new PNotify({
 					title: $notifySuccess,
 				    text:  $notifyUpdate ,
@@ -371,7 +394,7 @@ $(function (){
 							end : moment(data.end),
 							room :{"id":data.id},
 							reservationType :{"id":data.id},
-							color: '#FF4512'
+							color: '#CC66CC'
 						};
 						console.log(insData);
 						$calendar.fullCalendar('renderEvent', insData); // stick? = true
@@ -413,7 +436,7 @@ $(function (){
 				reservationBy : $reservationBy,
 				masDivision : $masDivision,
 				masreservationtype :$masreservationtype
-					},
+			},
 			type : 'GET',
 			success : function(result){
 				console.log(result);
@@ -467,8 +490,129 @@ $(function (){
 		var $masDivision = $("#divisionFilter").val();
 		var $masreservationtype = $("#reservationTypeFilter").val();
 		var $masRoom = $("#roomFilter").val();
+		var view = $calendar.fullCalendar('getView');
 		
 		$calendar.fullCalendar( 'destroy' );
+		var eventSource;
+		if( $("#roomFilter").val()==1){
+			eventSource = [
+				{
+						url : 'reservation/filterReservation',
+						type: 'POST',
+						data: {
+								reserveBy : $reservationBy,
+								divisionId : $masDivision,
+								reservationTypeId :$masreservationtype,
+								roomId : 1
+						},
+				success: function(data) {
+				},
+				error: function(error) {
+					alert("ERROR");
+				},
+				color : "#79CDCD",
+				textColor :'white'
+				}
+			               ]
+		}else if ( $("#roomFilter").val()==2){
+			eventSource = [
+               {
+      				url : 'reservation/filterReservation',
+      				type: 'POST',
+      				data: {
+						reserveBy : $reservationBy,
+						divisionId : $masDivision,
+						reservationTypeId :$masreservationtype,
+						roomId : 2
+					},
+      				success: function(data) {
+      				},
+      				error: function(error) {
+      					alert("ERROR");
+      				},
+      				color : "#FF9999",
+      				textColor :'white'
+      		    }
+           ]
+		}else if ( $("#roomFilter").val()==3){
+			eventSource = [	
+				{
+						url : 'reservation/filterReservation',
+						type: 'POST',
+						data: {
+							reserveBy : $reservationBy,
+							divisionId : $masDivision,
+							reservationTypeId :$masreservationtype,
+							roomId : 3
+						},
+						success: function(data) {
+						},
+						error: function(error) {
+							alert("ERROR");
+						},
+						color : "#33CC66",
+						textColor :'white'
+				 }
+			               ]
+		}else{
+			eventSource = [
+     		   {
+      				url : 'reservation/filterReservation',
+      				type: 'POST',
+      				data: {
+						reserveBy : $reservationBy,
+						divisionId : $masDivision,
+						reservationTypeId :$masreservationtype,
+						roomId : 1
+					},
+      				success: function(data) {
+      				},
+      				error: function(error) {
+      					alert("ERROR");
+      				},
+      				color : "#79CDCD",
+      				textColor :'white'
+      		    },
+      		    {
+      				url : 'reservation/filterReservation',
+      				type: 'POST',
+      				data: {
+						reserveBy : $reservationBy,
+						divisionId : $masDivision,
+						reservationTypeId :$masreservationtype,
+						roomId : 2
+					},
+      				success: function(data) {
+      				},
+      				error: function(error) {
+      					alert("ERROR");
+      				},
+      				color : "#FF9999",
+      				textColor :'white'
+      		    },
+      		    {
+      				url : 'reservation/filterReservation',
+      				type: 'POST',
+      				data: {
+						reserveBy : $reservationBy,
+						divisionId : $masDivision,
+						reservationTypeId :$masreservationtype,
+						roomId : 3
+					},
+      				success: function(data) {
+      				},
+      				error: function(error) {
+      					alert("ERROR");
+      				},
+      				color : "#33CC66",
+      				textColor :'white'
+      		    }  
+      		];
+		}
+		
+		 
+		
+		
 		
 		$calendar = $("#calendar").fullCalendar({
 			header:{
@@ -480,7 +624,7 @@ $(function (){
 			editable: true,
 			allDaySlot : false,
 			buttonIcons: true,
-			defaultDate: moment(),
+			defaultDate: view.intervalStart,
 			select: function(start,end){
 				var view = $calendar.fullCalendar('getView');//get view object
 				if(view.name == "month"){ //if event that selected is month then show agendaDay view 
@@ -524,40 +668,43 @@ $(function (){
 			lang: $languageNow,
 			timezone: "Asia/Bangkok",
 			ignoreTimezone:false,
-			eventSources:[
-			   eventSource	={
-					url : $getContextPath+'/reservation/filterReservation',
-					type: 'POST',
-					data: {
-						reserveBy : $reservationBy,
-						divisionId : $masDivision,
-						reservationTypeId :$masreservationtype,
-						roomId : $masRoom
-					},
-					success: function(data) {
-						alert('Success');
-					},
-					error: function(error) {
-						alert("ERROR");
-					}
-			    }
-			],
+			eventSources: 
+				eventSource = [	
+         			{
+    						url : 'reservation/filterReservation',
+    						type: 'POST',
+    						data: {
+    							reserveBy : $reservationBy,
+    							divisionId : $masDivision,
+    							reservationTypeId :$masreservationtype,
+    							roomId : $masRoom
+    						},
+    						success: function(data) {
+    						},
+    						error: function(error) {
+    							alert("ERROR");
+    						},
+    						textColor :'white'
+    				 }
+               ],
 			editable : true,
 			eventDrop: function(event, delta, revertFunc) {
 				if(event.start.format("YYYY-MM-DD-HH-mm") < moment().format("YYYY-MM-DD-HH-mm")){
 					alertify.alert('cant edit');
 					revertFunc();
 				}else{
-					updateAppointmentDate(event, revertFunc);
+					updateReservationDate(event, revertFunc);
 				}
 		    },
 		    eventResize: function(event, delta, revertFunc) {
-		    	updateAppointmentDate(event, revertFunc);
+		    	updateReservationDate(event, revertFunc);
 		    },
-				
+
 			
 			
 		})
+		
+		$("div.fc-center").addClass("text-center");
 		
 	})
 })
