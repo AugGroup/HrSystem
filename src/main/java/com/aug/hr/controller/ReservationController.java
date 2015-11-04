@@ -154,6 +154,7 @@ public class ReservationController {
 					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
+				reservationService.create(reservation);
 				return reservationService.findReservationById(reservation.getId());
 			} else {
 				System.out.println("Can't");

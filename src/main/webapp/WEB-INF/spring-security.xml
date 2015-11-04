@@ -14,11 +14,10 @@
  	
     <http auto-config="true"  use-expressions="true">
         <intercept-url pattern="/login" access="permitAll" />
-        <intercept-url pattern="/reservation/**" access="permitAll" />
+        
         <intercept-url pattern="/logout" access="permitAll" />
         <intercept-url pattern="/accessdenied" access="permitAll" />
         <intercept-url pattern="/index" access="hasAnyRole('ROLE_ADMIN','ROLE_STAFF','ROLE_HR')" />
-<!--         <intercept-url pattern="/**" access="permitAll" /> -->
         <intercept-url pattern="/**" access="isAuthenticated()" />
         <form-login login-page="/login" default-target-url="/listemployee" authentication-failure-url="/accessdenied" always-use-default-target="true" />
         <logout logout-success-url="/logout" delete-cookies="JSESSIONID" invalidate-session="true"  />
