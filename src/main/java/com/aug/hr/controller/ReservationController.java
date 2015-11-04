@@ -105,43 +105,46 @@ public class ReservationController {
 	}
 	
 	@RequestMapping(value="/reservation/insertReservation",method=RequestMethod.POST)
-	public @ResponseBody ReservationDto insertReservation(@RequestBody Reservation reservation) {
+		public @ResponseBody ReservationDto insertReservation(@RequestBody Reservation reservation) {
 		
-		
+			/*                Change time for insert                      */
+			Date dateStart = reservation.getStart();//get date from calendar
+			Date dateEnd = reservation.getEnd();
+			DateFormat formatterDate = new SimpleDateFormat("yyyy-MM-dd",Locale.ENGLISH);
+			
+			DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss",Locale.ENGLISH);
+			formatter.setTimeZone(TimeZone.getTimeZone("GMT"));//set Timezone to be GMT
+			
+			String startString = formatter.format(dateStart);//convert date's timezone but it return String
+			String endString = formatter.format(dateEnd);
+			
+			if ( reservationService.findByTimestamp(startString, reservation.getRoom().getId()).size() == 0 && reservationService.findByTimestamp(endString, reservation.getRoom().getId()).size() == 0 && reservationService.findByBetween(startString, endString, reservation.getRoom().getId()).size()==0) {
+			
+				System.out.println("Can");
+			DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);//new format to convert String to Date
+				try {
+					//System.out.println(format.parse(startString));
+					reservation.setStart(format.parse(startString));//set date with new timezone 
+					reservation.setDateReservation(reservation.getStart());
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				
+				try {
+					//System.out.println(format.parse(endString));
+					reservation.setEnd(format.parse(endString));
+				} catch (ParseException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
+				return reservationService.findReservationById(reservation.getId());
+			} else {
+				System.out.println("Can't");
+				return new ReservationDto();
+			}
+		}
 	
-		/*                Change time for insert                      */
-		Date dateStart = reservation.getStart();//get date from calendar
-		Date dateEnd = reservation.getEnd();
-		DateFormat formatterDate = new SimpleDateFormat("yyyy-MM-dd",Locale.ENGLISH);
-		
-		DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss",Locale.ENGLISH);
-		formatter.setTimeZone(TimeZone.getTimeZone("GMT"));//set Timezone to be GMT
-		
-		String startString = formatter.format(dateStart);//convert date's timezone but it return String
-		String endString = formatter.format(dateEnd);
-		
-		DateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss", Locale.ENGLISH);//new format to convert String to Date
-		try {
-			//System.out.println(format.parse(startString));
-			reservation.setStart(format.parse(startString));//set date with new timezone 
-			reservation.setDateReservation(reservation.getStart());
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		
-		try {
-			//System.out.println(format.parse(endString));
-			reservation.setEnd(format.parse(endString));
-		} catch (ParseException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		reservationService.create(reservation);	
-		
-		return reservationService.findReservationById(reservation.getId());
-	}
-
 	@RequestMapping(value="/reservation/ajax/updateDateTime", method=RequestMethod.POST)
 	public @ResponseBody ReservationDto updateGetDateTime(@RequestBody Reservation reservation){
 		Reservation reservationToUpdate = reservationService.findById(reservation.getId());
