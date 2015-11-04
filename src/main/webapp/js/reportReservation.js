@@ -1,9 +1,6 @@
 $(document).ready(function () {
 	var dtReport;
-	//GPA pattern
-	/*$("#gpa").inputmask('Regex', { regex: "[0-3]\\.[0-9][0-9]?$ |4\\.00$" });*/
-	
-	//Search By Criteria and Show function 
+	var $dataReport;
 	$('#btn_search').off('click').on('click', function(){
 		if(dtReport){
 			dtReport.ajax.reload();
@@ -12,21 +9,24 @@ $(document).ready(function () {
 				ajax :{
 					type:'POST',
 					url: $getContextPath+'/reservation/report/findReservationReport',
-					data: function (d) {						
+					data: function (d) {	
 						d.roomId = $("#room").val();
 						d.reservationTypeId = $("#reservationType").val();
 						d.divisionId = $("#masDivisionInsert").val();;
 						d.reservationBy = $("#reservationBy").val();
+					},
+					dataSrc: function (data) {
+						$dataReport = data;
+						console.log(data.length)
+			            return data;
 					}
-					
 				},
 				columns : [
 			           {data: "reservationBy"},
 				       {data: "divisionName"},
 				       {data: "roomName"},
 				       {data: "reservationTypeName"},
-				       {data: "dateReservation"},
-				      
+				       {data: "dateReservation"},				      
 				       ]
 //				language:{
 //
@@ -39,7 +39,16 @@ $(document).ready(function () {
 		
 	});
 	
-	
+	$("#btn_preview").off().on("click",function(){
+		$("input:radio[name='reportType']").click(function(){
+            if(this.value === 'pdf' && this.checked){
+            	console.log("pdf");
+	        } else {
+	        	console.log("xls");
+	        }
+		});
+		
+	});
 	
 	$('#btn_search').trigger("click");
 	

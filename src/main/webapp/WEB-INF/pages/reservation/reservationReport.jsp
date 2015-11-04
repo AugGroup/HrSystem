@@ -58,7 +58,7 @@ $(document).ready(function(){
 								<div class="col-sm-12 col-md-2">
 									<label for="masDivision">Division</label> 
 									<select name="masDivisionInsert" id="masDivisionInsert" class="form-control">
-										<option value="">--- Please Select Division ---</option>
+										<option value="-1">--- Please Select Division ---</option>
 		
 										<c:forEach items="${divisions}" var="masDivision">
 												<option value="${masDivision.id}">${masDivision.name} </option>
@@ -74,6 +74,24 @@ $(document).ready(function(){
 								</div>
 								
 						</div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="row" >
+				<div class="report_preview">
+					<div class="search_inputgroup">
+							<div class="form-group" id="radio_inputgroup">
+								<label for="reportType">preview</label> 
+								<input type="radio" value="pdf" id="reportType" name="reportType" checked="checked">pdf
+								<input type="radio" value="xls" id="reportType" name="reportType">xls
+							</div>
+							
+							<div class="div_btn_report" >
+								<button type="button" class="btn btn-primary" id="btn_preview">
+									<span class="glyphicon glyphicon-search"></span>preview
+								</button>
+							</div>
 					</div>
 				</div>
 			</div>

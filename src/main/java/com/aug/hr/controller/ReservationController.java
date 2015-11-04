@@ -198,8 +198,10 @@ public class ReservationController {
 	}
 
 	@RequestMapping(value = "reservation/report/findReservationReport", method = RequestMethod.POST)
-	public @ResponseBody Object reservationReport(@RequestParam Integer roomId,Integer reservationTypeId, Integer divisionId,String reservationBy)
-			throws Exception {
+	public @ResponseBody Object reservationReport( @RequestParam(required=false,defaultValue= "-1" )Integer roomId,
+			@RequestParam(required=false,defaultValue= "-1" ) Integer reservationTypeId,
+			@RequestParam(required=false,defaultValue= "-1" ) Integer divisionId,
+			@RequestParam(required=false,defaultValue= "" ) String reservationBy) throws Exception {
 		System.out.println("roomId : " + roomId);
 		System.out.println("reservationTypeId : " + reservationTypeId);
 		System.out.println("divisionId : " + divisionId);
@@ -207,11 +209,7 @@ public class ReservationController {
 		final List<ReportReservationDto> data;
 		data = reservationService.findReservation(roomId, reservationTypeId, divisionId, reservationBy);
 
-		return new Object() {
-			public List<ReportReservationDto> getData() {
-				return data;
-			}
-		};
+		return data;
 	}
 	
 	@RequestMapping(value = "reservation/filterReservation", method = RequestMethod.POST)
