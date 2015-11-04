@@ -90,9 +90,9 @@ public class ReservationController {
 			List<ReservationDto> reservations = new ArrayList<ReservationDto>();
 			reservations = reservationService.findByDateRange(start, end,roomId);
 		if (null == reservations) {
-			return null;
-		}else if (reservations.size()==0) {
-			return null;
+			return reservations;
+		}else if (0==reservations.size()) {
+			return reservations;
 		}else {
 			return reservations;
 		}

@@ -174,15 +174,15 @@ function renderCalendar(){
 		lang: $languageNow,
 		timezone: "Asia/Bangkok",
 		ignoreTimezone:false,
-		eventSources:[
-		   eventSource	={
+		eventSources : eventSource = [
+		   {
 				url : 'reservation/ajax/getAllReservation',
 				type: 'POST',
 				data: { roomId : 1},
 				success: function(data) {
 				},
 				error: function(error) {
-					alert("ERROR");
+					alert("ERROR1");
 				},
 				color : "#FF4512",
 				textColor :'white'
@@ -194,7 +194,7 @@ function renderCalendar(){
 				success: function(data) {
 				},
 				error: function(error) {
-					alert("ERROR");
+					alert("ERROR2");
 				},
 				color : "#91E650",
 				textColor :'white'
@@ -206,7 +206,7 @@ function renderCalendar(){
 				success: function(data) {
 				},
 				error: function(error) {
-					alert("ERROR");
+					alert("ERROR3");
 				},
 				color : "#EBCD26",
 				textColor :'white'
