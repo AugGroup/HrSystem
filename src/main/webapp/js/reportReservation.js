@@ -21,12 +21,13 @@ $(document).ready(function () {
 			            return data;
 					}
 				},
-				columns : [
-			           {data: "reservationBy"},
+				columns :[
+				       {data: "reservationBy"},
 				       {data: "divisionName"},
 				       {data: "roomName"},
 				       {data: "reservationTypeName"},
 				       {data: "dateReservation"},				      
+
 				       ]
 //				language:{
 //
@@ -40,14 +41,19 @@ $(document).ready(function () {
 	});
 	
 	$("#btn_preview").off().on("click",function(){
-		$("input:radio[name='reportType']").click(function(){
-            if(this.value === 'pdf' && this.checked){
-            	console.log("pdf");
-	        } else {
-	        	console.log("xls");
-	        }
-		});
+		var typePreview = $('input[name=reportType]:checked','#reportForm').val();
+		console.log(typePreview);
 		
+		if($("#reservationBy").val()== ""){
+			var reservationBy = "empty";
+		}
+		window.open(
+				$getContextPath+'/reservation/report/review/'+typePreview+'/'
+				+$("#room").val()+'/'+$("#reservationType").val()+'/'+$("#masDivisionInsert").val()
+				+'/'+reservationBy);
+		console.log($getContextPath+'/reservation/report/review/'+typePreview+'/'
+				+$("#room").val()+'/'+$("#reservationType").val()+'/'+$("#masDivisionInsert").val()
+				+'/'+reservationBy);
 	});
 	
 	$('#btn_search').trigger("click");

@@ -11,12 +11,22 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 import java.util.TimeZone;
 
+import javax.sql.DataSource;
+
+import net.sf.jasperreports.engine.JRDataSource;
+import net.sf.jasperreports.engine.JRParameter;
+import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ApplicationContext;
 import org.springframework.stereotype.Controller;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,6 +34,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.jasperreports.JasperReportsMultiFormatView;
 
 import com.aug.hrdb.dto.ReportReservationDto;
 import com.aug.hrdb.dto.ReservationDto;
@@ -60,7 +72,11 @@ public class ReservationController {
 	@Autowired
 	private MasReservationTypeService masReservationTypeService;
 
+	@Autowired
+	private ApplicationContext appContext;
 	
+	@Autowired
+	private DataSource dataSource;
 	
 	@ModelAttribute("rooms")
 	public List<Room> roomList(){
@@ -201,7 +217,7 @@ public class ReservationController {
 	}
 
 	@RequestMapping(value = "reservation/report/findReservationReport", method = RequestMethod.POST)
-	public @ResponseBody Object reservationReport( @RequestParam(required=false,defaultValue= "-1" )Integer roomId,
+	public @ResponseBody List<ReportReservationDto> reservationReport( @RequestParam(required=false,defaultValue= "-1" )Integer roomId,
 			@RequestParam(required=false,defaultValue= "-1" ) Integer reservationTypeId,
 			@RequestParam(required=false,defaultValue= "-1" ) Integer divisionId,
 			@RequestParam(required=false,defaultValue= "" ) String reservationBy) throws Exception {
@@ -223,5 +239,59 @@ public class ReservationController {
 		
 		return reservationService.filterReservation(start, end, roomId, reservationTypeId, divisionId, reserveBy);
 	}
+	
+	@RequestMapping(value = "reservation/report/review/{reportType}/{room}/{reservationType}/{masDivisionInsert}/{reservationBy}", method = RequestMethod.GET)
+	public ModelAndView reportReservationPreview (@PathVariable String reportType,@RequestParam(required=false,defaultValue= "-1" )Integer roomId,
+			@RequestParam(required=false,defaultValue= "-1" ) Integer reservationTypeId,
+			@RequestParam(required=false,defaultValue= "-1" ) Integer divisionId,
+			@RequestParam(required=false,defaultValue= "empty" ) String reservationBy){
+		
+		System.out.println("roomId : " + roomId);
+		System.out.println("reservationTypeId : " + reservationTypeId);
+		System.out.println("divisionId : " + divisionId);
+		System.out.println("reservationBy : " + reservationBy);
+		List<ReportReservationDto> reportReservationDto = reservationService.findReservation(roomId, reservationTypeId, divisionId, reservationBy);
+			
+		Map<String, Object> parameterMap = new HashMap<String, Object>();
+		String roomId1 = "";
+		String reservationTypeId1 = "";
+		String divisionId1 = "";
+		String reservationBy1 ="";
+		
+		if( !StringUtils.isEmpty(reservationBy1)&& reservationBy1.length()>0){
+			reservationBy1 = " AND reservation.RESERVATIONBY = '"+reservationBy1+"'";
+		}
+		
+		if(roomId > 0){
+			roomId1 = " AND room.ID = "+roomId;
+		}
+		
+		if(reservationTypeId > 0 ){
+			reservationTypeId1 = " AND masreservationtype.ID = "+reservationTypeId;
+		}
+		
+		if(divisionId > 0 ){
+			divisionId1 = " AND masdivision.ID = "+divisionId;
+		}
+	
+		parameterMap.put(JRParameter.REPORT_LOCALE, Locale.ENGLISH);
 
+		parameterMap.put("format", reportType);
+
+		  
+
+		  JasperReportsMultiFormatView view = new JasperReportsMultiFormatView();
+
+		  view.setJdbcDataSource(dataSource);
+
+		  view.setUrl("classpath:reports/reservationReport.jasper");
+
+		  view.setApplicationContext(appContext);
+
+		  
+
+		  return new ModelAndView(view, parameterMap);
+
+	}
+	
 }

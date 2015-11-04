@@ -23,7 +23,7 @@ $(document).ready(function(){
 	<!------------------- Report search------------------->
 	<div class="container" >
 	<div class="report_search">
-	<form name="reportForm">
+	<form name="reportForm" id="reportForm">
 			<div class="row">
 				<div class="search_inputgroup">
 				<div class="report_search">
