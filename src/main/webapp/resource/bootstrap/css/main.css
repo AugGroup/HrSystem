@@ -1,4 +1,22 @@
+/* ------------------------------ Set Font ----------------------------  */
+@font-face {
+    font-family: 'Dosis-Bold';
+    src: url('../fonts/Dosis-Bold.ttf') format('truetype');
+}
 
+@font-face {
+    font-family: 'Dosis-Regular';
+    src: url('../fonts/Dosis-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Dosis-SemiBold';
+    src: url('../fonts/Dosis-SemiBold.ttf') format('truetype');
+}
+
+*{
+	font-family: Dosis-Regular;
+}
  html, body {
       height: 100%;
       margin: 0 0 1px;
