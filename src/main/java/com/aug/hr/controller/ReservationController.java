@@ -25,7 +25,10 @@ import net.sf.jasperreports.engine.data.JRBeanCollectionDataSource;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -41,6 +44,8 @@ import com.aug.hrdb.dto.ReportReservationDto;
 import com.aug.hrdb.dto.ReservationDto;
 import com.aug.hrdb.entities.Reservation;
 import com.aug.hrdb.services.ReservationService;
+import com.aug.hrdb.entities.Employee;
+import com.aug.hrdb.entities.Login;
 import com.aug.hrdb.entities.MasDivision;
 import com.aug.hrdb.entities.MasReservationType;
 import com.aug.hrdb.entities.Room;
@@ -93,9 +98,18 @@ public class ReservationController {
 		return masReservationTypeService.findAll();
 	}
 	
+	@Transactional
 	@RequestMapping(value="/reservation",method=RequestMethod.GET)
-	public String reservationPage(){
-		return "reservation/reservation";
+	public ModelAndView reservationPage(){
+		UserDetails userDetails = (UserDetails) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		Login login = loginService.findByUserName(userDetails.getUsername());
+		Employee employee = login.getEmployee();
+		ModelAndView model = new ModelAndView();
+		model.addObject("employeeId", employee.getId());
+		model.addObject("firstNameEn", employee.getApplicant().getFirstNameEN());
+		model.addObject("lastNameEn", employee.getApplicant().getLastNameEN());
+		model.setViewName("reservation/reservation");
+		return model;
 	}
 	
 	@RequestMapping(value="/reservation/ajax/getAllReservation",method=RequestMethod.POST)
@@ -105,16 +119,11 @@ public class ReservationController {
 		    System.out.println("start : "+start+"   end : "+end);
 			List<ReservationDto> reservations = new ArrayList<ReservationDto>();
 			reservations = reservationService.findByDateRange(start, end);
-		if (null == reservations) {
-			return reservations;
-		}else if (0==reservations.size()) {
-			return reservations;
-		}else {
-			return reservations;
-		}
+			System.out.println(reservations.size());
+		return reservations;
 	}
 	
-	@RequestMapping(value="/reservation/ajax/getReservation/{id}", method=RequestMethod.POST)
+	@RequestMapping(value="/reservation/ajax/getReservation/{id}", method=RequestMethod.GET)
 	public @ResponseBody ReservationDto findReservation(@PathVariable Integer id){
 		ReservationDto reservation = reservationService.findReservationById(id);
 		return reservation;
@@ -181,7 +190,7 @@ public class ReservationController {
 		reservationToUpdate.setDescription(reservation.getDescription());
 		reservationToUpdate.setMasreservationtype(reservation.getMasreservationtype());
 		reservationToUpdate.setMasDivision(reservation.getMasDivision());
-		reservationToUpdate.setReservationBy(reservation.getReservationBy());
+		//reservationToUpdate.setReservationBy(reservation.getReservationBy());
 		reservationService.update(reservationToUpdate);
 		return reservationService.findReservationById(reservation.getId());
 	}

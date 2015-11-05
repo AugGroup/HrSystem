@@ -9,6 +9,9 @@
 
 
 <div class="container-fluid">
+	<input type="hidden" id="employeeId" value="${employeeId}" >
+	<input type="hidden" id="firstNameEn" value="${firstNameEn}" >
+	<input type="hidden" id="lastNameEn" value="${lastNameEn}" >
 	<div class="row">
 		<div id="div-calendar-bg" class="col-md-9">
 			<div id="calendar"></div>
@@ -149,7 +152,7 @@
       			<div class="col-offset-md-1 col-md-3"><h4><spring:message code="reservation.resserv.by" /></h4></div>
       			<div class="col-md-3">
       			<h4 id="detailReservBy" class="showReservData"></h4>
-      			<input id="editdetailReservBy" class="form-control editReservData"/>
+      				<input id="editdetailReservBy" class="form-control editReservData"/>
       			</div>
       		</div>	
       			
