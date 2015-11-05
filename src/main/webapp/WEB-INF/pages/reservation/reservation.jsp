@@ -10,7 +10,7 @@
 
 <div class="container-fluid">
 	<div class="row">
-		<div class="col-md-9">
+		<div id="div-calendar-bg" class="col-md-9">
 			<div id="calendar"></div>
 		</div>
 		<div class="col-md-3">
@@ -49,7 +49,7 @@
 					</select>
 					<label for="reservationByFilter"><spring:message code="reservation.resserv.by" /></label>
 					<input id="reservationByFilter" class="form-control" ></input>
-					<button id="filterReserveBtn" class="btn btn-info" ><spring:message code="reservation.search" /></button>
+					<div class="text-right"><button id="filterReserveBtn" class="btn btn-info" ><spring:message code="reservation.search" /></button></div>
 			      </div>
 			    </div>
 			  </div>
@@ -79,7 +79,7 @@
 					</select>
 					<label for="reservationByCriteria"><spring:message code="reservation.resserv.by" /></label>
 					<input id="reservationByCriteria" class="form-control" ></input>		
-					<button id="searchReserveBtn" class="btn btn-info" ><spring:message code="reservation.search" /></button>
+					<div class="text-right"><button id="searchReserveBtn" class="btn btn-info" ><spring:message code="reservation.search" /></button></div>
 			      </div>
 			    </div>
 			  </div>
