@@ -178,37 +178,13 @@ function renderCalendar(){
 		   {
 				url : $getContextPath+'/reservation/ajax/getAllReservation',
 				type: 'POST',
-				data: { roomId : 1},
+				//data: { roomId : 1},
 				success: function(data) {
 				},
 				error: function(error) {
 					alert("ERROR");
 				},
-				color : "#79CDCD",
-				textColor :'white'
-		    },
-		    {
-				url : $getContextPath+'/reservation/ajax/getAllReservation',
-				type: 'POST',
-				data: { roomId : 2},
-				success: function(data) {
-				},
-				error: function(error) {
-					alert("ERROR");
-				},
-				color : "#FF9999",
-				textColor :'white'
-		    },
-		    {
-				url : $getContextPath+'/reservation/ajax/getAllReservation',
-				type: 'POST',
-				data: { roomId : 3},
-				success: function(data) {
-				},
-				error: function(error) {
-					alert("ERROR");
-				},
-				color : "#33CC66",
+				//color : "#79CDCD",
 				textColor :'white'
 		    }
 		    
@@ -474,12 +450,11 @@ $(function (){
 			          {data : "divisionName"},
 			          {data : "reservedBy"}
 			 ],
-//			 initComplete :function(){
-//			    $("#reservationListTable_previous").children().text("<"); 
-//			    $("#reservationListTable_next").children().text(">");
-//			 },
+			 initComplete :function(){
+			    $("#reservationListTable_previous").children().text("<"); 
+			    $("#reservationListTable_next").children().text(">");
+			 },
 			 "dom": 'tp'
-			 
 		});
 	})
 	
@@ -491,129 +466,8 @@ $(function (){
 		var $masreservationtype = $("#reservationTypeFilter").val();
 		var $masRoom = $("#roomFilter").val();
 		var view = $calendar.fullCalendar('getView');
-		
 		$calendar.fullCalendar( 'destroy' );
 		var eventSource;
-		if( $("#roomFilter").val()==1){
-			eventSource = [
-				{
-						url : 'reservation/filterReservation',
-						type: 'POST',
-						data: {
-								reserveBy : $reservationBy,
-								divisionId : $masDivision,
-								reservationTypeId :$masreservationtype,
-								roomId : 1
-						},
-				success: function(data) {
-				},
-				error: function(error) {
-					alert("ERROR");
-				},
-				color : "#79CDCD",
-				textColor :'white'
-				}
-			               ]
-		}else if ( $("#roomFilter").val()==2){
-			eventSource = [
-               {
-      				url : 'reservation/filterReservation',
-      				type: 'POST',
-      				data: {
-						reserveBy : $reservationBy,
-						divisionId : $masDivision,
-						reservationTypeId :$masreservationtype,
-						roomId : 2
-					},
-      				success: function(data) {
-      				},
-      				error: function(error) {
-      					alert("ERROR");
-      				},
-      				color : "#FF9999",
-      				textColor :'white'
-      		    }
-           ]
-		}else if ( $("#roomFilter").val()==3){
-			eventSource = [	
-				{
-						url : 'reservation/filterReservation',
-						type: 'POST',
-						data: {
-							reserveBy : $reservationBy,
-							divisionId : $masDivision,
-							reservationTypeId :$masreservationtype,
-							roomId : 3
-						},
-						success: function(data) {
-						},
-						error: function(error) {
-							alert("ERROR");
-						},
-						color : "#33CC66",
-						textColor :'white'
-				 }
-			               ]
-		}else{
-			eventSource = [
-     		   {
-      				url : 'reservation/filterReservation',
-      				type: 'POST',
-      				data: {
-						reserveBy : $reservationBy,
-						divisionId : $masDivision,
-						reservationTypeId :$masreservationtype,
-						roomId : 1
-					},
-      				success: function(data) {
-      				},
-      				error: function(error) {
-      					alert("ERROR");
-      				},
-      				color : "#79CDCD",
-      				textColor :'white'
-      		    },
-      		    {
-      				url : 'reservation/filterReservation',
-      				type: 'POST',
-      				data: {
-						reserveBy : $reservationBy,
-						divisionId : $masDivision,
-						reservationTypeId :$masreservationtype,
-						roomId : 2
-					},
-      				success: function(data) {
-      				},
-      				error: function(error) {
-      					alert("ERROR");
-      				},
-      				color : "#FF9999",
-      				textColor :'white'
-      		    },
-      		    {
-      				url : 'reservation/filterReservation',
-      				type: 'POST',
-      				data: {
-						reserveBy : $reservationBy,
-						divisionId : $masDivision,
-						reservationTypeId :$masreservationtype,
-						roomId : 3
-					},
-      				success: function(data) {
-      				},
-      				error: function(error) {
-      					alert("ERROR");
-      				},
-      				color : "#33CC66",
-      				textColor :'white'
-      		    }  
-      		];
-		}
-		
-		 
-		
-		
-		
 		$calendar = $("#calendar").fullCalendar({
 			header:{
 				left: "prev,next today",
@@ -699,12 +553,7 @@ $(function (){
 		    eventResize: function(event, delta, revertFunc) {
 		    	updateReservationDate(event, revertFunc);
 		    },
-
-			
-			
 		})
-		
 		$("div.fc-center").addClass("text-center");
-		
 	})
 })

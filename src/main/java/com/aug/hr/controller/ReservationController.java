@@ -101,10 +101,10 @@ public class ReservationController {
 	@RequestMapping(value="/reservation/ajax/getAllReservation",method=RequestMethod.POST)
 	public @ResponseBody List<ReservationDto> findAllReservation(@RequestParam(value="start") String start,
 			@RequestParam(value="end") String end, @RequestParam(value="_",required = false) String underscore, 
-			@RequestParam(value="timezone",required = false) String timezone, @RequestParam Integer roomId ) throws ParseException {
+			@RequestParam(value="timezone",required = false) String timezone) throws ParseException {
 		    System.out.println("start : "+start+"   end : "+end);
 			List<ReservationDto> reservations = new ArrayList<ReservationDto>();
-			reservations = reservationService.findByDateRange(start, end,roomId);
+			reservations = reservationService.findByDateRange(start, end);
 		if (null == reservations) {
 			return reservations;
 		}else if (0==reservations.size()) {
@@ -203,21 +203,7 @@ public class ReservationController {
 	
 	@RequestMapping(value = "/reservation/ajax/searchReservation", method = RequestMethod.GET)
 	public @ResponseBody List<ReservationDto> searchReservation(@RequestParam String reservationBy, @RequestParam Integer masDivision, @RequestParam Integer masreservationtype) {
-		System.out.println("do in controller");
-		Reservation reservation = new Reservation();
-		if(null!=masDivision){
-			reservation.setMasDivision(masDivisionService.findById(masDivision));
-			System.out.println("notttttttttttttttt");
-		}
-		
-		if(null!=masreservationtype){
-			reservation.setMasreservationtype(masReservationTypeService.findById(masreservationtype));
-		}
-		
-		reservation.setReservationBy(reservationBy);
-		
-		System.out.println("complete setting");
-		return reservationService.searchReservation(reservation);
+		return reservationService.searchReservation(reservationBy, masDivision, masreservationtype);
 	}
 	
 	@RequestMapping(value = "reservation/report", method = RequestMethod.GET)
