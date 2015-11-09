@@ -79,8 +79,7 @@ function updateReservationDate(eventToUpdate, revertParam) {
 				data : JSON.stringify(updatedata),
 				dataType : "json",
 				success : function(result) {
-					var view = $calendar.fullCalendar('getView');// get view
-																	// object
+					var view = $calendar.fullCalendar('getView');// get view object
 					$calendar.fullCalendar('destroy');
 					renderCalendar();
 					$calendar.fullCalendar('changeView', view.name);
@@ -134,20 +133,15 @@ function renderCalendar() {
 				buttonIcons : true,
 				defaultDate : moment(),
 				select : function(start, end) {
-					var view = $calendar.fullCalendar('getView');// get view
-																	// object
-					if (view.name == "month") { // if event that selected is
-												// month then show agendaDay
-												// view
+					var view = $calendar.fullCalendar('getView');// get view object
+					if (view.name == "month") { // if event that selected is month then show agendaDay view
 						$calendar.fullCalendar('changeView', 'agendaDay');
 						$calendar.fullCalendar('gotoDate', start);
 					} else {
 						$validform.resetForm();
 						$('#formInsert').trigger('reset');
-						$("#insStartTime").text(
-								moment(start).format("HH:mm MMMM D, YYYY"));
-						$("#insEndTime").text(
-								moment(end).format("HH:mm MMMM D, YYYY"));
+						$("#insStartTime").text(moment(start).format("HH:mm MMMM D, YYYY"));
+						$("#insEndTime").text(moment(end).format("HH:mm MMMM D, YYYY"));
 						$('#insModal').modal('show');
 						insStartTime = start;
 						insEndTime = end;
@@ -155,29 +149,25 @@ function renderCalendar() {
 					}
 				},
 				eventClick : function(event) {
+					$("#editReservBtn").hide();
+					$("#delModalBtn").hide();
 					eventSelector = event;
 					$.ajax({
-						url : $getContextPath
-								+ '/reservation/ajax/getReservation/'
-								+ event.id,
+						url : $getContextPath + '/reservation/ajax/getReservation/' + event.id,
 						type : 'GET',
 						success : function(data) {
-
-							$("#reservDetailModal").modal("show");
 							$("#detailRoomName").text(data.roomName);
 							$("#detailDescType").text(data.reservationType);
 							$("#detailDesc").text(data.description);
-							$("#detailDate").text(
-									moment(data.dateReservation).format(
-											"DD-MM-YYYY"));
-							$("#detailStart").text(
-									moment(data.start, "YYYY-MM-DD HH:mm:ss")
-											.format("HH:mm"));
-							$("#detailEnd").text(
-									moment(data.end, "YYYY-MM-DD HH:mm:ss")
-											.format("HH:mm"));
+							$("#detailDate").text(moment(data.dateReservation).format("DD-MM-YYYY"));
+							$("#detailStart").text(moment(data.start, "YYYY-MM-DD HH:mm:ss").format("HH:mm"));
+							$("#detailEnd").text(moment(data.end, "YYYY-MM-DD HH:mm:ss").format("HH:mm"));
 							$("#detailReservBy").text(data.firstName_En + " " + data.lastName_En);
 							$("#detailDivision").text(data.divisionName);
+							if ($("#employeeId").val() == data.employeeId) {
+								$("#editReservBtn").show();
+								$("#delModalBtn").show();
+							}
 							$("#reservDetailModal").modal("show");
 						},
 						error : function(error) {
@@ -190,8 +180,7 @@ function renderCalendar() {
 				timezone : "Asia/Bangkok",
 				ignoreTimezone : false,
 				eventSources : eventSource = [ {
-					url : $getContextPath
-							+ '/reservation/ajax/getAllReservation',
+					url : $getContextPath + '/reservation/ajax/getAllReservation',
 					type : 'POST',
 					// data: { roomId : 1},
 					success : function(data) {
@@ -206,8 +195,7 @@ function renderCalendar() {
 				],
 				editable : true,
 				eventDrop : function(event, delta, revertFunc) {
-					if (event.start.format("YYYY-MM-DD-HH-mm") < moment()
-							.format("YYYY-MM-DD-HH-mm")) {
+					if (event.start.format("YYYY-MM-DD-HH-mm") < moment().format("YYYY-MM-DD-HH-mm")) {
 						alertify.alert($cannotMove);
 						revertFunc();
 					} else {
@@ -222,8 +210,11 @@ function renderCalendar() {
 	$("div.fc-center").addClass("text-center");
 }
 $(function() {
+	$("#editReservBtn").hide();
+	$("#delModalBtn").hide();
 	renderCalendar();
 	$(".editReservData").hide();
+	
 
 	$('#confirmDeleteReserv').on('click', function() {
 		deleteReservation(eventSelector.id);
@@ -242,7 +233,8 @@ $(function() {
 		$("#saveEditReservBtn").show();
 
 		$("#description").text($("#detailDesc").text());
-		$("#editdetailReservBy").val($("#detailReservBy").text());
+		$("#editdetailReservBy").text($("#detailReservBy").text());
+		
 		$("#editdetailDesc").val($("#detailDesc").text());
 
 		// find room name
@@ -263,12 +255,14 @@ $(function() {
 
 	});
 
-	$('#reservDetailModal').on('hide.bs.modal', function(e) {
-		// do something...
-		$(".showReservData").show();
-		$(".editReservData").hide();
-
-	})
+//	$('#reservDetailModal').on('hide.bs.modal', function(e) {
+//		// do something...
+//		$("#editReservBtn").hide();
+//		$(".showReservData").show();
+//		$(".editReservData").hide();
+//
+//	})
+	
 	$("#cancelEditReservBtn").on('click', function() {
 		$(".showReservData").show();
 		$(".editReservData").hide();
@@ -287,7 +281,9 @@ $(function() {
 			masDivision : {
 				id : $("#editdetailDivision").val()
 			},
-			reservationBy : $("#editdetailReservBy").val()
+			employee : {
+				id : $("#employeeId").val()
+			},
 		}
 
 		$.ajax({
@@ -314,9 +310,7 @@ $(function() {
 				} else if (roomId == 3) {
 					roomColor = "#33CC66";
 				}
-				$calendar.fullCalendar('removeEvents', eventSelector.id); // remove
-																			// old
-																			// event
+				$calendar.fullCalendar('removeEvents', eventSelector.id); // remove old event
 				updateData = {
 					id : eventSelector.id,
 					title : result.title,
@@ -325,8 +319,7 @@ $(function() {
 					color : roomColor
 				};
 				console.log(updateData);
-				$calendar.fullCalendar('renderEvent', updateData); // create
-																	// new event
+				$calendar.fullCalendar('renderEvent', updateData); // create new event
 
 				new PNotify({
 					title : $notifySuccess,
@@ -344,22 +337,20 @@ $(function() {
 			}
 		});
 	});
-
-	$("#insBtn").on(
-			'click',
-			function() {
+	
+	$("#insBtn").on('click',function() {
 				if ($('#formInsert').valid()) {
 
 					var reservation = {
-						reservationBy : $("#reservationBy").val(),
+						employee : {
+							id : $("#employeeId").val()
+						},
 						masDivision : {
 							id : $("#masDivisionInsert option:selected").val()
 						},
 						description : $("#descriptionInsert").val(),
-						start : insStartTime.tz("Asia/Bangkok").format(
-								"YYYY-MM-DD HH:mm:ss"),
-						end : insEndTime.tz("Asia/Bangkok").format(
-								"YYYY-MM-DD HH:mm:ss"),
+						start : insStartTime.tz("Asia/Bangkok").format("YYYY-MM-DD HH:mm:ss"),
+						end : insEndTime.tz("Asia/Bangkok").format("YYYY-MM-DD HH:mm:ss"),
 						room : {
 							id : $("#room option:selected").val()
 						},
@@ -393,7 +384,9 @@ $(function() {
 								insData = {
 									id : data.id,
 									title : data.title,
-									reservationBy : data.reservationBy,
+									employee : {
+										id : data.id
+									},
 									masDivision : {
 										"id" : data.id
 									},
@@ -409,9 +402,7 @@ $(function() {
 									color : '#CC66CC'
 								};
 								console.log(insData);
-								$calendar.fullCalendar('renderEvent', insData); // stick?
-																				// =
-																				// true
+								$calendar.fullCalendar('renderEvent', insData); // stick? = true
 								$('#insModal').modal('hide');
 								$('#formInsert').trigger('reset');
 
@@ -479,21 +470,15 @@ $(function() {
 				dataSrc : "",
 				type : 'GET'
 			},
-			columns : [ {
-				data : "roomName"
-			}, {
-				data : "dateReservation"
-			}, {
-				data : "start"
-			}, {
-				data : "end"
-			}, {
-				data : "reservationType"
-			}, {
-				data : "divisionName"
-			}, {
-				data : "reservedBy"
-			} ],
+			columns : [ 
+			   { data : "roomName"}, 
+			   {data : "dateReservation"}, 
+			   {data : "start"}, 
+			   {data : "end"}, 
+			   {data : "reservationType"}, 
+			   {data : "divisionName"}, 
+			   {data : "reservedBy"} 
+			],
 			initComplete : function() {
 				$("#reservationListTable_previous").children().text("<");
 				$("#reservationListTable_next").children().text(">");
@@ -502,179 +487,107 @@ $(function() {
 		});
 	})
 
-	$('#filterReserveBtn')
-			.on(
-					'click',
-					function() {
+	$('#filterReserveBtn').on('click',function() {
 						var $reservationBy = $("#reservationByFilter").val();
 						var $masDivision = $("#divisionFilter").val();
-						var $masreservationtype = $("#reservationTypeFilter")
-								.val();
+						var $masreservationtype = $("#reservationTypeFilter").val();
 						var $masRoom = $("#roomFilter").val();
 						var view = $calendar.fullCalendar('getView');
 						$calendar.fullCalendar('destroy');
 						var eventSource;
-						$calendar = $("#calendar")
-								.fullCalendar(
-										{
-											header : {
-												left : "prev,next today",
-												center : "title",
-												right : "month,agendaWeek,agendaDay"
-											},
-											selectable : true,
-											editable : true,
-											allDaySlot : false,
-											buttonIcons : true,
-											defaultDate : view.intervalStart,
-											select : function(start, end) {
-												var view = $calendar
-														.fullCalendar('getView');// get
-																					// view
-																					// object
-												if (view.name == "month") { // if
-																			// event
-																			// that
-																			// selected
-																			// is
-																			// month
-																			// then
-																			// show
-																			// agendaDay
-																			// view
-													$calendar.fullCalendar(
-															'changeView',
-															'agendaDay');
-													$calendar.fullCalendar(
-															'gotoDate', start);
-												} else {
-													$validform.resetForm();
-													$('#formInsert').trigger(
-															'reset');
-													$("#insStartTime")
-															.text(
-																	moment(
-																			start)
-																			.format(
-																					"HH:mm MMMM D, YYYY"));
-													$("#insEndTime")
-															.text(
-																	moment(end)
-																			.format(
-																					"HH:mm MMMM D, YYYY"));
-													$('#insModal')
-															.modal('show');
-													insStartTime = start;
-													insEndTime = end;
-													$calendar
-															.fullCalendar('unselect');
-												}
-											},
-											eventClick : function(event) {
-												eventSelector = event;
-												$
-														.ajax({
-															url : $getContextPath
-																	+ '/reservation/ajax/getReservation/'
-																	+ event.id,
-															type : 'GET',
-															success : function(
-																	data) {
-
-																$(
-																		"#reservDetailModal")
-																		.modal(
-																				"show");
-																$(
-																		"#detailRoomName")
-																		.text(
-																				data.roomName);
-																$(
-																		"#detailDescType")
-																		.text(
-																				data.reservationType);
-																$("#detailDesc")
-																		.text(
-																				data.description);
-																$("#detailDate")
-																		.text(
-																				moment(
-																						data.dateReservation)
-																						.format(
-																								"DD-MM-YYYY"));
-																$(
-																		"#detailStart")
-																		.text(
-																				moment(
-																						data.start,
-																						"YYYY-MM-DD HH:mm:ss")
-																						.format(
-																								"HH:mm"));
-																$("#detailEnd")
-																		.text(
-																				moment(
-																						data.end,
-																						"YYYY-MM-DD HH:mm:ss")
-																						.format(
-																								"HH:mm"));
-																$(
-																		"#detailReservBy")
-																		.text()(result.firstName_En + " " + result.lastName_En);
-																$(
-																		"#detailDivision")
-																		.text(
-																				data.divisionName);
-																$(
-																		"#reservDetailModal")
-																		.modal(
-																				"show");
-															},
-															error : function(
-																	error) {
-																alert("ERROR");
-															}
-														})
-											},
-											eventLimit : true,
-											lang : $languageNow,
-											timezone : "Asia/Bangkok",
-											ignoreTimezone : false,
-											eventSources : eventSource = [ {
-												url : 'reservation/filterReservation',
-												type : 'POST',
-												data : {
-													reserveBy : $reservationBy,
-													divisionId : $masDivision,
-													reservationTypeId : $masreservationtype,
-													roomId : $masRoom
-												},
+						$calendar = $("#calendar").fullCalendar({
+								header : {
+									left : "prev,next today",
+									center : "title",
+									right : "month,agendaWeek,agendaDay"
+								},
+								selectable : true,
+								editable : true,
+								allDaySlot : false,
+								buttonIcons : true,
+								defaultDate : view.intervalStart,
+								select : function(start, end) {
+									var view = $calendar.fullCalendar('getView');// get view object
+									if (view.name == "month") { // if event that selected is month then show agendaDay view
+										$calendar.fullCalendar('changeView','agendaDay');
+										$calendar.fullCalendar('gotoDate', start);
+									} else {
+										$validform.resetForm();
+										$('#formInsert').trigger('reset');
+										$("#insStartTime").text(moment(start).format("HH:mm MMMM D, YYYY"));
+										$("#insEndTime").text(moment(end).format("HH:mm MMMM D, YYYY"));
+										$('#insModal').modal('show');
+										insStartTime = start;
+										insEndTime = end;
+										$calendar.fullCalendar('unselect');
+									}
+								},
+								eventClick : function(event) {
+									eventSelector = event;
+									$
+											.ajax({
+												url : $getContextPath
+														+ '/reservation/ajax/getReservation/'
+														+ event.id,
+												type : 'GET',
 												success : function(data) {
+													$("#editReservBtn").hide();
+													$("#delModalBtn").hide();
+													$("#detailRoomName").text(data.roomName);
+													$("#detailDescType").text(data.reservationType);
+													$("#detailDesc").text(data.description);
+													$("#detailDate").text(moment(data.dateReservation).format("DD-MM-YYYY"));
+													$("#detailStart").text(moment(data.start,"YYYY-MM-DD HH:mm:ss").format("HH:mm"));
+													$("#detailEnd").text(moment(data.end,"YYYY-MM-DD HH:mm:ss").format("HH:mm"));
+													$("#detailReservBy").text(result.firstName_En + " " + result.lastName_En);
+													$("#detailDivision").text(data.divisionName);
+												
+													if ($("#employeeId").val() == data.employeeId) {
+														$("#editReservBtn").show();
+														$("#delModalBtn").show();
+													}
+													
+													$("#reservDetailModal").modal("show");
 												},
 												error : function(error) {
-													alert("ERROR FILTER");
-												},
-												textColor : 'white'
-											} ],
-											editable : true,
-											eventDrop : function(event, delta,
-													revertFunc) {
-												if (event.start
-														.format("YYYY-MM-DD-HH-mm") < moment()
-														.format(
-																"YYYY-MM-DD-HH-mm")) {
-													alertify.alert('cant edit');
-													revertFunc();
-												} else {
-													updateReservationDate(
-															event, revertFunc);
+													alert("ERROR");
 												}
-											},
-											eventResize : function(event,
-													delta, revertFunc) {
-												updateReservationDate(event,
-														revertFunc);
-											},
-										})
+											})
+								},
+								eventLimit : true,
+								lang : $languageNow,
+								timezone : "Asia/Bangkok",
+								ignoreTimezone : false,
+								eventSources : eventSource = [ {
+									url : 'reservation/filterReservation',
+									type : 'POST',
+									data : {
+										reserveBy : $reservationBy,
+										divisionId : $masDivision,
+										reservationTypeId : $masreservationtype,
+										roomId : $masRoom
+									},
+									success : function(data) {
+									},
+									error : function(error) {
+										alert("ERROR FILTER");
+									},
+									textColor : 'white'
+								} ],
+								editable : true,
+								eventDrop : function(event, delta,
+										revertFunc) {
+									if (event.start.format("YYYY-MM-DD-HH-mm") < moment().format("YYYY-MM-DD-HH-mm")) {
+										alertify.alert('cant edit');
+										revertFunc();
+									} else {
+										updateReservationDate(event, revertFunc);
+									}
+								},
+								eventResize : function(event,delta, revertFunc) {
+									updateReservationDate(event,revertFunc);
+								},
+							})
 						$("div.fc-center").addClass("text-center");
 					})
 })

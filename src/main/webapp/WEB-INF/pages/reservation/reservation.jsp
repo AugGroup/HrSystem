@@ -93,6 +93,7 @@
 	
 </div>
 
+<!-- Detail Modal -->
 <div class="modal fade" id="reservDetailModal" tabindex="-1" role="dialog" aria-labelledby="reservDetailLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -151,8 +152,8 @@
       		<div class="row">
       			<div class="col-offset-md-1 col-md-3"><h4><spring:message code="reservation.resserv.by" /></h4></div>
       			<div class="col-md-3">
-      			<h4 id="detailReservBy" class="showReservData"></h4>
-      				<input id="editdetailReservBy" class="form-control editReservData"/>
+      				<h4 id="detailReservBy" class="showReservData"></h4>
+      				<h4 id="editdetailReservBy" class="editReservData"></h4>
       			</div>
       		</div>	
       			
@@ -176,7 +177,7 @@
       	<button id="saveEditReservBtn" type="button" class="btn btn-warning editReservData"><spring:message code="label.save" /></button>
       	<button id="cancelEditReservBtn" type="button" class="btn btn-default editReservData"><spring:message code="label.cancel" /></button>
         <button id="delModalBtn" type="button" class="btn btn-danger showReservData"><spring:message code="label.delete" /></button>
-        <button type="button" class="btn btn-default" data-dismiss="modal"><spring:message code="label.close" /></button>
+        <button id="closeBtn" type="button" class="btn btn-default" data-dismiss="modal"><spring:message code="label.close" /></button>
       </div>
     </div>
   </div>
@@ -255,7 +256,7 @@
         			<div class="row">
 	        			<div class="col-md-6">
 	        				<label for="reservationBy"><spring:message code="reservation.resserv.by" /></label>
-	        				<input id="reservationBy" class="form-control" placeholder="<spring:message code="reservation.resserv.by" />" name="reservationBy"  ></input>
+	        				<input id="reservationBy" class="form-control" name="reservationBy" disabled value="${firstNameEn} ${lastNameEn}"></input>
 	        			</div>
 	        		
 	        		<div class="col-md-6">
