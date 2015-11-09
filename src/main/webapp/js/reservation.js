@@ -477,7 +477,9 @@ $(function() {
 			   {data : "end"}, 
 			   {data : "reservationType"}, 
 			   {data : "divisionName"}, 
-			   {data : "reservedBy"} 
+			   {data : function(data) {
+				   return data.firstName_En + " " + data.lastName_En;
+			   }} 
 			],
 			initComplete : function() {
 				$("#reservationListTable_previous").children().text("<");
