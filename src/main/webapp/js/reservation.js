@@ -541,7 +541,7 @@ $(function() {
 													$("#detailDate").text(moment(data.dateReservation).format("DD-MM-YYYY"));
 													$("#detailStart").text(moment(data.start,"YYYY-MM-DD HH:mm:ss").format("HH:mm"));
 													$("#detailEnd").text(moment(data.end,"YYYY-MM-DD HH:mm:ss").format("HH:mm"));
-													$("#detailReservBy").text(result.firstName_En + " " + result.lastName_En);
+													$("#detailReservBy").text(data.firstName_En + " " + data.lastName_En);
 													$("#detailDivision").text(data.divisionName);
 												
 													if ($("#employeeId").val() == data.employeeId) {
